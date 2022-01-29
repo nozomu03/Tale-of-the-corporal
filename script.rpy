@@ -44,7 +44,7 @@ label start:
     scene bg_black
     with dissolve
     scene bg_zitong
-    show cap_nom at right 
+    show cap_working at right 
     with dissolve
     $SoundPlayer("knock.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
@@ -81,7 +81,7 @@ label start:
     fcaptain "중대장이 할 일이 좀 있어서 저녁 때부터 나와 있었어."
     main "고생하십니다..."
     fcaptain "[main]이도 고생해야지?"
-    hide cap_nom
+    hide cap_working
     show main_atten at right with moveinleft
     "상황병 컴퓨터를 바라보았다. {w}근무를 서지 않았떤 삼 일 동안 확인하지 않은 인수인계 사항을 점검했다."
     main "(\'네, 여러분. {w}균영이에요. {w}근무 끝나고 나면 자기가 사용했던 자리는 자기가 청소하는 양심 있는 본부중대원이 됩시다. {w}인간적으로 간부님들도 보는 공간인데 먹은 쓰레기 버리고 가는 건 아니죠.{w}자기가 버린 게 아니라도 치워주는 배려심 넘치는 여러분이니 믿고 있겠습니다\'? {w}아 씨... {w}이거 내 이야긴거 같은데...)"
@@ -100,11 +100,59 @@ label start:
     $SoundPlayer("click.ogg", 1.0)
     main "부대일지 남겼습니다."
     "외출, 외박, 휴가, 외진, 전역. {w}이 네가지 경우를 제외한다면 공적인 업무가 없는 이상 부대 바깥으로 나가는 게 불가능에 가까운 병사들과 달리 간부들은 평시라면 일과시간이 끝나면 퇴근하게 된다."
-    "병사 입장에서는 단순히 \'짜증나는 것\' 내지는 \'귀찮은 것\'으로 취급되는 신속대응조나 당직근무를 기피하는 간부가 존재하는 것이 이 때문이다."
+    "병사 입장에서는 단순히 \'짜증나는 것\' 내지는 \'귀찮은 것\'으로 취급되는 신속대응조나 당직근무를 광적으로 기피하는 간부가 존재하는 것이 이 때문도 있는 것이다."
     "오늘은 토요일. {w}본래라면 출근을 하지 않아도 상관없을 휴일. {w}평일에도 짜증날 근무를 토요일이라는 황금같은 시간에 서게 되었기에. {w}근무 교대가 이루어지는 이 때쯤 으레 이뤄지는 당직근무자 화상 회의도, 뜬금없이 걸려오는 전화도. {w}사전 약속도 없이 불시에 날아오는 무전도 없이 시간은 고요히 흘러갔다."
+    $SoundPlayer("door.ogg")
+    $SoundPlayer("door.ogg")
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show sergeant_working at left with dissolve
+    adjutant "오, [main]. {w}오늘 근무야?"
+    main "예, 그렇습니다. {w}밖에 많이 추운가 봅니다?"
+    adjutant "응. {w}아직 본격적으로 겨울 시작하지도 않았는데 벌써 이렇게 춥네."
+    main "이 맘 때면 딱 저 신병휴가 복귀할 때 즈음이었는데 작년에도 이렇게 추웠지 않았었습니까?"
+    adjutant "그렇긴 한데... {w}왜 여기만 지구 온난화가 반대로 오는 것 같지?"
+    hide sergeant_working
+    hide main_atten
+    "인트라넷에 접속해 국방일보를 살펴보았다. {w}즐겨보던 작가의 새 칼럼이 기고된 것을 확인하고 천천히 읽어 나갔다."
+    show cap_working at center with dissolve
+    fcaptain "[main]아. {w}너 디오라마에 관심이 있었니?"
+    show main_atten at right with dissolve
+    main "예. {w}제대로 된 정식 디오라마를 만들어 본 적은 없지만 용돈 모아서 비행기나 전차 프라모델을 만들곤 했습니다."
+    fcaptain "그렇구나... {w}몰랐네."
+    "상황 근무 도중의 병사는 훈련 상황. {w}혹은 실상황이 벌어지지 않는 이상 할 일이 그렇게 많지 않았다. {w}칼럼을 전부 읽은 후 멍하니 CCTV 화면을 바라보고 있었다."
+    "전번 근무자가 밥을 먹는 동안 대신 근무를 서 주던 때까지는 기름이 섞여들어간 물처럼 무지개색으로 번들거리던 화면도 지금은 깨끗히 밤의 순찰로를 비추고 있다."
+    fcaptain "근무자 신고 갔다 올게."
+    main "맨 강당에서 하십니까?"
+    fcaptain "응."
+    main "실시사항 기입해 두겠습니다."
+    fcaptain "부탁해~"
+    hide cap_working
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
-    
+    "등받이에 기댄 채 나도 모르는 사이 무너진 자세를 바로잡았다. {w}첫 근무 때처럼 갑작스레 찾아온 저혈압으로 간부님들꼐 걱정을 끼치지 않으려면 이런 사소한 것도 전부 신경써야 했다."
+    $SoundPlayer("typing.ogg", 2.0)
+    $SoundPlayer("alert.ogg", 2.0)
+    "육군 레이더 체계 수신기가 경보음을 토해냈다."
+    main "확인하겠습니다!"
+    $SoundPlayer("click.ogg", 2.0)
+    adjutant "뭐야?"
+    main "수신율 점검입니다. {w}바로 응신하겠습니다."
+    $SoundPlayer("dial.wav", 1.0)
+    $SoundPlayer("phone.wav", 2.0)
+    "목소리" "통신보안. {w}군단 AOC 근무자 일병 ＠＠＠입니다."
+    main "통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다. {w}ㅇㅇ대대 육군 레이더 체계 수신율 점검 응신입니다."
+    "목소리" "ㅇㅇ대대 확인되었습니다. {w}고생하십시오."
+    $SoundPlayer("teleclick.ogg", 1.0)
+    #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
+    #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
+    #adjutant "그-{w=.3}{nw}"
+    #"부관님의 말씀이 끝나기도 전이었다."
+    #$SoundPlayer("broadcast.wav", 2.0)
+    #"녹음된 목소리" "\[문자형 전파체계 신규 문자 수신 알림입니다.\]"
+    #show sergeant_working at left with dissolve
+    #adjutant "보고드립니다! {w}"
     "."
     return
 
