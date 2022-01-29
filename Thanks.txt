@@ -8,5 +8,13 @@ pen Lukeo135(https://freesound.org/people/Lukeo135/sounds/540449/)
 
 knock: egomassive(https://freesound.org/people/egomassive/sounds/536789/)
 
+buzzer: Rickplayer(https://freesound.org/people/Rickplayer/sounds/531701/)
+
+teleclick: nakenne(https://freesound.org/people/nakenne/sounds/467896/)
+
+typing: JayeWilde(https://freesound.org/people/JayeWilde/sounds/505076/)
+
+click: TheFlakesMaster(https://freesound.org/people/TheFlakesMaster/sounds/400659/)
+
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63

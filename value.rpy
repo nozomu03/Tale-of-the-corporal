@@ -1,6 +1,6 @@
 define main = Character("ㅇㅇㅇ", who_color = "#000000", what_color="#AE8B59")
 define fcaptain = Character("ㅁㅁㅁ", who_color = "#C29F6D", what_color="#000000")
-
+define prf = Character("김조", who_clor="#8572EE", what_color="#3CB371")
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
 define left = Position(xalign=.1, yalign=1.0)
