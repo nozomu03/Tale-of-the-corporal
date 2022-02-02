@@ -26,5 +26,11 @@ broadcast https://freesound.org/people/MatthewWong/sounds/361564/
 
 lock_open LordForklift https://freesound.org/people/LordForklift/sounds/448412/
 
+lockc_close wesleyextreme_gamer https://freesound.org/people/wesleyextreme_gamer/sounds/516009/
+
+noise Tissman https://freesound.org/people/Tissman/sounds/444673/ 
+
+
+
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63
