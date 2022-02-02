@@ -226,6 +226,18 @@ label start:
     scene bg_black with blinds
     $renpy.pause(1.0)
     scene bg_zitong
+    show cap_working at center
+    with blinds
+    $SoundPlayer("broadcast.wav", 2.0)
+    fcaptain "\[지휘통제실에서 당직사령이 전파합니다. {w}육군 복무신조.\]"
+    "목소리" "우리의 결의!" with vpunch
+    fcaptain "\[우리는 국가와 국민에 충성을 다하는 대한민국 육군이다.\]"
+    "목소리" "우리는 국가와 국민에 충성을 다하는 대한민국 육군이다!" with vpnch
+    fcaptain "\[하나, 우리는 자유민주주의를 수호하며 조국통일의 역군이 된다.\]"
+    "목소리" "하나! {w}우리는 자유민주주의를 수호하며 조국통일의 역군이 된다!" with vpnch
+    scene bg_black with blinds
+    $renpy.pause(1.0)
+    scene bg_zitong
     show main_unhat at right
     show sergeant_working at center
     show cap_working at left
@@ -236,7 +248,23 @@ label start:
     play sound typing
     adjutant "보고드립니다. {w}참조점 32번 일대에서 미상 인원 2인이 근방 초소 근무자에 의해 식별. {w}수하를 실시하였으나 이에 불응하고 울타리 방향으로 도주. {w}한 명은 검은 모자에 갈색 티셔츠, 다른 한 명은 검은 티셔츠에 파란색 청바지 차림이라고 합니다."
     "부관님의 말씀과 대형 스크린에 띄워진 메모 프로그램을 바라보며 부대일지에 신속히 옮겨 적기 시작했다."
-    $Sound
+    play sound noise
+    "목소리 α" "\[단륜간, 단륜간. {w}새부엌 송신.\]"
+    "전 직할대가 공유하는 무전망으로 ㅇㅇ대대를 호출하는 목소리가 흘러나왔다."
+    $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
+    main "\[새부엌, 새부엌. {w}단륜간 송신.\]"
+    play sound noise
+    "목소리 α" "\[단륜간측 수신감도 어떠한지.\]"
+    main "\[단륜간측 수신감도 삼삼, 수신감도 삼삼. {w}이상.\]"
+    "목소리 α" "\[수신 양호.\]"
+    main "(무전망으로 우릴 불렀다는건...)"
+    play sound noise
+    "목소리 α" "장검집, 장검집. {w}새부엌 송신."
+    "약속된 절차에 따라 수발신 점검을 완료했다."
+    main "군단과 이어지는 무전망 개통 완료했습니다!"
+    scene bg_black with blinds
+    $renpy.pause(2.0)
+    scene bg_
     "."
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
