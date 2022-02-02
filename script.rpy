@@ -145,7 +145,7 @@ label start:
     fcaptain "근무자 신고 갔다 올게."
     main "맨 강당에서 하십니까?"
     fcaptain "응."
-    main "실시사항 기입해 두겠습니다."
+    main "부대일지 기입해 두겠습니다."
     fcaptain "부탁해~"
     hide cap_working
     hide main_atten
@@ -182,14 +182,66 @@ label start:
     "모니터를 바라보았다."
     "육군 레이더 체계에도. {w}3군 통합 레이더 체계에도. {w}보고되지 않은 비행. {w}의문점을 남기는 비행은 잡히지 않고 있다."
     $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show cap_working at left with dissolve
+    adjutant "다녀오셨습니까?"
+    fcaptain "예. {w}[main]아. {w}오늘 강조사항은 탄약고 근무자 실외온도 영하로 내려가면 보고하고 실내 근무 전환."
+    play sound typing
+    main "외곽 근무 온도 영하로 내려가면 초소 내에서 근무입니다."
+    stop sound
+    fcaptain "순찰자 접근 시 공무원증 확인 철저."
+    play sound typing
+    main "공무원증 확인 철저입니다."
+    stop sound
+    fcaptain "기본 근무자 복장 B형. {w}근무자간 복장 통일이 된 경우 추가 복장 착용 가능."
+    play sound typing
+    main "근무자간 통일 시 추가 복장 착용 가능입니다."
+    stop sound
+    fcaptain "응. {w}그거면 됐어."
+    main "예. {w}바로 실시사항 올리겠습니다."
+    $SoundPlayer("click.ogg", 2.0)
+    adjutant "오늘은 금방 끝났습니다?"
+    fcaptain "예. {w}이번에는 암구호도 제대로 알고 있고 문제 없었습니다."
+    scene bg_black with blinds
+    $renpy.pause(1.0)
+    hide sergeant_working
+    hide cap_working
+    scene bg_zitong
+    show main_unhat at right
+    with blinds        
+    $SoundPlayer("walk_slow.ogg")
+    show sol_nom at center with dissolve
+    "병사 α" "탄약고 투입입니다."
+    main "불러주십니까?"
+    play sound typing
+    "병사 α" "사수에 상병 박현중, 부사수에 일병 윤정훈입니다."
+    stop sound
+    main "상병 박현중, 일병 윤정훈 맞습니까?"
+    "병사 α" "맞습니다."
+    main "예, 감사합니다. {w}고생하십시오."
+    "병사 α" "고생하십시오."
+    hide sol_nom 
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_black with blinds
+    $renpy.pause(1.0)
+    scene bg_zitong
+    show main_unhat at right
+    show sergeant_working at center
+    show cap_working at left
+    with blinds
+    $SoundPlayer("broadcast.wav", 2.0)
+    "녹음된 목소리" "\[문자형 전파체계 신규 문자 수신 알림입니다.\]"
+    show sergeant_working at left with dissolve
+    play sound typing
+    adjutant "보고드립니다. {w}참조점 32번 일대에서 미상 인원 2인이 근방 초소 근무자에 의해 식별. {w}수하를 실시하였으나 이에 불응하고 울타리 방향으로 도주. {w}한 명은 검은 모자에 갈색 티셔츠, 다른 한 명은 검은 티셔츠에 파란색 청바지 차림이라고 합니다."
+    "부관님의 말씀과 대형 스크린에 띄워진 메모 프로그램을 바라보며 부대일지에 신속히 옮겨 적기 시작했다."
+    $Sound
+    "."
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
     #adjutant "그-{w=.3}{nw}"
     #"부관님의 말씀이 끝나기도 전이었다."
-    #$SoundPlayer("broadcast.wav", 2.0)
-    #"녹음된 목소리" "\[문자형 전파체계 신규 문자 수신 알림입니다.\]"
-    #show sergeant_working at left with dissolve
-    #adjutant "보고드립니다! {w}"
     "."
     return
 
