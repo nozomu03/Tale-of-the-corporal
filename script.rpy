@@ -121,6 +121,27 @@ label start:
     fcaptain "그렇구나... {w}몰랐네."
     "상황 근무 도중의 병사는 훈련 상황. {w}혹은 실상황이 벌어지지 않는 이상 할 일이 그렇게 많지 않았다. {w}칼럼을 전부 읽은 후 멍하니 CCTV 화면을 바라보고 있었다."
     "전번 근무자가 밥을 먹는 동안 대신 근무를 서 주던 때까지는 기름이 섞여들어간 물처럼 무지개색으로 번들거리던 화면도 지금은 깨끗히 밤의 순찰로를 비추고 있다."
+    $SoundPlayer("knock.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    show sol_nom at left with dissolve
+    $renpy.pause(1.0)
+    $FaceChange("sol_salute", 0.0, 1.0, "sol_nom")
+    "병사 α" "북진!"
+    show cap_working at center with dissolve
+    fcaptain "어~ {w}총기교대야?"
+    $FaceChange("sol_nom", 0.0, 1.0, "sol_salute")
+    "병사 α" "예, 그렇습니다."
+    fcaptain "율호 하사."
+    adjutant "예, 지금 열겠습니다."
+    hide sol_nom
+    hide cap_working
+    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("lock_open.ogg", 1.0)
+    $SoundPlayer("lock_open.ogg", 1.0)
+    "지통실의 문을 열어놓은 채 잠시 기다렸다. {w}근무자 총기함에 총기를 시건하기 위해 병사들이 하나 둘 올라오다 이내 발걸음이 뚝 끊겼다."
+    $SoundPlayer("lock_close.ogg", 1.0)
+    $SoundPlayer("lock_close.ogg", 1.0)
+    show cap_working
     fcaptain "근무자 신고 갔다 올게."
     main "맨 강당에서 하십니까?"
     fcaptain "응."
@@ -137,6 +158,7 @@ label start:
     "육군 레이더 체계 수신기가 경보음을 토해냈다."
     main "확인하겠습니다!"
     $SoundPlayer("click.ogg", 2.0)
+    show sergeant_working at center with dissolve
     adjutant "뭐야?"
     main "수신율 점검입니다. {w}바로 응신하겠습니다."
     $SoundPlayer("dial.wav", 1.0)
@@ -145,6 +167,21 @@ label start:
     main "통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다. {w}ㅇㅇ대대 육군 레이더 체계 수신율 점검 응신입니다."
     "목소리" "ㅇㅇ대대 확인되었습니다. {w}고생하십시오."
     $SoundPlayer("teleclick.ogg", 1.0)
+    adjutant "오늘은 되게 칼같이 하네. {w}평소에는 시간 안 지키고 아무떄나 걸었잖아."
+    main "맞습니다. {w}예전에 한 번 전준태 하던 도중에 걸려오는 바람에 응신 못할 뻔 한 적도 한 번 있지 않았습니까."
+    adjutant "응. {w}그때 너 진지 가 있는 사람들 무전 받는다고 전화 놓치고 나도 C4I 조치한다고 바빠서 사령님이 대신 전화해줬었잖아."
+    main "아 진짜 그때 당시에는 짜증만 나고 되는 것 하나 없는 하루라고 생각했었는데 지금 와서 생각하니 그것도 나름 군생활 추억담이지 않겠습니까."
+    adjutant "추억담이라... {w}너 전역 언제지?"
+    main "80일 조금 안 되게 남았습니다."
+    adjutant "이야... {w}거의 다 했네."
+    main "그래도 아직 좀 남지 않았습니까. {w}더 열심히 하겠습니다."
+    adjutant "잘 하고 있잖아. {w}늘 하던 대로만 하면 돼."
+    main "([adjutant] 하사님... {w}저는 간부님들께서 생각하시는 것과는 다르게... {w}그렇게 좋은 사람이 아닙니다... {w}저는... {w}저는...)"
+    main "좋게 봐 주셔서 감사합니다."
+    "웃음을 지어 부끄러워함을 가장해 넘겼다."
+    "모니터를 바라보았다."
+    "육군 레이더 체계에도. {w}3군 통합 레이더 체계에도. {w}보고되지 않은 비행. {w}의문점을 남기는 비행은 잡히지 않고 있다."
+    $SoundPlayer("door.ogg", 2.0)
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
     #adjutant "그-{w=.3}{nw}"
