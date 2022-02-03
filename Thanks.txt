@@ -30,6 +30,11 @@ lockc_close wesleyextreme_gamer https://freesound.org/people/wesleyextreme_gamer
 
 noise Tissman https://freesound.org/people/Tissman/sounds/444673/ 
 
+alert2
+https://freesound.org/people/erkanozan/sounds/51752/
+https://freesound.org/people/melokacool/sounds/613651/
+
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 

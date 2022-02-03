@@ -232,9 +232,40 @@ label start:
     fcaptain "\[지휘통제실에서 당직사령이 전파합니다. {w}육군 복무신조.\]"
     "목소리" "우리의 결의!" with vpunch
     fcaptain "\[우리는 국가와 국민에 충성을 다하는 대한민국 육군이다.\]"
-    "목소리" "우리는 국가와 국민에 충성을 다하는 대한민국 육군이다!" with vpnch
+    "목소리" "우리는 국가와 국민에 충성을 다하는 대한민국 육군이다!" with vpunch
     fcaptain "\[하나, 우리는 자유민주주의를 수호하며 조국통일의 역군이 된다.\]"
-    "목소리" "하나! {w}우리는 자유민주주의를 수호하며 조국통일의 역군이 된다!" with vpnch
+    "목소리" "하나! {w}우리는 자유민주주의를 수호하며 조국통일의 역군이 된다!" with vpunch
+    fcaptain "\[둘, 우리는 실전과 같은 훈련으로 지상전의 승리자가 된다.\]"
+    "목소리" "둘!{w} 우리는 실전과 같은 훈련으로 지상전의 승리자가 된다!" with vpunch
+    fcaptain "\[셋, 우리는 법규를 준수하며 상관의 명령에 복종한다.\]"
+    "목소리" "셋!{w} 우리는 법규를 준수하며 상관의 명령에 복종한다!" with vpunch
+    fcaptain "\[넷, 우리는 명예와 신의를 지키며 전우애로 굳게 단결한다.\]"
+    "목소리" "넷!{w} 우리는 명예와 신의를 지키며 전우애로 굳게 단결한다!" with vpunch
+    fcaptain "\[아, 여러분. {w}토요일 하루 고생 많았습니다. {w}주말에도 쉬지 않고 각자의 위치에서 노력하시는 여러분이 있기에 오늘 하루도 무사히 끝났습니다. {w}오늘은 토요일. {w}TV연등이 있는 날입니다.\]"
+    fcaptain "\[22시까지 미비된 동작을 마치고 22:50분부터 23시까지, 23시 50분부터 00시까지 유동병력 허용하며 00시에는 취침에 들어갈 수 있도록 합니다. {w}TV연등 이외 연등 희망자는 연명부와 출입대장에 기입하시고 연등 종료 후 각층 당직사관에게 보고 후 생활관에 복귀하시길 바랍니다.\]"
+    "목소리" "편안한 밤 되십시오!!!" with vpunch
+    hide cap_working
+    show main_unhat at right with dissolve
+    main "저, 부관님?"
+    show sergeant_working at center with dissolve
+    adjutant "어, 왜?"
+    main "혹시 담배 한 까치만 피고 와도 되겠습니까?"
+    adjutant "그래. {w}음어낭 이리 주고 갔다 와."
+    $SoundPlayer("blanket.wav", 4.0)
+    $FaceChange("main_atten", 2.0, 1.0, "main_unhat")
+    show cap_working at left with dissolve
+    $FaceChange("main_atten", 2.0, .5, "main_unhat")
+    show main_atten at right with dissolve
+    $FaceChange("main_salute", 2.0, .5, "main_atten")
+    main "북진. {w}흡연 다녀오겠습니다."
+    fcaptain "응~ {w}다녀 와."
+    $FaceChange("main_atten", 2.0, .5, "main_salute")
+    $renpy.pause(1.0)
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("door.ogg")
+    $SoundPlayer("door.ogg")
+    scene bg_taba with fade
     scene bg_black with blinds
     $renpy.pause(1.0)
     scene bg_zitong
@@ -244,7 +275,6 @@ label start:
     with blinds
     $SoundPlayer("broadcast.wav", 2.0)
     "녹음된 목소리" "\[문자형 전파체계 신규 문자 수신 알림입니다.\]"
-    show sergeant_working at left with dissolve
     play sound typing
     adjutant "보고드립니다. {w}참조점 32번 일대에서 미상 인원 2인이 근방 초소 근무자에 의해 식별. {w}수하를 실시하였으나 이에 불응하고 울타리 방향으로 도주. {w}한 명은 검은 모자에 갈색 티셔츠, 다른 한 명은 검은 티셔츠에 파란색 청바지 차림이라고 합니다."
     "부관님의 말씀과 대형 스크린에 띄워진 메모 프로그램을 바라보며 부대일지에 신속히 옮겨 적기 시작했다."
@@ -259,12 +289,43 @@ label start:
     "목소리 α" "\[수신 양호.\]"
     main "(무전망으로 우릴 불렀다는건...)"
     play sound noise
-    "목소리 α" "장검집, 장검집. {w}새부엌 송신."
-    "약속된 절차에 따라 수발신 점검을 완료했다."
+    "목소리 α" "\[장검집, 장검집. {w}새부엌 송신.\]"
+    "ㅇㅇ대대 신속대응조를 부르는 목소리. {w}아직 잠들지 않은 옛 후임의 목소리가 무전을 탔다."
+    "목소리 β" "\[장검집 등장.\]"
+    "목소리 α" "\[장검집측 수신감도 어떠한지.\]"
+    play sound noise
+    "목소리 β" "\[장검집측 수신감도 삼삼.{w} 수신감도 삼삼.{w} 새부엌측 수신감도 어떠한지.\]"
+    stop sound
+    $FaceChange("main_unhat", 2.0, .5, "main_hand")
     main "군단과 이어지는 무전망 개통 완료했습니다!"
     scene bg_black with blinds
     $renpy.pause(2.0)
-    scene bg_
+    scene bg_zitong 
+    show sergeant_working at center
+    with blinds
+    adjutant "[main]."
+    show main_nem at right with dissolve
+    main "부르...셨습...니까?"
+    adjutant "괜찮아? {w}많이 피곤해?"
+    main "괜찮습니다... {w}죄송합니다. {w}화장실 가서 찬물 한 번 뒤집어 쓰고 오겠-{w=.3}{nw}"
+    play sound alert2
+    hide main_nem  
+    show main_unhat_sup at right
+    main "으악!"
+    $SoundPlayer("collapse.ogg", 1.0)
+    $FaceChange("main_ita", 2.0, .5, "main_unhat_sup")
+    show cap_working at left with dissolve
+    fcaptain "[main]아, 괜찮아? {w}안 다쳤어?"
+    $FaceChange("main_unhat_sha", 2.0, 1.0, "main_ita")
+    "녹음된 목소리" "\[훈련상황 전파, 훈련상황 전파. {w}N18562호 미상항적. {w}N18562호 미상항적.\]"
+    main "괘... 괜찮습니다."
+    play sound typing
+    "3군 통합 레이더 체계 홈페이지에 수신율 점검 내역을 올렸다."
+    adjutant "그래도 잠은 확실히 깼지?"
+    main "예..."
+    "귀가, 얼굴이. {w}불타는 듯 뜨거웠다."
+#    $SoundPlayer("buzzer.ogg", 1.0)
+#    $SoundPlayer("teleclick.ogg", 1.0)
     "."
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
