@@ -265,7 +265,6 @@ label start:
     $SoundPlayer("walk_slow.ogg")
     $SoundPlayer("door.ogg")
     $SoundPlayer("door.ogg")
-    scene bg_taba with fade
     scene bg_black with blinds
     $renpy.pause(1.0)
     scene bg_zitong
@@ -279,7 +278,7 @@ label start:
     adjutant "보고드립니다. {w}참조점 32번 일대에서 미상 인원 2인이 근방 초소 근무자에 의해 식별. {w}수하를 실시하였으나 이에 불응하고 울타리 방향으로 도주. {w}한 명은 검은 모자에 갈색 티셔츠, 다른 한 명은 검은 티셔츠에 파란색 청바지 차림이라고 합니다."
     "부관님의 말씀과 대형 스크린에 띄워진 메모 프로그램을 바라보며 부대일지에 신속히 옮겨 적기 시작했다."
     play sound noise
-    "목소리 α" "\[단륜간, 단륜간. {w}새부엌 송신.\]"
+    "목소리 α" "\[단륜간, 단륜간. {w}새부엌 송f신.\]"
     "전 직할대가 공유하는 무전망으로 ㅇㅇ대대를 호출하는 목소리가 흘러나왔다."
     $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
     main "\[새부엌, 새부엌. {w}단륜간 송신.\]"
@@ -321,9 +320,19 @@ label start:
     main "괘... 괜찮습니다."
     play sound typing
     "3군 통합 레이더 체계 홈페이지에 수신율 점검 내역을 올렸다."
+    stop sound
+    $SoundPlayer("click.ogg", 1.0)
     adjutant "그래도 잠은 확실히 깼지?"
     main "예..."
     "귀가, 얼굴이. {w}불타는 듯 뜨거웠다."
+    scene bg_black with blinds
+    $renpy.pause(2.0)
+    scene bg_zitong 
+    show main_atten at right
+    "병사 α" "이[main] 상병님이십니까?"
+    main "예."
+    "병사 α" "2중대 "
+
 #    $SoundPlayer("buzzer.ogg", 1.0)
 #    $SoundPlayer("teleclick.ogg", 1.0)
     "."
