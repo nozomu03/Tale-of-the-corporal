@@ -30,6 +30,8 @@ lockc_close wesleyextreme_gamer https://freesound.org/people/wesleyextreme_gamer
 
 noise Tissman https://freesound.org/people/Tissman/sounds/444673/ 
 
+wind egomassive https://freesound.org/people/egomassive/sounds/536776/
+
 alert2
 https://freesound.org/people/erkanozan/sounds/51752/
 https://freesound.org/people/melokacool/sounds/613651/
@@ -38,5 +40,9 @@ https://freesound.org/people/melokacool/sounds/613651/
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
+https://pixabay.com/photos/sky-clouds-forms-air-atmosphere-5534319/
+
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63
+
+classic-plastic-chairs https://sketchfab.com/3d-models/classic-plastic-chairs-6d139742099d48f195e6774514ccb7ef

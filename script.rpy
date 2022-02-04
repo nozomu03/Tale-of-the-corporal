@@ -306,7 +306,7 @@ label start:
     show main_nem at right with dissolve
     main "부르...셨습...니까?"
     adjutant "괜찮아? {w}많이 피곤해?"
-    main "괜찮습니다... {w}죄송합니다. {w}화장실 가서 찬물 한 번 뒤집어 쓰고 오겠-{w=.3}{nw}"
+    main "괜찮습니다... {w}죄송합니다. {w}화장실 가서 찬물 한 번 뒤집어  쓰고 오겠-{w=.3}{nw}"
     play sound alert2
     hide main_nem  
     show main_unhat_sup at right
@@ -328,11 +328,38 @@ label start:
     scene bg_black with blinds
     $renpy.pause(2.0)
     scene bg_zitong 
-    show main_atten at right
+    show main_unhat at right
+    show sol2_nom at center
+    with blinds
     "병사 α" "이[main] 상병님이십니까?"
     main "예."
-    "병사 α" "2중대 "
-
+    "병사 α" "2중대 일병 김윤하입니다. {w}교대하러 왔습니다."
+    main "아, 네. {w}특이사항은 딱히 없고 위치전송 단말기는 오늘 주말이라서 주욱 안 될 것 같긴 한데 10시에 확인해보시고 보내지면 사령님께 보고드리면 될 것 같습니다."
+    "병사 α" "그거 말곤 없습니까?"
+    main "그렇습니다. {w}고생하세요."
+    "병사 α" "고생하셨어요."
+    $SoundPlayer("blanket.wav", 4.0)
+    $FaceChange("main_atten", 2.0, 1.0, "main_unhat")
+    show cap_working at left with dissolve
+    $FaceChange("main_salute", 2.0, .5, "main_atten")
+    main "북진! {w}중대장님. {w}퇴근해 보아도 되겠습니까?"
+    fcaptain "응~ {w}고생 많았다. {w}가서 푹 쉬고~"
+    $FaceChange("main_atten", 2.0, .5, "main_salute")
+    $renpy.pause(1.0)
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0) 
+    scene bg_ground 
+    show main_atten at right
+    with dissolve
+    play sound wind
+    "평화로운 주말 아침. {w}탑탑한 바람이 몸을 엤다."
+    main "어으, 추워."
+    $SoundPlayer("walk_slow.ogg")
+    scene bg_resta_front with dissolve
+    $renpy.pause(2.0)
+    scene bg_resta_in with dissolve
 #    $SoundPlayer("buzzer.ogg", 1.0)
 #    $SoundPlayer("teleclick.ogg", 1.0)
     "."
