@@ -388,7 +388,65 @@ label start:
     "가만히 앉아 식사를 하는 이는 나 혼자였다. {w}문득. {w}생각이 났다."
     scene bg_hallway_sepia
     show gwon_nem_sepia at center 
+    show main_atten_sepia at right
     with fade
+    main "고생하셨습니다, 권인호 상병님."
+    gwon "응~ {w}[main]이구나. {w}일일명령하달 시작했니?"
+    main "아직 아닙니다."
+    gwon "어우, 다행이다. {w}후딱 신고하고 빨리 씻고 누워야지."
+    main "고생하셨습니다."
+    gwon "너도 일과 고생해. {w}있다 체단 끝나고 보자."
+    main "안녕히 주무십시오."
+    hide gwon_nem_sepia
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_resta_in2 with fade
+    $SoundPlayer("metal.ogg", 1.0)
+    $SoundPlayer("metal.ogg", .5)
+    "퇴식구에 잔반을 버렸다."
+    scene bg_black with fade
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
+    $renpy.pause(2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg")
+    scene bg_office
+    show snipe_nom at right
+    with fade
+    show main_atten at center with dissolve
+    $renpy.pause(1.0)
+    $FaceChange("main_salute", 1.0, .5, "main_atten")
+    main "북진."
+    snipe "어."
+    $FaceChange("main_atten", 1.0, .5, "main_salute")
+    main "근무십니까?"    
+    snipe "어."
+    main "고생하십니다."
+    $SoundPlayer("pen.ogg", 2.0)
+    "사용일지에 서명하고 휴대폰을 꺼냈다."
+    $FaceChange("main_salute", 1.0, .5, "main_atten")
+    main "북진."
+    snipe "ㅇㅇㅇ."
+    $FaceChange("main_atten", 1.0, .5, "main_salute")
+    main "예."
+    snipe "사용일지랑 온도대장 서명 똑바로 해라."
+    main "더 이상 실수하지 않습니다."
+    snipe "그래."
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway 
+    show main_atten at right 
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    "무뚝뚝한 표정으로. {w}때로는 일그러진 모습으로 일관힌 채 불호령을 내리는 반장님. {w}그 분은 병사의 입장에서 다가서기 힘들고. {w}누구보다 엄하기만 한 존재이긴 하였으나 나는 알 수 있었다. {w}다친 채 추락하여 원래의 둥지로 돌아가지 못한 새를 거둬준 보금자리에서 첫 마디를 땠을 때가 있었기에."
+    main "(하지만 그건 그거고... {w}무섭단 말이지.)"
+    "울리는 발소리 하나 없는 복도. {w}형광등이 비추는 바닥. {w}진한 색의 실이 가득한 텍스 천장. {w}수 천 번은 마주했던 풍경이고. {w}또 앞으로 수 백먼은 마주하게 될 풍경."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_daidai
+    show main_atten at right
+    with dissolve
+    $renpy.pause(1.0)
+    "벽에 걸린 액자를 들여다 보았다. {w}사진 속에서 웃고 있는 나. {w}그리고, 그리운 얼굴들."
 
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)
