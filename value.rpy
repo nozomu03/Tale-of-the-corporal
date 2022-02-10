@@ -23,7 +23,6 @@ init python:
         renpy.transition(Dissolve(t))
         if org_img != None:
             renpy.hide(org_img)
-
         renpy.pause(t, hard=True)
 
 
@@ -31,6 +30,20 @@ init python:
         renpy.music.play("/audio/"+ fn, channel=ch)
         renpy.pause(t)
         renpy.music.stop(channel='sound')
+
+    def Smoking(img="main", loc=0, rep = 1, first=False):
+        count = 0
+        if first == True:
+            renpy.sound.play("/audio/lighter.ogg")
+            renpy.pause(4.0)
+            FaceChange(img + "_taba", loc, 2.0, img + "_taba_nof")
+        while count < rep:
+            FaceChange(img + "_taba", loc, 1.0, img + "_tabahand")
+            renpy.sound.play("/audio/smoke.ogg")
+            FaceChange(img + "_tabahand", loc, 1.0, img + "_taba")
+            renpy.pause(2.0)
+            count += 1
+
     
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     

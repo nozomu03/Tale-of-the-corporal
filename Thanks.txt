@@ -42,6 +42,10 @@ dish_wash
 
 metal https://freesound.org/people/abstraktgeneriert/sounds/233631/
 
+lighter https://freesound.org/people/MikeNavajas/sounds/521483/
+
+smoke https://freesound.org/people/inmelo/sounds/424744/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
