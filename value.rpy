@@ -10,6 +10,9 @@ define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
 define left = Position(xalign=.1, yalign=1.0)
 
+define config.gl2 = True
+define centered = Character(None, kind = centered, what_color="#FFFFFF")
+
 init python:
     def FaceChange(img="", loc=0 ,t=2.0, org_img=None):
         if loc == 0:
@@ -44,6 +47,7 @@ init python:
             renpy.pause(2.0)
             count += 1
 
+    blur_val = False
     
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     

@@ -6,6 +6,8 @@
 # 게임에서 사용할 캐릭터를 정의합니다.
 
 # 여기에서부터 게임이 시작합니다.
+
+
 label start:
     window hide
     scene bg_black
@@ -467,8 +469,79 @@ label start:
     "손에 쥔 담배가 서서히 줄어들어 간다."
     "담뱃재가 군화 위로 떨어져 내려 허연 얼룩을 만들어냈다."
     $Smoking(img="main", loc=1.0, rep=1)
-    "감각이 잦아든다. {w}막연하게 퍼져나가던 이름모를. {w}형상없는 두려움에 가닥이 잡히고, 어린 아이가 장난 삼아 모든 색을 섞어 만들어 낸 색점토 모형 마냥 거무튀튀한 부정형의 일그러짐만을 내 보이던 그것이 그림자를 벗어내고 윤곽을 드러냈다."
+    "감각이 잦아든다."
+    $SoundPlayer("blanket.wav", 4.0)
+    show main_sil at right with pixellate
+    " 막연하게 퍼져나가던 이름모를. {w}형상없는 두려움에 가닥이 잡히고, 어린 아이가 장난 삼아 모든 색을 섞어 만들어 낸 색점토 모형 마냥 거무튀튀한 부정형의 일그러짐만을 내 보이던 그것이 그림자를 벗어내고 윤곽을 드러냈다."
+    "모습을. {w}이름을 안다면 대처하는 것은 간단."
+    "목소리" "네가 할 수 있을까? {w}다음 일주일. {w}과연?"
+    $Smoking(img="main", loc=1.0, rep=1)
+    main "할 수 있든, 없든. {w}해야만 해. {w}지금껏 그래 왔듯이."
+    "목소리" "매일매일을 힘겨워하고. {w}꺾이려고 하는 주제에. {w}또 만용이라도 부리겠다는 거야? {w}그러다가 그 \'운\'이 끊기면 어쩌려고?"
+    main "...그건..."
+    "목소리" "지금이라도 말하는 게 어때?"
+    extend "\'못하겠습니다\'." with vpunch
+    extend "\'무리입니다\'." with vpunch
+    extend "\'죄송합니다\'.{w} 를." with vpunch
+    main "......."
+    $Smoking(img="main", loc=1.0, rep=1)
+    "목소리" "담배만 뻑뻑 피워대지 말고 뭐라도 말해 보라고, [main]."
+    main "아직 한계가 온 건 아니야. {w}난... 이것보다 심한 수라장도 버텨냈다고."
+    "목소리" "\'이것보다 심한\'? {w}야... {w}너 그거 설마 진심으로 한 말이냐? {w}그 땐 적어도 속내를 나눌만한 사람 한 둘이라도 있었지... {w}지금 여기서 너는 온전한 외톨이인데 정말로 지금이 옛날보다 낫다고 생각하는 건 아니지?"
+    $Smoking(img="main", loc=1.0, rep=1)
+    main "할 이야기는 그것 뿐이야?"
+    "목소리" "더 이상 할 필요도 없을 것 같네. {w}그럼 한 번 고생해 봐. {w}어차피 오늘 하루 남았잖아? {w}천천히 고민하고... {w}또 실패해서... {w}몸부림치라고."
+    main "그래... 격려 고맙다... {w}개XX야."
+    hide main_sil with pixellate
+    $Smoking(img="main", loc=1.0, rep=1)
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("main_atten", 1.0, .5, "main_tabahand")
+    $SoundPlayer("sigh.wav", 2.0)
+    main "x같네 진짜..."
+    "한 때 이 몸을 덮었던 근거없는 공포는 지금에 이르러선 물러갔다. {w}그 자리를 대신하여 엄습한 것은 자신. {w}스스로를 누구보다 잘 알고 있기에 세워진 장벽."
+    "지난 경험이. {w}살아왔던 시간이. {w}내 발목을 붙잡아 끌며 전진하는 것을 방해했다. {w}과거 겪었던 일과 닮은, 혹은 동일한 시간이 내게 찾아올 떄마다. {w}나는 움츠러들 수 밖에 없었고 그에 따른 정당한 비판을 받아냈다."
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_black with Fade(2.0, 2.0, 0.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    centered "객관적으로 판단했을 때. {w}나로서는 이뤄낼 수 없는 목표. {w}그에 무리하게 도전하여 부딪히고, 파절되며. {w}고지로 올라서던 도중{p}추락하기를 반복하던 날들."    
+    centered "나는 해낼 수 없다. {p}지금껏 해왔던 경험을 통해 증명된 사실. {w}그럼에도 나는 앞으로 나섰다. {w}가파른 절벽을 오르면서. {p}몇 번이고 넘어지고, 때로는 굴러 떨어지고. {w}상처로 뒤덮힌 몸을 악착같이 쥐어짜내며 능선을 등반했다."
+    centered "내 옆에서. {w}앞에서. {w}또는 뒤에서. {w}끌어주고, 밀어주고, 같이 걸어주던. {p}그들이 곁에 있어 주었기에. {w}나는 정상에 위치한 \'무언가\'를 향해 발걸음을 옮기는 일을 포기하지 않을 수 있었다."
+    centered "그러나 지금에 이르러, 그들 모두가 흩어지고. {w}나 역시 외따른 곳에 이른 지금."
+    $blur_val = True
+    centered "{size=50}{color=#B90000}내 도전은 의미가 없었다."
+    centered "{size=50}{color=#B90000}대략 11개월에 걸친 나의 투쟁은 무위로 돌아갔고."
+    centered "{size=50}{color=#B90000}그렇게 커다란 상처를 안은 채 끝 모를 바닥을 향한 추락이 시작되었다.{/color}{/size}"
+    $blur_val = False
+    show crack_glass at Position(xpos=240, ypos=300) with vpunch
+    $SoundPlayer("shotcrash.ogg")
+    show crack_glass2 at Position(xpos=911, ypos=360) with vpunch
+    $SoundPlayer("shotcrash.ogg")
+    show crack_glass3 at Position(xpos=475, ypos=573) with vpunch
+    $SoundPlayer("shotcrash.ogg")
+    play sound bleed
+    scene bg_black with Fade(4.0, 1.0, 1.0, color="#B90000")
+    stop sound
+    show syms_logo with Dissolve(2.0)
+    $renpy.pause(5.0)
+    hide syms_logo with Dissolve(2.0)
+    $renpy.pause(.3)
+    centered "{size=50}=제공="
+    show syms_slogan with Dissolve(1.0)
+    $renpy.pause(1.0)
+    show syms_logo2 with Dissolve(1.0)
+    $renpy.pause(5.0)
+    hide syms_slogan
+    hide syms_logo2
+    with dissolve
+    centered "Indie Studio SYMS 장기 프로젝트"
+    extend "\n{size=50}{font=SDMiSaeng.ttf}Unit 1. \'어느 상병의 이야기\'{/font}{/size}"
+    scene bg_black with dissolve
+    centered "꿈을 꾸었다."
+    extend "\n그래, 그것은 틀림없는 꿈이었다."
+    scene bg_hospital
     
+
     "."
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)
@@ -480,3 +553,4 @@ label start:
     #"."
     return
 
+#(85, 35, 238, 216)

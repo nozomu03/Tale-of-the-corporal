@@ -106,7 +106,10 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
 
-        text what id "what"
+        text what: 
+            id "what"
+            if blur_val == True:
+                at bluring
 
 
     ## 사이드 이미지가 있는 경우 글자 위에 표시합니다. 휴대폰 환경에서는 보이지
