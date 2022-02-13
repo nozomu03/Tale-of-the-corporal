@@ -51,6 +51,7 @@ init python:
             count += 1
 
     blur_val = False
-    
+    now_h = 12
+    now_m = 30
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     

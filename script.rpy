@@ -669,6 +669,23 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     show main_cloth_taba_nof at center with dissolve
     $Smoking(img="main_cloth", loc=1.0, rep=2, first = True)
+    "잔류했던 졸음이 사라졌다. {w}더부룩한 속이 정리되며 머리가 개운해졌다."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    main "(일요일이라.)"
+    show screen time
+    show explain_scene 
+    with dissolve
+    centered "시간 시스템에 관하여"
+    extend "\n앞으로 등장하는 선택지 중 일부는 게임 상에서의 시간을 소모하게 됩니다."
+    extend "\n예를 한 번 들어 볼까요?"
+    hide explain_scene with Dissolve(1.5)
+    "이제 뭘 하면 좋을까?"
+    menu:
+        "px에 간다(+5m)":
+            call go_px1
+    show explain_scene with dissolve
+    centered "이와 같이 선택지 지문에 + 기호와 함께 시간이 표시되어 있는 경우 해당 이벤트를 진행한 이후 적혀있는 숫자만큼의 시간이 경과하게 됩니다."
+    
     "."
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)

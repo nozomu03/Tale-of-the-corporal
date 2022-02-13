@@ -8,7 +8,12 @@ init offset = -1
 ################################################################################
 ## 스타일
 ################################################################################
-
+screen time:
+    add "clock_back.png"
+    vbox:
+        xpos 1115
+        ypos 5
+        text "{color=#FF0000}{size=50}[now_h]:[now_m]{/size}{/color}"
 style default:
     properties gui.text_properties()
     language gui.language
