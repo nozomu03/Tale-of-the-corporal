@@ -539,9 +539,136 @@ label start:
     scene bg_black with dissolve
     centered "꿈을 꾸었다."
     extend "\n그래, 그것은 틀림없는 꿈이었다."
-    scene bg_hospital
-    
-
+    scene bg_hospital_sepia
+    show main_young_sepia at center 
+    with dissolve
+    "내용은 기억나지 않는다. {w}그러나 병상에 누워 계신 할아버지는 어린 내 이마에 손을 얹은 채 분명히 어떤 말을 읊조리셨다."
+    "내 기억 속에 남은 것은. {w}새하얀 병원 복도. {w}다르르, 하는 소리를 내며 할아버지의 뒤를 따르던 링거. {w}주사. {w}찡그려진 얼굴."
+    "거의 대부분의 시간을 병원에서 보내시던 할아버지가 내 곁에서 떠나신지 벌써 10년도 넘어버렸다."
+    "이제 와서는 남겨진 말도, 물건도 시간의 흐름에 바래어 본래의 모습을 일어버린 이금의 나날에 모습을 비추는 일이 거의 없던 할아버지께서 내게 무언가 전언을 남기기 위해 꿈속에 나타났던 것이다."
+    "목소리" "ㅇ... 안... 나?"
+    main "......."
+    "목소리" "ㅇ... ...나? {w}식... ....때..."
+    main "......."
+    "먼 곳에서 아련히 들려오던 목소리가 현실감을 가진 채 귓가에 속삭여졌다."
+    "목소리" "야~{w} 안 일어나냐? {w}점심 먹을 때 깨워달라 한 건 너잖아~ {w}먼저 간다~"
+    main "어... {w}일어났어... {w}일어났어..."
+    $SoundPlayer("blanket.wav", 4.0)
+    scene bg_room
+    show main_cloth at center
+    show jeong_cloth at right
+    with dissolve
+    main "다른 애들은?"
+    jeong "당연히 먼저 갔지."
+    main "나 때문에 기다린 거야?"
+    jeong "그래. {w}또 너 혼자가면 혼날 게 뻔하니까 기다려줬다."
+    main "땡큐."
+    jeong "가자. {w}늦겠다."
+    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway 
+    show go_cross at left
+    with dissolve
+    show jeong_cloth at right
+    show main_cloth at center
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    go "식사 가십니까?"
+    jeong "엉."
+    go "ㅇㅇㅇ 상병님은 왜 일어나셨습니까?"
+    main "밥 먹으려고."
+    go "오우... {w}밥에 진심인 남자 뭐 그런 겁니까?"
+    main "아마도?"
+    go "같이 가십니까? {w}저도 아직 안 먹었습니다."
+    jeong "그래."
+    scene bg_resta_front 
+    show snipe_working at right
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show main_cloth at left
+    show jeong_cloth at Position(xalign=.3, yalign=1.0)
+    show go_nom_hat at center
+    with dissolve
+    $FaceChange("go_salute", 1.0, .5, "go_nom_hat")
+    go "북진."
+    snipe "밥 먹기 전에 손 깨끗하게 씻어라."
+    $FaceChange("go_nom_hat", 1.0, .5, "go_salute")
+    $SoundPlayer("walk_slow.ogg")
+    play looping dish_wash
+    scene bg_resta_in
+    show go_nom at left
+    show jeong_cloth at center
+    show main_cloth at right 
+    with dissolve
+    go "어제 근무는 어땠습니까?"
+    main "뭐... 별 거 없었어. {w}점호하고 상황조치훈련하고... 레이더 점검 응신하고..."
+    go "별 일 없었나 봅니다?"
+    main "응. {w}위치단말도 잘 되던데?"
+    go "그거 드디어 됩니까?"
+    main "응. {w}들어보니까 무전실 근무자가 퇴근할 때 무전기를 다 끄고 퇴근했었다더라."
+    go "말이 됩니까? {w}그게?"
+    main "나도 이상하다고 생각은 했는데 무전실 쪽 사람들은 선임들한테 인수인계 받을 때 그렇게 받았다고 하더라고."
+    go "거기 무전기가 꺼지면 직할대망 전부가 불통인거 모른답니까?"
+    main "그건 안 물어봤는데... {w}알고 있지 않을까? {w}기본적인 거니까."
+    go "왠지 모를 거 같다는 생각이 강하게 듭니다..."
+    "식기 세척기 소리에 갇힌 건물. {w}저 너머에서 이름 모를 일병 하나가 옷소매로 땀을 닦아내며 수세미로 식판을 닦아내고 있었다."
+    "뚜껑 없는 세척기가 줄 지어진 식판을 집어 삼켜 거품을 깨끗히 닦아내면 카트 위에 차곡차곡 쌓아 밖의 건조기로 가져간다."
+    "짬통에서 올라오는 음식물 쓰레기의 냄새. {w}세척기가 뿜어내는 찝찝한 증기. {w}해진 고무장갑을 뚫고 들어온 수돗물 탓에 퉁퉁 부르튼 손."
+    main "저 사람들도 고생하네..."
+    jeong "아 맞네. {w}넌 저거 해봤겠구나."
+    go "그러고보니 기억납니다. {w}옛날에 스쳐가듯이 한 번 뵌 적 있는 것 같습니다."
+    main "그랬나? {w}난 잘 기억이 안 나는데."
+    jeong "저거 개짜증날 거 같은데."
+    main "엉. {w}더럽고, 무겁고, 짜증나지."
+    jeong "본부중대라서 다행이다... {w}나라면 저거 절대 못한다."
+    main "막상 하면 해 볼만 해. {w}저거 하면 일과도 적당히 빼주고."
+    go "일과를 뺴준다 말입니까?"
+    main "훈련이나 병기본 평가 같은거 하고 있으면 어쩔 수 없지만 작업은 왠만해선 빼줬었어. {w}고생한다고."
+    go "어우 그래도 전 하기 싫을 거 같습니다."
+    main "근데 체력단련은 해야 해."
+    go "가능합니까?"
+    main "뜀걸음만 후딱 뛰고 다른 사람들 근력운동 할 때 살짝 빠지면 되지."
+    jeong "그럼 땀범벅인 상태 그대로 밥 먹고 투입이야?"
+    main "그런 셈이지."
+    jeong "어으 소름끼쳐."
+    go "주말이면 더 최악이지 않습니까?"
+    main "개인정비시간이 줄어드니까 아무래도 그렇지? {w}아, 그래도 주말 식청조가 좋은 점 하나 있다."
+    go "무엇입니까?"
+    main "휴대폰. {w}주말에는 휴대폰을 일찍 받으니까 노래 들으면서 설거지 하거나 눈치껏 잠깐 잠깐 보거나 할 수 있어."
+    go "어으."
+    jeong "주말에도 세 끼 전부 같은 사람이 할 거 아냐."
+    main "당연하지."
+    jeong "으."
+    main "다 먹었어?"
+    go "전 다 먹었습니다."
+    jeong "나도."
+    main "일어날까?"
+    jeong "엉."
+    hide main_cloth
+    hide jeong_cloth
+    hide go_nom
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
+    scene bg_resta_front
+    show go_nom_hat at left
+    show jeong_cloth at center
+    show main_cloth at right
+    with dissolve
+    main "그럼 있다 보자."
+    go "고생하십쇼."
+    jeong "고생해."
+    hide jeong_cloth
+    hide go_nom_hat
+    $SoundPlayer("walk_slow.ogg")
+    "다른 이들은 먼저 생활관으로 향하였다."
+    play sound wind
+    main "...추워."
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_taba with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show main_cloth_taba_nof at center with dissolve
+    $Smoking(img="main_cloth", loc=1.0, rep=2, first = True)
     "."
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)
