@@ -19,6 +19,15 @@ label go_px1:
     main "네."
     hide main_cloth
     $SoundPlayer("door.ogg", 2.0)
+    scene bg_bath with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at center with dissolve
     $now_m += 5
     
+    return
+
+
+label go_control:
+    scene bg_black with dissolve
+    "와! 와!"
     return

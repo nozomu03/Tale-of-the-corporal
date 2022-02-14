@@ -8,6 +8,103 @@ init offset = -1
 ################################################################################
 ## 스타일
 ################################################################################
+screen map_view:
+    modal True
+    add "map_2f"
+    imagebutton:
+        pos(353, 227)    
+        idle "button"
+        action [Show("go_confirm"), SetVariable("where", "지휘통제실")]
+
+    imagebutton:
+        pos(662, 226)    
+        idle "button"
+
+    imagebutton:
+        pos(830, 226)    
+        idle "button"
+
+    imagebutton:
+        pos(998, 226)    
+        idle "button"
+
+    imagebutton:
+        pos(1051, 454)    
+        idle "button2"
+
+    imagebutton:
+        pos(941, 452)    
+        idle "button2"
+
+    imagebutton:
+        pos(708, 452)    
+        idle "button2"
+
+    imagebutton:
+        pos(533, 469)    
+        idle "button"
+
+    imagebutton:
+        pos(220, 238)    
+        idle "button3"
+screen inventory_button:
+    textbutton "인벤토리":
+        xalign 0.006
+        yalign 0.006
+        action [Show("inventory", transition=dissolve), Hide("inventory_button")]
+
+screen go_confirm:
+    modal True
+    vbox:
+        align(.5, .0)
+        text "{color=#FFFFFF}[where]로 갈까?{/color}"
+        textbutton "예" action [Hide("go_confirm"), Hide("map_view"), Call("go_control")]
+        textbutton "아니오" action Hide("go_confirm")
+
+screen inventory:
+   # $tip = Tooltip("N/A")
+    modal True
+    add "inven_back"
+    textbutton "X 닫기":
+        xalign 0.96
+        yalign 0.006
+        action [Hide("inventory", transition=dissolve), Show("inventory_button")]
+    $item_x=630
+    $item_y=60
+    $now_x = 0
+    $i_list = main_inventory.getall()
+    for x in i_list:
+        if now_x % 3 == 0 and now_x != 0:
+            $item_y+=221 
+            $item_x = 630
+        imagebutton: 
+            xpos item_x
+            ypos item_y 
+            idle x.icon
+            action [Show("inven_intro", transition=dissolve), SetVariable("now_name", x.name), SetVariable("now_intro", x.intro)]
+            tooltip "{color=#FFFFFF}[x.tip]{/color}"
+        $item_x+=220
+        $now_x+=1
+    $mouse_pos = renpy.get_mouse_pos()
+    $tooltip = GetTooltip()
+    if tooltip:
+        text tooltip
+     #   xpos mouse_pos[0]
+      #  ypos mouse_pos[1] - 5 
+screen inven_intro:
+    modal True
+    add "inven_intro"
+    vbox:
+        xpos 55
+        ypos 77
+        text "{size=48}" + now_name + "{/size}"
+    vbox:
+        xpos 55
+        ypos 150
+        text now_intro
+    button action Hide("inven_intro", transition=dissolve)
+
+#x 220 y 221
 screen time:
     add "clock_back.png"
     vbox:

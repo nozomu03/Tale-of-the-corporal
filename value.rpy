@@ -50,8 +50,53 @@ init python:
             renpy.pause(2.0)
             count += 1
 
+    class Item:
+        def __init__(self, name="", icon="", intro="", tip=""):
+            self.name = name
+            self.icon = icon
+            self.intro = intro
+            self.tip = tip
+
+    class Inventory:
+        item_list = []
+        def __init__(self):
+            self.item_list = []
+            return
+
+        def add(self, item):
+            print(len(self.item_list))
+            if len(self.item_list) >= 9:
+                narrator("더 이상 가질 수 없어.")
+                return
+            self.item_list.append(item)
+            return
+
+        def delete(self, item):
+            self.item_list.remove(item)
+            return 
+
+        def search(self, item):
+            if item in self.item_list:
+                return True
+            else:
+                return False
+        
+        def getall(self):
+            return self.item_list
+
+    mouse_pos = ( )
     blur_val = False
     now_h = 12
     now_m = 30
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     
+    item_x = 0
+    item_y = 0
+
+    now_name = "N/A"
+    now_intro = "N/A"
+
+    where = "N/A"
+
+    taba = Item("루나틱 드래곤", "item_taba", "군 PX에서 구할 수 있는 6mg 담배 중 가장\n인기가 좋다.\n6.0mg/0.5mg.\n\n{size=10}=과도한 흡연은 질병의 원인이 될 수 있습니다={/size}", "끊어. 돈 낭비 건강 낭비 하지 말고.")
+    main_inventory = Inventory()
