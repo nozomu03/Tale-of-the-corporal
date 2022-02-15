@@ -686,8 +686,11 @@ label start:
     show explain_scene with dissolve
     centered "이와 같이 선택지 지문에 + 기호와 함께 시간이 표시되어 있는 경우 해당 이벤트를 진행한 이후 적혀있는 숫자만큼의 시간이 경과하게 됩니다."
     $main_inventory.add(taba)
+    $bufftory.add(stress_minus)
     show screen inventory_button
     show screen map_view
+    show screen buff_screen
+    show screen status
     #scene inven_back
     #show item_taba at Position(xpos=710, ypos=221)
     "어디로 갈까?"

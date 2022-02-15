@@ -28,6 +28,29 @@ label go_px1:
 
 
 label go_control:
-    scene bg_black with dissolve
-    "와! 와!"
+    "[where]로 발걸음을 옮겼다."
+    if where == "소대 사무실":
+        call patron_event
+    elif where == "본부 행정반":
+        call hq_office
+    elif where == "CSCO 행정반":
+        call csco_office
+    elif where == "세탁실":
+        call washing_event
+    elif where == "휴게실":
+        call lounge_event
+    elif where == "사지방":
+        call pc_event
     return
+
+label patron_event:
+    return
+label hq_office:
+    return
+label csco_office:
+    return
+label washing_event:
+    return
+label lounge_event:
+    return
+label pc_event:

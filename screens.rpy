@@ -8,45 +8,88 @@ init offset = -1
 ################################################################################
 ## 스타일
 ################################################################################
+screen buff_screen:
+    $buff_y=67
+    $all_buff = bufftory.getall()
+    for i in all_buff:
+        imagebutton:
+            xpos 1212
+            ypos buff_y
+            idle i.icon 
+            action [Show("buff_intro"), SetVariable("mouse_y", renpy.get_mouse_pos()[1]), SetVariable("now_buff", i)]
+        $buff_y += 67
+
+screen buff_intro:
+    modal True
+    add "textback":
+        xpos 836
+        ypos 67
+    vbox:
+        xpos 840
+        ypos 71
+        #text "[mouse_y]"
+        text "{color=#FFFFFF}" + now_buff.name + "{/color}\n"
+        text "{color=#FFFFFF}" + now_buff.intro + "{/color}"
+    button action Hide("buff_intro")
+        
+
+screen status:
+    hbox:
+        spacing 250
+        xalign .2
+        yalign 0.012
+        text "{color=#FFFFFF}스트레스"
+        text "{color=#FFFFFF}만족도"
+
+    hbox:
+        xalign .37
+        yalign 0.012
+        spacing 100
+        bar value stress_val range 100 xmaximum 200
+        bar value sat_val range 100 xmaximum 200
+
 screen map_view:
     modal True
     add "map_2f"
-    imagebutton:
-        pos(353, 227)    
-        idle "button"
-        action [Show("go_confirm"), SetVariable("where", "지휘통제실")]
+    #imagebutton:
+    #    pos(353, 227)    
+    #    idle "button"
+    #    action [Show("go_confirm"), SetVariable("where", "지휘통제실")]
 
     imagebutton:
         pos(662, 226)    
         idle "button"
-
+        action [Show("go_confirm"), SetVariable("where", "소대 사무실")]
     imagebutton:
         pos(830, 226)    
         idle "button"
+        action [Show("go_confirm"), SetVariable("where", "본부 행정반")]
 
-    imagebutton:
-        pos(998, 226)    
-        idle "button"
+    #imagebutton:
+    #    pos(998, 226)    
+    #    idle "button"
 
     imagebutton:
         pos(1051, 454)    
         idle "button2"
+        action [Show("go_confirm"), SetVariable("where", "CSCO 행정반")]
 
-    imagebutton:
-        pos(941, 452)    
-        idle "button2"
-
+    #imagebutton:
+    #    pos(941, 452)    
+    #    idle "button2"
     imagebutton:
         pos(708, 452)    
         idle "button2"
+        action [Show("go_confirm"), SetVariable("where", "휴게실")]
 
     imagebutton:
         pos(533, 469)    
         idle "button"
-
+        action [Show("go_confirm"), SetVariable("where", "세탁실")]
     imagebutton:
         pos(220, 238)    
         idle "button3"
+        action [Show("go_confirm"), SetVariable("where", "사지방")]
 screen inventory_button:
     textbutton "인벤토리":
         xalign 0.006
@@ -55,8 +98,10 @@ screen inventory_button:
 
 screen go_confirm:
     modal True
+    add "textback2":
+        align(.5, 0)
     vbox:
-        align(.5, .0)
+        align(.5, .03)
         text "{color=#FFFFFF}[where]로 갈까?{/color}"
         textbutton "예" action [Hide("go_confirm"), Hide("map_view"), Call("go_control")]
         textbutton "아니오" action Hide("go_confirm")
