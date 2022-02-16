@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/dse-events.rpy", line 23: reached end of line when expecting ':'.
+    elif event_result_val <= 90
+                               ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Wed Feb 16 17:16:44 2022

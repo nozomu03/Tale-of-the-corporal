@@ -37,20 +37,33 @@ label go_control:
         call csco_office
     elif where == "세탁실":
         call washing_event
-    elif where == "휴게실":
+    elif where == "휴게실":        
         call lounge_event
     elif where == "사지방":
         call pc_event
+    else:
+        "무슨 일이 벌어지고 있나요?"
     return
 
 label patron_event:
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg")
+    scene bg_office2 with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at center with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    call events_run_period
     return
 label hq_office:
+    scene bg_office
     return
 label csco_office:
+    scene bg_office3
     return
 label washing_event:
+    scene bg_washing
     return
 label lounge_event:
+    scene bg_lounge
     return
 label pc_event:
