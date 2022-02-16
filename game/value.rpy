@@ -9,6 +9,7 @@ define snipe = Character("저격반장", who_color="#DB631F", what_color="#B9000
 define grand = Character("할아버지", who_color = "#F0B469", what_color = "#FF8200")
 define jeong = Character("정제영", who_color="#F5AF64", what_color="#5A5AFF")
 define go = Character("고균영", who_color="#2828CD", what_color="#0A6E0A")
+define gang = Character("강민준", who_color="#110E0E", what_color="#001E38")
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
 define left = Position(xalign=.1, yalign=1.0)
@@ -141,3 +142,8 @@ init python:
     sat_val = 20
 
     now_buff = stress_minus
+
+    event_result_val = 0
+
+    events_executed = { }
+    events_executed_yesterday = { }
