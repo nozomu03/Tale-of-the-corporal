@@ -18,16 +18,19 @@ label meet_gang:
     "[event_result_val]"
     scene bg_office2 
     show main_cloth at center
-    with blinds
     if event_result_val <= 70:
+        show gang_hap at right
+        with blinds
         main "어, 미안하다. {w}주말에 계속 붙잡아 놨네."
         gang "아닙니다. {w}재밌었습니다. {w}고생하십시오."
         $stress_val -= 3
     elif event_result_val <= 90:
+        show gang_kon at right
         main "뭐 그랬단 거지."
         gang "예... {w}고생하십시오."
         main "그래, 잘가."
     else:
+        show gang_bad at right
         gang "저 혹시 죄송한데... {w}먼저 가 봐도 되겠습니까?"
         main "어? {w}아, 그래."
         gang "...고생하십시오."
@@ -43,10 +46,13 @@ label meet_jeong:
     main "방금 전부터."
     jeong "주말인데 왠일이야."
     main "그냥 심심해서."
-    jeong "하... {w}비문병 줄까 물어봤을 때 받으면 안됐었는데..."
+    jeong "하... {w}비문병 줄까 물어봤을 때 받으면 안 됐었는데..."
     main "뭐야? {w}일 하러 온 거야?"
     jeong "어. {w}원래 금요일날 해 놨어야 했는데 까먹은 게 하나 있어서."
-
+    main "고생하네."
+    jeong "기왕 이렇게 된 거 나 한 번만 도와줄 수 있을까?"
+    main "그래, 뭐 하면 되는데?"
+    jeong "소대장님 직인 찍혀있는 "
 
 label none:
     "[where]에는 아무도 없는 것 같다..."
