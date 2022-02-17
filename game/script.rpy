@@ -694,6 +694,13 @@ label start:
     #scene inven_back
     #show item_taba at Position(xpos=710, ypos=221)
     "어디로 갈까?"
+    $evented = False
+    $where_list.append(where)
+    $where = "N/A"
+    show explain_scene 
+    show screen map_view
+    with dissolve
+    "어디로 갈까?"
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)
    # "."

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dse-events.rpy", line 23: reached end of line when expecting ':'.
-    elif event_result_val <= 90
-                               ^
+File "game/branc.rpy", line 32: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    if i == where:
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Feb 16 17:16:44 2022
+Thu Feb 17 15:10:38 2022

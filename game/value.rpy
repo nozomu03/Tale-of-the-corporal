@@ -128,6 +128,8 @@ init python:
     now_intro = "N/A"
 
     where = "N/A"
+    where_list = []
+    evented = False
 
     mouse_y = 0
 
@@ -147,3 +149,10 @@ init python:
 
     events_executed = { }
     events_executed_yesterday = { }
+
+    def timeCheck(add_h=0, add_m=0):
+        now_h += add_h
+        now_m += add_m
+        if now_m >=60:
+            now_h += 1
+            now_m -= 60
