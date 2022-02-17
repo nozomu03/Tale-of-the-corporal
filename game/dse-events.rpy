@@ -8,6 +8,8 @@ init python:
     event('none', 'where==\"본부 행정반\" and evented == False', priority = 100)
     event('washing_room1', 'where==\"세탁실\" and evented == False', event.random(.3), event.only(), priority=20)
     event('none', 'where==\"세탁실\" and evented == False', priority = 100)
+    event('csco1', 'where==\"CSCO 행정반\" and evented == False', event.random(.2), event.only(), priority=20)
+    event('none', 'where==\"CSCO 행정반\" and evented == False', priority = 100)
 
     #event('meet_j')
 
@@ -297,6 +299,85 @@ label washing_room1:
     $sat_val += 7
     $timeCheck(0, 20)
     $evented = True
+    return
 
+label csco1:
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_room
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("blanket.wav", 4.0)
+    "사 두었던 콜라를 집어 들었다."
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway 
+    show main_cloth
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_office3
+    show main_cloth at left
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    main "균영아."
+    go "부르셨습니까?"
+    show go_nom at center with dissolve
+    $SoundPlayer("put.ogg", 1.0)
+    "가져온 콜라를 책상 위에 올렸다."
+    main "마시면서 하라고."
+    go "아, 감사합니다. {w}마침 목말랐는데 잘 마시겠습니다."
+    $SoundPlayer("coke.wav", 1.0) 
+    $SoundPlayer("drink.wav", 1.0)
+    go "요즘은 좀 어떠십니까. {w}지낼만 하십니까?"
+    main "그렇지."
+    go "그래도 와 보니까 좋지 않습니까? {w}화기애애하고."
+    main "그러게..."
+    "머릿속을 스쳐 지나가는 과거의 이야기. {w}반목, 싸움, 결별."
+    main "{size=15}적어도 맞을 일은 없어서 좋네.{/size}"
+    go "몸은 괜찮아졌습니까?"
+    main "며칠 전에도 말했지만 이제 일상생활에 지장은 없어. {w}조금만 조심하면 돼."
+    go "그래도 아프시면 바로 말씀해 주셔야 합니다. {w}괜히 참으시지 말고."
+    main "응. {w}알았어."
+    #"입이, 떨어지지, 않았다. {w}준비했던 문장을 이루는 단어들이 머릿속을 복잡히 휘저었다."
+    #"솔직히 말해 두려웠다. {w}내가 했떤 말실수. {w}6월달. {w}중대 격리 도중. {w}밥을 먹고 돌아오는 길의 철볼."
+    #"내 한 마디 말 실수 탓에 내 군생활은 거대한 변혁을 맞이했고. {w}그대로 바닥으로 추락해 내려가기 시작했다. {w}똑같은 일이 벌어질지도 모른다."
+    #main "(그래도... 해야겠지...)"
+    #main "있잖아."
+    #go "왜 그러십니까?"
+    #"보가 무너졌다. {w}멈출 수도 없고. {w}멈춰서도 안 된다."
+    #main "너도 알고 있겠지만 내가 그렇게 좋은 선임은 아니잖아."
+    #go "......."
+    #main "나도 알고 있어. {w}이전에는 하지 않았던 새로운 일이라고는 해도 전입온 지 두 달 넘게 지났는데 아직도 적응 못하고 후임들도 안 내는 빵꾸만 뻥뻥 터뜨려 대고 있따는 걸. {w}넌 내 분대장이기도 하고 또래 상담병이기도 하니까 그냥 솔직하게 이야기 할게. {w}갓 전입왔을 때 말했으니까 너도 알고 있겠지만은 내가 평소에 앓고 있는 병이 하나 있어. {w}그것 떄문에 "
+    $event_result_val = renpy.random.randint(1, 100)
+    "처음에는 건강 이야기. {w}그 이후에는 1중대 시절 이야기. {w}그 다음으로는 균영이의 이야기. {w}겉으로 보기에는 다가서기 힘들고 언제나 화나 있어 보이는 무서운 분대장이었던 균영이."
+    main "이렇게 길게 이야기 해 본 적 있었나?"
+    go "없었던 걸로 기억합니다. {w}그래도 이걸로 ㅇㅇㅇ 상병님에 대해서 이전보다는 조금 더 알게 된 것 같습니다."
+    main "나도 너에 대해서 더 알게 된 것 같아서 기분 좋네."
+    if event_result_val <= 30:
+        "굳어 있던 마음이 조금은 풀리는 것 같았다. {w}그리운 얼굴들이 겹쳐 보였다. {w}지금은 떠나버린 간부님들이. {w}선임들이 나와 이야기를 나눌 때. {w}고민을 털어 놓고서 조언을 구했을 때와 같은. {w}따스함이 이 곳에서도 다시금 느껴졌다."
+        $stress_minus += 10
+        $sat_val += 7
+    elif event_result_val < 70:
+        "털어놓자 무겁게만 느껴졌던 매일이 조금은 가벼워진 것 같았다. {w}균영이는 지겨운 내 이야기를 끝까지 들어주었고. {w}이에 공감하는 척이라도 해 주었다. {w}누군가는 나를 타인을 나의 감정 쓰래기통으로 이용하고 있다고. {w}이기적이라 몰아붙일지도 모를 일이다." 
+        "그러나. {w}이 맘 속에 품은 채 때를 지나 썩어가는 감정 더미와. {w}소중한 사람에게 꼭 전해야 했으나. {w}때가 늦어 건내지 못했던 감사의 잔여물들은 지금까지도 차곡차곡 쌓여 벗어 던질 수 없는 짐덩이가 되어버린 상태였다."
+        main "(미안하다. {w}하지만 이렇게라도 하지 않으면... {w}진짜 미쳐버릴 거 같아...)"
+    else:
+        "균영이는 무표정히 컴퓨터 화면을 바라보고 있다."
+        $SoundPlayer("typing.ogg", 2.0)
+        go "아...{w} 정말 죄송합니다. {w}계속 해야할게 밀려들어 와서... {w}그래도 ㅇㅇㅇ 상병님꼐서는 언제나 노력하고 계시지 않습니까. {w}그 노력이 언젠가는 결실을 맺을거라고 저는 생각하고 있습니다."
+        main "그래, 고맙다."
+    main "고생해라."
+    go "고생하십시오. {w}화이팅입니다."
+    hide main_cloth
+    $SoundPlayer("door.ogg")
+    scene bg_hallway 
+    show main_cloth at center
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    $timeCheck(0, 20)
+    $evented = True
+    return
 
 

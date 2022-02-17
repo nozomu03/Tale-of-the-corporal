@@ -68,7 +68,7 @@ label hq_office:
     call events_run_period
     return
 label csco_office:
-    scene bg_office3
+    call events_run_period
     return
 label washing_event:
     hide main_cloth
