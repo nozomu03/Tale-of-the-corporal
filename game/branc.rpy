@@ -65,12 +65,19 @@ label hq_office:
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth with dissolve
     $SoundPlayer("door.ogg", 2.0)
+    call events_run_period
     return
 label csco_office:
     scene bg_office3
     return
 label washing_event:
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_washing
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at center with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    call events_run_period
     return
 label lounge_event:
     scene bg_lounge

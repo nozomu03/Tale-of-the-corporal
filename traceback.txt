@@ -1,66 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00keymap.rpy", line 469, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 469, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 469, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 488, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-AttributeError: 'NoneType' object has no attribute 'stores'
+  File "game/script.rpy", line 710, in script call
+    "어디로 갈까?"
+  File "game/branc.rpy", line 44, in script call
+    call washing_event
+  File "game/branc.rpy", line 81, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/dse-events.rpy", line 257, in script
+    $SoundPlayer("typing", 1.0)
+  File "game/dse-events.rpy", line 257, in <module>
+    $SoundPlayer("typing", 1.0)
+  File "game/value.rpy", line 39, in SoundPlayer
+    renpy.pause(t)
+IOError: Couldn't find file 'audio/typing'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 550, in main
-    if renpy.parser.report_parse_errors():
-  File "renpy/parser.py", line 3015, in report_parse_errors
-    renpy.display.error.report_parse_errors(full_text, error_fn)
-  File "renpy/display/error.py", line 198, in report_parse_errors
-    error_fn=error_fn,
-  File "renpy/game.py", line 284, in invoke_in_new_context
-    return callable(*args, **kwargs)
-  File "renpy/display/error.py", line 46, in call_exception_screen
-    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3800, in interact_core
-    renpy.loader.check_autoreload()
-  File "renpy/loader.py", line 1132, in check_autoreload
-    renpy.exports.reload_script()
-  File "renpy/exports.py", line 1867, in reload_script
-    renpy.game.call_in_new_context("_save_reload_game")
-  File "renpy/game.py", line 344, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "renpy/execution.py", line 922, in run_context
-    context.run()
-  File "renpy/common/00keymap.rpy", line 469, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 469, in script
-    python hide:
-  File "renpy/ast.py", line 928, in execute
+  File "game/script.rpy", line 710, in script call
+    "어디로 갈까?"
+  File "game/branc.rpy", line 44, in script call
+    call washing_event
+  File "game/branc.rpy", line 81, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/dse-events.rpy", line 257, in script
+    $SoundPlayer("typing", 1.0)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 469, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 488, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-  File "renpy/loadsave.py", line 394, in save
-    roots = renpy.game.log.freeze(None)
-  File "renpy/python.py", line 2142, in freeze
-    self.complete(False)
-  File "renpy/python.py", line 1726, in complete
-    self.current.stores[name], self.current.delta_ebc[name] = sd.get_changes(begin)
-AttributeError: 'NoneType' object has no attribute 'stores'
+  File "game/dse-events.rpy", line 257, in <module>
+    $SoundPlayer("typing", 1.0)
+  File "game/value.rpy", line 39, in SoundPlayer
+    renpy.pause(t)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 1563, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 4025, in interact_core
+    renpy.audio.audio.periodic()
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 518, in periodic
+    topf = load(filename)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/typing'.
 
-Windows-10-10.0.22000
+Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
 Tale of the corporal 1.0
-Wed Feb 16 17:24:20 2022
+Thu Feb 17 23:24:30 2022

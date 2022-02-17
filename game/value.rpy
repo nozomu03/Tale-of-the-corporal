@@ -10,6 +10,7 @@ define grand = Character("할아버지", who_color = "#F0B469", what_color = "#F
 define jeong = Character("정제영", who_color="#F5AF64", what_color="#5A5AFF")
 define go = Character("고균영", who_color="#2828CD", what_color="#0A6E0A")
 define gang = Character("강민준", who_color="#110E0E", what_color="#001E38")
+define cap2 = Character("박류원", who_color="#1A1E1E", what_color="#09030A")
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
 define left = Position(xalign=.1, yalign=1.0)
@@ -115,8 +116,6 @@ init python:
 
     mouse_pos = ( )
     blur_val = False
-    now_h = 12
-    now_m = 30
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     
     item_x = 0
@@ -146,11 +145,15 @@ init python:
     now_buff = stress_minus
 
     event_result_val = 0
+    now_h = 12
+    now_m = 30
 
     events_executed = { }
     events_executed_yesterday = { }
 
     def timeCheck(add_h=0, add_m=0):
+        global now_h
+        global now_m
         now_h += add_h
         now_m += add_m
         if now_m >=60:
