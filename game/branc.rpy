@@ -28,26 +28,30 @@ label go_px1:
 
 
 label go_control:
-    "[where]로 발걸음을 옮겼다."
-    if where == "소대 사무실":
-        call patron_event
-    elif where == "본부 행정반":
-        call hq_office
-    elif where == "CSCO 행정반":
-        call csco_office
-    elif where == "세탁실":
-        call washing_event
-    elif where == "휴게실":        
-        call lounge_event
-    elif where == "사지방":
-        call pc_event
+    if where in where_list:
+        "이미 갔던 곳이야."
+        call screen map_view
     else:
-        "무슨 일이 벌어지고 있나요?"
+        "[where]로 발걸음을 옮겼다."
+        if where == "소대 사무실":
+            call patron_event
+        elif where == "본부 행정반":
+            call hq_office
+        elif where == "CSCO 행정반":
+            call csco_office
+        elif where == "세탁실":
+            call washing_event
+        elif where == "휴게실":        
+            call lounge_event
+        elif where == "사지방":
+            call pc_event
+        else:
+            "무슨 일이 벌어지고 있나요?"
     return
 
 label patron_event:
     hide main_cloth
-    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_office2 with dissolve
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth at center with dissolve
@@ -55,7 +59,12 @@ label patron_event:
     call events_run_period
     return
 label hq_office:
-    scene bg_office
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_office with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth with dissolve
+    $SoundPlayer("door.ogg", 2.0)
     return
 label csco_office:
     scene bg_office3
