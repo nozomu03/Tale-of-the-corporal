@@ -73,13 +73,17 @@ label csco_office:
 label washing_event:
     hide main_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
-    scene bg_washing
+    scene bg_washing with dissolve
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth at center with dissolve
     $SoundPlayer("door.ogg", 2.0)
     call events_run_period
     return
 label lounge_event:
-    scene bg_lounge
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_lounge with dissolve
+    call events_run_period
     return
-label pc_event:
+
+#label pc_event:

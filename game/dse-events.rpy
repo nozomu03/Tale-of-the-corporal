@@ -10,6 +10,8 @@ init python:
     event('none', 'where==\"세탁실\" and evented == False', priority = 100)
     event('csco1', 'where==\"CSCO 행정반\" and evented == False', event.random(.2), event.only(), priority=20)
     event('none', 'where==\"CSCO 행정반\" and evented == False', priority = 100)
+    event('lounge_event1', 'where==\"휴게실\" and evented == False', event.random(1), event.only(), priority=20)
+
 
     #event('meet_j')
 
@@ -110,6 +112,17 @@ label meet_jeong:
     return
 
 label none:
+    if where == "CSCO 행정반":
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_office3
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth at center with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+    elif where == "휴게실":
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth with dissolve
+        $SoundPlayer("door.ogg", 2.0)
     "[where]에는 아무도 없는 것 같다... {w}휴대폰을 만지며 시간을 때웠다."
     $SoundPlayer("door.ogg", 2.0)
     scene bg_hallway
@@ -379,5 +392,21 @@ label csco1:
     $timeCheck(0, 20)
     $evented = True
     return
+
+label lounge_event1:
+    play music guitar1
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    "기타 소리."    
+    show son_guitar at right with dissolve
+    $renpy.pause(1.0)
+    stop music
+    son "안녕하세요."
+    main "어, 한연 씨 기타 치셨어요?"
+    son "옛날에요. {w}오랜만에 다시 잡아봤는데 기억이 잘 안 나네요."
+    main "좀 더 쳐줄 수 있어요?"
+    son "아까 전에 그거 처음부터 다시 쳐드릴게요 그럼."
+    play music guitar1
 
 

@@ -1,66 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 710, in script call
+  File "game/script.rpy", line 711, in script call
     "어디로 갈까?"
-  File "game/branc.rpy", line 44, in script call
-    call washing_event
-  File "game/branc.rpy", line 81, in script call
+  File "game/branc.rpy", line 41, in script call
+    call csco_office
+  File "game/branc.rpy", line 71, in script call
     call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 297, in script call
-    call expression _event from call_expression_event_1
-  File "game/dse-events.rpy", line 257, in script
-    $SoundPlayer("typing", 1.0)
-  File "game/dse-events.rpy", line 257, in <module>
-    $SoundPlayer("typing", 1.0)
-  File "game/value.rpy", line 39, in SoundPlayer
-    renpy.pause(t)
-IOError: Couldn't find file 'audio/typing'.
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+SyntaxError: EOL while scanning string literal (<none>, line 1)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 710, in script call
+  File "game/script.rpy", line 711, in script call
     "어디로 갈까?"
-  File "game/branc.rpy", line 44, in script call
-    call washing_event
-  File "game/branc.rpy", line 81, in script call
+  File "game/branc.rpy", line 41, in script call
+    call csco_office
+  File "game/branc.rpy", line 71, in script call
     call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 297, in script call
-    call expression _event from call_expression_event_1
-  File "game/dse-events.rpy", line 257, in script
-    $SoundPlayer("typing", 1.0)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 928, in execute
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2245, in py_exec_bytecode
+  File "renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/dse-events.rpy", line 257, in <module>
-    $SoundPlayer("typing", 1.0)
-  File "game/value.rpy", line 39, in SoundPlayer
-    renpy.pause(t)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 1563, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 4025, in interact_core
-    renpy.audio.audio.periodic()
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1162, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1140, in periodic_thread_main
-    periodic_pass()
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 1082, in periodic_pass
-    c.periodic()
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 518, in periodic
-    topf = load(filename)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/typing'.
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+  File "renpy/python.py", line 2274, in py_eval
+    code = py_compile(code, 'eval')
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: EOL while scanning string literal (<none>, line 1)
 
-Windows-10-10.0.18362
+Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
 Tale of the corporal 1.0
-Thu Feb 17 23:24:30 2022
+Fri Feb 18 18:29:18 2022

@@ -709,7 +709,13 @@ label start:
     show screen map_view
     with dissolve
     "어디로 갈까?"
-
+    $evented = False
+    $where_list.append(where)
+    $where = "N/A"
+    show explain_scene 
+    show screen map_view
+    with dissolve
+    "어디로 갈까?"
 #   $SoundPlayer("buzzer.ogg", 1.0)
 #   $SoundPlayer("teleclick.ogg", 1.0)
    # "."
