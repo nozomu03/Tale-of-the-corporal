@@ -86,10 +86,11 @@ screen map_view:
         pos(533, 469)    
         idle "button"
         action [Show("go_confirm"), SetVariable("where", "세탁실")]
-    imagebutton:
-        pos(220, 238)    
-        idle "button3"
-        action [Show("go_confirm"), SetVariable("where", "사지방")]
+    if len(where_list) == 5:
+        imagebutton:
+            pos(220, 238)    
+            idle "button3"
+            action [Show("go_confirm"), SetVariable("where", "사지방")]
 screen inventory_button:
     textbutton "인벤토리":
         xalign 0.006

@@ -2,11 +2,10 @@
 errors listed below, and try again.
 
 
-The label lounge_event is defined twice, at File "game/branc.rpy", line 82:
-label lounge_event:
-and File "game/dse-events.rpy", line 384:
-label lounge_event:
-
+File "game/value.rpy", line 122: invalid syntax
+    default item_x = 0
+                  ^
+    
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Feb 18 18:29:58 2022
+Fri Feb 18 23:26:12 2022

@@ -19,6 +19,29 @@ define left = Position(xalign=.1, yalign=1.0)
 define config.gl2 = True
 define centered = Character(None, kind = centered, what_color="#FFFFFF")
 
+default item_x = 0
+default item_y = 0
+default buff_y = 67
+default now_name = "N/A"
+default now_intro = "N/A"
+default where = "N/A"
+default evented = False
+default mouse_y = 0
+default taba = Item("루나틱 드래곤", "item_taba", "군 PX에서 구할 수 있는 6mg 담배 중 가장\n인기가 좋다.\n6.0mg/0.5mg.\n\n{size=10}=과도한 흡연은 질병의 원인이 될 수 있습니다={/size}", "끊어. 돈 낭비 건강 낭비 하지 말고.")
+default main_inventory = Inventory()
+default stress_minus = Buff(type=0, name="족쇄-과거의 이름으로", effect=30, intro="{size=20}사람은 경험의 반복에서 만들어집니다.\n본래의 중대에서 전출하게 된 계기가.\n또한 학창시절에 겪었던 핍박이 제대로 된 \n판단을 내리지 못하게 만드는 족쇄로\n기능하고있습니다.\n\n{size=15}스테러스가 영구히 30 증가합니다", icon="icon_chain")
+default bufftory = Bufftory()
+default stress_val = 80
+default sat_val = 20
+default now_buff = stress_minus
+default event_result_val = 0
+default now_h = 12
+default now_m = 30
+default events_executed = { }
+default events_executed_yesterday = { }
+default where_list = []
+
+
 init python:
     def FaceChange(img="", loc=0 ,t=2.0, org_img=None):
         if loc == 0:
@@ -119,38 +142,6 @@ init python:
     blur_val = False
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     
-    item_x = 0
-    item_y = 0
-
-    buff_y = 67
-
-    now_name = "N/A"
-    now_intro = "N/A"
-
-    where = "N/A"
-    where_list = []
-    evented = False
-
-    mouse_y = 0
-
-    taba = Item("루나틱 드래곤", "item_taba", "군 PX에서 구할 수 있는 6mg 담배 중 가장\n인기가 좋다.\n6.0mg/0.5mg.\n\n{size=10}=과도한 흡연은 질병의 원인이 될 수 있습니다={/size}", "끊어. 돈 낭비 건강 낭비 하지 말고.")
-    main_inventory = Inventory()
-    
-
-    stress_minus = Buff(type=0, name="족쇄-과거의 이름으로", effect=30, intro="{size=20}사람은 경험의 반복에서 만들어집니다.\n본래의 중대에서 전출하게 된 계기가.\n또한 학창시절에 겪었던 핍박이 제대로 된 \n판단을 내리지 못하게 만드는 족쇄로\n기능하고있습니다.\n\n{size=15}스테러스가 영구히 30 증가합니다", icon="icon_chain")
-    bufftory = Bufftory()
-
-    stress_val = 80
-    sat_val = 20
-
-    now_buff = stress_minus
-
-    event_result_val = 0
-    now_h = 12
-    now_m = 30
-
-    events_executed = { }
-    events_executed_yesterday = { }
 
     def timeCheck(add_h=0, add_m=0):
         global now_h
@@ -160,3 +151,4 @@ init python:
         if now_m >=60:
             now_h += 1
             now_m -= 60
+

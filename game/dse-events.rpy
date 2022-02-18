@@ -175,7 +175,7 @@ label hq_event1:
     main "일을 한 건 아니고, 배운거지. {w}혼자서 깔짝대거나."
     prf "운동해서 건강해지면 좋지만 선수도 아니면서 제몸 깎아먹기 식 운동은 자재하시는 편이 좋습니다."
     main "나 운동 그다지 열심히 안했는데."
-    prf "어... 그렇습니까? {w}아무튼 약이야 먹으면 부작용 오는 거 떄문에 잘 안 먹는다고 치더라도 군의관님이 하지 말라고 하신건 안 하시는 게 맞을 것 같습니다."
+    prf "어... 그렇습니까? {w}아무튼 약이야 먹으면 부작용 오는 거 때문에 잘 안 먹는다고 치더라도 군의관님이 하지 말라고 하신건 안 하시는 게 맞을 것 같습니다."
     main "그래, 고맙다. {w}내 몸 걱정해주는 건 너밖에 없네."
     prf "제가 또 대대 체력단련병이지 않겠습니까."
     "시시콜콜한 잡담들을 나누었다."
@@ -235,11 +235,11 @@ label sniper_hq:
         $SoundPlayer("sigh.wav", 2.0)
         main "(x같네...)"
         "감정을 가다듬었다. {w}심호흡했다. {w}애써 생각했다. {w}이 또한 필요한 일이다. {w}멍청하고, 다른 누구보다 지금 서 있는 이 장소에 어울리지 않는 내가 동화되기 위해서는 엄히 서 꾸중하는 이 역시 있어야 한다. {w}고 되뇌이자 흐트러졌던 호흡도. {w}일그러져가던 생각도 바로잡혔다."
-        main "(망할... {w}나같은 놈 떄문에...)"
+        main "(망할... {w}나같은 놈 때문에...)"
         $stress_val += 5
         $sat_val -= 5
-        $timeCheck(0, 20)
-        $evented = True
+    $timeCheck(0, 20)
+    $evented = True
     return 
     
 label washing_room1:
@@ -362,7 +362,7 @@ label csco1:
     #"보가 무너졌다. {w}멈출 수도 없고. {w}멈춰서도 안 된다."
     #main "너도 알고 있겠지만 내가 그렇게 좋은 선임은 아니잖아."
     #go "......."
-    #main "나도 알고 있어. {w}이전에는 하지 않았던 새로운 일이라고는 해도 전입온 지 두 달 넘게 지났는데 아직도 적응 못하고 후임들도 안 내는 빵꾸만 뻥뻥 터뜨려 대고 있따는 걸. {w}넌 내 분대장이기도 하고 또래 상담병이기도 하니까 그냥 솔직하게 이야기 할게. {w}갓 전입왔을 때 말했으니까 너도 알고 있겠지만은 내가 평소에 앓고 있는 병이 하나 있어. {w}그것 떄문에 "
+    #main "나도 알고 있어. {w}이전에는 하지 않았던 새로운 일이라고는 해도 전입온 지 두 달 넘게 지났는데 아직도 적응 못하고 후임들도 안 내는 빵꾸만 뻥뻥 터뜨려 대고 있따는 걸. {w}넌 내 분대장이기도 하고 또래 상담병이기도 하니까 그냥 솔직하게 이야기 할게. {w}갓 전입왔을 때 말했으니까 너도 알고 있겠지만은 내가 평소에 앓고 있는 병이 하나 있어. {w}그것 때문에 "
     $event_result_val = renpy.random.randint(1, 100)
     "처음에는 건강 이야기. {w}그 이후에는 1중대 시절 이야기. {w}그 다음으로는 균영이의 이야기. {w}겉으로 보기에는 다가서기 힘들고 언제나 화나 있어 보이는 무서운 분대장이었던 균영이."
     main "이렇게 길게 이야기 해 본 적 있었나?"
@@ -408,5 +408,91 @@ label lounge_event1:
     main "좀 더 쳐줄 수 있어요?"
     son "아까 전에 그거 처음부터 다시 쳐드릴게요 그럼."
     play music guitar1
-
-
+    $renpy.pause(2.0)
+    main "이거 혹시 제목이 뭔가요?"
+    son "글쎄요... {w}어릴 때 하도 연습해서 손에 익은 거라 제목은 까먹어 버렸네요."
+    $renpy.pause(30.0)
+    stop music fadeout 1.0
+    main "되게 잘 치시네요."
+    son "아니에요. {w}아, 그러고보니 ㅇㅇ 씨도 옛날에 악기 했다고 하지 않았던가요?"
+    main "예... {w}뭐. {w}바이올린 약간 했었어요."
+    son "얼마나요?"
+    main "제대로 했던 건... 초2때부터니까... 한 4년? 쯤 되네요."
+    son "그 이후론 안 했어요?"
+    main "가끔 음악 수업 수행평가 할 때 잡아본 이후론 거의요."
+    son "바이올린이라... {w}멋있네요."
+    main "인제는 하라고 해도 못할 걸요. {w}아마."
+    "한연 씨와 악기 이야기를 나누었다."
+    scene bg_lounge
+    show main_cloth at center
+    show son_guitar at right
+    with blinds
+    son "그럼 그 이후로는 쭉?"
+    main "예... 뭐... {w}이런저런 핑계만 대면서 안 잡았었죠. {w}1중대 있었을 때 중대 단체 휴가 나갔다가 격리됐을 때 후임이 갖다 놓은 바이올린을 켜보긴 했지만... {w}오래 안 했으니까요."
+    $SoundPlayer("blanket.wav", 4.0)
+    son "일어나시려고요?"
+    main "예."
+    son "푹 쉬세요."
+    main "한연 씨도요."
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show main_cloth 
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    main "바이올린이라..."
+    "초등학교 때. {w}다니던 피아노 학원의 선생님이 바이올린을 배우기 시작한 것을 계기로 나는 활을 잡았었다."
+    "내 초등학교 때에서 바이올린이 차지한 지분은 결코 적지 않을 것이다."
+    "하지만 그게 무슨 소용일까. {w}바이올린을 손에서 놓은 것은 나였고. {w}오랫동안 쓰지 않은 손의 근육은 뻣뻣히 굳었다. {w}재봉실 두께만큼의 재능조차 가지지 못한 내가 노력 비스무리한 것조차 하지 않았으니."
+    "자연스럽게 옛날 같은 일을 하는 건. {w}...{w}무리겠지."
+    "피식, 웃음이 나왔다."
+    "그렇게 좋아하고. {w}자랑스러워했던 일인데. {w}졸업과 동시에 얄팍한 끈이 끊어지며 언제 그랬냐는 듯 나는 하드 케이스를 벽에 내팽게친 채 열어보지 않았다."
+    "바니쉬가 발린. {w}나무색으로 반짝이던 바이올린의 본체도. {w}브릿지도, 지판도. {w}눈 앞에 놓인 보면대와 그 위에 놓인 악보도. {w}지휘봉이 휘둘러지는 그 순간을 기다리며 바라봤던 지휘자도."
+    "나는 한 순간에 기억 한 구석에 처박은 채 떠올리지 않았다."
+    "\'우상\'이. {w}\'닮고픈 모습\'이. {w}\'바램\'이. {w}없어졌기 때문에."
+    "그랬던 \'나\'다. {w}그런 \'나\'다. {w}그럴 \'나\'이다."
+    "훈련소에서부터 시작되어 벌써 1년. {w}국가에서 정의한. {w}의무라는 이름의 족쇄를 차고 하루하루를 살아왔다."
+    "그러나 지금. {w}졸업했던 그 때와 마찬가지로. {w}내가 뒤쫒았던 그림자가. {w}뙤약볕 아래 서 있을 때 찾아 들어갈 수 있었던 그늘이. {w}그리고 언제나 내 앞에 서서 나아가며 내가 떨고 있을 때 슬쩍 내밀어지던 손이. {w}사라진. {w}아니, 그 모든 것을 잃어버린 이 날에."
+    "시작되었을 때는 자그마한 얼룩이었던 것이. {w}내쫒을 수 있었던. {w}그저 꾸물이다 내가 미는 대로 떠밀리던 한낱 점에 불과했던 그것이. {w}이제 와서는 눈을 돌리기조차 힘들 거대한 늪이 되어 있었다."
+    "다리를 휘감긴 채 서서히 빠져들면서도 헤엄쳐 빠져나올 생각조차 하지 않은 채 가만히 서서 밑바닥까지 삼켜져 가는 와중."
+    "저항할 의지도. {w}노력도. {w}끌어내지 못할 만큼 너덜너덜해져."
+    main "(x신 같은 새x... {w}이런 때까지도... {w}자기합리화냐.)"
+    scene bg_black with dissolve
+    $blur_val = True
+    centered "{size=50}{color=#B90000}쓰래기처럼 살아온 나는."
+    centered "{size=50}{color=#B90000}매일매일 습관처럼 죽고싶다는 말을 지분대는 나는."
+    centered "{size=50}{color=#B90000}그런 용기 따위는 어디에도 없는 나는."
+    centered "{size=50}{color=#B90000}어째서 태어나고."
+    centered "{size=50}{color=#B90000}어째서 살아가는 걸까."
+    $blur_val = False
+    show why with vpunch
+    play sound scream
+    show blood at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood2 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood3 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood4 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood5 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood6 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood7 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood8 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood9 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood10 at Position(xpos=renpy.random.randint(200, 1000), ypos=renpy.random.randint(20, 700)) with vpunch
+    $renpy.pause(.5)
+    show blood_2 with vpunch
+    $renpy.pause(1.0)
+    stop sound
+    $sat_val -= 10
+    scene bg_hallway
+    show main_cloth 
+    with Dissolve(2.0)
+    $timeCheck(0, 20)
+    $evented = True
+    return

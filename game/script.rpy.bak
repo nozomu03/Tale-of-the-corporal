@@ -682,7 +682,7 @@ label start:
     "이제 뭘 하면 좋을까?"
     menu:
         "px에 간다(+5m)":
-            call go_px1 from _call_go_px1
+            call go_px1
     show explain_scene with dissolve
     centered "이와 같이 선택지 지문에 + 기호와 함께 시간이 표시되어 있는 경우 해당 이벤트를 진행한 이후 적혀있는 숫자만큼의 시간이 경과하게 됩니다."
     $main_inventory.add(taba)
@@ -726,8 +726,7 @@ label start:
     $evented = False
     $where_list.append(where)
     $where = "N/A"
-    if len(where_list) > 5:
-        $del where_list[5]
+    $del where_list[5]
     show explain_scene 
     show screen map_view
     with dissolve

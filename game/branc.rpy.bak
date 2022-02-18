@@ -34,17 +34,17 @@ label go_control:
     else:
         "[where]로 발걸음을 옮겼다."
         if where == "소대 사무실":
-            call patron_event from _call_patron_event
+            call patron_event
         elif where == "본부 행정반":
-            call hq_office from _call_hq_office
+            call hq_office
         elif where == "CSCO 행정반":
-            call csco_office from _call_csco_office
+            call csco_office
         elif where == "세탁실":
-            call washing_event from _call_washing_event
+            call washing_event
         elif where == "휴게실":        
-            call lounge_event from _call_lounge_event
+            call lounge_event
         elif where == "사지방":
-            call pc_event from _call_pc_event
+            call pc_event
         else:
             "무슨 일이 벌어지고 있나요?"
     return
@@ -56,7 +56,7 @@ label patron_event:
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth at center with dissolve
     $SoundPlayer("door.ogg", 2.0)
-    call events_run_period from _call_events_run_period
+    call events_run_period
     return
 label hq_office:
     hide main_cloth
@@ -65,10 +65,10 @@ label hq_office:
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth with dissolve
     $SoundPlayer("door.ogg", 2.0)
-    call events_run_period from _call_events_run_period_1
+    call events_run_period
     return
 label csco_office:
-    call events_run_period from _call_events_run_period_2
+    call events_run_period
     return
 label washing_event:
     hide main_cloth
@@ -77,13 +77,13 @@ label washing_event:
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth at center with dissolve
     $SoundPlayer("door.ogg", 2.0)
-    call events_run_period from _call_events_run_period_3
+    call events_run_period
     return
 label lounge_event:
     hide main_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_lounge with dissolve
-    call events_run_period from _call_events_run_period_4
+    call events_run_period
     return
 
 label pc_event:
