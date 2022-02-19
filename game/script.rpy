@@ -603,7 +603,7 @@ label start:
     go "어제 근무는 어땠습니까?"
     main "뭐... 별 거 없었어. {w}점호하고 상황조치훈련하고... 레이더 점검 응신하고..."
     go "별 일 없었나 봅니다?"
-    main "응. {w}위치단말도 잘 되던데?"
+    main "응. {w}상황훈련 때 위치단말도 잘 되던데?"
     go "그거 드디어 됩니까?"
     main "응. {w}들어보니까 무전실 근무자가 퇴근할 때 무전기를 다 끄고 퇴근했었다더라."
     go "말이 됩니까? {w}그게?"
@@ -739,7 +739,13 @@ label start:
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
     #adjutant "그-{w=.3}{nw}"
     #"부관님의 말씀이 끝나기도 전이었다."
-    "."
+    scene bg_black with Dissolve(5.0)
+    centered "오늘 하루 나는..."
+    extend "\n[stress_val]만큼의 스트레스를 받았다."
+    extend "\n[sat_val]만큼 만족했다."
+    call status_check
+    call screen continued with Dissolve(1.0)
+    "......."
     return
 
 #(85, 35, 238, 216)

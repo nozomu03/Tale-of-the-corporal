@@ -1,28 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 729, in script
-    if len(wehre_list) > 5:
-  File "game/script.rpy", line 729, in <module>
-    if len(wehre_list) > 5:
-NameError: name 'wehre_list' is not defined
+  File "game/script.rpy", line 747, in script
+    call screen continued with Dissolve(1.0)
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+TypeError: unbound method get_tooltip() must be called with Return instance as first argument (got nothing instead)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 729, in script
-    if len(wehre_list) > 5:
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 729, in <module>
-    if len(wehre_list) > 5:
-NameError: name 'wehre_list' is not defined
+  File "game/script.rpy", line 747, in script
+    call screen continued with Dissolve(1.0)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3879, in interact_core
+    renpy.display.focus.mouse_handler(None, x, y, default=False)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/focus.py", line 440, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/focus.py", line 389, in change_focus
+    set_focused(current, newfocus.arg, newfocus.screen)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/focus.py", line 111, in set_focused
+    new_tooltip = widget._get_tooltip()
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/behavior.py", line 770, in _get_tooltip
+    return get_tooltip(self.action)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/behavior.py", line 383, in get_tooltip
+    return func()
+TypeError: unbound method get_tooltip() must be called with Return instance as first argument (got nothing instead)
 
 Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
 Tale of the corporal 1.0
-Fri Feb 18 23:36:50 2022
+Sat Feb 19 22:41:13 2022

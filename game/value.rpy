@@ -29,7 +29,8 @@ default evented = False
 default mouse_y = 0
 default taba = Item("루나틱 드래곤", "item_taba", "군 PX에서 구할 수 있는 6mg 담배 중 가장\n인기가 좋다.\n6.0mg/0.5mg.\n\n{size=10}=과도한 흡연은 질병의 원인이 될 수 있습니다={/size}", "끊어. 돈 낭비 건강 낭비 하지 말고.")
 default main_inventory = Inventory()
-default stress_minus = Buff(type=0, name="족쇄-과거의 이름으로", effect=30, intro="{size=20}사람은 경험의 반복에서 만들어집니다.\n본래의 중대에서 전출하게 된 계기가.\n또한 학창시절에 겪었던 핍박이 제대로 된 \n판단을 내리지 못하게 만드는 족쇄로\n기능하고있습니다.\n\n{size=15}스테러스가 영구히 30 증가합니다", icon="icon_chain")
+default stress_minus = Buff(type=0, name="족쇄-과거의 이름으로", effect=30, intro="{size=20}사람은 경험의 반복에서 만들어집니다.\n본래의 중대에서 전출하게 된 계기가.\n또한 학창시절에 겪었던 핍박이 제대로 된 \n판단을 내리지 못하게 만드는 족쇄로\n기능하고있습니다.\n\n{size=15}스트레스가 영구히 30 증가합니다", icon="icon_chain")
+default sat_debuff1 = Buff(type=1, name="번뇌탁-수욕정이풍부지", effect=20, intro="{size=10}{b}{i}\"판도라가 허락되지 않은 상자의 내용물을 탐하니, 갖은 죄악이 온 세상에 퍼지매 \n마지막으로 남은 것의 이름은 \'희망\'이라.{/b{/i}{/size}\"\n\n{size=20}이뤄질 수 없는 것을 희망하는 자는 불행합니다.{/size} \n\n{size=15}만족도가 영구히 20 감소합니다", icon="icon_wood")
 default bufftory = Bufftory()
 default stress_val = 80
 default sat_val = 20
@@ -40,8 +41,14 @@ default now_m = 30
 default events_executed = { }
 default events_executed_yesterday = { }
 default where_list = []
+define bad_incount = 0
 
-
+#풍수지탄
+#화발다풍우
+#수욕정이풍부지
+#풍찬노숙
+#즐풍목우
+#
 init python:
     def FaceChange(img="", loc=0 ,t=2.0, org_img=None):
         if loc == 0:
@@ -152,3 +159,11 @@ init python:
             now_h += 1
             now_m -= 60
 
+label status_check:
+    if sat_val <= 25:
+        $bufftory.add(sat_debuff1)
+        centered "디버프 \'번뇌탁-수욕정이풍부지\'가 추가되었다."
+    if stress_val >= 72:
+        centered "이런 개같은 하루 하루를... {w}얼마나 더 보내야 끝이 날까."
+        $bad_incount += 1
+    return

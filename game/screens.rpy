@@ -38,11 +38,11 @@ screen status:
         spacing 250
         xalign .2
         yalign 0.012
-        text "{color=#FFFFFF}스트레스"
-        text "{color=#FFFFFF}만족도"
+        text "{color=#FFFFFF}{size=15}스트레스{/size}"
+        text "{color=#FFFFFF}{size=15}만족도"
 
     hbox:
-        xalign .37
+        xalign .33
         yalign 0.012
         spacing 100
         bar value stress_val range 100 xmaximum 200
@@ -100,12 +100,17 @@ screen inventory_button:
 screen go_confirm:
     modal True
     add "textback2":
-        align(.5, 0)
+        align(.5, 0.1)
     vbox:
-        align(.5, .03)
-        text "{color=#FFFFFF}[where]로 갈까?{/color}"
+        align(.5, .13)
+        text "{color=#FFFFFF}[where]로 갈까?\n(+20m){/color}"
         textbutton "예" action [Hide("go_confirm"), Hide("map_view"), Call("go_control")]
         textbutton "아니오" action Hide("go_confirm")
+
+screen continued:
+    modal True
+    add "continue"
+    button action Return()
 
 screen inventory:
    # $tip = Tooltip("N/A")

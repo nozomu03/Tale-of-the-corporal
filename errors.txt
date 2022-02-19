@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/value.rpy", line 122: invalid syntax
-    default item_x = 0
-                  ^
-    
+File "game/screens.rpy", line 113: expected a keyword argument, colon, or end of line.
+    button action Return(transition=Dissolve(1.0)))
+                                                  ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Feb 18 23:26:12 2022
+Sat Feb 19 22:40:48 2022

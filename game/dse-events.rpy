@@ -10,10 +10,176 @@ init python:
     event('none', 'where==\"세탁실\" and evented == False', priority = 100)
     event('csco1', 'where==\"CSCO 행정반\" and evented == False', event.random(.2), event.only(), priority=20)
     event('none', 'where==\"CSCO 행정반\" and evented == False', priority = 100)
-    event('lounge_event1', 'where==\"휴게실\" and evented == False', event.random(1), event.only(), priority=20)
-
-
+    event('lounge_event1', 'where==\"휴게실\" and evented == False', event.random(.3), event.only(), priority=20)
+    event('pc_bad', 'where==\"사지방\" and evented == False', priority = 100)
+    event('pc_good','where==\"사지방\" and evented == False', event.random(.5), event.only(), priority=20)
     #event('meet_j')
+
+label pc_bad:
+    $timeCheck(0, 20)
+    "막혔던 부분은 몇 차례나 코드를 고쳐도 해결되지 않았다."
+    $SoundPlayer("phone2.wav", 1.0)
+    main "\[통신보안?\]"
+    go "\[통신보안이고 뭐고 지금 어디십니까? {w}식사 안 하십니까?\]"
+    "시계를 쳐다봤다. {w}17시 40분. {w}어찌 변명도 못할 지각이다."
+    main "\[아... {w}지금 바로 갈게.\]"
+    play sound sigh
+    go "하아...{w} 제가 저번에도 말씀드리지 않았습니까? {w}아니. {w}자세한 건 나중에 하고 빨리 식당으로 오십시오."
+    $SoundPlayer("teleclick.ogg", 1.0)
+    $stress_val += 5
+    $sat_val -= 2
+    main "(망할... {w}일 났네...)"
+    hide main_cloth
+    $SoundPlayer("running.wav", 2.0)
+    scene bg_resta_front
+    show go_nom at right
+    show snipe_working at center
+    with dissolve
+    $SoundPlayer("running.wav", 2.0)
+    show main_cloth at left with moveinleft
+    $FaceChange("main_cloth_sal", 0.0, .5, "main_cloth")
+    main "북진."
+    snipe "...{w}들어가서 밥 먹어."
+    $FaceChange("main_cloth", 0.0, .5, "main_cloth_sal")
+    "반장님의 목소리에는 평소 섞여있던 것을 웃도는 냉랭함만이 묻어 있었다."
+    main "...예."
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    play looping dish_wash
+    scene bg_resta_in
+    show main_cloth
+    with dissolve
+    "밥을 다 먹고 퇴식하는 것이. {w}두려웠다."
+    "그러나 두 사람을 기다리게 하는 것이 더 바보같은 일이란 것을 경험으로 체득한 나는 밥이 입으로 들어가는 지 코로 들어가는 지 모를 정도로 빠르게 식판을 비웠다."
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_resta_in2 
+    show main_cloth 
+    with dissolve
+    $renpy.pause(1.0)
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
+    scene bg_resta_front
+    show go_nom at right
+    show snipe_working at center
+    with dissolve
+    show main_cloth at left with dissolve
+    $FaceChange("main_cloth_sal", 0.0, .5, "main_cloth")
+    main "북진."
+    snipe "야, ㅇㅇㅇ."
+    $FaceChange("main_cloth", 0.0, .5, "main_cloth_sal")
+    main "상병 ㅇㅇㅇ."
+    snipe "어디 있었냐?"
+    "본능적으로 느껴졌다.{w} 솔직하게 대답해야한다는 것이."
+    main "사이버지식정보방에 있었습니다."
+    snipe "......."
+    $SoundPlayer("sigh.wav", 1.0)
+    snipe "대체 왜 그러냐?"
+    main "죄송합니다."
+    snipe "그놈의 \'죄송합니다\' 말고. {w}난 이유를 물었는데."
+    main "....... {w}잠깐 정도는 괜찮겠지... {w}라고 안일하게 생각한 것 같습니다."
+    snipe "그 안일... {w}{b}그만해라.{/b} {w}내 말 알아 들었지? {w}{b}마지막 경고다.{/b}"
+    main "...예."
+    hide snipe_working
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    go "이ㅇㅇ 상병님."
+    main "...어."
+    go "조심해 주십쇼. {w}아시지 않습니까. {w}이렇게 되면 이ㅇㅇ 상병님 혼자서 혼나고 끝날 일이 아니란 걸. {w}같이 생활관 쓰시는 다른 선임분들도 피해보시고 저도 혼납니다. {w}잘 좀 부탁드립니다."
+    main "...그래..."
+    hide go_nom
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $FaceChange("main_cloth_ang", 0.0, 1.0, "main_nom")
+    main "(시X... {w}빌어먹을...)"
+    $stress_val += 5
+    $sat_val -= 3
+    $evented = True
+    $now_h = 17
+    $now_m = 50
+    return
+
+label pc_good:
+    "조급한 마음을 버리고 천천히 코드를 다시 살폈다."
+    $timeCheck(0, 10)
+    main "(어.)"
+    "코드 뭉치 사이에 어처구니 없는 오타가 하나 섞여있었다."
+    $SoundPlayer("typing.ogg", 3.0)
+    main "(좋아... {w}이제... {w}작동해야 하는데.)"
+    $SoundPlayer("enter.wav", 1.0)
+    "프로그램은 문제 없이 작동했다."
+    $stress_val -= 10
+    main "(몇 시지? {w}...30분? {w}이런 씨...)"
+    play sound running
+    scene bg_hallway at run_trans
+    "드라이브 업로드 버튼을 누르고 확인조차 하지 않은 채 내달렸다."
+    stop sound
+    scene bg_room with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at center with dissolve
+    $renpy.pause(.3)
+    $SoundPlayer("broadcast.wav", 2.0)
+    go "\[아, 아. {w}통합중대 인원들. {w}식사 출발해 주시길 바랍니다.\]"
+    show jeong_cloth at right with wipeup
+    jeong "밥 먹으러 가자.{w} 오늘은 딱 맞췄네."
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway 
+    show go_nom at right 
+    with dissolve
+    show jeong_cloth at left
+    show main_cloth at center
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    go "오, 오늘은 안 늦으셨습니다?"
+    main "그러게. {w}오늘은 시간 맞췄네."
+    go "그것 보십시오. {w}제가 할 수 있다 하지 않았습니까."
+    $sat_val += 10
+    hide jeong_cloth
+    hide go_nom
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    play looping dish_wash
+    scene bg_resta_in with dissolve
+    show explain_scene with dissolve
+    centered "아슬아슬하게 식사 집합에 늦지 않을 수 있었다."
+    hide explain_scene with Dissolve(.5)
+    go "그러고보니 ㅇㅇㅇ 상병님. {w}혹시 내일 뭐 할 일 있으십니까?"
+    main "나? {w}내일 근문데. {w}말했었잖아."
+    go "아 맞습니다... {w}내일이었습니다..."
+    main "왜?"
+    go "윤이가 금요일에 허리 다쳤던 것 때문에 의무대 진료 희망해서 말입니다. {w}다른 소대원들 전부 그날 일과 때 해야 할 거 있어서 ㅇㅇㅇ 상병님 소대 대기하시면 좀 같이 다녀와달라 하려고 했습니다."
+    main "아... {w}어쩌지? {w}그날 딱 근무네..."
+    go "어쩔 수 없지 않습니까. {w}제가 근무취침하기 전에 후딱 다녀와야 할 것 같습니다."
+    main "괜히 미안하네."
+    go "아닙니다. {w}근무가 당연히 더 우선이지 않겠습니까."
+    $renpy.pause(1.0)
+    jeong "그만 일어날까?"
+    go "예."
+    main "그래."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_resta_in2
+    show main_cloth
+    show jeong_cloth at left
+    show go_nom at right
+    with dissolve
+    $renpy.pause(1.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
+    scene bg_resta_front 
+    show main_cloth
+    show jeong_cloth at left
+    show go_nom at right
+    with dissolve
+    go "그럼 있다 뵙겠습니다."
+    jeong "나도 간다~"
+    main "응. {w}고생해~"
+    hide go_nom
+    hide jeong_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    main "(하... {w}이렇게 또 하루가 끝나가는 건가...)"
+    $evented = True
+    $now_h = 17
+    $now_m = 50
+    return
 
 label meet_gang:
     $SoundPlayer("walk_slow.ogg", 2.0)
@@ -43,7 +209,7 @@ label meet_gang:
         gang "저 혹시 죄송한데... {w}먼저 가 봐도 되겠습니까?"
         main "어? {w}아, 그래."
         gang "...고생하십시오."
-        $stress_val += 3
+        $stress_val += 5
     $renpy.pause(1.0)
     "나도 그만 갈까."
     $SoundPlayer("door.ogg", 2.0)
@@ -237,7 +403,7 @@ label sniper_hq:
         "감정을 가다듬었다. {w}심호흡했다. {w}애써 생각했다. {w}이 또한 필요한 일이다. {w}멍청하고, 다른 누구보다 지금 서 있는 이 장소에 어울리지 않는 내가 동화되기 위해서는 엄히 서 꾸중하는 이 역시 있어야 한다. {w}고 되뇌이자 흐트러졌던 호흡도. {w}일그러져가던 생각도 바로잡혔다."
         main "(망할... {w}나같은 놈 때문에...)"
         $stress_val += 5
-        $sat_val -= 5
+        $sat_val -= 10
     $timeCheck(0, 20)
     $evented = True
     return 
@@ -370,7 +536,7 @@ label csco1:
     main "나도 너에 대해서 더 알게 된 것 같아서 기분 좋네."
     if event_result_val <= 30:
         "굳어 있던 마음이 조금은 풀리는 것 같았다. {w}그리운 얼굴들이 겹쳐 보였다. {w}지금은 떠나버린 간부님들이. {w}선임들이 나와 이야기를 나눌 때. {w}고민을 털어 놓고서 조언을 구했을 때와 같은. {w}따스함이 이 곳에서도 다시금 느껴졌다."
-        $stress_minus += 10
+        $stress_val -= 10
         $sat_val += 7
     elif event_result_val < 70:
         "털어놓자 무겁게만 느껴졌던 매일이 조금은 가벼워진 것 같았다. {w}균영이는 지겨운 내 이야기를 끝까지 들어주었고. {w}이에 공감하는 척이라도 해 주었다. {w}누군가는 나를 타인을 나의 감정 쓰래기통으로 이용하고 있다고. {w}이기적이라 몰아붙일지도 모를 일이다." 

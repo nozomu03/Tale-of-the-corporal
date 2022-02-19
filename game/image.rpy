@@ -20,4 +20,10 @@ transform bluring:
     blur 100.0
     linear 4.0 blur 8.0
 
+transform run_trans:
+    align(.5, .8)
+    zoom 1.5
+    linear .1 align(.5, .5)
+    linear .1 align(.5, .8)
+    repeat 10
 
