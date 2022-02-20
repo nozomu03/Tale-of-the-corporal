@@ -603,7 +603,7 @@ label start:
     go "어제 근무는 어땠습니까?"
     main "뭐... 별 거 없었어. {w}점호하고 상황조치훈련하고... 레이더 점검 응신하고..."
     go "별 일 없었나 봅니다?"
-    main "응. {w}위치단말도 잘 되던데?"
+    main "응. {w}상황훈련 때 위치단말도 잘 되던데?"
     go "그거 드디어 됩니까?"
     main "응. {w}들어보니까 무전실 근무자가 퇴근할 때 무전기를 다 끄고 퇴근했었다더라."
     go "말이 됩니까? {w}그게?"
@@ -682,7 +682,7 @@ label start:
     "이제 뭘 하면 좋을까?"
     menu:
         "px에 간다(+5m)":
-            call go_px1
+            call go_px1 from _call_go_px1
     show explain_scene with dissolve
     centered "이와 같이 선택지 지문에 + 기호와 함께 시간이 표시되어 있는 경우 해당 이벤트를 진행한 이후 적혀있는 숫자만큼의 시간이 경과하게 됩니다."
     $main_inventory.add(taba)
@@ -726,19 +726,26 @@ label start:
     $evented = False
     $where_list.append(where)
     $where = "N/A"
-    $del where_list[5]
+    if len(where_list) > 5:
+        $del where_list[5]
     show explain_scene 
     show screen map_view
     with dissolve
     "어디로 갈까?"
 #   $SoundPlayer("buzzer.ogg", 1.0)
-#   $SoundPlayer("teleclick.ogg", 1.0)
+#   $SoundPlayer("teleclick.ogg", 1.0) 
    # "."
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
     #adjutant "그-{w=.3}{nw}"
     #"부관님의 말씀이 끝나기도 전이었다."
-    "."
+    scene bg_black with Dissolve(5.0)
+    centered "오늘 하루 나는..."
+    extend "\n[stress_val]만큼의 스트레스를 받았다."
+    extend "\n[sat_val]만큼 만족했다."
+    call status_check
+    call screen continued with Dissolve(1.0)
+    "......."
     return
 
 #(85, 35, 238, 216)

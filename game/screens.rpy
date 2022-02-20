@@ -473,6 +473,7 @@ screen navigation():
         textbutton _("불러오기") action ShowMenu("load")
 
         textbutton _("환경설정") action ShowMenu("preferences")
+        textbutton _("도움주신\n   분들") action ShowMenu("thanks")
 
         if _in_replay:
 
@@ -864,6 +865,23 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
+
+
+screen thanks():
+    tag menu
+    use game_menu(_("{font=SDMiSaeng.ttf}{size=80}항상 감사합니다!{/size}{/font}"), scroll="viewport"):
+
+        style_prefix "about"
+        $all_txt = renpy.file("/Thanks.txt").read().decode("utf-8")
+        vbox:
+            
+            text _("[all_txt]")
+
+            ## gui.about 의 내용은 보통 options.rpy에 있습니다.
+        #if gui.about:
+        #    text "[gui.about!t]\n"
+#
+        #text _("{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only] 으로 만들어진 게임.\n\n[renpy.license!t]")
 
 
 ## Preferences 스크린 #############################################################

@@ -743,7 +743,7 @@ label start:
     centered "오늘 하루 나는..."
     extend "\n[stress_val]만큼의 스트레스를 받았다."
     extend "\n[sat_val]만큼 만족했다."
-    call status_check
+    call status_check from _call_status_check
     call screen continued with Dissolve(1.0)
     "......."
     return

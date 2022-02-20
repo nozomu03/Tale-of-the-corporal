@@ -243,7 +243,7 @@ define gui.file_slot_rows = 2
 ## 이러한 변수들은 다양한 사용자 인터페이스 요소들의 위치와 간격을 제어합니다.
 
 ## 화면의 왼쪽을 기준으로 하는 네비게이션 버튼의 왼쪽 위치입니다.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 20
 
 ## 스킵 표시기(skip indicator)의 수직 위치입니다.
 define gui.skip_ypos = 10

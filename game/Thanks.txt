@@ -65,6 +65,7 @@ put https://freesound.org/people/mohomran/sounds/179997/
 phone https://freesound.org/people/lartti/sounds/529979/
 
 deleted_user_4772965 https://freesound.org/people/deleted_user_4772965/sounds/256435/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
@@ -74,8 +75,19 @@ https://pixabay.com/photos/paper-texture-wrapping-paper-3155438/
 
 https://pixabay.com/photos/paper-old-texture-parchment-1074131/
 
+https://pixabay.com/photos/police-helicopter-military-war-1282330/
+
 camo https://www.publicdomainpictures.net/en/view-image.php?image=112213&picture=camouflage-fabric
+
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63
 
 classic-plastic-chairs https://sketchfab.com/3d-models/classic-plastic-chairs-6d139742099d48f195e6774514ccb7ef
+
+Font
+NanumGothic by NAVER Corp. https://help.naver.com/support/service/main.help?serviceNo=1074&categoryNo=13669
+
+SandooMiSaeng by Sandoll Inc. https://www.sandollcloud.com/font/Sandoll/225.html
+
+3D 모델링 자문 유튜브 개는멍멍
+https://www.youtube.com/channel/UClr8KV3V-Kt7_90RdarFBnA

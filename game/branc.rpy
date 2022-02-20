@@ -194,6 +194,6 @@ label pc_event:
         "다시 시도한다(+10m/+20m)":
             main "(아주 조금... 아주 조금이면 돼...)"
             "전원이 내려가면, 수행했던 모든 작업이 \'일어나지 않은 것\'이 되며 초기 상태로 돌아가는 사지방 컴퓨터. {w}저녁을 먹고 와서 다시 컴파일러와 IDE를 깔 생각을 하는 것만으로도 속이 쓰렸다."
-            call events_run_period
+            call events_run_period from _call_events_run_period_8
             return
     return
