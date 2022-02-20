@@ -35,11 +35,19 @@ screen buff_intro:
 
 screen status:
     hbox:
+        spacing 200
+        xalign .2
+        yalign 0.012
+        add "textback3"
+        add "textback3"
+
+    hbox:
         spacing 250
         xalign .2
         yalign 0.012
-        text "{color=#FFFFFF}{size=15}스트레스{/size}"
-        text "{color=#FFFFFF}{size=15}만족도"
+        text "{color=#3CA03C}{size=15}스트레스{/size}"
+        text "{color=#3CA03C}{size=15}만족도"
+
 
     hbox:
         xalign .33

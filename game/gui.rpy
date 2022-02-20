@@ -163,7 +163,7 @@ define gui.button_text_font = gui.interface_text_font
 define gui.button_text_size = gui.interface_text_size
 
 ## 다양한 상태의 버튼 글자의 색상입니다.
-define gui.button_text_idle_color = gui.idle_color
+define gui.button_text_idle_color = "#B4B4FF"#gui.idle_color
 define gui.button_text_hover_color = gui.hover_color
 define gui.button_text_selected_color = gui.selected_color
 define gui.button_text_insensitive_color = gui.insensitive_color

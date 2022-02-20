@@ -733,7 +733,7 @@ label start:
     with dissolve
     "어디로 갈까?"
 #   $SoundPlayer("buzzer.ogg", 1.0)
-#   $SoundPlayer("teleclick.ogg", 1.0)
+#   $SoundPlayer("teleclick.ogg", 1.0) 
    # "."
     #adjutant "이렇게 어중간한 시간에 갑자기 왠 수신율 점검?"
     #main "그러게 말입니다. {w}훈련 상활 걸 거 같은데 대기합니까?"
