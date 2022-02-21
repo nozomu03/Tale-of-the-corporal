@@ -746,6 +746,7 @@ label start:
     call status_check from _call_status_check
     call screen continued with Dissolve(1.0)
     "......."
+    
     return
 
 #(85, 35, 238, 216)
