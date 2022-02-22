@@ -746,6 +746,8 @@ label start:
     call status_check from _call_status_check
     call screen continued with Dissolve(1.0)
     "......."
+    $SoundPlayer("broadcast.wav", 2.0)
+    "당직사령" "아, 기상. 기상.{w} ㅇㅇ대대 장병 여러분 "
     return
 
 #(85, 35, 238, 216)
