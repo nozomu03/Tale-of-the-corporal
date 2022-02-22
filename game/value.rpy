@@ -159,6 +159,18 @@ init python:
             now_h += 1
             now_m -= 60
 
+    def stressAndSat():
+        global stress_val
+        global sat_val
+        global bufftory
+        all_buff = bufftory.getall()
+        for b in all_buff:
+            if b.type == 0:
+                stress_val -= b.effect
+            elif b.type == 1:
+                sat_val -= b.effect
+
+
 label status_check:
     if sat_val <= 25:
         $bufftory.add(sat_debuff1)

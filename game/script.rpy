@@ -746,8 +746,66 @@ label start:
     call status_check from _call_status_check
     call screen continued with Dissolve(1.0)
     "......."
+    $stressAndSat()
+    centered "반복. {w}어제는 오늘과. {w}오늘은 내일과."
+    extend "\n매일매일이 같은. {w}모든 것이 뻔히 예상되는. {w}그렇기에 조그마한 실금이라도 난다면. {w}반드시 파절로 이어지는."
+    extend "\n그 속에서 상처 입고, 상처 주며 2년이라는 시간을 살아왔다. {w}몇 번이고 깨어질 위기를 넘어서며 악착같이 헤엄쳐 졸업장을 받아냈다."
+    centered "그리고 지금에 이르러. {w}나는 등치를 증오하고, 돌발을 두려워하며 살아간다."
+    extend "\n무엇에도 속하지 못한 채. {w}나를 거두어주려 내밀어진 손을 쳐내고 홀로 떨며 만사의 핏대를 세운 채 경계하며."
+    extend "\n내게 감정을 품은 이도 이내 질려 무덤덤히, 혹은 적개심만이 남은 채."
+    extend "\n다른 것을 잃어버리는 것이 일상 내지는 당연한 것인 양 느껴지는 무렵이다."
     $SoundPlayer("broadcast.wav", 2.0)
-    "당직사령" "아, 기상. 기상.{w} ㅇㅇ대대 장병 여러분 "
+    "당직사령" "\[아, 기상. 기상.{w} ㅇㅇ대대 장병 여러분 기상. {w}기상. {w}오늘 점호는 연병장, 연병장에 실시하겠습니다. {w}ㅇㅇ대대 장병 여러분들은 07시까지 전투복으로 환복 후 집합하시길 바랍니다.\]"
+    show main_cloth with wipeup
+    go "\[전투지원중대 행정반에서 당직 부사관 상병 [go]이 전파합니다. {w}통합중대 인원들 점호 복장 착용해서 07시까지 연병장으로 나가주시길 바랍니다.\]"
+    $SoundPlayer("blanket.wav", 4.0)
+    $FaceChange("main_atten", 1.0, 1.0, "main_cloth")
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show go_nom at right
+    with dissolve
+    show main_atten at center with dissolve
+    go "일어나셨습니까?"
+    main "어..."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    play sound ambient
+    scene bg_ground
+    show main_atten
+    with dissolve
+    "날씨는 더 없이 맑았다. {w}새파란 하늘에는 뭉게구름 몇 점만이 한가로이 노닌다."
+    "연병장을 내려다 보았다. {w}서둘러 나온 몇몇 이들은 이미 사열대를 기준점 삼아 줄 지어 서 있었다."
+    "기억 속 남은. {w}언젠가와 똑같은 풍경."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_ground2
+    show main_atten at center 
+    with dissolve
+    "흘낏, 옆을 봤다. {w}똑같은 옷과, 똑같은 모자를 쓴 이들의 군집. {w}새벽꿈에 아스름히 비치었던 때와는 달리 사열대 정면이 아닌 왼편에 서게 되었다."
+    "눈에 익은 얼굴들이 드문드문 보인다. {w}두 번 다시 마주치고 싶지 않다고 생각했던 이의 얼굴도. {w}간혹 가다 떠오르는 그리운 이의 얼굴도."
+    "이제 와 돌이키면 너무나도 하찮은 것에서 피어난 불씨는 내 몸뚱이 하나만이 아닌 건물 한 층의 절반을 불태우고 나서야 사그라들었다."
+    "아무리 정교하게 복원한다 하여도 한 번 불에 탄 것은 과거의 모습으로 돌아갈 수 없다."
+    "...내가 그러하듯이."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show cap2_working at right with dissolve
+    cap2 "아, 2021년 9월 18일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}육군 복무신조!"
+    "목소리" "우리의 결의!" with vpunch
+    cap2 "우리는 국가와 국민에 충성을 다하는...{w}{nw}"
+    scene bg_black with blinds
+    $renpy.pause(1.0)
+    scene bg_ground2
+    show main_atten at center
+    show cap2_working at right
+    with blinds
+    cap2 "지금부터 국군 도수체조를 실시한다. {w}체조는 1번 다리운동부터 12번 숨쉬기 운동까지 방송 반주에 맞춰 2회 반복 실시한다. {w}방송 반주가 나올 때까지 잠시 대기할 수 있도록."
+    main "먼저 간다."
+    show go_nom at left with dissolve
+    go "예. {w}오늘도 고생하십시오."
+    hide 
+
+
+
+
+
+
     return
 
 #(85, 35, 238, 216)
