@@ -12,6 +12,7 @@ define go = Character("고균영", who_color="#2828CD", what_color="#0A6E0A")
 define gang = Character("강민준", who_color="#110E0E", what_color="#001E38")
 define cap2 = Character("박류원", who_color="#1A1E1E", what_color="#09030A")
 define son = Character("손한연", who_color="#828282", what_color="#3C3C8C")
+define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
 define left = Position(xalign=.1, yalign=1.0)
@@ -163,10 +164,12 @@ init python:
         global stress_val
         global sat_val
         global bufftory
+        stress_val = 20
+        sat_val = 20
         all_buff = bufftory.getall()
         for b in all_buff:
             if b.type == 0:
-                stress_val -= b.effect
+                stress_val += b.effect
             elif b.type == 1:
                 sat_val -= b.effect
 

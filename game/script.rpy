@@ -795,17 +795,73 @@ label start:
     show main_atten at center
     show cap2_working at right
     with blinds
-    cap2 "지금부터 국군 도수체조를 실시한다. {w}체조는 1번 다리운동부터 12번 숨쉬기 운동까지 방송 반주에 맞춰 2회 반복 실시한다. {w}방송 반주가 나올 때까지 잠시 대기할 수 있도록."
+    cap2 "지금부터 국군 도수체조를 실시한다. {w}체조는 1번 다리 운동부터 12번 숨쉬기 운동까지 방송 반주에 맞춰 2회 반복 실시한다. {w}방송 반주가 나올 때까지 잠시 대기할 수 있도록."
     main "먼저 간다."
     show go_nom at left with dissolve
     go "예. {w}오늘도 고생하십시오."
-    hide 
-
-
-
-
-
-
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show bg_resta_front 
+    show main_atten 
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_resta_in 
+    show main_unhat at center
+    with dissolve
+    "목소리" "ㅇㅇ."
+    main "예."
+    $SoundPlayer("walk_slow.ogg")
+    show sang_smi at right with dissolve
+    main "너였구나."
+    sang "어때. {w}본부 생활은?"
+    if sat_val >= 1:
+        main "뭐... {w}나쁘진 않아.."
+    else:
+        main "뭐... {w}그냥 그렇지."
+    sang "에효... {w}미안하다."
+    main "아냐, 내가 말도 잘못하고... {w}생각도 잘못한 탓인 걸. {w}식청이야?"
+    sang "응."
+    main "고생하네."
+    sang "넌 근무?"
+    main "응."
+    sang "그저께도 근무지 않았어?"
+    main "이번에 오랜만에 요원화 훈련 하잖아. {w}본부중대 근무 인원 중 절반 이상이 21년도 전반기 군번이거든."
+    sang "왜 그렇지? {w}아, 취사병?"
+    main "어."
+    "목소리" "{size=30}구상언 병장님! {w}물 다 채웠습니다!"
+    sang "{size=30}어~ {w}전원 올려! {w}나도 지금 갈게!{/size} {w}가 봐야겠다. {w}근무 힘 내."
+    main "너도."
+    play looping dish_wash
+    hide sang_smi 
+    $SoundPlayer("walk_slow.ogg")
+    "멀어져 가는 뒷모습을 바라보았다. {w}그것은, 엄연한 잘못이었다. {w}오판, 따위가 아니었다."
+    "제아무리 튼튼하게 꿰매진 단추라 해도 어긋나게 채웠다면 미약한 힘으로도 터져 버리듯. {w}첫 발걸음부터 꼬여버려 아슬아슬하게 이어져온 줄타기는 감정에 휘둘려 무심코 내뱉아버린 한 마디에 의해 붕괴되었다."
+    "오해를 풀 시간. {w}사과를 건낼 시간. {w}\'기다림\'이라는 선택지 역시 있었겠지만. {w}내게 내비쳐진 시선이 두려워 그 굴에서 도망친 나."
+    "내게 내려져 마땅한 처벌을 담담히 받아들이지 못한 채 도주했기에. {w}박리되어 어정쩡히 동결된 관계는 선뜻 다가가기 힘든 복잡한 모습을 얻고 말았다."
+    main "(고맙다... {w}진심으로.)"
+    $renpy.pause(1.0)
+    hide main_unhat
+    $SoundPlayer("walk_slow.ogg")
+    scene bg_resta_in2 
+    show main_unhat at center
+    with dissolve
+    $SoundPlayer("metal.ogg", 1.0)
+    $SoundPlayer("metal.ogg", .5)
+    sang "잘 가."
+    main "있다 점심 때 보자."
+    sang "응."
+    "얼굴이. {w}세척기의 증기에 파묻혀 지워졌다."
+    hide main_unhat
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
+    scene bg_resta_front
+    show main_atten at center 
+    with dissolve
+    "멀리서 국군 도수체조 방송이 들려온다. {w}발걸음을 재촉했다."
+    play sound running
+    hide main_atten
+    scene bg_black with Dissolve(3.0)
+    "."
     return
 
 #(85, 35, 238, 216)
