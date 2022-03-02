@@ -861,6 +861,8 @@ label start:
     play sound running
     hide main_atten
     scene bg_black with Dissolve(3.0)
+    show main_gaer at center with dissolve
+    
     "."
     return
 
