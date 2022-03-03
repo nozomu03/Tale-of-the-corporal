@@ -237,7 +237,41 @@ style frame:
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
+screen test_screen:
+    modal True
+    add "phone_back.png"
+    if message_list != []:
+        $y = 180
+        $counter = 0
+        for i in message_list:        
+            $temp_text = Text(i.message)
+            if counter == 0 or past_i.type == 1:
+                fixed:  
+                    text "{size=10}[i.who]{/size}":
+                        pos(490, y-13)
+                    add "msg_back.png":                                        
+                        pos(490, y)                                      
+                        size(temp_text.size()[0], temp_text.size()[1])
+                    text "[i.message]":
+                        pos(490, y)
+            else:
+                $y -= 5
+                fixed:                      
+                    add "msg_back.png":                                        
+                        pos(490, y)                                      
+                        size(temp_text.size()[0], temp_text.size()[1])
+                    text "[i.message]":
+                        pos(490, y)                        
+            $y += 40
+            $past_i = i
+            $counter += 1            
+        button action Return()
+        #$time.sleep(2)
+    $message_list = []                    
 
+screen delay_screen:
+    modal True
+    button action Hide("delay_screen")
 ################################################################################
 ## 게임내 스크린
 ################################################################################

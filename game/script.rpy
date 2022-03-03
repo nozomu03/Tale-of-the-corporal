@@ -12,6 +12,10 @@ label start:
     window hide
     scene bg_black
     centered "내가 원하는 건. {w}무엇이었을까."
+    $message_list.append(Message())
+    call screen test_screen
+    $message_list.append(Message())
+    call screen test_screen
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
     extend "그 얼굴에 떠오른 미소를 보기 위해 제 몸을 채찍질하던 날들, 은. {w}과연 의미가 있었을까?"
     scene bg_room 
@@ -860,9 +864,10 @@ label start:
     "멀리서 국군 도수체조 방송이 들려온다. {w}발걸음을 재촉했다."
     play sound running
     hide main_atten
-    scene bg_black with Dissolve(3.0)
-    show main_gaer at center with dissolve
-    
+    #show main_gaer at center with dissolve
+    scene qquari main at blur
+    $renpy.pause(4.0)
+
     "."
     return
 

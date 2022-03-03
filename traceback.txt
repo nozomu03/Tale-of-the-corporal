@@ -1,26 +1,87 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 845, in script
-    show main_unhat at centered
-Exception: Character expects its what argument to be a string, got <<ImageReference (u'main_unhat',)> at 4142110>.
+  File "game/script.rpy", line 15, in script call
+    extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/screens.rpy", line 240, in execute
+    screen test_screen:
+  File "game/screens.rpy", line 240, in execute
+    screen test_screen:
+  File "game/screens.rpy", line 243, in execute
+    if message_list != []:
+  File "game/screens.rpy", line 246, in execute
+    for i in message_list:
+  File "game/screens.rpy", line 268, in execute
+    $renpy.call_screen("delay_screen")
+  File "game/screens.rpy", line 268, in <module>
+    $renpy.call_screen("delay_screen")
+Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
+Stack was <Layer: u'transient'>
+<Many: <Fixed at 578ad70>>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 845, in script
-    show main_unhat at centered
-  File "renpy/ast.py", line 1197, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "renpy/ast.py", line 1167, in show_imspec
-    atl=atl)
-  File "renpy/exports.py", line 754, in show
-    img = i(img)
-  File "renpy/character.py", line 1170, in __call__
-    raise Exception("Character expects its what argument to be a string, got %r." % (what,))
-Exception: Character expects its what argument to be a string, got <<ImageReference (u'main_unhat',)> at 4142110>.
+  File "game/script.rpy", line 15, in script call
+    extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 240, in execute
+    screen test_screen:
+  File "game/screens.rpy", line 240, in execute
+    screen test_screen:
+  File "game/screens.rpy", line 243, in execute
+    if message_list != []:
+  File "game/screens.rpy", line 246, in execute
+    for i in message_list:
+  File "game/screens.rpy", line 268, in execute
+    $renpy.call_screen("delay_screen")
+  File "game/screens.rpy", line 268, in <module>
+    $renpy.call_screen("delay_screen")
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 292, in interact
+    raise Exception("ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?\nStack was " + ('\n'.join([str(item) for item in stack])))
+Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
+Stack was <Layer: u'transient'>
+<Many: <Fixed at 578ad70>>
 
-Windows-10-10.0.22000
+Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
  
-Wed Feb 23 19:06:12 2022
+Thu Mar  3 16:07:30 2022

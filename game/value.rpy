@@ -43,7 +43,7 @@ default events_executed = { }
 default events_executed_yesterday = { }
 default where_list = []
 define bad_incount = 0
-
+default message_list = []
 #풍수지탄
 #화발다풍우
 #수욕정이풍부지
@@ -51,6 +51,8 @@ define bad_incount = 0
 #즐풍목우
 #
 init python:
+    import time
+    temp_text = ""
     def FaceChange(img="", loc=0 ,t=2.0, org_img=None):
         if loc == 0:
             renpy.show(img, [left])
@@ -145,6 +147,12 @@ init python:
 
         def getall(self):
             return self.buff_list
+
+    class Message:
+        def __init__(self, type=0, who="N/A", message = "wehwrhgerther"):
+            self.type = type
+            self.who = who
+            self.message = message
 
     mouse_pos = ( )
     blur_val = False

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 872: use statement expects a non-empty block.
-    use game_menu(_("{font=SDMiSaeng.ttf}{size=80}항상 감사합니다!{/size}{/font}"), scroll="viewport"):
-                                                                                                ^
+File "game/screens.rpy", line 268: u'time' is not a keyword argument or valid child for the for statement.
+    time.sleep(2)
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sun Feb 20 22:51:00 2022
+Thu Mar  3 16:10:25 2022

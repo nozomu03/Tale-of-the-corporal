@@ -1,4 +1,7 @@
 image bg_hallway_sepia = im.Sepia("bg_hallway.png")
+define bg_qquari_sepia = im.Sepia("bg_qquari.png")
+define main_gear_sepia = im.Sepia("main_gear.png")
+
 image gwon_nem_sepia = im.Sepia("gwon_nem.png")
 image main_atten_sepia = im.Sepia("main_atten.png")
 image bg_hospital_sepia = im.Sepia("bg_hospital.png")
@@ -20,10 +23,15 @@ transform bluring:
     blur 100.0
     linear 4.0 blur 8.0
 
-transform run_trans:
-    align(.5, .8)
-    zoom 1.5
-    linear .1 align(.5, .5)
-    linear .1 align(.5, .8)
-    repeat 10
+layeredimage qquari:
+    always:
+        bg_qquari_sepia
 
+    group chara:
+        attribute main:
+            align(.5, 1.0)
+            main_gear_sepia
+
+transform blur:        
+    blur 100.0
+    linear 4.0 blur 0.0
