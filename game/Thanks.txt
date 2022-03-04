@@ -70,6 +70,8 @@ ambient https://freesound.org/people/xavimuse/sounds/233261/
 
 gasp https://freesound.org/people/Drkvixn91/sounds/318078/
 
+dial https://freesound.org/people/bevibeldesign/sounds/315919/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
@@ -82,6 +84,8 @@ https://pixabay.com/photos/paper-old-texture-parchment-1074131/
 https://pixabay.com/photos/police-helicopter-military-war-1282330/
 
 camo https://www.publicdomainpictures.net/en/view-image.php?image=112213&picture=camouflage-fabric
+
+legal pad https://pixabay.com/photos/ripped-paper-legal-pad-ripped-paper-1806471/
 
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63

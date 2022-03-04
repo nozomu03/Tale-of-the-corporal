@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 271: u'print' is not a keyword argument or valid child for the for statement.
-    print("temp: [temp]")
+File "game/branc.rpy", line 202: expected 'label_name_declare' not found.
+    label 
          ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar  3 17:45:02 2022
+Fri Mar  4 17:42:12 2022

@@ -1,78 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    call screen test_screen
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 240, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 240, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 243, in execute
-    if message_list != []:
-  File "game/screens.rpy", line 246, in execute
-    for i in message_list:
-  File "game/screens.rpy", line 269, in execute
-    if temp_text.size()[1] >= 54:
-  File "game/screens.rpy", line 271, in execute
-    $print("temp: " + temp + "")
-  File "game/screens.rpy", line 271, in <module>
-    $print("temp: " + temp + "")
-TypeError: coercing to Unicode: need string or buffer, float found
+  File "game/script.rpy", line 738, in script call
+    "어디로 갈까?"
+  File "game/branc.rpy", line 50, in script call
+    call pc_event from _call_pc_event
+  File "game/branc.rpy", line 197, in script call
+    call events_run_period from _call_events_run_period_8
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/dse-events.rpy", line 80, in script
+    snipe "그놈의 \'죄송합니다\' 말고. {w}난 이유를 물었는데."
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    call screen test_screen
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 298, in interact
+  File "game/script.rpy", line 738, in script call
+    "어디로 갈까?"
+  File "game/branc.rpy", line 50, in script call
+    call pc_event from _call_pc_event
+  File "game/branc.rpy", line 197, in script call
+    call events_run_period from _call_events_run_period_8
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/dse-events.rpy", line 80, in script
+    snipe "그놈의 \'죄송합니다\' 말고. {w}난 이유를 물었는데."
+  File "renpy/ast.py", line 721, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1419, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1249, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 901, in do_display
+    **display_args)
+  File "renpy/character.py", line 647, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3325, in interact
+  File "renpy/display/core.py", line 3325, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 240, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 240, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 243, in execute
-    if message_list != []:
-  File "game/screens.rpy", line 246, in execute
-    for i in message_list:
-  File "game/screens.rpy", line 269, in execute
-    if temp_text.size()[1] >= 54:
-  File "game/screens.rpy", line 271, in execute
-    $print("temp: " + temp + "")
-  File "game/screens.rpy", line 271, in <module>
-    $print("temp: " + temp + "")
-TypeError: coercing to Unicode: need string or buffer, float found
+  File "renpy/display/core.py", line 3773, in interact_core
+    renpy.audio.audio.interact()
+  File "renpy/audio/audio.py", line 1209, in interact
+    periodic()
+  File "renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 437, in periodic
+    force_stop = self.context.force_stop or (renpy.game.preferences.mute.get(self.mixer, False) and self.stop_on_mute)
+  File "renpy/audio/audio.py", line 315, in get_context
+    mcd = renpy.game.context().music
+  File "renpy/game.py", line 246, in context
+    return contexts[index]
+IndexError: list index out of range
 
-Windows-10-10.0.18362
+Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Thu Mar  3 17:45:20 2022
+Fri Mar  4 15:07:12 2022

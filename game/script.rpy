@@ -167,7 +167,7 @@ label start:
     show sergeant_working at center with dissolve
     adjutant "뭐야?"
     main "수신율 점검입니다. {w}바로 응신하겠습니다."
-    $SoundPlayer("dial.wav", 1.0)
+    $SoundPlayer("dial.ogg", 1.0)
     $SoundPlayer("phone.wav", 2.0)
     "목소리" "통신보안. {w}군단 AOC 근무자 일병 ＠＠＠입니다."
     main "통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다. {w}ㅇㅇ대대 육군 레이더 체계 수신율 점검 응신입니다."
@@ -750,6 +750,7 @@ label start:
     call status_check from _call_status_check
     call screen continued with Dissolve(1.0)
     "......."
+    hide screen time
     $stressAndSat()
     centered "반복. {w}어제는 오늘과. {w}오늘은 내일과."
     extend "\n매일매일이 같은. {w}모든 것이 뻔히 예상되는. {w}그렇기에 조그마한 실금이라도 난다면. {w}반드시 파절로 이어지는."
@@ -760,6 +761,7 @@ label start:
     extend "\n다른 것을 잃어버리는 것이 일상 내지는 당연한 것인 양 느껴지는 무렵이다."
     $SoundPlayer("broadcast.wav", 2.0)
     "당직사령" "\[아, 기상. 기상.{w} ㅇㅇ대대 장병 여러분 기상. {w}기상. {w}오늘 점호는 연병장, 연병장에 실시하겠습니다. {w}ㅇㅇ대대 장병 여러분들은 07시까지 전투복으로 환복 후 집합하시길 바랍니다.\]"
+    scene bg_room with dissolve
     show main_cloth with wipeup
     go "\[전투지원중대 행정반에서 당직 부사관 상병 [go]이 전파합니다. {w}통합중대 인원들 점호 복장 착용해서 07시까지 연병장으로 나가주시길 바랍니다.\]"
     $SoundPlayer("blanket.wav", 4.0)
@@ -788,9 +790,14 @@ label start:
     "이제 와 돌이키면 너무나도 하찮은 것에서 피어난 불씨는 내 몸뚱이 하나만이 아닌 건물 한 층의 절반을 불태우고 나서야 사그라들었다."
     "아무리 정교하게 복원한다 하여도 한 번 불에 탄 것은 과거의 모습으로 돌아갈 수 없다."
     "...내가 그러하듯이."
+    $timeCheck(0, 25)
     $SoundPlayer("walk_slow.ogg", 2.0)
     show cap2_working at right with dissolve
-    cap2 "아, 2021년 9월 18일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}육군 복무신조!"
+    cap2 "아, 2021년 9월 18일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}뒤로 돌아! {w}전방에 힘찬 함성 3초간 실시!"
+    "목소리" "아아아아아!!" with vpunch
+    cap2 "구령조정 3회 실시!"
+    "목소리" "부대 차려! {w}열 중 쉬어! {w}뒤로 돌아!"
+    cap2 "육군 복무 신조!"
     "목소리" "우리의 결의!" with vpunch
     cap2 "우리는 국가와 국민에 충성을 다하는...{w}{nw}"
     scene bg_black with blinds
@@ -799,6 +806,7 @@ label start:
     show main_atten at center
     show cap2_working at right
     with blinds
+    $timeCheck(0, 5)
     cap2 "지금부터 국군 도수체조를 실시한다. {w}체조는 1번 다리 운동부터 12번 숨쉬기 운동까지 방송 반주에 맞춰 2회 반복 실시한다. {w}방송 반주가 나올 때까지 잠시 대기할 수 있도록."
     main "먼저 간다."
     show go_nom at left with dissolve
@@ -861,11 +869,12 @@ label start:
     scene bg_resta_front
     show main_atten at center 
     with dissolve
+    $timeCheck(0, 15)
     "멀리서 국군 도수체조 방송이 들려온다. {w}발걸음을 재촉했다."
     play sound running
     hide main_atten
     #show main_gaer at center with dissolve
-    scene qquari main at blur
+    scene qquari main at blur with Dissolve(3.0)
     $renpy.pause(4.0)
     play looping gasp
     main "하아... 하아..."
@@ -876,17 +885,19 @@ label start:
     park "고작 그거야? {w}보여 준다면서. {w}해보겠다면서. {w}40km... 꿋꿋히 완주해 보겠다면서!"
     main "아직... {w}아직... {w}괜찮습니다..."
     show explain_scene with dissolve
-    cetnered "그날, 나는 행군을 완주하지 못하였다."
-    extend "다시금 엄습해 온 어깨 통증은 날 무릎 꿇렸고, 결국 군장을 주임원사님 차에 싣고서 단독군장에 방독면만을 맨 상태로 행군을 마쳤다."
-    extend "그로 인한 어떠한 불이익도 받지 않았으나 그 사실은 지금까지도 잔류하여 시시때떄로 이 마음을 혼탁케 해 왔다."
+    centered "그날, 나는 행군을 완주하지 못하였다."
+    extend "\n다시금 엄습해 온 어깨 통증은 날 무릎 꿇렸고, 결국 군장을 주임원사님 차에 싣고서 단독군장에 방독면만을 맨 상태로 행군을 마쳤다."
+    extend "\n그로 인한 어떠한 불이익도 받지 않았으나 그 사실은 지금까지도 잔류하여 시시때떄로 이 마음을 혼탁케 해 왔다."
     $SoundPlayer("telering.wav", 1.5)
     $SoundPlayer("teleclick.ogg", 1.0)
     scene bg_zitong
     show main_unhat at right
     with dissolve
     main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]" 
-    "목소리" "\[군단 무전실 근무자 일병 ㅁㅁㅁ입니다. {w}직할대망, 작전망 교전 가능하겠습니까?\]"
-    main "\[예. {w}바로 준비하겠습니다. {w}먼저 무전 부탁드립니다.\]"
+    "목소리" "\[군단 무전실 근무자 상병 ㅁㅁㅁ입니다. {w}작전망 교전 가능하겠습니까?\]"
+    main "\[예. {w}바로 준비하겠습니다."
+    $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
+    extend " 준비 완료되었습니다. {w}먼저 무전 부탁드립니다.\]"
     "목소리" "\[보내겠습니다.\]"
     play looping noise
     "목소리" "\[쟁취자, 쟁취자. {w}호롱등 송신.\]"
@@ -895,13 +906,147 @@ label start:
     main "\[쟁취자 측 수신감도 삼삼. {w}호롱등측 수신감도 어떠한지.\]"
     "목소리" "\[호롱등 측 수신감도 삼삼. {w}이상 교신 끝.\]"
     stop looping
+    $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
     "목소리" "\[관등성명 여쭈어 봐도 되겠습니까?\]"
     main "상병 ㅇㅇㅇ. {w}ㅇㅇㅇ입니다."
     "목소리" "군단 무전실 근무자 상병 ㅁㅁㅁ이었습니다."
+    main "아, 저 혹시 오늘 음어자재 교신은 몇 시 쯤에 하십니까?"
+    "목소리" "아... 전문 준비되는 대로 다시 전화 드리겠습니다."
+    main "예, 고생하십시오."
+    main "고생하십시오."
     $SoundPlayer("teleclick.ogg", 1.0)
     $SoundPlayer("typing.ogg", 2.0)
     $SoundPlayer("enter.wav", 1.0)
-    "돌이켜보면. {w}지금까지 있었던 일은 마치 한 편의 백일몽과 같은 "
+    "돌이켜보면. {w}지금까지 있었던 일은 마치 한 편의 백일몽과 같은. {w}한 번 깨어버리면 두 번 다시 되돌아갈 수 없는 환상과도 같은 것이었다."
+    "간부가 아닌 병사로 징집된 이의 군생활에서 1년이라는 시간이 가지는 무게는 결코 가볍지 않다. {w}아무리 하루하루를 보내도 끝나지 않을 것만 같은 까마득히 멀기만 한 전역이라는 이름의 결말까지 2/3에 해당하는 시간이기에."
+    "찾아왔던 꿈이 마음 속에 자그마한 파문 하나만을 남기고 흩어지듯이. {w}12개월 어치의 과거는 어렴풋한 감정 덩어리와. {w}아스라한 추억과. {w}결코 지워지지 않을 상흔만을 남겼다."
+    "고등학교에 입학하기도 전. {w}지금과는 비교도 못할 정도로 미숙하던 시절에 이별으로. {w}헤어짐으로 끝맺음 지어지지 않는 만남은 없음을. {w}그렇기에 관계가 끊어지기 전에. {w}그 사람이 내 눈 앞에 있을 때 보일 수 있는 최선의 모습을 보여한다는 것을 배웠었다."
+    "직접 두 눈으로 목도했던 이별 덕분에. {w}나는 깨달았다. {w}...고 생각했었다."
+    main "(멍청한 자식...)"
+    "안개는 걷혔고, 부옇게 흐려져있던 시야는 또렷한 상을 되찾았다. {w}지금껏 느낄 수 없어썬 진실이 내게 휘몰아쳤고. {w}애써 세워두었던 보루는 폭풍에 휘말려 무너졌다."
+    main "(아아... {w}날씨 한 번 좋네...)"
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0) 
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]"
+    "목소리" "\[통신보안. {w}무전실 근무자 상병 ㅁㅁㅁ입니다. {w}전문 준비 완료되서 연락드렸습니다.\]"
+    $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
+    main "\[예. {w}무전 넣어주십시오.\]"
+    $SoundPlayer("teleclick.ogg", 1.0)
+    play looping noise
+    "목소리" "\[쟁취자, 쟁취자. {w}호롱등 송신.\]"
+    main "\[쟁취자 등장.\]"
+    "목소리" "\[호롱등 측에 17어수, 17어수 전문 있음.\]"
+    main "\[수신 양호. {w}송신 바람.\]"
+    "목소리" "\[다음은 첫 번째 줄 전문 구분. {w}"
+    play looping2 pen
+    extend "둘, 칠, 아홉, 삼 하나. {w} 삼, 오, 둘, 공. {w}넷, 오, 둘, 삼, 하나...\]"
+    window hide
+    $renpy.pause(1.0) 
+    "목소리" "\[... 오, 넷, 팔, 삼. {w}이상 {nw}"
+    stop looping2
+    extend "17어수 전문 송신 끝.\]"
+    main "\[수신 양호.\]"
+    stop looping
+    $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
+    main "어디 보자..."
+    show code1 at center_true with dissolve
+    "음어자재를 꺼내 전문을 받아 적은 종이 옆에 나란히 놓았다."
+    $SoundPlayer("pen.ogg", 2.0)
+    show code2 at center_true with dissolve
+    hide code1
+    $renpy.pause(1.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    show code3 at center_true with dissolve
+    hide code2
+    $renpy.pause(1.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    show code4 at center_true with dissolve
+    hide code3
+    $renpy.pause(1.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    show code5 at center_true with dissolve
+    hide code4
+    $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
+    $SoundPlayer("dial.ogg", 1.0)
+    $SoundPlayer("phone.wav", 1.0)
+    "목소리" "\[통신보안. {w}군단 무전실 근무자 상병 ㅁㅁㅁ입니다.\]"
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다. {w}방금 주셨던 전문에 대한 답이 준비되서 연락드렸습니다.\]"
+    "목소리" "예. {w}바로 불러 주십시오."
+    play looping noise
+    main "\[호롱등, 호롱등. {w}쟁취자 송신.\]"
+    "목소리" "\[호롱등 등장.\]"
+    main "\[쟁취자 측에 13어수 전문 있음.\]"
+    "목소리" "\[송신 바람.\]"
+    main "\[다음은 첫 번째 줄 전문 구분. {w}칠, 둘, 아홉, 삼. {w}여섯, 오, 칠, 삼....\]"
+    window hide
+    $renpy.pause(1.0)
+    main "\[여섯, 넷, 삼, 하나. {w}이상 13어수 전문 송신 완료.\]"
+    "목소리" "\[수신 양호. {w}이상 교신 끝.\]"
+    stop looping
+    $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
+    "목소리" "\[관등성명 한 번 다시 여쭤봐도 되겠습니까?\]"
+    main "ㅇㅇ대대 상병 ㅇㅇㅇ입니다."
+    "목소리" "군단 무전실 근무자 상병 ㅁㅁㅁ이었습니다. {w}고생하십시오."
+    main "고생하십시오."
+    $SoundPlayer("teleclick.ogg", 1.0)
+    hide code5
+    $SoundPlayer("typing.ogg", 2.0)
+    $SoundPlayer("enter.wav", 1.0)
+    tie "ㅇㅇ아."
+    main "상병 ㅇㅇㅇ."
+    tie "CEOI 어떻게 됐어?"
+    main "아까 전에 일일상황평가회의 끝나자 마자 제영이랑 통신소대장이 와서 프린트 해 줬습니다. {w}중대 배부는 오전 중에 끝낸다고 했습니다."
+    tie "그럼 넌 가지고 있지 지금?"
+    main "예."
+    tie "화이트보드는?"
+    main "최신화 했습니다."
+    tie "진짜?"
+    main "예.{w} 아까 받자마자 최신화 했습니다." 
+    tie "아니기만 해 봐."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    tie "진짜네?"
+    main "지난 번에 통신소대장이 근무자 전체 대상으로 교육했었습니다. {w}있다가 점심시간 때 제원값만 싸악 바꾸면 됩니다."
+    tie "그렇구만."
+    "음어자재 교신을 마지막으로 오전 중에 끝내 놓아야 할 일을 전부 마쳤다."
+    main "흐아... {w}그래도 오늘은 본청에서 전화를 제때제때 받아 줘서 다행입니다."
+    tie "저쪽도 오늘은 한가한가보지."
+    main "매일 한가했으면 좋겠습니다."
+    tie "그러게... {w}하루면 될 일이 2~3일씩 질질 끌리는 것도 대부분 본청이 바빠서니까..."
+    $now_h = 10
+    $now_m = 0
+    show screen time with dissolve
+    tie "아... 오늘 시간 진짜 안 가네."
+    main "(몇 시 길래 그러시지? {w}10시? {w}진짜 얼마 안 됐네.)"
+    main "그러게 말입니다. {w}아직 점심 때도 안 됐습니다."
+    tie "한 건 많은데 시간은 더럽게 안 가고... {w}날씨는 맑고..."
+    "보통 후번초가 점심 교대 하러 와 주는 시간이 11시 50분 쯤임을 고려했을 때 짧게 잡아도 1시간 30분이 넘는 시간이 남았다."
+    tie "ㅇㅇ아."
+    main "상병 ㅇㅇㅇ."
+    tie "관등성명 그렇게 계속 안 대도 돼. {w}계속 대화하고 있었잖아. {w}그냥 \'네\'라고 대답만 하면 돼."
+    main "알겠습니다."
+    tie "전역 전 휴가 얼마나 남았니?"
+    main "저 11주 정도 남았습니다."
+    tie "11주... {w}77일... {w}하... {w}내가 왜 장교를 해서..."
+    main "얼마나 남으셨습니까?"
+    tie "글쎄다..."
+    main "◇◇대대 작전장교랑 동기시지 않습니까?"
+    tie "조원우 중위님? {w}아니야. {w}조원우 중위님이 나보다 1년 먼저 임관하셨어."
+    main "아... {w}20군번이십니까?"
+    tie "응."
+    main "저랑 비슷한 때 입대하셨습니다."
+    tie "왜? {w}맞먹게?"
+    main "아닙니다."
+    tie "에효... {w}부럽다 부러워. {w}나가면 뭐하게?"
+    main "아직 좀 남아서 구체적으로 생각하진 않았습니다. {w}아마 글 쓰거나 공부 좀 더 해서 프로그래머 하지 않겠습니까."
+    tie "대학 가게?"
+    main "한 학기만 하고 휴학했지만 가긴 했습니다."
+    tie "어디?"
+    main "실업계 출신이라 20년도 수능을 안 본 바람에 방통대 들어갔습니다."
+    tie "거기 졸업하기 힘들다던데."
+    main "열심히 해야하지 않겠습니까."
+    tie "그래, 힘 내라."
+    $timeCheck(0, 5)
+    main "(이제... {w}밥 먹을 때까지 뭐 하지?)"
     "."
     return
 

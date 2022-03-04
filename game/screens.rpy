@@ -169,7 +169,14 @@ screen time:
     vbox:
         xpos 1115
         ypos 5
-        text "{color=#FF0000}{size=50}[now_h]:[now_m]{/size}{/color}"
+        if now_h >= 10 and now_m >= 10:
+            text "{color=#FF0000}{size=50}[now_h]:[now_m]{/size}{/color}"
+        else:
+            if now_h < 10: 
+                text "{color=#FF0000}{size=50}0[now_h]:[now_m]{/size}{/color}"
+            if now_m < 10:
+                text "{color=#FF0000}{size=50}[now_h]:0[now_m]{/size}{/color}"
+        
 style default:
     properties gui.text_properties()
     language gui.language

@@ -14,8 +14,11 @@ define gang = Character("강민준", who_color="#110E0E", what_color="#001E38")
 define cap2 = Character("박류원", who_color="#1A1E1E", what_color="#09030A")
 define son = Character("손한연", who_color="#828282", what_color="#3C3C8C")
 define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
+define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B57")
+#3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
+define center_true = Position(xalign=.5, yalign=.5)
 define left = Position(xalign=.1, yalign=1.0)
 
 define config.gl2 = True
@@ -45,6 +48,8 @@ default events_executed_yesterday = { }
 default where_list = []
 define bad_incount = 0
 default message_list = []
+default what = ""
+default what_list = []
 #풍수지탄
 #화발다풍우
 #수욕정이풍부지
@@ -158,7 +163,8 @@ init python:
     mouse_pos = ( )
     blur_val = False
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
-    
+    renpy.music.register_channel(name = "looping2", mixer = None, loop = True)
+
 
     def timeCheck(add_h=0, add_m=0):
         global now_h
@@ -173,6 +179,10 @@ init python:
         global stress_val
         global sat_val
         global bufftory
+        global now_h 
+        global now_m 
+        now_h = 06
+        now_m = 30
         stress_val = 20
         sat_val = 20
         all_buff = bufftory.getall()

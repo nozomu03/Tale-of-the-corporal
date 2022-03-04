@@ -197,3 +197,18 @@ label pc_event:
             call events_run_period from _call_events_run_period_8
             return
     return
+
+
+label read_novel:
+    $what = "소설 읽기"
+    main "(책이나 읽어야지.)"
+    "가슴 주머니에 넣어 두었던 포켓북을 꺼냈다."
+
+    return
+
+label study_specialty:
+    $what = "주특기 공부"
+    return
+label study_major:
+    $what = "전공 공부"
+    return
