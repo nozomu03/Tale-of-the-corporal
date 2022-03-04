@@ -1,10 +1,8 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 15, in script call
-    extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
+  File "game/script.rpy", line 16, in script
+    call screen test_screen
   File "renpy/common/000statements.rpy", line 569, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
   File "game/screens.rpy", line 240, in execute
@@ -15,22 +13,19 @@ While running game code:
     if message_list != []:
   File "game/screens.rpy", line 246, in execute
     for i in message_list:
-  File "game/screens.rpy", line 268, in execute
-    $renpy.call_screen("delay_screen")
-  File "game/screens.rpy", line 268, in <module>
-    $renpy.call_screen("delay_screen")
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: u'transient'>
-<Many: <Fixed at 578ad70>>
+  File "game/screens.rpy", line 269, in execute
+    if temp_text.size()[1] >= 54:
+  File "game/screens.rpy", line 271, in execute
+    $print("temp: " + temp + "")
+  File "game/screens.rpy", line 271, in <module>
+    $print("temp: " + temp + "")
+TypeError: coercing to Unicode: need string or buffer, float found
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 15, in script call
-    extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
-  File "<string>", line 1, in script
+  File "game/script.rpy", line 16, in script
+    call screen test_screen
   File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
     self.call("execute")
   File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
@@ -69,19 +64,15 @@ Full traceback:
     if message_list != []:
   File "game/screens.rpy", line 246, in execute
     for i in message_list:
-  File "game/screens.rpy", line 268, in execute
-    $renpy.call_screen("delay_screen")
-  File "game/screens.rpy", line 268, in <module>
-    $renpy.call_screen("delay_screen")
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ui.py", line 292, in interact
-    raise Exception("ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?\nStack was " + ('\n'.join([str(item) for item in stack])))
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: u'transient'>
-<Many: <Fixed at 578ad70>>
+  File "game/screens.rpy", line 269, in execute
+    if temp_text.size()[1] >= 54:
+  File "game/screens.rpy", line 271, in execute
+    $print("temp: " + temp + "")
+  File "game/screens.rpy", line 271, in <module>
+    $print("temp: " + temp + "")
+TypeError: coercing to Unicode: need string or buffer, float found
 
 Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
  
-Thu Mar  3 16:07:30 2022
+Thu Mar  3 17:45:20 2022

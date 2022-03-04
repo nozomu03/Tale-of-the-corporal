@@ -867,7 +867,41 @@ label start:
     #show main_gaer at center with dissolve
     scene qquari main at blur
     $renpy.pause(4.0)
-
+    play looping gasp
+    main "하아... 하아..."
+    stop looping
+    show park_gear_ang_sepia at right with dissolve
+    park "ㅇㅇㅇ."
+    main "상병... {w}ㅇㅇㅇ"
+    park "고작 그거야? {w}보여 준다면서. {w}해보겠다면서. {w}40km... 꿋꿋히 완주해 보겠다면서!"
+    main "아직... {w}아직... {w}괜찮습니다..."
+    show explain_scene with dissolve
+    cetnered "그날, 나는 행군을 완주하지 못하였다."
+    extend "다시금 엄습해 온 어깨 통증은 날 무릎 꿇렸고, 결국 군장을 주임원사님 차에 싣고서 단독군장에 방독면만을 맨 상태로 행군을 마쳤다."
+    extend "그로 인한 어떠한 불이익도 받지 않았으나 그 사실은 지금까지도 잔류하여 시시때떄로 이 마음을 혼탁케 해 왔다."
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0)
+    scene bg_zitong
+    show main_unhat at right
+    with dissolve
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]" 
+    "목소리" "\[군단 무전실 근무자 일병 ㅁㅁㅁ입니다. {w}직할대망, 작전망 교전 가능하겠습니까?\]"
+    main "\[예. {w}바로 준비하겠습니다. {w}먼저 무전 부탁드립니다.\]"
+    "목소리" "\[보내겠습니다.\]"
+    play looping noise
+    "목소리" "\[쟁취자, 쟁취자. {w}호롱등 송신.\]"
+    main "\[쟁취자 등장.\]"
+    "목소라" "\[쟁취자 측 수신감도, 수신감도 어떠한지.\]"
+    main "\[쟁취자 측 수신감도 삼삼. {w}호롱등측 수신감도 어떠한지.\]"
+    "목소리" "\[호롱등 측 수신감도 삼삼. {w}이상 교신 끝.\]"
+    stop looping
+    "목소리" "\[관등성명 여쭈어 봐도 되겠습니까?\]"
+    main "상병 ㅇㅇㅇ. {w}ㅇㅇㅇ입니다."
+    "목소리" "군단 무전실 근무자 상병 ㅁㅁㅁ이었습니다."
+    $SoundPlayer("teleclick.ogg", 1.0)
+    $SoundPlayer("typing.ogg", 2.0)
+    $SoundPlayer("enter.wav", 1.0)
+    "돌이켜보면. {w}지금까지 있었던 일은 마치 한 편의 백일몽과 같은 "
     "."
     return
 

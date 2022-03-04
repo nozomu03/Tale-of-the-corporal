@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 268: u'time' is not a keyword argument or valid child for the for statement.
-    time.sleep(2)
-        ^
+File "game/screens.rpy", line 271: u'print' is not a keyword argument or valid child for the for statement.
+    print("temp: [temp]")
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar  3 16:10:25 2022
+Thu Mar  3 17:45:02 2022

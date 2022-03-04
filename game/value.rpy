@@ -4,6 +4,7 @@ define prf = Character("주안", who_color="#8572EE", what_color="#3CB371")
 define OOI = Character("통신소대장", who_color="#EF9F5B", what_color="#0A6E0A")
 define adjutant = Character("김율호", who_color="#906D3B", what_color="#FF8200")
 define oh = Character("오준현", who_color="#147814", what_color="#50508C")
+define park = Character("박수윤", who_color = "#323232", what_color="#A0522D")
 define gwon = Character("권인호", who_color="#FF8200", what_color="#898989")
 define snipe = Character("저격반장", who_color="#DB631F", what_color="#B90000")
 define grand = Character("할아버지", who_color = "#F0B469", what_color = "#FF8200")
@@ -149,7 +150,7 @@ init python:
             return self.buff_list
 
     class Message:
-        def __init__(self, type=0, who="N/A", message = "wehwrhgerther"):
+        def __init__(self, type=0, who="N/A", message = "awa\ngawg"):
             self.type = type
             self.who = who
             self.message = message

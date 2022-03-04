@@ -244,6 +244,10 @@ screen test_screen:
         $y = 180
         $counter = 0
         for i in message_list:        
+          #  vbox:
+         #   #    hbox:
+                   # text "[y]"
+            $print(y)
             $temp_text = Text(i.message)
             if counter == 0 or past_i.type == 1:
                 fixed:  
@@ -261,7 +265,10 @@ screen test_screen:
                         pos(490, y)                                      
                         size(temp_text.size()[0], temp_text.size()[1])
                     text "[i.message]":
-                        pos(490, y)                        
+                        pos(490, y)            
+            if temp_text.size()[1] >= 54:                
+                $y += int(temp_text.size()[1] - 27)
+           # else:
             $y += 40
             $past_i = i
             $counter += 1            
@@ -269,9 +276,6 @@ screen test_screen:
         #$time.sleep(2)
     $message_list = []                    
 
-screen delay_screen:
-    modal True
-    button action Hide("delay_screen")
 ################################################################################
 ## 게임내 스크린
 ################################################################################

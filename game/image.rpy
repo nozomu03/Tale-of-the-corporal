@@ -2,6 +2,7 @@ image bg_hallway_sepia = im.Sepia("bg_hallway.png")
 define bg_qquari_sepia = im.Sepia("bg_qquari.png")
 define main_gear_sepia = im.Sepia("main_gear.png")
 
+image park_gear_ang_sepia = im.Sepia("park_gear_ang.png")
 image gwon_nem_sepia = im.Sepia("gwon_nem.png")
 image main_atten_sepia = im.Sepia("main_atten.png")
 image bg_hospital_sepia = im.Sepia("bg_hospital.png")
