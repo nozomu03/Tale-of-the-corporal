@@ -200,9 +200,10 @@ label pc_event:
 
 
 label day2_checker:
-    if what == "소설 읽기":
+    if what == "독서":
         main "(책이나 읽어야지.)"
         "가슴 주머니에 넣어 두었던 포켓북을 꺼냈다."
+        call events_run_period
         return
     elif what == "주특기 공부":
         main "(이제 곧 호국훈련이네... {w}그때까지 주특기를 좀 더 숙달해 놓으면 균영이도 더 이상 뭐라 못하겠지.)"
@@ -214,6 +215,7 @@ label day2_checker:
         tie "상관은 없는데 나한테 권한이 있나 모르겠네."
         main "간부님 계정으로 로그인만 되어 있으면 왠만한 교범은 다 읽을 수 있는 걸로 알고 있습니다."
         tie "맘대로 해."
+        call events_run_period
         return
     elif what == "전공 공부":
         main "(어디보자... {w}어디까지 했더라...)"

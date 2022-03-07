@@ -13,6 +13,9 @@ init python:
     event('lounge_event1', 'where==\"휴게실\" and evented == False', event.random(.3), event.only(), priority=20)
     event('pc_bad', 'where==\"사지방\" and evented == False', priority = 100)
     event('pc_good','where==\"사지방\" and evented == False', event.random(.5), event.only(), priority=20)
+    event("day2_novel1", 'what==\"독서\" and evented == False', event.random(.6), event.only(), priority=20)
+    event("day2_novel3", 'what==\"독서\" and evented == False', event.random(.4), event.only(), priority=20)
+    event("day2_novel2", 'what==\"독서\" and evented == False', priority = 100)
     #event('meet_j')
 
 label pc_bad:
@@ -698,6 +701,8 @@ label day2_novel1:
     tie "부끄러워? {w}사람이 살다 보면 그럴 수도 있지. {w}뭐 이런 거 가지고 부끄러워하고 그래."
     "책 글자 하나 하나에 집중하려 했다. {w}얼굴에서 전해지는 열기가 정신을 흐뜨러뜨리려 했지만. {w}이내 손가락에서 느껴지는 종이의 감촉과 문장에서 전해지는 감정이 다른 모든 자극을 차단하기 시작했다."
     $stress_val -= 5 
+    $timeCheck(0, 2.0)
+    $evented=True
     return 
 
 label day2_novel2:
@@ -727,8 +732,78 @@ label day2_novel2:
     $FaceChange("jeong_salute", 1.0, .5, "jeong_nom")
     jeong "북진. {w}용무 마치고 복귀하겠습니다."
     $FaceChange("jeong_nom", 1.0, .5, "jeong_salute")
+    $renpy.pause(.5)
+    hide jeong_nom
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
     main "(편제장비라... {w}벌써 시간이 그렇게 됐나...)"
     "분기에 한 번 있는 간부님들의 자격 평가. {w}시간은 유수같이 흘러 어느덧 내가 본래 있었던 곳에서 떠난 지 3개월의 시간이 지나 버렸다."
     main "(이쯤되면 완전히... {w}바뀌어 버린 거겠지.)"
-    "\'돌아가고 싶다\'. {w}동시에 \'도망치고 싶다\'. {w}내 옛 둥지는 내 심상 속에서 언제나 "
+    "\'돌아가고 싶다\'. {w}동시에 \'도망치고 싶다\'. {w}내 옛 둥지는 내 심상 속에서 언제나 그리움의 온상이었으며. {w}전력으로 멀어져야 할 곪은 대지였다."
+    "후회와, 아쉬움과, 참회와 동시에. {w}내 안에 잔류한 것. {w}품어서는 아니 될 허락되지 못한 감정."
+    $FaceChange("main_ang", 2.0, 1.0, "main_atten")
+    main "(하아... {w}개x신 같은 놈... {w}남탓하는 것 말고는... {w}할 줄 아는게 없지, 그래...)"
+    $stress_val += 5
+    $timeCheck(0, 20)
+    $evented=True
     return 
+
+label day2_novel3:
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0)
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]"
+    pl3 "\[ㅇㅇ아. {w}나야 나.\]"
+    $FaceChange("main_hap", 2.0, 1.0, "main_atten")
+    main "\[소대장님!\]"
+    pl3 "\[잘 지냈어?\]"
+    main "\[예, 잘 지내고 있습니다. {w}소대장님께서도 잘 지내고 계십니까?\]"
+    pl3 "\[나야 잘 지내지. {w}혹시 금요일날 어디가 5대기 투입했지?\]"
+    main "\[1중대 2소대입니다.\]"
+    pl3 "\[지휘조장은?\]"
+    main "\[2소대장입니다.\]"
+    pl3 "\[오케, 알겠어.{w} 땡큐~ {w}고생해~\]"
+    main "\[북진! {w}고생하십시오!\]"
+    $SoundPlayer("teleclick.ogg", 1.0)
+    show tie_nom at center with dissolve
+    tie "누구 전화길래 그렇게 얼굴에 화색이 돌아?"
+    main "3소대... {w}아니, ◇◇대대 작전장교님입니다."
+    tie "아~ {w}너 원래 3소대였지?"
+    main "예. {w}[pl3] 중위님 밑에서 9개월 정도 있었습니다."
+    tie "표정이 활짝 필만 하구만. {w}근데 5대기를 왜 물어보지?"
+    $FaceChange("main_unhat", 2.0, 1.0, "main_hap")
+    main "이번에 지휘검열 때문에 아닙니까? {w}ㅇㅇ대대가 작전 나가면 ◇◇대대가 5대기를 맡아주지 않습니까. {w}어쩌면 거기까지 훈련 내용에 포함되어 있을지도 모릅니다."
+    tie "그런가? {w}그런 내용은 못 봤는데."
+    main "어, 점검표 나왔습니까?"
+    tie "나온 지 꽤 됐는데."
+    main "보여주실 수 있습니까?" 
+    tie "봐서 뭐하게?"
+    main "이번 지휘검열 때 상황 근무를 처음으로 맡게 되서 불안합니다. {w}점검표를 보면 좀 괜찮아지지 않을까 싶어서 말입니다."
+    tie "별 거 없어. {w}여기."
+    "점검표를 훑어보았다."
+    main "이번에도 소산진지 가는 겁니까?"
+    tie "응. {w}근데 어차피 넌 근무라서 안 가잖아."
+    main "1중대 사람들 고생 좀 할 것 같습니다. {w}작년 지휘검열 때는 1중대였으니까 저도 갔었는데... {w}어우, 그 때 생각만 하면 아찔합니다."
+    tie "많이 힘들었어?"
+    main "완전군장 한 것까지는 힘들고 말 정도였는데 꽈리고개를 넘어서 공중강습 훈련장에서 갑자기 화생방 상황이 터졌었습니다."
+    tie "켁. {w}작년 9월이면 덥기도 덥고 습도도 엄청 높았던 걸로 기억하는데."
+    main "예... {w}화생방 보호의에 방독면에... {w}아으... {w}전투준비태세 점검이 끝나고 막사 돌아와서 씻는데 땀띠 때문에 한 2~3일은 고생했었습니다."
+    tie "생각만 해도 고통스럽다, 야."
+    main "그래도 이번엔 온도도 습도도 그렇게 안 높아서 다행입니다."
+    tie "작년이 미쳤던 거지 뭐."
+    main "하긴 그렇습니다. {w}저도 21년 살면서 그렇게 비 많이 오는 건 처음 봤습니다."
+    tie "21년? {w}너 21살이야?"
+    main "예."
+    tie "와... {w}20살에 입대한 거네."
+    main "할 게 없어서 말입니다. {w}20년 대구 코로나 범유행 기억나십니까?"
+    tie "어, 기억 나."
+    main "거기랑 제가 살던 곳이랑 꽤 가까워서 외부활동을 아예 못하게 되버리는 바람에 이 참에 후딱 군대 갔다와야겠다 싶어서 바로 입대했습니다."
+    tie "입대하기 힘들었을텐데 용케 자리 찾았다?"
+    main "그때는 몰랐습니다... {w}무선장비운용이 전투병과일지... {w}빨간색 글씨가 제 전공이라 관련있는 주특기인지..."
+    tie "좀 천천히 알아보지 그랬어."
+    main "그러게나 말입니다... {w}그때로 돌아가서 제 손목을 분질러 버리고 싶습니다."
+    $evented=True
+    $timeCheck(0, 2.0)
+    $stress_val -= 5
+    $sat_val += 10
+    return

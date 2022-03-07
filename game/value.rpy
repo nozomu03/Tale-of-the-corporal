@@ -15,6 +15,7 @@ define cap2 = Character("박류원", who_color="#1A1E1E", what_color="#09030A")
 define son = Character("손한연", who_color="#828282", what_color="#3C3C8C")
 define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
 define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B57")
+define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)

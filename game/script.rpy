@@ -1041,12 +1041,18 @@ label start:
     tie "대학 가게?"
     main "한 학기만 하고 휴학했지만 가긴 했습니다."
     tie "어디?"
-    main "실업계 출신이라 20년도 수능을 안 본 바람에 방통대 들어갔습니다."
+    main "실업계 출신이라 수능을 안 본 바람에 방통대 들어갔습니다."
     tie "거기 졸업하기 힘들다던데."
     main "열심히 해야하지 않겠습니까."
     tie "그래, 힘 내라."
     $timeCheck(0, 5)
     main "(이제... {w}밥 먹을 때까지 뭐 하지?)"
+    $where = ""
+    $evented = False
+    menu:
+        "독서(+20m)":
+            $what = "독서"
+    call day2_checker
     "."
     return
 

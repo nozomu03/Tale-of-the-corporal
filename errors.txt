@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/branc.rpy", line 202: expected 'label_name_declare' not found.
-    label 
-         ^
+The label _call_events_run_period_4 is defined twice, at File "game/branc.rpy", line 89:
+    call events_run_period from _call_events_run_period_4
+and File "game/branc.rpy", line 217:
+    call events_run_period from _call_events_run_period_4
+
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Mar  4 17:42:12 2022
+Mon Mar  7 18:33:44 2022
