@@ -894,7 +894,7 @@ label start:
     show main_unhat at right
     with dissolve
     main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]" 
-    "목소리" "\[군단 무전실 근무자 상병 ㅁㅁㅁ입니다. {w}작전망 교전 가능하겠습니까?\]"
+    "목소리" "\[군단 무전실 근무자 상병 ㅁㅁㅁ입니다. {w}직할대망 교전 가능하겠습니까?\]"
     main "\[예. {w}바로 준비하겠습니다."
     $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
     extend " 준비 완료되었습니다. {w}먼저 무전 부탁드립니다.\]"

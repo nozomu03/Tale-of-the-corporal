@@ -664,6 +664,8 @@ label lounge_event1:
     return
 
 label day2_novel1:
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show tie_nom at center with dissolve
     tie "뭐 읽어?"
     main "빨간머리 앤입니다."
     tie "요즘엔 그렇게 조그만 버전도 있나 보네. {w}어린이 용처럼 내용을 줄인 건가?"
@@ -687,6 +689,7 @@ label day2_novel1:
     main "관물대와 침대 사이에서 내리고 있었어서 관물대에 머리 안 박으려고 살짝만 틀었는데 부족했나 봅니다."
     tie "그런 상황이면 보통 뒤로 빠지거나 앞으로 후딱 나가잖아."
     main "왜 거기서 옆으로 피한다는 발상을 했는지 저도 의문입니다. {w}진짜 귀가 찢어지는 줄 알았습니다."
+    $FaceChange("tie_smi", 1.0, 1.0, "tie_nom")
     tie "너 그때 쓰러져서 지휘통제실에 들릴 만큼 크게 소리질렀던 거 알아? {w}진짜 나는 초소 근무자들이 실수로 공포탄이라도 격발한 줄 알았어."
     $FaceChange("main_unhat_sha", 2.0, 1.0, "main_unhat")
     main "진... 진짜입니까?"
@@ -694,5 +697,38 @@ label day2_novel1:
     main "으으..."
     tie "부끄러워? {w}사람이 살다 보면 그럴 수도 있지. {w}뭐 이런 거 가지고 부끄러워하고 그래."
     "책 글자 하나 하나에 집중하려 했다. {w}얼굴에서 전해지는 열기가 정신을 흐뜨러뜨리려 했지만. {w}이내 손가락에서 느껴지는 종이의 감촉과 문장에서 전해지는 감정이 다른 모든 자극을 차단하기 시작했다."
-    $stress_val -= 5
-    return
+    $stress_val -= 5 
+    return 
+
+label day2_novel2:
+    $SoundPlayer("knock.ogg")
+    $SoundPlayer("door.ogg", 2.0)
+    show jeong_salute at center with dissolve
+    jeong "북진. {w}병장 [jeong] 지휘통제실에 용무 있어 왔습니다."
+    $FaceChange("jeong_nom", 1.0, .5, "jeong_salute")
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    jeong "ㅇㅇ."
+    main "엉?"
+    jeong "대대 내부망 CEOI 종이 좀 빌려주라."
+    main "갑자기?"
+    jeong "이번에 간부님들 편제장비 시험 보시잖아. {w}예시로 들만한 실제 제원이 필요하데."
+    main "아 그래서 대대망?"
+    jeong "응. {w}군단 예하 부대가 전부 공유하는 무전망을 간부님들 연습하실 때 쓸 순 없잖아."
+    main "상황간부님 허락은?"
+    jeong "아까 중대장님이 전화해서 허가 받았어. {w}뭣하면 물어보지 그래?"
+    main "정훈장교님?"
+    show tie_nom at left with dissolve
+    tie "어~ {w}아까 전에 본부중대장님께 전화 왔었어. {w}주면 돼."
+    hide tie_nom 
+    $SoundPlayer("blanket.wav", 4.0)
+    "음어낭에서 종이를 꺼내 건냈다."
+    main "고생하쇼."
+    tie "너도 고생해~"
+    $FaceChange("jeong_salute", 1.0, .5, "jeong_nom")
+    jeong "북진. {w}용무 마치고 복귀하겠습니다."
+    $FaceChange("jeong_nom", 1.0, .5, "jeong_salute")
+    main "(편제장비라... {w}벌써 시간이 그렇게 됐나...)"
+    "분기에 한 번 있는 간부님들의 자격 평가. {w}시간은 유수같이 흘러 어느덧 내가 본래 있었던 곳에서 떠난 지 3개월의 시간이 지나 버렸다."
+    main "(이쯤되면 완전히... {w}바뀌어 버린 거겠지.)"
+    "\'돌아가고 싶다\'. {w}동시에 \'도망치고 싶다\'. {w}내 옛 둥지는 내 심상 속에서 언제나 "
+    return 

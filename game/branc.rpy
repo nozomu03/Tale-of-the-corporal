@@ -199,16 +199,27 @@ label pc_event:
     return
 
 
-label read_novel:
-    $what = "소설 읽기"
-    main "(책이나 읽어야지.)"
-    "가슴 주머니에 넣어 두었던 포켓북을 꺼냈다."
-
-    return
-
-label study_specialty:
-    $what = "주특기 공부"
-    return
+label day2_checker:
+    if what == "소설 읽기":
+        main "(책이나 읽어야지.)"
+        "가슴 주머니에 넣어 두었던 포켓북을 꺼냈다."
+        return
+    elif what == "주특기 공부":
+        main "(이제 곧 호국훈련이네... {w}그때까지 주특기를 좀 더 숙달해 놓으면 균영이도 더 이상 뭐라 못하겠지.)"
+        main "정훈장교님?"
+        tie "왜?"
+        main "전자도서관 들어가서 교범 봐도 되겠습니까?"
+        tie "무슨 교범?"
+        main "무전기랑 C4I 연동 통신체계 교범입니다."
+        tie "상관은 없는데 나한테 권한이 있나 모르겠네."
+        main "간부님 계정으로 로그인만 되어 있으면 왠만한 교범은 다 읽을 수 있는 걸로 알고 있습니다."
+        tie "맘대로 해."
+        return
+    elif what == "전공 공부":
+        main "(어디보자... {w}어디까지 했더라...)"
+        "챙겨왔던 전공서적을 꺼내 펼쳤다."
+        return
 label study_major:
     $what = "전공 공부"
+
     return
