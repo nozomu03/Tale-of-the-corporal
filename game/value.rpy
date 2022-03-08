@@ -16,6 +16,7 @@ define son = Character("손한연", who_color="#828282", what_color="#3C3C8C")
 define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
 define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B57")
 define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
+define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
@@ -146,7 +147,7 @@ init python:
         def delete(self, buff):
             self.buff_list.remove(buff)
 
-        def serach(self, buff):
+        def search(self, buff):
             if buff in self.buff_list:
                 return True
             else:

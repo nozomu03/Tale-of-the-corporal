@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label _call_events_run_period_4 is defined twice, at File "game/branc.rpy", line 89:
-    call events_run_period from _call_events_run_period_4
-and File "game/branc.rpy", line 217:
-    call events_run_period from _call_events_run_period_4
-
+File "game/dse-events.rpy", line 897: expected statement.
+    main ("x바... {w}x됐네...")
+                            ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar  7 18:33:44 2022
+Tue Mar  8 17:04:48 2022

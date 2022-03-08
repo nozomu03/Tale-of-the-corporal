@@ -16,6 +16,10 @@ init python:
     event("day2_novel1", 'what==\"독서\" and evented == False', event.random(.6), event.only(), priority=20)
     event("day2_novel3", 'what==\"독서\" and evented == False', event.random(.4), event.only(), priority=20)
     event("day2_novel2", 'what==\"독서\" and evented == False', priority = 100)
+    event("day2_study_specialty3", 'what==\"주특기 공부\" and evented == False', event.random(.7), event.only(), priority=20)
+    event("day2_study_specialty2", 'what==\"주특기 공부\" and evented == False', event.random(.7), event.only(), priority=20)
+    event("day2_study_specialty1", 'what==\"주특기 공부\" and evented == False', priority = 100)
+
     #event('meet_j')
 
 label pc_bad:
@@ -758,7 +762,7 @@ label day2_novel3:
     main "\[소대장님!\]"
     pl3 "\[잘 지냈어?\]"
     main "\[예, 잘 지내고 있습니다. {w}소대장님께서도 잘 지내고 계십니까?\]"
-    pl3 "\[나야 잘 지내지. {w}혹시 금요일날 어디가 5대기 투입했지?\]"
+    pl3 "\[나야 잘 지내지. {w}혹시 금요일날 어디가 5대기 투입했는지 알고 있어?\]"
     main "\[1중대 2소대입니다.\]"
     pl3 "\[지휘조장은?\]"
     main "\[2소대장입니다.\]"
@@ -770,8 +774,10 @@ label day2_novel3:
     main "3소대... {w}아니, ◇◇대대 작전장교님입니다."
     tie "아~ {w}너 원래 3소대였지?"
     main "예. {w}[pl3] 중위님 밑에서 9개월 정도 있었습니다."
-    tie "표정이 활짝 필만 하구만. {w}근데 5대기를 왜 물어보지?"
+    tie "표정이 활짝 필만 하구만. {w}무슨 이야기 했는데?"
     $FaceChange("main_unhat", 2.0, 1.0, "main_hap")
+    main "금요일날 바뀐 5대기 투입한 소대랑 지휘조장 여쭤보셨습니다."
+    tie "5대기? {w}◇◇대대에서 5대기를 왜 물어보지?"
     main "이번에 지휘검열 때문에 아닙니까? {w}ㅇㅇ대대가 작전 나가면 ◇◇대대가 5대기를 맡아주지 않습니까. {w}어쩌면 거기까지 훈련 내용에 포함되어 있을지도 모릅니다."
     tie "그런가? {w}그런 내용은 못 봤는데."
     main "어, 점검표 나왔습니까?"
@@ -785,7 +791,7 @@ label day2_novel3:
     tie "응. {w}근데 어차피 넌 근무라서 안 가잖아."
     main "1중대 사람들 고생 좀 할 것 같습니다. {w}작년 지휘검열 때는 1중대였으니까 저도 갔었는데... {w}어우, 그 때 생각만 하면 아찔합니다."
     tie "많이 힘들었어?"
-    main "완전군장 한 것까지는 힘들고 말 정도였는데 꽈리고개를 넘어서 공중강습 훈련장에서 갑자기 화생방 상황이 터졌었습니다."
+    main "완전군장 한 것까지는 힘들고 말 정도였는데 꽈리고개를 넘고 공중강습 훈련장에서 갑자기 화생방 상황이 터졌었습니다."
     tie "켁. {w}작년 9월이면 덥기도 덥고 습도도 엄청 높았던 걸로 기억하는데."
     main "예... {w}화생방 보호의에 방독면에... {w}아으... {w}전투준비태세 점검이 끝나고 막사 돌아와서 씻는데 땀띠 때문에 한 2~3일은 고생했었습니다."
     tie "생각만 해도 고통스럽다, 야."
@@ -802,8 +808,207 @@ label day2_novel3:
     main "그때는 몰랐습니다... {w}무선장비운용이 전투병과일지... {w}빨간색 글씨가 제 전공이라 관련있는 주특기인지..."
     tie "좀 천천히 알아보지 그랬어."
     main "그러게나 말입니다... {w}그때로 돌아가서 제 손목을 분질러 버리고 싶습니다."
-    $evented=True
+    $evented=True 
     $timeCheck(0, 2.0)
     $stress_val -= 5
     $sat_val += 10
+    return
+
+label day2_study_specialty1:
+    $SoundPlayer("click.ogg", 1.0)
+    main "(전술무전기는... 됐고... {w}위치전송 단말기... 위치전송 단말기가...)"
+    $SoundPlayer("click.ogg", 1.0)
+    main "......."
+    $SoundPlayer("click.ogg", 1.0)
+    $SoundPlayer("knock.ogg", 1.0)
+    $SoundPlayer("door.ogg", 2.0)
+    show go_uw_salute at center with dissolve
+    go "북진. {w}상병 [go] 지휘통제실에 용무 있어 왔습니다."
+    $FaceChange("go_uw_atten", 1.0, .5, "go_uw_salute")
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    go "ㅇㅇㅇ 상병님."
+    main "엉?"
+    go "뭐하십니까?"
+    main "교범 보는데."
+    go "엇, 공부 중이셨습니까?"
+    main "그렇지."
+    go "무슨 교범입니까?"
+    main "위치전송단말기. {w}복귀?"
+    go "예. {w}윤이랑 저 의무대 복귀입니다."
+    main "군의관님이 뭐라셔?"
+    go "격한 운동 자제하고 2~3일 파스 붙이고 있으면 낫는답니다."
+    main "크게 다친 건 아닌가 보네. {w}다행이다."
+    go "근무 고생하십시오. {w}전 이제 씻으러 가 봐야겠습니다."
+    main "그래, 잘 자."
+    go "고생하십쇼~"
+    $FaceChange("go_uw_salute", 1.0, .5, "go_uw_atten")
+    go "북진! {w}상병 [go] 용무 마치고 복귀하겠습니다."
+    $FaceChange("go_uw_atten", 1.0, .5, "go_uw_salute")
+    $renpy.pause(.5)
+    hide go_uw_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("click.ogg", 1.0)
+    $SoundPlayer("click.ogg", 1.0)
+    $renpy.pause(2.0)
+    $timeCheck(0, 20)
+    $evented = True
+    return
+
+label day2_study_specialty2:
+    $SoundPlayer("click.ogg", 1.0)
+    main "(전술무전기는... 됐고... {w}위치전송 단말기... 위치전송 단말기가...)"
+    $SoundPlayer("click.ogg", 1.0)
+    main "......."
+    "대대 내에서 위치전송단말기는 오랫동안 거의 쓰이지 않았다. {w}기껏해야 지휘통제실에 상황병 자리에 설치된 게 고작일까."
+    "5대기 통신병이 지녀야 할 물품이긴 했지만 전원이 켜지는 일 없이 공격배낭 안쪽에 잠들어 있던 단말기를 돌연 실사용하라는 지침이 하달되었었다."
+    "통신소대에 각 중대의 소대통신병들이 모여 들었던 위치단말기 사용법 교육. {w}나름 경청했음에도 투입 이후 많은 문제들에 직면해야만 했다."
+    "근무 도중. {w}혹은 훈련 도중에 어떤 돌발상황이 생기더라도 남의 도움을 받지 않고 해결할 수 있을 정도의 지식을 쌓아 둔다면 그 때 같은 대참사는 터지지 않겠지."
+    $SoundPlayer("click.ogg", 1.0)
+    $SoundPlayer("click.ogg", 1.0)
+    $renpy.pause(2.0)
+    $stress_val -= 5
+    $sat_val += 5
+    $timeCheck(0, 20)
+    $evented = True
+    return
+
+label day2_study_specialty3:
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0)
+    main "\[통신보안 ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]"
+    gang "\[ㅇㅇㅇ 상병님? {w}저 민준입니다. {w}소대장님께서 저랑 근무교대하고 잠깐 사무실로 와달라 하시는데 지금 가면 되겠습니까?\]"
+    main "\[소대장님께서?\]"
+    gang "\[예.\]"
+    main "\[뭐지... {w}어. {w}빨리 와.\]"
+    main "정훈장교님?"
+    show tie_nom at center with dissolve
+    tie "왜 불러?"
+    main "통신소대장이 절 호출해서 가 봐야 할 것 같습니다. {w}저 대신해서 민준이가 와서 근무 맡아 준다고 하는데 다녀와도 되겠습니까?"
+    tie "어 그래. {w}민준이 오면 인수인계하고 후딱 갔다 와."
+    $SoundPlayer("running.wav", 2.0)
+    $SoundPlayer("knock.ogg", 1.0)
+    $SoundPlayer("door.ogg", 2.0)
+    show gang_salute at left with dissolve
+    gang "북진. {w}일병 [gang] 지휘통제실에 용무 있어 왔습니다."
+    tie "그래, 고생한다."
+    $FaceChange("gang_atten", 0.0, .5, "gang_salute")
+    hide tie_nom
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    gang "저 왔습니다."
+    main "무슨 일이야?"
+    gang "잘... 모르겠습니다. {w}소대장님도 그냥 \'가서 ㅇㅇㅇ 데려와\' 라고 밖에 말씀 안하셨습니다."
+    main "어디 계신데, 지금?"
+    $event_result_val = renpy.random.randint(1, 100)
+    "[event_result_val]"
+    if event_result_val <= 60:
+        gang "사이버지식정보방입니다."
+        $FaceChange("main_ang", 2.0, 1.0, "main_unhat")
+        main "(x바... {w}x됐네...)"
+        $FaceChange("main_unhat", 2.0, 1.0, "main_ang")
+    else:
+        gang "사무실에 계십니다."
+        main "(사무실? {w}날 갑자기 왜?)"
+    main "알았어. {w}특이사항은 없고, 잘 부탁해."
+    gang "예, 고생하십시오."
+    $FaceChange("main_salute", 2.0, .5, "main_unhat")
+    main "북진. {w}다녀오겠습니다."
+    hide main_salute
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("running.wav", 2.0)
+    scene bg_black with blinds
+    $renpy.pause(2.0)
+    if event_result_val <= 70 and bufftory.search(sat_debuff1):
+        scene bg_taba
+        show main_tabahand at center
+        with blinds
+        main "(하... {w}x발...)"
+        $Smoking("main", 1, 2)
+        show explain_scene with dissolve
+        centered "어제, 야간 연등 시간."
+        extend "\n예전에 우연찮게 찾아냈던 보안 프로그램을 무력화 시키는 방법. {w}\악용하고자하는 마음이 없었다\'... {w}라고 단언할 수 없었다."
+        extend "\n그러나, 그 시작은. {w}어제 진행하였던 작업은. {w}컴퓨터를 재부팅할 때마다. {w}보안 프로그램과 복원 프로그램을 완전히 삭제했음에도 다시금 설치되는 상황에 대한 순수한 호기심에서 출발한 일이었다."
+        extend "\n꺼지지 않은 컴퓨터. {w}남아있는 작업 파일. {w}지워지지 않은 방문 기록과 다운로드 기록."
+        centered "작업할 일이 있어 사이버지식정보방에 들어간 소대장님께서는 내가 사용했던 컴퓨터를 발견하고, 어제자 당직부관에게 연락해 연등시간에 사용했던 사람을 파악한 것이었다."
+        extend"\n어디까지나 경고. {w}남아있는 증거만으로는 내게 그랬다는 것을 특정해낼 수 없었다. "
+        extend "\n연등시간 이전에. {w}혹은 연등 시긴이 끝나고 누군가가 몰래 했을 가능성이 있기에 경고하는 것으로 일단 마무리 되었다."
+        centered "그러나. {w}문제는 이 사실이 다른 사람들. {w}특히 균영이의 귀에 들어갔을 때의 후폭풍이다."
+        extend "\n...할 수 있는 건... {w}마음을 비우고 기다리는 것 뿐이다."
+        hide explain_scene
+        $Smoking("main", 1, 2)
+        main "빌어먹을..."
+        show explain_scene with dissolve
+        centered "무엇을 탓해야 할지는 명확했다. {w}해서는 안 될 일이라는 것을 알고도 잘못을 저지른 내 자신만을 원망하면 될 문제이다."
+        extend "\n각오하고 있었던 일이다. {w}발각되고, 욕 먹고. {w}징계를 받게 될지도 모른다는 것을 알고 있었다."
+        extend "\n후회는 없다. {w}만약에 내게 보안 체계 무력화라는 목표를 가지고, 임하지 않았더라면. {p}}나는 비루히나마 이어져 지금을 쥐지는 것조차 이루지 못한 채 진즉에 파절되어 흩어졌을 것이다."
+        extend "\n그만큼, 하루하루는 내게 적대적이었고. {w}벼랑에 몰려 아슬아슬한 균형잡기를 이어가는 상황이었다."
+        extend "\n물론 이는 변명이고, 핑계이다. {w}그 누구도 인정해주지 않을 여담이다."
+        extend "\n동시에, 분명히 있었던 일이고. {w}틀림없는 현실이었다."
+        extend "\n내 잘못임은 분명하고. {w}이로 인해 모종의 처벌을 받게 된다 하여도 내게 불복할, 반항할 권리도, 명분도 없음을 알고 있었다."
+        extend "\n그럼에도, 머리 속을 맴도는 이 감정은... {w}무엇일까."
+        hide explain_scenes
+        $Smoking("main", 1, 2)
+        $SoundPlayer("putoff.wav", 2.0)
+        $FaceChange("main_atten", 1.0, .5, "main_tabahand")
+        $stress_val += 15
+        $sat_val -= 10
+        $renpy.pause(.5)
+        hide main_atten
+    else:
+        scene bg_hallway with blinds
+        main "북진. {w}용무 마치고 복귀하겠습니다."            
+        OOI "그래."
+        $SoundPlayer("door.ogg", 2.0)
+        show main_unhat at center with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        main "(편제 전환이라... {w}이제 정말로... {w}끝인 건가...)"
+        "어디까지나 \'장기 파견\' 명목으로 본부중대에서 생활하고 있었기에 내 편제는 아직 1중대 3소대였고. {w}내 개인화기 역시 1중대 재산이었다."
+        "내일이 되면, 나는 더 이상 1중대 소대 통신병이 아닌. {w}대대본부 통신소대 소속 무선장비운용병이 돤다."
+        "비취인가는 물론, 보통의 경우 자대배치를 받은 이후 거의 바뀌지 않는 소총마저 새로 지급받게 될 것이다."
+        "더 이상... {w}1중대와는 어떠한 연관점도 없는 남이 되어 버림을 의미했다."
+        "물론, 알고 있다. {w}내가 도망치기로 결심한 이상. {w}꼭 거쳐야 할 과정이라는 것을."
+        "그럼에도. {w}동시에 드는. {w}두 번 다시 돌아오지 않을 호시절. {w}이제 와서는 아득하게만 느껴지는 과거의 기억들과, 그 속에 남겨진 여러 \'약속\'들."
+        "그 모든 것들을 저버리고. {w}마치 그런 일이 처음부터 없었던 것 마냥 바래버리는 듯한 느낌이 지워지지 않았다."
+        $evented = True
+        $stress_val-= 5
+        $sat_val-=5
+        hide main_unhat
+
+    $timeCheck(0, 20)
+    $evented = True
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_zitong with dissolve
+    $SoundPlayer("knock.ogg", 1.0)
+    $SoundPlayer("door.ogg", 2.0)
+    show main_atten with dissolve
+    $SoundPlayer("door.ogg", 2.0)    
+    $FaceChange("main_salute", 1.0, .5, "main_atten")
+    main "북진. {w}상병 ㅇㅇㅇ. {w}다녀왔습니다."
+    $FaceChange("main_atten", 1.0, .5, "main_salute")
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show gang_atten at right with dissolve
+    main "특이사항."
+    gang "없습니다."
+    main "고생했다."
+    gang "고생하십니다. {w}별 일 없으셨습니까?"
+    main "...응. {w}별 거 아녔어."
+    $FaceChange("gang_salute", 2.0, .5, "gang_atten")
+    gang "북진! {w}일병 [gang]. {w}용무 마치고 복귀하겠습니다."
+    $FaceChange("gang_atten", 0.0, .5, "gang_salute")
+    $SoundPlayer("door.ogg", 2.0)
+    hide gang_atten
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $evented = True
+    return
+
+label day2_study_maojr1:
+    $SoundPlayer("pen.ogg", 1.0)
+    main "(잠깐만. {w}두 점 사이에 거리? {w}어떻게 구하더라?)"
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show zoo_smi at center with dissolve
+    zoo "ㅇㅇ."
     return

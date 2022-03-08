@@ -220,8 +220,9 @@ label day2_checker:
     elif what == "전공 공부":
         main "(어디보자... {w}어디까지 했더라...)"
         "챙겨왔던 전공서적을 꺼내 펼쳤다."
+        call events_run_period
         return
-label study_major:
-    $what = "전공 공부"
-
-    return
+#label study_major:
+#    $what = "전공 공부"
+#
+#    return

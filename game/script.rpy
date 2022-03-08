@@ -793,7 +793,7 @@ label start:
     $timeCheck(0, 25)
     $SoundPlayer("walk_slow.ogg", 2.0)
     show cap2_working at right with dissolve
-    cap2 "아, 2021년 9월 18일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}뒤로 돌아! {w}전방에 힘찬 함성 3초간 실시!"
+    cap2 "아, 2021년 9월 XX일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}뒤로 돌아! {w}전방에 힘찬 함성 3초간 실시!"
     "목소리" "아아아아아!!" with vpunch
     cap2 "구령조정 3회 실시!"
     "목소리" "부대 차려! {w}열 중 쉬어! {w}뒤로 돌아!"
@@ -1052,6 +1052,10 @@ label start:
     menu:
         "독서(+20m)":
             $what = "독서"
+        "주특기 공부(+20m)":
+            $what = "주특기 공부"
+        "전공 공부(+20m":
+            $what = "전공 공부"
     call day2_checker
     "."
     return
