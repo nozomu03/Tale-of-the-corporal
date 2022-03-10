@@ -19,6 +19,9 @@ init python:
     event("day2_study_specialty3", 'what==\"주특기 공부\" and evented == False', event.random(.7), event.only(), priority=20)
     event("day2_study_specialty2", 'what==\"주특기 공부\" and evented == False', event.random(.7), event.only(), priority=20)
     event("day2_study_specialty1", 'what==\"주특기 공부\" and evented == False', priority = 100)
+    event("day2_study_major3", 'what==\"전공 공부\" and evented == False', event.random(.5), event.only(), priority=20)
+    event("day2_study_major1", 'what==\"전공 공부\" and evented == False', event.random(.5), event.only(), priority=20)
+    event("day2_study_major2", 'what==\"전공 공부\" and evented == False', priority = 100)
 
     #event('meet_j')
 
@@ -707,6 +710,7 @@ label day2_novel1:
     $stress_val -= 5 
     $timeCheck(0, 2.0)
     $evented=True
+    $what = "부상의 이유"
     return 
 
 label day2_novel2:
@@ -751,6 +755,7 @@ label day2_novel2:
     $stress_val += 5
     $timeCheck(0, 20)
     $evented=True
+    $what = "편제장비"
     return 
 
 label day2_novel3:
@@ -957,6 +962,7 @@ label day2_study_specialty3:
         $sat_val -= 10
         $renpy.pause(.5)
         hide main_atten
+        $what = "사지방"
     else:
         scene bg_hallway with blinds
         main "북진. {w}용무 마치고 복귀하겠습니다."            
@@ -976,6 +982,7 @@ label day2_study_specialty3:
         $stress_val-= 5
         $sat_val-=5
         hide main_unhat
+        $what = "편제 전환"
 
     $timeCheck(0, 20)
     $evented = True
@@ -1005,10 +1012,100 @@ label day2_study_specialty3:
     $evented = True
     return
 
-label day2_study_maojr1:
+label day2_study_major1:
     $SoundPlayer("pen.ogg", 1.0)
     main "(잠깐만. {w}두 점 사이에 거리? {w}어떻게 구하더라?)"
     $SoundPlayer("walk_slow.ogg", 2.0)
     show zoo_smi at center with dissolve
     zoo "ㅇㅇ."
+    main "상병 ㅇㅇㅇ. {w}부르셨습니까?"
+    zoo "뭐하고 있어?"
+    main "아, [zoo] 하사님! {w}고생하십니다. {w}공부하고 있었습니다."
+    zoo "전공?"
+    main "예, 전공 공부입니다."
+    zoo "열심히 하네."
+    main "감사합니다. {w}부대 일지 뭐라고 남기면 되겠습니까?"
+    zoo "백신 예비조 복귀."
+    $SoundPlayer("typing.ogg", 2.0)
+    main "예. {w}기입했습니다."
+    zoo "오늘도 근무야?"
+    main "예... {w}어쩌다 보니 그렇게 됐습니다."
+    zoo "요원화 훈련이 사람 잡네."
+    main "괜찮습니다. {w}저 훈련받을 때도 선임분들께서 제가 해야할 것까지 대신 해주시지 않았습니까."
+    zoo "하긴. {w}너 훈련 가는 바람에 5대기 통신병이 없어서 2소대에서 지원해주긴 했다."
+    main "그때 기억나십니까? {w}[zoo] 하사님께서 훈련 잘 받고 오라고 부식으로 나온 감자칩 나눠주시지 않았습니까."
+    zoo "맞다, 그랬었지. {w}그때 준혁이가... {w}그... {w}왜 그랬었잖아. {w}이거 줄 테니까... {w}뭐였더라?"
+    main "\'이거 줄게. {w}이거 주고 5대기도 들어가줄게. {w} 그 대신에 맛있게 먹고 훈련 열심히 받아서 가슴에 독수리 꼭 달고 돌아와라\'였습니다."
+    zoo "그걸 아직도 기억하고 있어? {w}정말 대단한 기억력인데?"
+    main "저도 아직 기억하고 있는 게 좀 신기하긴 합니다."
+    zoo "와... {w}그게 벌써 반년이 넘었네..."
+    main "예. {w}그게 올해 1월달이었으니까 시간 진짜 빨리 흐르긴 했습니다."
+    zoo "그러게... {w}근무 고생하고 안녕~"
+    main "중대 내려가십니까?"
+    zoo "응. {w}가서 복귀 신고 해야지."
+    main "고생하십시오, [zoo] 하사님."
+    zoo "너도~"
+    hide zoo_smi
+    $SoundPlayer("walk_slow.ogg")
+    $SoundPlayer("door.ogg")
+    $SoundPlayer("door.ogg")
+    "어깨에, 감촉이 남아있다."
+    "작업 도중, 훈련 도중. {w}여러 차례 넘어지고, 부상당하며 해진 섬유 너머에서 체온이 전달되었다."
+    "지금으로부터 닿을 수 없으리 만큼 멀직히 떨어진 것처럼 느껴지는 가까운 떄에. {w}두려움에 질듯 고개를 숙일 때마다 살며시 얹어졌듯이."
+    "몇 남지 않은 연결고리들마저 하나 둘 부서져 내리는 이금에, 어깨에 머문 온기. {w}그 흔적은 빠르게 흩어지겠지만. {w}분명한 형상을 지닌 따스함을 남겼다."
+    main "([zoo] 하사님...)"
+    "어리석음에서 시작된 잘못으로 인해 모래 위의 성탑은 파도라 말하지도 못할 하찮은 물줄기와 만나자 삽시간에 무너져 내렸다."
+    "도망자. {w}어찌보면 선의를 배신한 사람. {w}그럼에도. {w}그 사실을 들었음에도. {w}진실을 보았음에도. {w}한결같은 은의를 베풀어주시기에."
+    "한 번도 만족시켜드리지 못하고. {w}언제나 내게 내려진 기대를 저버리기를 반복하던 나. {w}하루하루를 두려움 속에서 살며. {w}나를 향한 제각각의 시선으로부터 도망가고자 궁리하던 사람."
+    "한 시의 쉼도 없이 매 차례 몸집을 불리던 달빛의 그림자를 진실된 빛으로 지워내주던 이들."
+    "비록 그 분들 중 대부분은 약속된 기간이 끝남과 함께 떠나가게 되었으나."
+    "선임 분들이. {w}[zoo] {s}상병{/s}하사님이. {w} 간부님이 계셨기에. {w}노력할 수 있었고. {w}깎아지르는 절벽을 수 차례 넘어설 수 있었다."
+    "변변한 사과 한 마디도 건내지 않은 채 도망나올 정도로 나를 둘러싼 허물이 커졌던 떄도. {w}그 벗겨지지 않은 허물이 드리운 그늘이 아직 남은 지금에도."
+    "나는 버텨 섰다. {w}폭풍에 휩싸인 것 마냥 굉굉히 흔들리면서도 아슬하게나마 꺾이지 않은 채."
+    "지금껏 지탱해준 모든 것 중에 단 하나라도 도중에 잃어버렸거나, 처음부터 손에 쥐지 못했더라면."
+    "어떻게 되었을지는 자명한 사실이다."
+    $SoundPlayer("pen.ogg", 2.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    $SoundPlayer("paper.ogg", 1.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    $stress_val -= 5
+    $sat_val += 5
+    $timeCheck(0, 20)
+    $evented = True
+    return
+
+label day2_study_major2:
+    $SoundPlayer("pen.ogg", 1.0)
+    main "(뭔가 이상한데... {w}이게 왜 안 풀리지?)"
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0)
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다.\]"
+    young "\[ㅇㅇㅇ 상병님? {w}저 영훈입니다.\]"
+    main "\[어, 무슨 일이야.\]"
+    young "\[지금 지철이가 얼굴을 데이는 바람에 저랑 같이 의무대 출발합니다.\]"
+    main "\[괜찮데? {w}많이 안 다쳤어?\]"
+    young "\[튀김 튀기다가 기름 튄 거라서 그렇게까지 심하진 않습니다.\]"
+    main "\[그래, 빨리 갔다 와. {w}갔다 와서도 전화 주고.\]"
+    young "\[예. {w}있다 복귀해서 다시 전화드리겠습니다.\]"
+    $SoundPlayer("teleclick.ogg", 1.0)    
+    $SoundPlayer("pen.ogg", 2.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    $SoundPlayer("paper.ogg", 1.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    $timeCheck(0, 20)
+    $evented = True
+    $what = "데였다"
+    return
+
+label day2_study_major3:
+    $SoundPlayer("pen.ogg", 1.0)
+    main "(삼차원에서 두 점 사이의 거리? {w}어떻게 구하더라?)"
+    "교과서에 부록으로 실려 있는 문제들을 하나 하나 풀어갔다."
+    $SoundPlayer("pen.ogg", 2.0)
+    $SoundPlayer("pen.ogg", 2.0)
+    $renpy.pause(2.0)
+    $timeCheck(0, 20)
+    main "(82점이라... {w}나쁘진 않네.)"
+    $stress_val -= 5
+    $evented = True
     return

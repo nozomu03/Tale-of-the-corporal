@@ -900,11 +900,11 @@ label start:
     extend " 준비 완료되었습니다. {w}먼저 무전 부탁드립니다.\]"
     "목소리" "\[보내겠습니다.\]"
     play looping noise
-    "목소리" "\[쟁취자, 쟁취자. {w}호롱등 송신.\]"
-    main "\[쟁취자 등장.\]"
-    "목소라" "\[쟁취자 측 수신감도, 수신감도 어떠한지.\]"
-    main "\[쟁취자 측 수신감도 삼삼. {w}호롱등측 수신감도 어떠한지.\]"
-    "목소리" "\[호롱등 측 수신감도 삼삼. {w}이상 교신 끝.\]"
+    "목소리" "\[단륜간, 단륜간. {w}새부엌 송신.\]"
+    main "\[단륜간 등장.\]"
+    "목소라" "\[단륜간 측 수신감도, 수신감도 어떠한지.\]"
+    main "\[단륜간 측 수신감도 삼삼. {w}새부엌측 수신감도 어떠한지.\]"
+    "목소리" "\[새부엌 측 수신감도 삼삼. {w}이상 교신 끝.\]"
     stop looping
     $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
     "목소리" "\[관등성명 여쭈어 봐도 되겠습니까?\]"
@@ -933,9 +933,9 @@ label start:
     main "\[예. {w}무전 넣어주십시오.\]"
     $SoundPlayer("teleclick.ogg", 1.0)
     play looping noise
-    "목소리" "\[쟁취자, 쟁취자. {w}호롱등 송신.\]"
-    main "\[쟁취자 등장.\]"
-    "목소리" "\[호롱등 측에 17어수, 17어수 전문 있음.\]"
+    "목소리" "\[단륜간, 단륜간. {w}새부엌 송신.\]"
+    main "\[단륜간 등장.\]"
+    "목소리" "\[새부엌 측에 17어수, 17어수 전문 있음.\]"
     main "\[수신 양호. {w}송신 바람.\]"
     "목소리" "\[다음은 첫 번째 줄 전문 구분. {w}"
     play looping2 pen
@@ -973,9 +973,9 @@ label start:
     main "\[통신보안. {w}ㅇㅇ대대 상황근무자 상병 ㅇㅇㅇ입니다. {w}방금 주셨던 전문에 대한 답이 준비되서 연락드렸습니다.\]"
     "목소리" "예. {w}바로 불러 주십시오."
     play looping noise
-    main "\[호롱등, 호롱등. {w}쟁취자 송신.\]"
-    "목소리" "\[호롱등 등장.\]"
-    main "\[쟁취자 측에 13어수 전문 있음.\]"
+    main "\[새부엌, 새부엌. {w}단륜간 송신.\]"
+    "목소리" "\[새부엌 등장.\]"
+    main "\[단륜간 측에 13어수 전문 있음.\]"
     "목소리" "\[송신 바람.\]"
     main "\[다음은 첫 번째 줄 전문 구분. {w}칠, 둘, 아홉, 삼. {w}여섯, 오, 칠, 삼....\]"
     window hide
@@ -1054,9 +1054,56 @@ label start:
             $what = "독서"
         "주특기 공부(+20m)":
             $what = "주특기 공부"
-        "전공 공부(+20m":
+        "전공 공부(+20m)":
             $what = "전공 공부"
     call day2_checker
+    $SoundPlayer("broadcast.wav", 2.0)\
+    "녹음된 목소리" "\[문자형 전파체계 신규 문자 수신 알림입니다.\]"
+    main "확인하겠습니다!"
+    $SoundPlayer("running.wav", 2.0)
+    $SoundPlayer("click.ogg", 2.0)
+    tie "뭐야?"
+    main "군용 민간통신장비 점검 응신 요청입니다! {w}대상에 ㅇㅇ대대도 포함입니다! {w}제가 무전 넣겠습니다."
+    tie "부탁해~"
+    $SoundPlayer("running.wav", 2.0)
+    $FaceChange("main_hand", 2.0, 1.0, "main_unhat")
+    play looping noise
+    main "\[장검집, 장검집. {w}단륜간 송신\]"
+    $renpy.pause(1.0)
+    main "\[장검집, 장검집. {w}단륜간 송신\]"
+    "목소리" "\[장검집 등장.\]"
+    main "\[장검집 측. {w}사제망 전송 바람.\]"
+    "목소리" "\[수신 양호. {w}바로 전송하겠음.\]"
+    main "\[양호. {w}이상 교신 끝.\]"
+    $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
+
+    stop looping
+    $SoundPlayer("alarm.ogg", 3.0)
+    play sound rolling
+    main "확인해보겠습니다!"
+    $SoundPlayer("click.ogg", 2.0)
+    main "정훈장교님?"
+    tie "왜?"
+    main "c4i 체계 점검 응싱해달라고 합니다."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show tie_nom at center with dissolve
+    main "제목에 c4i 체계 점검 응신이라고 적고 내용은 쓰지 않은 채로 보내라고 하는데 어떻게 합니까?"
+    tie "내가 할게. {w}잠깐만."
+    $SoundPlayer("typing.ogg", 2.0)
+    $SoundPlayer("enter.wav", 1.0)
+    main "갑자기 몰아칩니다."
+    tie "그러{w=.3}{nw}"
+    $SoundPlayer("telering.wav", 1.5)
+    $SoundPlayer("teleclick.ogg", 1.0)
+    main "\[통신보안. {w}ㅇㅇ대대 상황근무-{w=.3}{nw}"
+    "목소리" "\[아, 네... {w}군단 대침투 장교인데요. {w}정작과장님 안 계시나요?\]"
+    main "\[잠시만 기다려 주십시오.\] {w}정작과장님!"
+    "정작과장" "왜?"
+    main "군단 대침투 장교한테 전화왔는데 넘겨드리면 되겠습니까?"
+    "정작과장" "어, 넘겨줘."
+    main "\[지금 전환해 드리곘습니다.\]"
+    $SoundPlayer("dial.ogg", .4)
+    $SoundPlayer("teleclick.ogg", 1.0)
     "."
     return
 

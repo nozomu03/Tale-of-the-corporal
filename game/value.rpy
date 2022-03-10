@@ -17,6 +17,7 @@ define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
 define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B57")
 define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
 define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
+define young = Character("박영훈", who_color = "#CD853F", what_color = "#778899")
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
