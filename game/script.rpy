@@ -793,7 +793,7 @@ label start:
     $timeCheck(0, 25)
     $SoundPlayer("walk_slow.ogg", 2.0)
     show cap2_working at right with dissolve
-    cap2 "아, 2021년 9월 XX일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}뒤로 돌아! {w}전방에 힘찬 함성 3초간 실시!"
+    cap2 "아, 20xx년 9월 XX일 아침점호는 ㅇㅇ대대 당직사령이 직접 실시한다.{p}뒤로 돌아! {w}전방에 힘찬 함성 3초간 실시!"
     "목소리" "아아아아아!!" with vpunch
     cap2 "구령조정 3회 실시!"
     "목소리" "부대 차려! {w}열 중 쉬어! {w}뒤로 돌아!"
@@ -1076,7 +1076,6 @@ label start:
     "목소리" "\[수신 양호. {w}바로 전송하겠음.\]"
     main "\[양호. {w}이상 교신 끝.\]"
     $FaceChange("main_unhat", 2.0, 1.0, "main_hand")
-
     stop looping
     $SoundPlayer("alarm.ogg", 3.0)
     play sound rolling
@@ -1104,6 +1103,56 @@ label start:
     main "\[지금 전환해 드리곘습니다.\]"
     $SoundPlayer("dial.ogg", .4)
     $SoundPlayer("teleclick.ogg", 1.0)
+    hide screen time
+    scene bg_black with blinds
+    centered "군대에서의 시간은 다른 어느 곳에서보다 더디게 흐른다고들 한다."
+    extend "\n틀린 말은 아니었다. {w}1년 반이라는 시간이. {w}한 달이. {w}일주일이."
+    extend "\n이토록이나 긴 시간이란 것을 처음으로 느끼게 되었으니까."
+    extend "\n거꾸로 매달아도 국방부 시계는 돌아간다는 말이 시사하듯."
+    extend "\n매 순간순간에 흘러가는 모래알 같은 시간들이 모여 끝나지 않을 것만 같은 하루를 채워 나간다."
+    extend "\n창문 밖으로 해가 뉘엿이는 것을 보고서도 1시간여. {w}12시간 동안의 상황병 근무가 끝났다."
+    $now_h = 19
+    $now_m = 50
+    scene bg_zitong
+    show jeong_atten at center
+    show main_atten at right
+    with blinds
+    main "어우 씨, 죽는 줄 알았네."
+    jeong "괜찮아?"
+    main "아니... {w}안 괜찮은 것 같아... {w}속 쓰려..."
+    jeong "휴게실에서 뭐라도 좀 먹어."
+    main "라면 하나 끓이려고."
+    jeong "특이사항은?"
+    main "탄약고 근무자들 CEOI 배부했고, 화이트보드도 최신화 했고 제원도 다 바꿨어."
+    jeong "오키. {w}사령님은?"
+    main "5대기 강평 가셨어. {w}점검일지는 올렸고."
+    jeong "사령님 누구시지?"
+    main "전투지원중대장님."
+    jeong "고생했어. {w}쉬어."
+    main "욕 봐."
+    $FaceChange("main_salute", 2.0, .5, "main_atten")
+    main "북진! {w}상병 이지민 근무 마치고 복귀하겠습니다!"
+    show sergeant_working at left with dissolve
+    adjutant "그래~ {w}푹 쉬고 내일 보자."
+    $FaceChange("main_atten", 2.0, .5, "main_salute")
+    main "고생하십시오."
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show main_atten at right 
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_bath
+    show main_atten
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_taba_night
+    show main_taba_nof
+    with dissolve
+    main "(별이 하나도 없네...)"
+    $Smoking(img="main", loc=1.0, rep=2, first = True)
     "."
     return
 
