@@ -88,6 +88,7 @@ init python:
             renpy.sound.play("/audio/lighter.ogg")
             renpy.pause(4.0)
             FaceChange(img + "_taba", loc, 2.0, img + "_taba_nof")
+            first = False
         while count < rep:
             FaceChange(img + "_taba", loc, 1.0, img + "_tabahand")
             renpy.sound.play("/audio/smoke.ogg")

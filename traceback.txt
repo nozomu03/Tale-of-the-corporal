@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1112, in script
-    extned "\n매 순간순간에 흘러가는 모래알 같은 시간들이 모여 끝나지 않을 것만 같은 하루를 채워 나간다."
+  File "game/script.rpy", line 1218, in script
+    extned "\n오늘은 어제 한 것. {w}내일은 오늘 한 것."
 Exception: Sayer 'extned' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1112, in script
-    extned "\n매 순간순간에 흘러가는 모래알 같은 시간들이 모여 끝나지 않을 것만 같은 하루를 채워 나간다."
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 681, in execute
+  File "game/script.rpy", line 1218, in script
+    extned "\n오늘은 어제 한 것. {w}내일은 오늘 한 것."
+  File "renpy/ast.py", line 681, in execute
     who = eval_who(self.who, self.who_fast)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 574, in eval_who
+  File "renpy/ast.py", line 574, in eval_who
     raise Exception("Sayer '%s' is not defined." % who)
 Exception: Sayer 'extned' is not defined.
 
-Windows-10-10.0.18362
+Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Thu Mar 10 20:41:22 2022
+Fri Mar 11 17:49:55 2022

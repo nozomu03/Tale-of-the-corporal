@@ -1072,6 +1072,7 @@ label day2_study_major1:
     $sat_val += 5
     $timeCheck(0, 20)
     $evented = True
+    $what = "전문하사"
     return
 
 label day2_study_major2:

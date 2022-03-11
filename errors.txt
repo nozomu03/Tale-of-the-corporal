@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dse-events.rpy", line 897: expected statement.
-    main ("x바... {w}x됐네...")
-                            ^
+File "game/script.rpy", line 1205: expected statement.
+    main 
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar  8 17:04:48 2022
+Fri Mar 11 15:14:05 2022

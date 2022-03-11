@@ -1149,10 +1149,113 @@ label start:
     with dissolve
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_taba_night
-    show main_taba_nof
+    show main_tabahand
     with dissolve
+    $Smoking(img="main", loc=1.0, rep=2 )
     main "(별이 하나도 없네...)"
-    $Smoking(img="main", loc=1.0, rep=2, first = True)
+    $Smoking(img="main", loc=1.0, rep=4)
+    "목소리" "ㅇ~ㅇ~아~"
+    main "...?"
+    zoo "왁! {w=.3}{nw}" 
+    hide main_tabahand
+    show zoo_smi at Position(xalign=.4, yalign=1.0)
+    show main_tabahand_sup at center
+    with vpunch
+    $FaceChange("main_tabahand", 1.0, .5, "main_tabahand_sup")    
+    $FaceChange("main_tabahand_sal", 1.0, .5, "main_tabahand")    
+    main "북진."
+    zoo "그래."
+    show zoo_smi at left with moveinright
+    $FaceChange("main_tabahand", 1.0, .5, "main_tabahand_sal")
+    $FaceChange("zoo_taba_nof", 0.0, 1.0, "zoo_smi")
+    $Smoking(img="zoo", loc=0, rep = 2, first=True)
+    if what == "전문하사":
+        zoo "근무 끝났어?"
+        main "예. {w}막 퇴근했습니다."
+        zoo "고생했다."
+        $stress_val -= 3
+    main "[zoo] 하사님, 퇴근 안하셨습니까?"
+    zoo "이제 해야지."
+    main "지금까지 일 하신 겁니까?"
+    zoo "응. {w}예비조 갔다 와서 하려고 했었는데 오늘 작업 때문에 못했거든."
+    main "작업 있었습니까?"
+    zoo "응. {w}치장창고 정리하라고 해서. {w}이제 퇴근해야지."
+    main "고생하셨습니다."
+    $Smoking(img="main", loc=1, rep = 1)
+    main "백신 호송도 빨리 끝났으면 좋겠습니다."
+    zoo "그러게..."
+    $Smoking(img="zoo", loc=0, rep = 1)
+    if what == "전문하사":
+        zoo "넌 근무 언제까지야?"
+        main "금요일까지 쭉입니다."
+        zoo "백신호송에 요원화 훈련에... {w}간부도 병사도 죽어 나가는구나."
+        main "그러게 말입니다... {w}육지검도 받아야 하고... {w}호국도 해야합니다..."
+        zoo "하아... {w}그래도 그것만 끝나면 혹한기까지 큰 건 없다."
+        main "그럼 저도 집에 갈 수 있습니다..."
+        zoo "언제 가는데?"
+        main "11월 초에 나갑니다."
+        zoo "이야, 다 했네."
+        main "감사합니다."
+        $stress_val -= 3
+    zoo "오늘은 좀 흐리네."
+    main "구름도 많습니다..."
+    zoo "비 오는 거 아니겠지... {w}비 오면 일 나는데..."
+    main "어우, 끔찍할 거 같습니다... {w}그럼 훈련 연장될 수도 있지 않겠습니까/"
+    zoo "에이, 설마... {w}그렇게까지 되겠어?"
+    $Smoking(img="main", loc=1, rep = 1)
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("main_atten", 1.0, .5, "main_tabahand")
+    $renpy.pause(1.0)
+    $FaceChange("main_salute", 1.0, .5, "main_atten")
+    main "북진! {w}먼저 가 보아도 되겠습니까?"
+    zoo "응, 그래. {w}고생했어. {w}내일 보자."
+    $FaceChange("main_atten", 1.0, .5, "main_salute")
+    $renpy.pause(.5)
+    hide main_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_black with Fade(4.0, 1.0, 1.0, color="#000000")
+    centered "군대에서의 하루하루는 똑같은 것의 반복이라고들 한다."
+    extend "\n오늘은 어제 한 것. {w}내일은 오늘 한 것."
+    extend "\n훈련 주간에도 이 사실은 변하지 않는다. {w}소위 말하는 \'짬을 먹었다\'라는 표현이 생겨난 이유이다."
+    extend "\n아무리 덜떨어진 사람이라고 해도. {w}머리가 따르지 않는 사람이라 해도."
+    extend "\n한정된 상황을 십 수 개월 동안 반복하니 능숙해지지 않을 수 없었다."
+    scene bg_zitong 
+    show main_nem2 at right
+    with Fade(1.0, 1.0, 1.0, color="#000000")
+    $now_h = 19
+    $now_m = 52
+    $renpy.transition(dissolve)
+    show screen time 
+    $SoundPlayer("sigh.wav", 2.0)
+    main "(아무리 그래도 이건 진짜 못 해먹겠다...)"
+    $SoundPlayer("knock.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    show go_sal2 at center
+    go "북진. {w}상병 [go] 지휘통제실에 용무 있어 왔습니다."
+    show tie_nom at left with dissolve
+    tie "야간이야?"
+    $FaceChange("go_atten", 1.0, .5, "go_sal2")
+    go "예, 그렇습니다."
+    tie "ㅇㅇ아. {w}후번초 왔다."
+    main "잘... 못... 들엇...습니다...?"
+    tie "아이고... {w}완전 정신줄을 놓아 버렸네."
+    go "괜찮으십니까?"
+    main "어? {w}균영...이니...?"
+    $FaceChange("go_smi", 1.0, .5, "go_atten")
+    go "교대하십니까? {w}들어가서 좀 쉬십시오."
+    main "뭐야, 지금 몇 시야?"
+    go "19시 52분입니다."
+    main "그래... {w}특이사항은 딱히 없고... {w}5대기 점검도 실시사항 올렸고, 레이더 점검도 방금 했고... {w}그리고... {w}그리고... {w}없다."
+    go "오늘로 며칠 째십니까?"
+    main "5일 째지..."
+    go "어우, 고생하셨습니다."
+    main "너만 하겠니..."
+    go "CEOI낭 주십니까?"
+    main "여기."
+    $SoundPlayer("blanket.wav", 4.0)
+    $FaceChange("main_nem2_atten", 0.0, 1.0, "main_nem2")
+    $renpy.pause(.5)
+    $FaceChange("main_nem2_sal", 0.0, 1.0, "main_nem2_atten")
     "."
     return
 
