@@ -1232,7 +1232,7 @@ label start:
     $SoundPlayer("door.ogg", 2.0)
     show go_sal2 at center
     go "북진. {w}상병 [go] 지휘통제실에 용무 있어 왔습니다."
-    show tie_nom at left with dissolve
+    show tie_working at left with dissolve
     tie "야간이야?"
     $FaceChange("go_atten", 1.0, .5, "go_sal2")
     go "예, 그렇습니다."
@@ -1256,6 +1256,32 @@ label start:
     $FaceChange("main_nem2_atten", 0.0, 1.0, "main_nem2")
     $renpy.pause(.5)
     $FaceChange("main_nem2_sal", 0.0, 1.0, "main_nem2_atten")
+    main "북진... {w}상병 이지민 근무 마치고 복귀해도 되겠습니까?"
+    tie "그래, 고생했다. {w}오늘이 마지막이지?"
+    $FaceChange("main_nem2_atten", 0.0, 1.0, "main_nem2_sal")
+    main "예, 그렇습니다."
+    tie "내일 또 주말이니까 잘 쉬고, 월요일날 웃는 낯으로 다시 만나자."
+    main "옙. {w}정훈장교님도 근무 고생하십시오."
+    hide main_nem2_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show main_nem2_atten at center
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    "피곤했다. {w}서 있는 것조차 버거울 정도로 머리가 울린다. {w}목구멍이 불타는 듯 쓰려왔다."
+    "근무 내내 담배 한 대 입에 대지 않았음에도 흡연욕은 전혀 생기지 않았다. "
+    "샤워하고 한시라도 빨리 내 자리에 눕는 것. {w}그것 이외에는 아무런 생각도 들지 않았다."
+    main "(으... {w}토할 것 같아...)"
+    hide main_nem2_atten
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room
+    show main_nem2_atten at right
+    with dissolve
+    $SoundPlayer("blanket.wav", 5.0)
+    $FaceChange("main_cloth", 2.0, 1.0, "main_nem2_atten]")
+    
     "."
     return
 
