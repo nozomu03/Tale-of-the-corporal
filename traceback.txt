@@ -1,24 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1296, in script
-    show main_ord_ita at [blur2, center]
-TypeError: 'RevertableList' object is not callable
+  File "game/script.rpy", line 1396, in script call
+    "."
+  File "renpy/common/00console.rpy", line 1054, in script
+    python in _console:
+  File "renpy/common/00console.rpy", line 1056, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 564, in interact
+    line = ui.interact()
+IOError: Couldn't find file 'audio/laugh.wav'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1296, in script
-    show main_ord_ita at [blur2, center]
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 1197, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 1167, in show_imspec
-    atl=atl)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 754, in show
-    img = i(img)
-TypeError: 'RevertableList' object is not callable
+  File "game/script.rpy", line 1396, in script call
+    "."
+  File "renpy/common/00console.rpy", line 1054, in script
+    python in _console:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00console.rpy", line 1056, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 564, in interact
+    line = ui.interact()
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 4025, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 518, in periodic
+    topf = load(filename)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/laugh.wav'.
 
-Windows-10-10.0.18362
+Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Mon Mar 14 09:59:37 2022
+Mon Mar 14 19:14:34 2022

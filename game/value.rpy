@@ -18,6 +18,7 @@ define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B5
 define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
 define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
 define young = Character("박영훈", who_color = "#CD853F", what_color = "#778899")
+define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B90000")
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
@@ -54,8 +55,11 @@ default message_list = []
 default what = ""
 default what_list = []
 
-define circirisin = ImageDissolve("glass_crash.jpg", 2.0, 8)
+define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
+define testd = ImageDissolve("testimage.png", 5.0, 8)
+
 #풍수지탄
+
 #화발다풍우
 #수욕정이풍부지
 #풍찬노숙

@@ -21,8 +21,8 @@ image blood9 = "blood.png"
 image blood10 = "blood.png"
 
 transform bluring:
-    blur 100.0
-    linear 4.0 blur 8.0
+    blur 34.0
+    linear 2.0 blur 10.0
 
 layeredimage qquari:
     always:

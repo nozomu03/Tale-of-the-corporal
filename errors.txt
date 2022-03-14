@@ -2,13 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1296: expected statement.
-    main_ord_ita at blur2
-                 ^
+File "game/script.rpy", line 1376: expected statement.
+    alpha 0.0
+           ^
 
-File "game/script.rpy", line 1299: play requires a file
-    play looping
-                ^
+File "game/script.rpy", line 1377: expected statement.
+    align(.5, 1.0)
+                  ^
+
+File "game/script.rpy", line 1378: expected statement.
+    parallel:
+            ^
+
+File "game/script.rpy", line 1382: expected statement.
+    parallel:
+            ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 14 09:57:48 2022
+Mon Mar 14 19:23:52 2022

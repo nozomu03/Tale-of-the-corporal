@@ -1289,7 +1289,6 @@ label start:
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth_bath with dissolve
     $SoundPlayer("door.ogg", 2.0)
-    main "(아무도 없네.)"
     $SoundPlayer("blanket.wav", 5.0)
     $FaceChange("main_ord", 1.0, 1.0, "main_cloth_bath")
     scene bg_locker at blur2 
@@ -1303,6 +1302,8 @@ label start:
     "갑작스레 순찰자가 들이닥치지 않는 이상 추위와 더위에 시달리며 서 있기만 하면 되는 탄약고와 달리 언제, 어떻게 시작될 지 모르는 훈련상황과 소홀히 할 수 없는 무전대기."
     "어느 정도의 정형화 된 틀이 있고, 그 안에 맞춰가면 되는 일을 1년 가까이 해 왔던 입장에서 몸은 편할지 몰라도 억지로라도 신경을 곤두세울 필요가 있는 근무를 연속으로 들어가자 몸은 격한 거부반응을 내뱉았다."
     "충분한 수면시간을 보장 받는다 하여도, 그 여파를 완전히 지워내진 못한 것 같았다."
+    $now_h = 20
+    $now_m = 0
     scene bg_locker at blur2 
     show main_ord_ita at blur3
     with Dissolve(2.0)
@@ -1314,6 +1315,127 @@ label start:
     "의자에 앉았다. {w}잠깐 앉아 쉰다면 금방 회복될 것이다."
     $SoundPlayer("door.ogg", 2.0)
     show prf_cloth_nom at right with dissolve
+    prf "혼자 앉아서 뭐하십니까?"
+    main "저혈압 때문에..."
+    prf "괜찮으십니까?"
+    main "어, 괜찮아. {w}잠깐 앉아서 쉬면 금방 나아."
+    $FaceChange("main_ord", 1.0, 2.0, "main_ord_ita")
+    prf "그건 안 낫는답니까?"
+    main "뭐... 몸이 건강해지면 자동적으로 낫는다곤 하는데 난 아직 부족한가 보지."
+    prf "저랑 운동하십니까?"
+    main "아니오아니오아니오아니오아니오. {w}누구 죽일 일 있냐."
+    prf "그렇게 질색하시지 않으셔도 됩니다. {w}저야 군대 오기 전에도 운동을 했었으니 체단실에서 그런 식으로 운동하는 거지 ㅇㅇㅇ 상병님 도와드릴 땐 그렇게 안 합니다. {w}한 번 믿어 보십시오. {w}체력단련병 한 번 믿어주십시오."
+    main "에휴..."
+    prf "뭐, 그건 그렇고 아직 어지러우십니까?"
+    main "이제 괜찮아졌어. {w}씻으러 들어가자."
+    hide main_ord
+    hide prf_cloth_nom
+    scene bg_shower with dissolve
+    play looping shower
+    scene bg_black with circirisin 
+    $renpy.pause(2.0, hard=True)
+    stop looping
+    $stress_val -= 3
+    $timeCheck(0, 20)
+    scene bg_locker 
+    show main_ord 
+    show prf_cloth_nom at right
+    with circirisin
+    prf "먼저 가보겠습니다."
+    main "응."
+    hide prf_cloth_nom
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("blanket.wav", 4.0)
+    $FaceChange("main_cloth_bath", 1.0, 2.0, "main_ord")
+    main "(나도 그만 갈까.)"
+    hide main_cloth_bath
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show main_cloth_bath with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room2
+    show main_cloth_bath
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    play sound put
+    main "(아무도 없나.)"
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_bath")
+    $renpy.pause(1.0)
+    hide main_cloth
+    $SoundPlayer("sheet.ogg", 1.0)
+    "개인임무 분담제가 시작될 때까지, 잠깐 눈을 붙이기로 했다."
+    hide screen time 
+    scene bg_room2:
+        linear 2.0 blur 100
+        im.Sepia("bg_room.png")
+        linear 2.0 blur 0
+    show main_ord:
+        alpha 0.0
+        align(.5, 1.0)
+        parallel:
+            linear 2.0 blur 100
+            im.Sepia("main_ord.png") 
+            linear 2.0 blur 0   
+        parallel:
+            pause 2.0
+            linear 2.0 alpha 1.0
+    show past1_smi:
+        align(.9, 1.0)
+        alpha 0.0
+        parallel:
+            linear 2.0 blur 100
+            im.Sepia("past1_smi.png")
+            linear 2.0 blur 0
+        parallel:
+            pause 2.0
+            linear 2.0 alpha 1.0
+    $renpy.pause(4.0)
+    show explain_scene with dissolve
+    centered "꿈을, 꾸고 있다."
+    extend "\n비록 그것은 내가 확인하지 못한 것을 비춘 환상."
+    extend "\n그러나, 동시에. {w}틀림없는 현실."
+    extend "\n지금에 이르러서는, 알 수 있었다. {w}잘못된 방향으로 나아가기를 수 차례. {w}그럼에도 나는 정교하게 짜여진 무수한 거짓으로 보호받고 있던 진실을 엿보는데 성공했다."
+    extend "\n벗어날 수 없는 족쇄에서 도피하기 위해 내달리던 내가 최소한의 상처만 입은 채 그 굴레를 끊어내지 못함을 깨닫도록 만들기 위해 진의를 숨긴채 행동했음을."
+    $blur_val = True
+    centered "{size=60}{color=#FF0000}나는 인정받지 못함이니.{/size}"
+    centered "{size=60}{color=#FF0000}나는 받아들여지지 못함이니."
+    centered "{size=60}{color=#FF0000}모든 이들이 설령 나를 질기한다 하여도."
+    centered "{size=60}{color=#FF0000}그들이 은혜를 베풀어 주었음은 틀림없는 사실." 
+    centered "{size=60}{color=#FF0000}본래라면 아무런 타격도\n주지 못했을 터인데 어찌하여."
+    centered "{size=60}{color=#FF0000}나는 그 사실에 이토록이나 번롱하고 있는가." with circirisin
+    $blur_val = False
+    $SoundPlayer("laugh.ogg", 1.0)
+    past1 "너 설마 지금까지 그렇게 믿고 있었던 거냐? {w}이것 참. {w}우스워서 눈물이 나려고 하네."
+    main "......."
+    past1 "그 사람들이 네가 없을 때... {w}흡연장에서... {w}나한테 무슨 소리를 했는 지 알게되면 네가 어떤 반응일지 궁금한데?"
+    main "......."
+    "입에 담을 수 있는 말은 없었다. {w}그저 묵묵히 듣는 것 외에... {w}내가 할 수 있는 것은 없었다."
+    $SoundPlayer("slap.ogg", .6)
+    past1 "정신 차려 개새X야. {w}넌 존x 이기적인 거라고... {w}이해해?"
+    extend "\n네가 그딴 연기에 속아버리는 바람에!" with vpunch
+    extend "\n우리가 지금까지 얼마나 힘들었는지 알기나 해?" with vpunch
+    $SoundPlayer("slap.ogg", .6)
+    $SoundPlayer("slap.ogg", .6)
+    past1 "왜, 맞으니까 기분 더러워? {w}더렵냐고? {w}응? {w}대답해."
+    $SoundPlayer("slap.ogg", .6)
+    extend " 대답해!" with vpunch
+    $SoundPlayer("slap.ogg", .6)
+    extend " 대답하라고!" with vpunch
+    $SoundPlayer("slap.ogg", .6)
+    "뺨이 얼얼했다. {w}틀림없는 꿈임에도 생생한 통각이 전해져 온다."
+    "[jeong]의 목소리" "ㅇㅇ." with testd
+    main "......."
+    "[jeong]의 목소리" "괜찮아?" with testd
+    main "괜찮아... {w}별 거 아냐..."
+    play sound blanket
+    scene bg_room 
+    show jeong_cloth at center
+    show main_cloth at right
+    with circirisin
+    stop sound
     "."
     return
 
