@@ -36,3 +36,7 @@ layeredimage qquari:
 transform blur:        
     blur 100.0
     linear 4.0 blur 0.0
+
+transform blur2:
+    linear 1.0 blur 100
+    linear 1.0 blur 0

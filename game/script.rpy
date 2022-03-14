@@ -1253,12 +1253,12 @@ label start:
     go "CEOI낭 주십니까?"
     main "여기."
     $SoundPlayer("blanket.wav", 4.0)
-    $FaceChange("main_nem2_atten", 0.0, 1.0, "main_nem2")
+    $FaceChange("main_nem2_atten", 2.0, 1.0, "main_nem2")
     $renpy.pause(.5)
-    $FaceChange("main_nem2_sal", 0.0, 1.0, "main_nem2_atten")
+    $FaceChange("main_nem2_sal", 2.0, 1.0, "main_nem2_atten")
     main "북진... {w}상병 이지민 근무 마치고 복귀해도 되겠습니까?"
     tie "그래, 고생했다. {w}오늘이 마지막이지?"
-    $FaceChange("main_nem2_atten", 0.0, 1.0, "main_nem2_sal")
+    $FaceChange("main_nem2_atten", 2.0, 1.0, "main_nem2_sal")
     main "예, 그렇습니다."
     tie "내일 또 주말이니까 잘 쉬고, 월요일날 웃는 낯으로 다시 만나자."
     main "옙. {w}정훈장교님도 근무 고생하십시오."
@@ -1280,8 +1280,37 @@ label start:
     show main_nem2_atten at right
     with dissolve
     $SoundPlayer("blanket.wav", 5.0)
-    $FaceChange("main_cloth", 2.0, 1.0, "main_nem2_atten]")
-    
+    $FaceChange("main_cloth_bath", 2.0, 1.0, "main_nem2_atten")
+    $renpy.pause(.5)
+    hide main_cloth_bath
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_locker with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth_bath with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    main "(아무도 없네.)"
+    $SoundPlayer("blanket.wav", 3.0)
+    $FaceChange("main_ord", 1.0, 1.0, "main_cloth_bath")
+    scene bg_locker at blur2 
+    main_ord_ita at blur2
+    with Dissolve(2.0)
+    main "윽...!"
+    play looping
+    #$SoundPlayer("heartbeat.ogg", 1.0)
+    #$SoundPlayer("heartbeat.ogg", 1.0)
+    "현기증이 몰려왔다."
+    main "(진짜 사람 할 짓이 못 되네... {w}탄약고 근무랑은 비교도 안 돼...)"
+    "갑작스레 순찰자가 들이닥치지 않는 이상 추위와 더위에 시달리며 서 있기만 하면 되는 탄약고와 달리 언제, 어떻게 시작될 지 모르는 훈련상황과 소홀히 할 수 없는 무전대기."
+    "어느 정도의 정형화 된 틀이 있고, 그 안에 맞춰가면 되는 일을 1년 가까이 해 왔던 입장에서 몸은 편할지 몰라도 억지로라도 신경을 곤두세울 필요가 있는 근무를 연속으로 들어가자 몸은 격한 거부반응을 내뱉았다."
+    "충분한 수면시간을 보장 받는다 하여도, 그 여파를 완전히 지워내진 못한 것 같았다."
+    scene bg_locker at blur2 with Dissolve(2.0)
+    "한 손으로 의자를 짚어 간신히 섰다."
+    scene bg_locker at blur2 with Dissolve(2.0)
+    main "(젠장... {w}다리에 힘이...)"
+    "의자에 앉았다. {w}잠깐 앉아 쉰다면 금방 회복될 것이다."
+    $SoundPlayer("door.ogg", 2.0)
+    show prf_cloth_nom at right with dissolve
     "."
     return
 

@@ -1,22 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1218, in script
-    extned "\n오늘은 어제 한 것. {w}내일은 오늘 한 것."
-Exception: Sayer 'extned' is not defined.
+  File "game/script.rpy", line 1293, in script call
+    main "윽...!"
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
+  File "renpy/common/000statements.rpy", line 300, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+NameError: name 'hearatbeat' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1218, in script
-    extned "\n오늘은 어제 한 것. {w}내일은 오늘 한 것."
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'extned' is not defined.
+  File "game/script.rpy", line 1293, in script call
+    main "윽...!"
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 300, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<string>", line 1, in <module>
+NameError: name 'hearatbeat' is not defined
 
-Windows-10-10.0.22000
+Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
  
-Fri Mar 11 17:49:55 2022
+Mon Mar 14 02:14:55 2022

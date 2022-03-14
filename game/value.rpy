@@ -53,6 +53,8 @@ define bad_incount = 0
 default message_list = []
 default what = ""
 default what_list = []
+
+define circirisin = ImageDissolve("glass_crash.jpg", 2.0, 8)
 #풍수지탄
 #화발다풍우
 #수욕정이풍부지

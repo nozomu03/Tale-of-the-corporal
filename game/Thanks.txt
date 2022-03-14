@@ -76,6 +76,8 @@ alarm https://freesound.org/people/wesleyextreme_gamer/sounds/574785/
 
 rolling https://freesound.org/people/Ayliffe/sounds/94160/
 
+heartbeat https://freesound.org/people/StarNinjas37/sounds/506909/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
@@ -92,6 +94,8 @@ https://pixabay.com/photos/clouds-wheat-fields-fields-overcast-194840/
 camo https://www.publicdomainpictures.net/en/view-image.php?image=112213&picture=camouflage-fabric
 
 legal pad https://pixabay.com/photos/ripped-paper-legal-pad-ripped-paper-1806471/
+
+https://pixabay.com/ko/illustrations/%ed%9a%8c%eb%a1%9c%eb%a7%9d-%ed%9a%8c%eb%a1%9c-%ea%b8%b0%ed%8c%90-%ed%9a%8c%eb%a1%9c-%ec%b6%94%ec%a0%81-5987786/
 
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63
