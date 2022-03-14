@@ -1,42 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1293, in script call
-    main "윽...!"
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
-  File "renpy/common/000statements.rpy", line 300, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-NameError: name 'hearatbeat' is not defined
+  File "game/script.rpy", line 1296, in script
+    show main_ord_ita at [blur2, center]
+TypeError: 'RevertableList' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1293, in script call
-    main "윽...!"
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
-  File "<string>", line 1, in script
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 300, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<string>", line 1, in <module>
-NameError: name 'hearatbeat' is not defined
+  File "game/script.rpy", line 1296, in script
+    show main_ord_ita at [blur2, center]
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 1197, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/ast.py", line 1167, in show_imspec
+    atl=atl)
+  File "C:\Users\jaejun\Downloads\renpy-7.3.5-sdk/renpy/exports.py", line 754, in show
+    img = i(img)
+TypeError: 'RevertableList' object is not callable
 
 Windows-10-10.0.18362
 Ren'Py 7.4.11.2266
  
-Mon Mar 14 02:14:55 2022
+Mon Mar 14 09:59:37 2022

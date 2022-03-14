@@ -40,3 +40,8 @@ transform blur:
 transform blur2:
     linear 1.0 blur 100
     linear 1.0 blur 0
+
+transform blur3(xa=.5, ya=1.0):
+    align(xa, ya)
+    linear 1.0 blur 100
+    linear 1.0 blur 0

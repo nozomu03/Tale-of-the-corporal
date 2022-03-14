@@ -1290,23 +1290,26 @@ label start:
     show main_cloth_bath with dissolve
     $SoundPlayer("door.ogg", 2.0)
     main "(아무도 없네.)"
-    $SoundPlayer("blanket.wav", 3.0)
+    $SoundPlayer("blanket.wav", 5.0)
     $FaceChange("main_ord", 1.0, 1.0, "main_cloth_bath")
     scene bg_locker at blur2 
-    main_ord_ita at blur2
+    show main_ord_ita at blur3
     with Dissolve(2.0)
     main "윽...!"
-    play looping
-    #$SoundPlayer("heartbeat.ogg", 1.0)
-    #$SoundPlayer("heartbeat.ogg", 1.0)
+    $SoundPlayer("heartbeat.ogg", 1.0)
+    $SoundPlayer("heartbeat.ogg", 1.0)
     "현기증이 몰려왔다."
     main "(진짜 사람 할 짓이 못 되네... {w}탄약고 근무랑은 비교도 안 돼...)"
     "갑작스레 순찰자가 들이닥치지 않는 이상 추위와 더위에 시달리며 서 있기만 하면 되는 탄약고와 달리 언제, 어떻게 시작될 지 모르는 훈련상황과 소홀히 할 수 없는 무전대기."
     "어느 정도의 정형화 된 틀이 있고, 그 안에 맞춰가면 되는 일을 1년 가까이 해 왔던 입장에서 몸은 편할지 몰라도 억지로라도 신경을 곤두세울 필요가 있는 근무를 연속으로 들어가자 몸은 격한 거부반응을 내뱉았다."
     "충분한 수면시간을 보장 받는다 하여도, 그 여파를 완전히 지워내진 못한 것 같았다."
-    scene bg_locker at blur2 with Dissolve(2.0)
+    scene bg_locker at blur2 
+    show main_ord_ita at blur3
+    with Dissolve(2.0)
     "한 손으로 의자를 짚어 간신히 섰다."
-    scene bg_locker at blur2 with Dissolve(2.0)
+    scene bg_locker at blur2 
+    show main_ord_ita at blur3
+    with Dissolve(2.0)
     main "(젠장... {w}다리에 힘이...)"
     "의자에 앉았다. {w}잠깐 앉아 쉰다면 금방 회복될 것이다."
     $SoundPlayer("door.ogg", 2.0)
