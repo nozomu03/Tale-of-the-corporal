@@ -19,6 +19,7 @@ define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
 define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
 define young = Character("박영훈", who_color = "#CD853F", what_color = "#778899")
 define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B90000")
+define wol = Character("정영월", who_color = "#3C4444", what_color = "#1E0A0A")
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
