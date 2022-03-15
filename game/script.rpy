@@ -1431,11 +1431,87 @@ label start:
     "[jeong]의 목소리" "괜찮아?" with testd
     main "괜찮아... {w}별 거 아냐..."
     play sound blanket
-    scene bg_room 
+    scene bg_room3
     show jeong_cloth at center
-    show main_cloth at right
     with circirisin
     stop sound
+    show screen time
+    show main_cloth at right 
+    with wipeup
+    jeong "왜 이렇게 떨어? {w}악몽이라도 꿨어?"
+    main "어... {w}좀..."
+    jeong "다시 잘 거야? {w}아님 같이 볼래?"
+    main "뭐 보고 있었는데?"
+    jeong "영화. {w}중간부터 봐야 하는데 상관 없어?"
+    main "응."
+    hide jeong_cloth
+    "침대에 앉아 TV를 바라봤다. {w}골아떨어진 두 명과 당직 근무 중인 한 명을 뺀 세 사람이 이름 모를 영화를 바라봤다."
+    $renpy.pause(4.0)
+    scene bg_room2
+    show main_cloth at right
+    $SoundPlayer("tv-off.ogg", 1.0)
+    show jeong_cloth with dissolve
+    jeong "더럽게 재미없네."
+    main "그러게..."
+    jeong "이거 봐. {w}지훈이도 골아떨어졌잖아."
+    "시간을 죽이는 용도로도 쓰지 못할 수면제 같은 영화. {w}하지만 적어도 그 덕분에 머리 속에 파종된 기억의 씨앗은 성장하지 못한 채 고사했다."
+    "다시 잠든다면 쓸데없는 과거에 취하는 일 없이 숙면할 수 있을 듯 했다."
+    main "담배 한 대 피고 올게."
+    jeong "들어올 때 조용히 들어와."
+    main "응."
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show young_nom at right
+    with dissolve
+    show main_cloth at center with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    wol "어, ㅇㅇ씨. {w}담배 피러 가시나요?"
+    main "예."
+    wol "같이 가주실 수 있나요? {w}같은 생활관 애가 절 두고 먼저 가 버리는 바람에 전우조가 없거든요."
+    main "마침 저도 혼자였는데 그러면 좋죠."
+    wol "그럴 줄 알고 미리 보고도 해놨어요. {w}내려 가시죠."
+    hide main_cloth
+    hide young_nom
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_bath2 with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_black with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_taba_night
+    show main_cloth_taba_nof
+    show young_taba at right
+    with dissolve
+    $Smoking(img="main_cloth", loc=1, rep = 1, first=True)
+    main "꽤나 쌀쌀해졌네요."
+    $Smoking(img="young", loc=2, rep = 1)
+    wol "그러게요."
+    main "아, 이번 일주일 너무 길었어요. {w}진짜 죽을 뻔 했네."
+    wol "그러고보니 통 안 보이시던데 뭐하고 계셨어요?"
+    mian "근무가 계속 잡혀서 죽어라 주간 상황만 섰죠."
+    wol "아아. {w}요원화요? {w}이번에 본부중대원 거의 대부분이 훈련 참여했다 하던데 그것 때문이가 보네요."
+    main "예... {w}오늘도 요원화 훈련 참석자는 전투휴무니까요. {w}오늘까지 근무 섰고 이번 달에는 더 이상 근무 없을 것 같네요."
+    wol "와... {w}이번 훈련 꽤 빡세서 훈련 참가 안한 사람들 부럽다고 속으로 궁시렁거리고 있었는데 고생하셨네요..."
+    $Smoking(img="main_cloth", loc=1, rep = 1)
+    $Smoking(img="young", loc=2, rep = 1)
+    main "몸은 괜찮아요?"
+    wol "예... 뭐. {w}이번 훈련 받을 동안에는 말썽 안 부리더라고요."
+    main "다행이네요."
+    wol "그러는 ㅇㅇ씨야 말로 무릎 괜찮아요? {w}연골이라고 그랬던 것 같은데..."
+    main "쭉 근무 섰잖아요. {w}무릎 쓸 일이 없어서 괜찮아요."
+    wol "내일 비온다던데 안 시려요?"
+    main "아, 망할. {w}왤케 시리나 했더니 그것 때문인 것 같네요."
+    $Smoking(img="main_cloth", loc=1, rep = 1)
+    "다른 이가 듣는다면 비웃을 대화. {w}아무런 영양가도 없는 여담."
+    main "훈련은 어땠어요?"
+    wol "힘들었죠..."
+    main "이번에도 독도법 했나요?"
+    wol "하긴 했는데 시간이 부족해서 실기동은 안하고 시험쳤어요."
+    main "잘 보셨나요?"
+    wol "예. {w}실제로 찾는 게 어려워서 그렇지 지도 상에 특정하는 건 쉬우니까요."
+    main "제가 요원화 훈련 받을 때는 실기동도 했었는데 제가 찾아야 할 차례 때 길 잃어버리는 바람에 암구호도 안 외운 채로 방공진지에 들어가버렸었죠."
+    wol "어떻게 됐나요?"
+    main "초병들 뛰어와서 수하하는데도 대답 못해서 포박당할 뻔 했는데 뒤쫒아 온 교관님이 해결해 주셨죠, 뭐. {w}그것 때문에 한동안 놀림 받았었는데... {w}그것도 반 년이나 됐네요."
+    
     "."
     return
 
