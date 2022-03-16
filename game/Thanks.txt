@@ -112,6 +112,9 @@ office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13
 
 classic-plastic-chairs https://sketchfab.com/3d-models/classic-plastic-chairs-6d139742099d48f195e6774514ccb7ef
 
+Ren'py Source:
+https://lemmasoft.renai.us/forums/viewtopic.php?t=17599
+
 Font
 NanumGothic by NAVER Corp. https://help.naver.com/support/service/main.help?serviceNo=1074&categoryNo=13669
 

@@ -2,30 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1486: invalid syntax
-    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
-                                   ^
-    
-
-File "game/script.rpy", line 1495: invalid syntax
-    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
-                                   ^
-    
-
-File "game/script.rpy", line 1516: invalid syntax
-    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
-                                   ^
-    
-
-File "game/script.rpy", line 1522: invalid syntax
-    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
-                                   ^
-    
-
-File "game/script.rpy", line 1532: invalid syntax
-    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
-                                   ^
-    
+File "game/screens.rpy", line 1460: u's' is not a keyword argument or valid child for the textbutton statement.
+    textbutton _("아니오") action Return()s
+                                        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 21:39:30 2022
+Wed Mar 16 15:42:17 2022

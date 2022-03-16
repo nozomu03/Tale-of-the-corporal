@@ -8,6 +8,50 @@ init offset = -1
 ################################################################################
 ## 스타일
 ################################################################################
+screen schedule:
+    modal True
+    vbox:
+        align(.5, .5)
+        frame:
+            grid 3 2:
+                text "07:00 ~ 10:10   "
+                text "11:00 ~ 17:10   "
+                text "18:00 ~ 20:30"
+                textbutton "[morn_do]" action[Show("schedule_inner"), SetVariable("schedule_time", 1)]
+                textbutton "[af_do]" action[Show("schedule_inner"), SetVariable("schedule_time", 2)]
+                textbutton "[night_do]" action[Show("schedule_inner"), SetVariable("schedule_time", 3)]
+    if morn_do != "선택" and af_do != "선택" and night_do != "선택":
+        button action Show("simple_confirm")
+
+        
+screen schedule_inner:
+    modal True
+    vbox:
+        if schedule_time == 1:
+            align(.35, .6)
+            frame:
+                grid 1 3:
+                    textbutton "잠자기" action[SetVariable("morn_do", "잠자기"), Hide("schedule_inner")]
+                    textbutton "사이버지식정보방" action[SetVariable("morn_do", "사이버지식정보방"), Hide("schedule_inner")]
+                    textbutton "휴대폰" action[SetVariable("morn_do", "휴대폰"), Hide("schedule_inner")]
+        elif schedule_time == 2:
+            align(.5, .63)    
+            frame:
+                grid 1 4:
+                    textbutton "잠자기" action[SetVariable("af_do", "잠자기"), Hide("schedule_inner")]
+                    textbutton "공부" action[SetVariable("af_do", "공부"), Hide("schedule_inner")]
+                    textbutton "사이버지식정보방" action[SetVariable("af_do", "사이버지식정보방"), Hide("schedule_inner")]
+                    textbutton "휴대폰" action[SetVariable("af_do", "휴대폰"), Hide("schedule_inner")]
+        elif schedule_time == 3:
+            align(.65, .63)        
+            frame:
+                grid 1 4:
+                    textbutton "잠자기" action[SetVariable("night_do", "잠자기"), Hide("schedule_inner")]
+                    textbutton "공부" action[SetVariable("night_do", "공부"), Hide("schedule_inner")]
+                    textbutton "사이버지식정보방" action[SetVariable("night_do", "사이버지식정보방"), Hide("schedule_inner")]
+                    textbutton "휴대폰" action[SetVariable("night_do", "휴대폰"), Hide("schedule_inner")]
+
+
 screen buff_screen:
     $buff_y=67
     $all_buff = bufftory.getall()
@@ -1386,6 +1430,34 @@ screen confirm(message, yes_action, no_action):
     ## 우클릭과 esc는 '아니오'를 입력하는 것과 같습니다.
     key "game_menu" action no_action
 
+screen simple_confirm:
+
+    ## 이 스크린이 출력 중일 때 다른 스크린과 상호작용할 수 없게 합니다.
+    modal True
+
+    zorder 200
+
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+
+    frame:
+
+        vbox:
+            xalign .5
+            yalign .5
+            spacing 30
+
+            label _("확실합니까?"):
+                style "confirm_prompt"
+                xalign 0.5
+
+            hbox:
+                xalign 0.5
+                spacing 100
+
+                textbutton _("네") action [Hide("simple_confirm"), Return()]
+                textbutton _("아니오") action [Hide("simple_confirm"), SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택")]
 
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt

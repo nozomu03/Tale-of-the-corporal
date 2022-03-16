@@ -66,7 +66,74 @@ define testd = ImageDissolve("testimage.png", 5.0, 8)
 #풍찬노숙
 #즐풍목우
 #
+
+screen test_screen:
+    modal True
+
+screen ForceMouse:
+    on "show":
+        action MouseMove(x=640, y=360)
+
+
+label SpriteSystem:
+    show screen ForceMouse
+    python:
+        import pygame
+        s_manager = SpriteManager(update = SpriteUpdate, event = PosSaver)
+        s_pos = None
+        s_val = None
+        flash = Image("flash_test.png")
+        s_val = s_manager.create(flash)
+    #$checkEvent()
+    #$getMousePosition()
+    $renpy.mouse = [ ]
+    python:
+        s_val.x = 0
+        s_val.y = 0
+    show expression s_manager as s_manager
+    call screen test_screen
+    return
+
 init python:
+    schedule_time = 0
+    morn_do = "선택"
+    af_do = "선택"
+    night_do = "선택"
+
+    class getMousePosition(renpy.Displayable):
+
+        def __init__(self):
+            renpy.Displayable.__init__(self)
+
+        def event(self, ev, x, y, st):
+            import pygame
+
+            if ev.type == pygame.MOUSEMOTION: # Updates the position of the mouse every time the player moves it
+                store.mousex = x
+                store.mousey = y
+
+        def render(self, width, height, st, at):
+            return renpy.Render(1, 1)
+
+    store.mousePosition= getMousePosition()
+
+    def checkEvent():
+        ui.add(mousePosition)
+    config.overlay_functions.append(checkEvent) # This adds a 1*1 displayable on every screen
+
+    def SpriteUpdate(st):
+        if s_pos is None:
+            return .01
+        print("sval: ")
+        t_sprite_x, t_sprite_y = s_pos
+        s_val.x = t_sprite_x - (config.screen_width * 1.125)
+        s_val.y = t_sprite_y - (config.screen_width * .63)
+        return .01
+
+    def PosSaver(event, x, y, st):        
+        store.s_pos = (x, y)
+        print(s_pos)
+
     import time
     temp_text = ""
     def FaceChange(img="", loc=0 ,t=2.0, org_img=None):

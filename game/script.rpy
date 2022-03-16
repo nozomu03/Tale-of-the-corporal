@@ -9,13 +9,11 @@
 
 
 label start:
+    #scene bg_room2
+    #call SpriteSystem
     window hide
     scene bg_black
     centered "내가 원하는 건. {w}무엇이었을까."
-    $message_list.append(Message())
-    call screen test_screen
-    $message_list.append(Message())
-    call screen test_screen
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
     extend "그 얼굴에 떠오른 미소를 보기 위해 제 몸을 채찍질하던 날들, 은. {w}과연 의미가 있었을까?"
     scene bg_room 
@@ -1554,7 +1552,7 @@ label start:
     scene bg_room2
     show main_cloth at right 
     with dissolve
-     $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
     $renpy.pause(.3)
     hide main_cloth
     $SoundPlayer("sheet.ogg", 1.0)
@@ -1562,7 +1560,14 @@ label start:
     scene bg_black with testd
     window show
     "금세 머리가 멍해지며 주변의 소리와 감각이 차단되며 졸음이 쏟아졌다."
+    "내일 나는... {w}뭘 하면 좋을까?"
+    window hide
+    call screen schedule with testd
     "."
     return
 
 #(85, 35, 238, 216)
+#$message_list.append(Message())
+#call screen test_screen
+#$message_list.append(Message())
+#call screen test_screen
