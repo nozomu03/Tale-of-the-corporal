@@ -1443,7 +1443,7 @@ label start:
     jeong "영화. {w}중간부터 봐야 하는데 상관 없어?"
     main "응."
     hide jeong_cloth
-    "침대에 앉아 TV를 바라봤다. {w}골아떨어진 두 명과 당직 근무 중인 한 명을 뺀 세 사람이 이름 모를 영화를 바라봤다."
+    "침대에 앉아 TV를 바라봤다. {w}골아떨어진 두 명과 근무 중인 한 명을 뺀 세 사람이 이름 모를 영화를 바라봤다."
     $renpy.pause(4.0)
     scene bg_room2
     show main_cloth at right
@@ -1563,6 +1563,16 @@ label start:
     "내일 나는... {w}뭘 하면 좋을까?"
     window hide
     call screen schedule with testd
+    "내일은 토요일. {w}모처럼 온전히 맞는 브런치 데이이다."
+    if morn_do == "잠자기":
+        extend " 푹 자고 일어난 다음 아침 겸 점심으로 베이컨과 크림치즈를 바른 빵. {w}상상만으로도 입에 침이 고였다."
+        $stress_val -= 2
+        $sat_val += 2
+    else:
+        extend " 간만에 시간에 쫒기지 않고 빵과 베이컨을 먹을 수 있을 것이다."
+    "그러한 잡생각들과 함께 마지막으로 남아있던 의식의 마지막 꺼풀마저 벗겨지며 나는 빠르게 잠에 빠져들었다."    
+    call saturday1
+    #"[morn_do] [af_do] [night_do]"
     "."
     return
 

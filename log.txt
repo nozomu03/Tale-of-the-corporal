@@ -1,22 +1,22 @@
-Wed Mar 16 15:50:28 2022
+Wed Mar 16 20:28:19 2022
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
 
 Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
-Loader init took 0.01s
+Loader init took 0.00s
 Loading error handling took 0.02s
-Loading script took 0.44s
-Loading save slot metadata. took 0.04s
+Loading script took 0.13s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.00s
+Analyze and compile ATL took 0.02s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
-Dump and make backups. took 0.04s
+Dump and make backups. took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -28,10 +28,10 @@ Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
+Analyze screens took 0.02s
 Save screen analysis took 0.02s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.02s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.07s
@@ -47,11 +47,11 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 22.02s
+Bootstrap to the start of init.init took 29.01s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.23s
+Loading script took 0.13s
 Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -67,7 +67,113 @@ Initial gc. took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.16s
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1091.06s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 1574, in script call
+    call saturday1
+  File "game/branc.rpy", line 292, in script
+    cetnered "같이 전입 온 다른 동기들보다 뒤쳐졌기에 자연스럽게 퍼진 소문."
+  File "renpy/ast.py", line 681, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "renpy/ast.py", line 574, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'cetnered' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 1574, in script call
+    call saturday1
+  File "game/branc.rpy", line 292, in script
+    cetnered "같이 전입 온 다른 동기들보다 뒤쳐졌기에 자연스럽게 퍼진 소문."
+Exception: Sayer 'cetnered' is not defined.
+Resetting cache.
+Bootstrap to the start of init.init took 1122.94s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
@@ -92,87 +198,73 @@ Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1444, in execute
-    frame:
-  File "game/screens.rpy", line 1446, in execute
-    vbox:
-  File "game/screens.rpy", line 1455, in execute
-    hbox:
-  File "game/screens.rpy", line 1460, in execute
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-  File "game/screens.rpy", line 1460, in keywords
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-  File "game/screens.rpy", line 1460, in <module>
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-TypeError: __init__() takes at most 4 arguments (5 given)
+  File "game/script.rpy", line 1574, in script call
+    call saturday1
+  File "game/branc.rpy", line 293, in script
+    extned "\n내게 쏟아지던 것은 제각각 다른 종류의 시선이었으나. {w}결과적으로는 모두 같은 의미를 내포하고 있었다."
+  File "renpy/ast.py", line 681, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "renpy/ast.py", line 574, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'extned' is not defined.
 
 While running game code:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1444, in execute
-    frame:
-  File "game/screens.rpy", line 1446, in execute
-    vbox:
-  File "game/screens.rpy", line 1455, in execute
-    hbox:
-  File "game/screens.rpy", line 1460, in execute
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-  File "game/screens.rpy", line 1460, in keywords
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-  File "game/screens.rpy", line 1460, in <module>
-    textbutton _("아니오") action Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))
-TypeError: __init__() takes at most 4 arguments (5 given)
+  File "game/script.rpy", line 1574, in script call
+    call saturday1
+  File "game/branc.rpy", line 293, in script
+    extned "\n내게 쏟아지던 것은 제각각 다른 종류의 시선이었으나. {w}결과적으로는 모두 같은 의미를 내포하고 있었다."
+Exception: Sayer 'extned' is not defined.
 Resetting cache.
-Bootstrap to the start of init.init took 65.91s
+Bootstrap to the start of init.init took 1129.30s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.21s
-Loading save slot metadata. took 0.04s
+Loading script took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1222.76s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.27s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
@@ -195,125 +287,7 @@ Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.03s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.02s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 511.65'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1444, in execute
-    frame:
-  File "game/screens.rpy", line 1446, in execute
-    vbox:
-  File "game/screens.rpy", line 1455, in execute
-    hbox:
-  File "game/screens.rpy", line 1460, in execute
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-  File "game/screens.rpy", line 1460, in keywords
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-  File "game/screens.rpy", line 1460, in <module>
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-TypeError: __init__() takes at most 4 arguments (5 given)
-
-While running game code:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1433, in execute
-    screen simple_confirm:
-  File "game/screens.rpy", line 1444, in execute
-    frame:
-  File "game/screens.rpy", line 1446, in execute
-    vbox:
-  File "game/screens.rpy", line 1455, in execute
-    hbox:
-  File "game/screens.rpy", line 1460, in execute
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-  File "game/screens.rpy", line 1460, in keywords
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-  File "game/screens.rpy", line 1460, in <module>
-    textbutton _("아니오") action [Hide("simple_confirm", SetVariable("morn_do", "선택"), SetVariable("af_do", "선택"), SetVariable("night_do", "선택"))]
-TypeError: __init__() takes at most 4 arguments (5 given)
-Resetting cache.
-Bootstrap to the start of init.init took 318.47s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.20s
-Loading save slot metadata. took 0.05s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
-Dump and make backups. took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.18s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.02s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
 Interface start took 0.05s
@@ -329,12 +303,12 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 322.41s
+Bootstrap to the start of init.init took 1230.59s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
 Loading script took 0.10s
-Loading save slot metadata. took 0.11s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
@@ -344,11 +318,11 @@ Index archives took 0.00s
 Dump and make backups. took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
@@ -371,45 +345,17 @@ Version: '4.6.0 NVIDIA 511.65'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3676, in interact_core
-    new_widget=layers_root)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
-
-While running game code:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
 Resetting cache.
-Bootstrap to the start of init.init took 346.78s
+Bootstrap to the start of init.init took 1232.41s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.25s
-Loading save slot metadata. took 0.04s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.02s
+Running init code took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
@@ -422,16 +368,16 @@ nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.16s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.04s
+Save screen analysis took 0.03s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.04s
+Interface start took 0.05s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1440)
@@ -443,39 +389,13 @@ Version: '4.6.0 NVIDIA 511.65'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 1566, in script
-    "."
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1419, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1249, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 901, in do_display
-    **display_args)
-  File "renpy/character.py", line 647, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3676, in interact_core
-    new_widget=layers_root)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
-
-While running game code:
-  File "game/script.rpy", line 1566, in script
-    "."
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
 Resetting cache.
-Bootstrap to the start of init.init took 365.11s
+Bootstrap to the start of init.init took 1609.59s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.23s
-Loading save slot metadata. took 0.04s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
@@ -514,16 +434,16 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 402.98s
+Bootstrap to the start of init.init took 1618.94s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.24s
-Loading save slot metadata. took 0.04s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
-Loading analysis data took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
@@ -534,9 +454,140 @@ Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.15s
+Creating interface object took 0.17s
 Cleaning stores took 0.00s
 Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1634.33s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.11s
+Loading save slot metadata. took 0.14s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1643.70s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1690.57s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
@@ -557,45 +608,17 @@ Version: '4.6.0 NVIDIA 511.65'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3676, in interact_core
-    new_widget=layers_root)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
-
-While running game code:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule with testd
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
 Resetting cache.
-Bootstrap to the start of init.init took 430.35s
+Bootstrap to the start of init.init took 1719.44s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.24s
+Loading script took 0.11s
 Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
-Loading analysis data took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
@@ -603,6 +626,138 @@ Dump and make backups. took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1722.73s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1820.69s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.14s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1836.02s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -629,45 +784,61 @@ Version: '4.6.0 NVIDIA 511.65'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3676, in interact_core
-    new_widget=layers_root)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
-
-While running game code:
-  File "game/script.rpy", line 1565, in script
-    call screen schedule
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-TypeError: __call__() got an unexpected keyword argument 'new_widget'
 Resetting cache.
-Bootstrap to the start of init.init took 448.69s
+Bootstrap to the start of init.init took 1837.85s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.21s
+Loading script took 0.12s
 Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
-Loading analysis data took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1880.23s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.11s
+Loading save slot metadata. took 0.10s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
@@ -678,16 +849,59 @@ Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
+Creating interface object took 0.15s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.03s
+Save screen analysis took 0.02s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.02s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 511.65'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1883.55s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Interface start took 0.05s
 
@@ -702,38 +916,38 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 450.57s
+Bootstrap to the start of init.init took 1897.42s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.26s
-Loading save slot metadata. took 0.11s
+Loading script took 0.12s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.02s
-Loading analysis data took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\i7\\AppData\\Roaming/RenPy/backups\\Tale-of-the-corporal':
 Dump and make backups. took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.06s
+Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.03s
+Save screen analysis took 0.02s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.06s
+Interface start took 0.05s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1440)
@@ -745,17 +959,3 @@ Version: '4.6.0 NVIDIA 511.65'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s

@@ -222,6 +222,90 @@ label day2_checker:
         "챙겨왔던 전공서적을 꺼내 펼쳤다."
         call events_run_period
         return
+
+label saturday1:
+    if morn_do != "잠자기":
+        $SoundPlayer("blanket.wav", 4.0)
+        main "......."
+        scene bg_room2 with dissolve
+        show main_cloth at right with wipeup
+        main "(다른 애들은 아직 자고 있나? {w}조용히 움직여야겠네.)"
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_hallway2
+        show main_cloth at center with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_office
+        show main_cloth at center
+        with dissolve
+        "조용한 행정반. {w}이미 몇 명 다녀갔는지 휴대폰 보관함은 드문드문 비어 있었다."
+        $SoundPlayer("pen.ogg", 2.0)
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway2
+        show main_cloth at center 
+        with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_toilet 
+        show main_cloth at right
+        with dissolve
+        play sound brush
+        "머리 속에, 어슴푸레 안개더미가 남았다."
+        main "(뭐였을까... {w}그건.)"
+        "희끄무레하여 형상을 파악할 수 없는. {w}그럼에도 분명히 존재하는 무언가가 헤엄친다."
+        "도중에 일어나지 않고 조금 더 잤더라면 제대로 볼 수 있었겠지만..."
+        main "(이미 일어나 버린 이상 그 꿈을 다시 꿀 수 있는 것도 아닌데 잊어버리자.)"
+        $renpy.pause(2.0)
+        stop sound
+        $SoundPlayer("gargle.ogg", 2.5)
+        hide main
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway2 with dissolve
+    else:
+        scene bg_office2:
+            im.Sepia("bg_office3.png")
+        show park_cross:
+            im.Sepia("park_cross.png")
+            align(.5, 1.0)
+        show main_atten:
+            im.Sepia("main_atten.png")
+            align(.9, 1.0)
+        with dissolve
+        main "잘 못 들었습니다?"
+        park "아무튼 그렇게 됐다."
+        main "제가 말씀이십니까?"
+        park "그래.{w} 왜? {w}못하겠어?"
+        main "아... 아닙니다."
+        park "지금 확실히 말해 줘야 해. {w}일단 한 번 투입하면 평소처럼은 못 해주니까."
+        main "한 번 해보겠습니다."
+        park "정말이지? {w}후회 없지?"
+        main "예. {w}없습니다."
+        show explain_scene with dissolve
+        centered "처음으로 5대기에 투입하기로 결정됐던 날."
+        extend "\n지금껏 겪어보지 못한 전혀 새로운 것을 마주했을 때 으레 느껴지는 두려움 역시 있었지만."
+        extend "\n그 때. {w}내게 가장 크게 느꼈던 감정은 \'기쁨\'. {w}혹은, \'안도감\'이었다."
+        hide explain_scene
+        main "(저번에 참관도 했었고... {w}김호윤 상병님도 계시고... {w}다른 선임 분들도 계시잖아. {w}할 수 있을 거야... {w}아니, 해 내야만 해.)"
+        show explain_scene with dissolve
+        centered "같이 전입 온 다른 동기들보다 뒤쳐졌기에 자연스럽게 퍼진 소문."
+        extend "\n내게 쏟아지던 것은 제각각 다른 종류의 시선이었으나. {w}결과적으로는 모두 같은 의미를 내포하고 있었다."
+        extend "\n5대기에 투입된다면 적어도 동기들과의 차이점 중 하나가 메워질 것이고. {w}나아가 평소와는 다른 모습을 보여준다면 내게 쏟아지는 의심 중 일부는 거둘 수 있으리라."
+        extend " ...생각했었다."
+        $SoundPlayer("broadcast.wav", 2.0)
+        fcaptain "\[지휘통제실에서 전파합니다. {w}강습대대 인원들 아침식사. {w}아침식사 출발해주시길 바랍니다.\]"
+        $SoundPlayer("blanket.wav", 4.0)
+        scene bg_room2 with dissolve
+        show main_cloth with wipeup
+        main "(꿈인가...)"
+        "가슴 속에 자그맣게. {w}그날 느꼈던 감정의 모조품이 어렸다."
+        main "(보고싶은... 사람들.)"
+        main "(그 분들 뵈기 부끄럽지 않도록... {w}더 분발해야겠지.)"
+        $stress_val -= 2
+        $sat_val += 2
+        return
+        
 #label study_major:
 #    $what = "전공 공부"
 #

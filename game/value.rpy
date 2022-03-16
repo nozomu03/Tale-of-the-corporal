@@ -1,5 +1,5 @@
 define main = Character("ㅇㅇ", who_color = "#000000", what_color="#AE8B59")
-define fcaptain = Character("ㅁㅁ", who_color = "#C29F6D", what_color="#000000")
+define fcaptain = Character("조예헌", who_color = "#C29F6D", what_color="#000000")
 define prf = Character("주안", who_color="#8572EE", what_color="#3CB371")
 define OOI = Character("통신소대장", who_color="#EF9F5B", what_color="#0A6E0A")
 define adjutant = Character("김율호", who_color="#906D3B", what_color="#FF8200")
@@ -20,6 +20,7 @@ define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
 define young = Character("박영훈", who_color = "#CD853F", what_color = "#778899")
 define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B90000")
 define wol = Character("정영월", who_color = "#3C4444", what_color = "#1E0A0A")
+#사수 통신병 -> 김호윤
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
 define center = Position(xalign=.5, yalign=1.0)
