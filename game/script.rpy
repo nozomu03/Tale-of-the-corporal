@@ -1460,8 +1460,8 @@ label start:
     jeong "들어올 때 조용히 들어와."
     main "응."
     $SoundPlayer("door.ogg", 2.0)
-    scene bg_hallway
-    show young_nom at right
+    scene bg_hallway2
+    show young_cloth at right
     with dissolve
     show main_cloth at center with dissolve
     $SoundPlayer("door.ogg", 2.0)
@@ -1471,7 +1471,7 @@ label start:
     main "마침 저도 혼자였는데 그러면 좋죠."
     wol "그럴 줄 알고 미리 보고도 해놨어요. {w}내려 가시죠."
     hide main_cloth
-    hide young_nom
+    hide young_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_bath2 with dissolve
     $SoundPlayer("walk_slow.ogg", 2.0)
@@ -1479,20 +1479,20 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_taba_night
     show main_cloth_taba_nof
-    show young_taba at right
+    show young_cloth_taba at right
     with dissolve
     $Smoking(img="main_cloth", loc=1, rep = 1, first=True)
     main "꽤나 쌀쌀해졌네요."
-    $Smoking(img="young", loc=2, rep = 1)
+    $Smoking(img="young_cloth", loc=2, rep = 1)
     wol "그러게요."
     main "아, 이번 일주일 너무 길었어요. {w}진짜 죽을 뻔 했네."
     wol "그러고보니 통 안 보이시던데 뭐하고 계셨어요?"
-    mian "근무가 계속 잡혀서 죽어라 주간 상황만 섰죠."
+    main "근무가 계속 잡혀서 죽어라 주간 상황만 섰죠."
     wol "아아. {w}요원화요? {w}이번에 본부중대원 거의 대부분이 훈련 참여했다 하던데 그것 때문이가 보네요."
     main "예... {w}오늘도 요원화 훈련 참석자는 전투휴무니까요. {w}오늘까지 근무 섰고 이번 달에는 더 이상 근무 없을 것 같네요."
     wol "와... {w}이번 훈련 꽤 빡세서 훈련 참가 안한 사람들 부럽다고 속으로 궁시렁거리고 있었는데 고생하셨네요..."
     $Smoking(img="main_cloth", loc=1, rep = 1)
-    $Smoking(img="young", loc=2, rep = 1)
+    $Smoking(img="young_cloth", loc=2, rep = 1)
     main "몸은 괜찮아요?"
     wol "예... 뭐. {w}이번 훈련 받을 동안에는 말썽 안 부리더라고요."
     main "다행이네요."
@@ -1511,7 +1511,57 @@ label start:
     main "제가 요원화 훈련 받을 때는 실기동도 했었는데 제가 찾아야 할 차례 때 길 잃어버리는 바람에 암구호도 안 외운 채로 방공진지에 들어가버렸었죠."
     wol "어떻게 됐나요?"
     main "초병들 뛰어와서 수하하는데도 대답 못해서 포박당할 뻔 했는데 뒤쫒아 온 교관님이 해결해 주셨죠, 뭐. {w}그것 때문에 한동안 놀림 받았었는데... {w}그것도 반 년이나 됐네요."
-    
+    wol "저도 입대한지 벌써 1년 가까이 됐네요. {w}...이렇게 보면 시간 참 빨라요."
+    main "그러니까요. {w}돌이켜보면 막상 군생활도 훅훅 지나가는 거 같은데... {w}하루하루는 무슨 굼뱅이 마냥 밍기적거리고... {w}참 신기해요."
+    $Smoking(img="young_cloth", loc=2, rep = 1)
+    wol "진짜 지금까지 살면서 군대만큼 신기한 곳은 처음 와 본 거 같아요. {w}비단 시간 뿐 아니라 모든 게 바깥이랑은 다르니까요."
+    main "듣고 보니 그렇네요."
+    $Smoking(img="main_cloth", loc=1, rep = 1)
+    "검푸른 바다에, 바알간.{w} 깜부기풀이 피었다."
+    $Smoking(img="main_cloth", loc=1, rep = 1)
+    $Smoking(img="young_cloth", loc=2, rep = 1)
+    main "내일 주말인데 뭐하실 건가요?"
+    wol "글쎄요... {w}어차피 내일 브런치 데이인데 늦게까지 자 버릴까 생각하고 있어요."
+    main "저도 그래버릴까요... {w}연속 근무 떄문에 피곤한데..."
+    wol "평소엔 항상 일찍 일어났죠?"
+    main "예."
+    wol "그럼 한 번 속는 셈 치고 깨우러 올 때까지 주무셔 보세요. {w}고작 두 시간 더 잔다고 뭐가 바뀌겠냐 하는데 깼을 때 개운함의 수준이 다르다니까요."
+    main "그럴까요..."
+    $renpy.pause(.5)
+    $Smoking(img="main_cloth", loc=1, rep = 1)
+    $Smoking(img="young_cloth", loc=2, rep = 1)
+    wol "다 피셨어요?"
+    main "예."
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_tabahand")
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("young_cloth", 2.0, .5, "young_cloth_tabahand")
+    main "올라갑시다."
+    hide main_cloth
+    hide young_cloth
+    $SoundPlayer("walk_slow.ogg")
+    scene bg_bath2 with dissolve
+    $SoundPlayer("walk_slow.ogg")
+    scene bg_hallway2
+    show main_cloth 
+    show young_cloth at right
+    with dissolve
+    wol "보고는 제가 드릴게요. {w}가서 주무세요."
+    main "아, 고마워요. {w}잘 자요, 영월 씨."
+    wol "ㅇㅇ 씨도요."
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room2
+    show main_cloth at right 
+    with dissolve
+     $SoundPlayer("door.ogg", 2.0)
+    $renpy.pause(.3)
+    hide main_cloth
+    $SoundPlayer("sheet.ogg", 1.0)
+    "모포를 뒤집어 쓰고 잠을 청했다."
+    scene bg_black with testd
+    window show
+    "금세 머리가 멍해지며 주변의 소리와 감각이 차단되며 졸음이 쏟아졌다."
     "."
     return
 

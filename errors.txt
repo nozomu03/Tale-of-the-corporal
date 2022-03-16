@@ -2,9 +2,30 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1492: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        main "예... {w}오늘도 요원화 훈련 참석자는 전투휴무니까요. {w}오늘까지 근무 섰고 이번 달에는 더 이상 근무 없을 것 같네요.
+File "game/script.rpy", line 1486: invalid syntax
+    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
+                                   ^
+    
+
+File "game/script.rpy", line 1495: invalid syntax
+    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
+                                   ^
+    
+
+File "game/script.rpy", line 1516: invalid syntax
+    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
+                                   ^
+    
+
+File "game/script.rpy", line 1522: invalid syntax
+    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
+                                   ^
+    
+
+File "game/script.rpy", line 1532: invalid syntax
+    Smoking(img="young_cloth"_cloth, loc=2, rep = 1)
+                                   ^
+    
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 15 18:20:19 2022
+Tue Mar 15 21:39:30 2022
