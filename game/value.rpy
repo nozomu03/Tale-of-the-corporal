@@ -68,6 +68,12 @@ define testd = ImageDissolve("testimage.png", 5.0, 8)
 #즐풍목우
 #
 
+
+style menu_choice_button is choice_button:
+    background "gui/button/choice_idle_warn.png"
+  
+
+
 screen test_screen:
     modal True
 
@@ -96,32 +102,13 @@ label SpriteSystem:
     return
 
 init python:
+    temp_count = 0
+
     schedule_time = 0
     morn_do = "선택"
     af_do = "선택"
     night_do = "선택"
-
-    class getMousePosition(renpy.Displayable):
-
-        def __init__(self):
-            renpy.Displayable.__init__(self)
-
-        def event(self, ev, x, y, st):
-            import pygame
-
-            if ev.type == pygame.MOUSEMOTION: # Updates the position of the mouse every time the player moves it
-                store.mousex = x
-                store.mousey = y
-
-        def render(self, width, height, st, at):
-            return renpy.Render(1, 1)
-
-    store.mousePosition= getMousePosition()
-
-    def checkEvent():
-        ui.add(mousePosition)
-    config.overlay_functions.append(checkEvent) # This adds a 1*1 displayable on every screen
-
+    exclaim = False
     def SpriteUpdate(st):
         if s_pos is None:
             return .01

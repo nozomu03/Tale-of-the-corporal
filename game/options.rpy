@@ -178,6 +178,7 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    config.conditionswitch_predict_all = False
 
     ## 파일을 아카이브하려면 'archive'로 분류하십시오.
 

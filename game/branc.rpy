@@ -234,7 +234,12 @@ label saturday1:
         scene bg_hallway2
         show main_cloth at center with dissolve
         $SoundPlayer("door.ogg", 2.0)
-        hide main_cloth
+        $SoundPlayer("walk_slow.ogg")
+        scene bg_hallway_mid2 
+        show main_cloth at center
+        with dissolve
+        #$SoundPlayer("door.ogg", 2.0)
+        #hide main_cloth
         $SoundPlayer("walk_slow.ogg", 2.0)
         $SoundPlayer("door.ogg", 2.0)
         scene bg_office
@@ -243,7 +248,7 @@ label saturday1:
         "조용한 행정반. {w}이미 몇 명 다녀갔는지 휴대폰 보관함은 드문드문 비어 있었다."
         $SoundPlayer("pen.ogg", 2.0)
         $SoundPlayer("walk_slow.ogg", 2.0)
-        scene bg_hallway2
+        scene bg_hallway_mid2
         show main_cloth at center 
         with dissolve
         $SoundPlayer("door.ogg", 2.0)
@@ -262,7 +267,11 @@ label saturday1:
         $SoundPlayer("gargle.ogg", 2.5)
         hide main
         $SoundPlayer("walk_slow.ogg", 2.0)
-        scene bg_hallway2 with dissolve
+        scene bg_hallway_mid2 
+        show main_cloth at center
+        with dissolve
+        if morn_do == "사이버지식정보방":
+            call saturday1_morn_pc
     else:
         scene bg_office2:
             im.Sepia("bg_office3.png")
@@ -304,7 +313,40 @@ label saturday1:
         main "(그 분들 뵈기 부끄럽지 않도록... {w}더 분발해야겠지.)"
         $stress_val -= 2
         $sat_val += 2
-        return
+    return
+
+label saturday1_morn_pc:
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_end2
+    show main_cloth at right 
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_pcroom2
+    show main_cloth at center 
+    with dissolve
+    #"testMessage"
+    play sound switch
+    $renpy.pause(.6)
+    scene bg_pcroom
+    show main_cloth at center
+    stop sound
+    "자리를 잡고 본체에 전원을 넣었다."
+    $SoundPlayer("computer.wav", 4.0)
+    "꼼꼼히. {w}주변을 살폈다."
+    "사이버지식정보방 내부에 CCTV는 없다. {w}밖에서 안을 들여다 볼 수 있는 창문 같은 것도 없다. {w}사람. {w}나보다 먼저 들어온 이가 있는가. {w}문을 열고 살피는 이는 없는가. {w}꼼꼼히 확인한 후 본체로 손을 뻗었다."
+    "어느 날. {w}단순한 발상에서 시작된 실험. {w}내 호기심에서 시작된 일련의 계획은 차근차근 진행되어 완성 직전에 다달았다. {w}조금만 더 시간을 투자한다면 결실을 맺을 수 있을 것이다."
+    "실시간 감시 기능이  사라진.{w}반쪽짜리 사이버 보안 체계가 가동하며 모니터 속에 바탕화면이 떴다."
+    main "(브런치를 먹으러 갈 때까지 뭘 하면 좋으려나?)"
+    menu:
+        "게임 개발":
+            "wejio"
+        "모델링 연습":
+            "werjiowegjio"        
+        "!!딴짓!!":
+            "wejiowegjo"
+        "!!게임!!":
+            "wejoiweg"
+    return
         
 #label study_major:
 #    $what = "전공 공부"

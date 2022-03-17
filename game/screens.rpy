@@ -460,7 +460,21 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            python:
+                if i.caption[0] == "!" and i.caption[1] == "!":
+                    store.exclaim = True
+                else:
+                    store.exclaim = False
+                store.temp_count+=1
+            if exclaim == True:
+                textbutton i.caption:
+                    action i.action
+                    style "menu_choice_button"
+            else:
+                textbutton i.caption:
+                    action i.action
+                    style "choice_button"
+        $temp_count=0
 
 
 ## True일 경우 narrator 캐릭터를 통해 지문을 표시합니다. False일 경우 지문이 비
@@ -469,7 +483,8 @@ define config.narrator_menu = True
 
 
 style choice_vbox is vbox
-style choice_button is button
+style choice_button is button:
+    background "gui/game_menu.png"
 style choice_button_text is button_text
 
 style choice_vbox:
