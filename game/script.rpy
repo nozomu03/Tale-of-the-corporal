@@ -1081,7 +1081,7 @@ label start:
     $SoundPlayer("click.ogg", 2.0)
     main "정훈장교님?"
     tie "왜?"
-    main "c4i 체계 점검 응싱해달라고 합니다."
+    main "c4i 체계 점검 응신해달라고 합니다."
     $SoundPlayer("walk_slow.ogg", 2.0)
     show tie_nom at center with dissolve
     main "제목에 c4i 체계 점검 응신이라고 적고 내용은 쓰지 않은 채로 보내라고 하는데 어떻게 합니까?"

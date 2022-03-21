@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 463: u'print' is not a keyword argument or valid child for the for statement.
-    print(i.caption)
-         ^
+File "game/branc.rpy", line 227: expected statement.
+    del where_list
+                  ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 17 18:52:48 2022
+Mon Mar 21 11:20:10 2022

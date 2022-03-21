@@ -23,6 +23,9 @@ init python:
     event("day2_study_major1", 'what==\"전공 공부\" and evented == False', event.random(.5), event.only(), priority=20)
     event("day2_study_major2", 'what==\"전공 공부\" and evented == False', priority = 100)
 
+    event("pcroom1_good_event1", 'morn_do==\"사이버지식정보방\" and evented == False', event.random(.7), event.only(), priority = 20)
+    event("pcroom1_normal_event1", 'morn_do==\"사이버지식정보방\" and evented == False', priority = 100)
+
     #event('meet_j')
 
 label pc_bad:
@@ -711,6 +714,7 @@ label day2_novel1:
     $timeCheck(0, 2.0)
     $evented=True
     $what = "부상의 이유"
+    $what_all_list.append(what)
     return 
 
 label day2_novel2:
@@ -756,6 +760,7 @@ label day2_novel2:
     $timeCheck(0, 20)
     $evented=True
     $what = "편제장비"
+    $what_all_list.append(what)
     return 
 
 label day2_novel3:
@@ -817,6 +822,7 @@ label day2_novel3:
     $timeCheck(0, 2.0)
     $stress_val -= 5
     $sat_val += 10
+    $what_all_list.append(what)
     return
 
 label day2_study_specialty1:
@@ -859,6 +865,7 @@ label day2_study_specialty1:
     $renpy.pause(2.0)
     $timeCheck(0, 20)
     $evented = True
+    $what_all_list.append(what)
     return
 
 label day2_study_specialty2:
@@ -877,6 +884,7 @@ label day2_study_specialty2:
     $sat_val += 5
     $timeCheck(0, 20)
     $evented = True
+    $what_all_list.append(what)
     return
 
 label day2_study_specialty3:
@@ -917,11 +925,14 @@ label day2_study_specialty3:
         main "(사무실? {w}날 갑자기 왜?)"
     main "알았어. {w}특이사항은 없고, 잘 부탁해."
     gang "예, 고생하십시오."
-    $FaceChange("main_salute", 2.0, .5, "main_unhat")
+    $FaceChange("main_unhat_salute", 2.0, .5, "main_unhat")
     main "북진. {w}다녀오겠습니다."
-    hide main_salute
+    hide main_unhat_salute
     $SoundPlayer("walk_slow.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway
+    show main_unhat
+    with dissolve
     $SoundPlayer("door.ogg", 2.0)
     $SoundPlayer("running.wav", 2.0)
     scene bg_black with blinds
@@ -990,11 +1001,11 @@ label day2_study_specialty3:
     scene bg_zitong with dissolve
     $SoundPlayer("knock.ogg", 1.0)
     $SoundPlayer("door.ogg", 2.0)
-    show main_atten with dissolve
+    show main_unhat with dissolve
     $SoundPlayer("door.ogg", 2.0)    
-    $FaceChange("main_salute", 1.0, .5, "main_atten")
+    $FaceChange("main_unhat_salute", 1.0, .5, "main_unhat")
     main "북진. {w}상병 ㅇㅇㅇ. {w}다녀왔습니다."
-    $FaceChange("main_atten", 1.0, .5, "main_salute")
+    $FaceChange("main_unhat", 1.0, .5, "main_unhat_salute")
     $SoundPlayer("walk_slow.ogg", 2.0)
     show gang_atten at right with dissolve
     main "특이사항."
@@ -1010,6 +1021,7 @@ label day2_study_specialty3:
     $SoundPlayer("door.ogg", 2.0)
     $SoundPlayer("walk_slow.ogg", 2.0)
     $evented = True
+    $what_all_list.append(what)
     return
 
 label day2_study_major1:
@@ -1073,6 +1085,7 @@ label day2_study_major1:
     $timeCheck(0, 20)
     $evented = True
     $what = "전문하사"
+    $what_all_list.append(what)
     return
 
 label day2_study_major2:
@@ -1096,6 +1109,7 @@ label day2_study_major2:
     $timeCheck(0, 20)
     $evented = True
     $what = "데였다"
+    $what_all_list.append(what)
     return
 
 label day2_study_major3:
@@ -1109,6 +1123,7 @@ label day2_study_major3:
     main "(82점이라... {w}나쁘진 않네.)"
     $stress_val -= 5
     $evented = True
+    $what_all_list.append(what)
     return
 
 label pcroom1_good_event1:
@@ -1116,30 +1131,59 @@ label pcroom1_good_event1:
     show cap_working at right with dissolve
     show main_cloth at center with wipeup
     $renpy.pause(.3)
-    $FaceChange("main_cloth_salute", 1.0, .5, "main_cloth")
+    $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
     main "북진."
     fcaptain "안녕~ {w}주말인데 여기서 뭐하고 있어?"
-    $FaceChange("main_cloth", 1.0, .5, "main_cloth_salute")
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
     main "게임 만들고 있었습니다."
     fcaptain "게임?"
     main "예."
     fcaptain "한 번 볼 수 있을까?"
-    main "IDE 창을 최소화하고 테스트 모드로 게임을 실행했다."
+    "IDE 창을 최소화하고 테스트 모드로 게임을 실행했다."
     fcaptain "직접 만든거야?"
     main "그림이랑 오디오 쪽 빼고는 대부분 제가 직접 작업했습니다."
     fcaptain "잘 만들었네..."
     main "감사합니다."
-    fcaptain "자기 개발에 몰두하는 것도 좋지만 밥은 꼬박꼬박 시간 맞춰서 먹으러 가야 한다?"
+    fcaptain "자기 개발도 좋지만 밥은 꼬박꼬박 시간 맞춰서 먹으러 가야 한다?"
     main "알겠습니다!"
     fcaptain "그래, ㅇㅇ이는 잘하니까 중대장이 이렇게 굳이 말할 필요도 없겠지."
-    "눈동자가. {w}가만히 나를 응시한다. {w}그 어떤 천칭으로 저울질 되어도. {w}그 어떤 고난으로 시험받아도 변치 않을 결연한 의지가 가득한 밤색 눈동자가 시야를 메운다."
-    $FaceChange("main_cloth_salute", 1.0, .5, "main_cloth")
+    "눈동자가. {w}가만히 나를 응시한다. {w}그 어떤 천칭으로 저울질 되어도. {w}그 어떤 고난으로 시험받아도 변치 않을 결연한 의지가 가득한 눈동자에 내 모습이 비치였다."
+    $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
     main "북진! {w}근무 고생하십시오!"
     fcaptain "잘 쉬어라 ㅇㅇ아."
-    $FaceChange("main_cloth", 1.0, .5, "main_cloth_salute")
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
     hide cap_working
     $SoundPlayer("walk_slow.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
-    $SoundPlayer("door.ogg", 2.0)
     "나는 구원받은 것이나 다름없다. {w}처음으로 이천에 발을 디뎠던 날. {w}중대장님께서 내게 미소 지어주시지 않았더라면 이야기는 여기까지 이어지지도 못한 채 파탄났을 것이다."
-    main "(중대장님... {w}지금에서는 중대장님과 떨어지게 되었습니다만... {w}중대장님께서 베풀어주신 그 모든 것 덕분에 )"
+    main "(중대장님... {w}지금에서는 중대장님과 떨어지게 되었습니다만... {w}중대장님께서 베풀어주신 그 모든 것 덕분에 지금껏 살아남았습니다. {w}언젠가 제 군생활이 끝날 때까지. {w}어쩌면 그 넘어서에도.)"
+    main "(중대장님은 저의 우상이시며, 아버지와 같은 분이십니다.)"
+    $stress_val -= 5
+    $sat_val += 5
+    "화면을 바라보았다. {w}지난 주 일요일. {w}끝내 해결하지 못한 채 근무 투입했던 난점."
+    "지금이라면. {w}중대장님께 칭찬 받은 지금이라면. {w}아무리 머리를 굴려 보아도 해결하지 못한 오류를 풀어낼 수 있을 것 같았다."
+    $SoundPlayer("typing.ogg", 2.0)
+    play sound typing
+    scene bg_black with fade    
+    $renpy.pause(1.0)
+    stop sound
+    $timeCheck(1, 30)
+    $evented=True
+    return
+
+label pcroom1_normal_event1:
+    $SoundPlayer("typing.ogg", 2.0)
+    "쉽게 해결되지 않는 오류를 바로잡는 마지막 방법."
+    play sound typing
+    "소스코드 일부를 삭제하고 천천히 다시 짜 넣었다. {w}아무리 디버깅을 해도 원인을 알아낼 수 없는 오류라 해도 손쉽게 해결할 수 있는 마지막 수단."
+    "공들여 쌓아온 탑 일부를 제 손으로 무너뜨리는 일. {w}두 걸음 나아가기 위한 한 걸음의 후퇴이다."
+    stop sound
+    $SoundPlayer("typing.ogg", 2.0)
+    $SoundPlayer("click.ogg", 1.0)
+    "예상대로 원인모를 오류는 사라져 있었다. {w} 다음 부분으로 넘어가 개발을 이어갔다."
+    play sound typing
+    scene bg_black with fade
+    $SoundPlayer("typing.ogg", 2.0)
+    $timeCheck(1, 30)
+    $evented=True
+    return

@@ -3,74 +3,53 @@
 While running game code:
   File "game/script.rpy", line 1574, in script call
     call saturday1
-  File "game/branc.rpy", line 274, in script call
+  File "game/branc.rpy", line 280, in script call
     call saturday1_morn_pc
-  File "game/branc.rpy", line 340, in script
-    menu:
-  File "game/screens.rpy", line 458, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 458, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 462, in execute
-    vbox:
-  File "game/screens.rpy", line 463, in execute
-    for i in items:
-  File "game/screens.rpy", line 464, in execute
-    python:
-  File "game/screens.rpy", line 466, in <module>
-    store.temp_count+=1
-AttributeError: 'StoreModule' object has no attribute 'temp_count'
+  File "game/branc.rpy", line 354, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+NameError: name 'what' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 1574, in script call
     call saturday1
-  File "game/branc.rpy", line 274, in script call
+  File "game/branc.rpy", line 280, in script call
     call saturday1_morn_pc
-  File "game/branc.rpy", line 340, in script
-    menu:
-  File "renpy/ast.py", line 1688, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "renpy/exports.py", line 1060, in menu
-    rv = renpy.store.menu(new_items)
-  File "renpy/exports.py", line 1296, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 458, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 458, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 462, in execute
-    vbox:
-  File "game/screens.rpy", line 463, in execute
-    for i in items:
-  File "game/screens.rpy", line 464, in execute
-    python:
-  File "game/screens.rpy", line 466, in <module>
-    store.temp_count+=1
-AttributeError: 'StoreModule' object has no attribute 'temp_count'
+  File "game/branc.rpy", line 354, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+  File "renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'what' is not defined
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Thu Mar 17 18:59:05 2022
+Mon Mar 21 12:20:14 2022

@@ -55,7 +55,10 @@ default where_list = []
 define bad_incount = 0
 default message_list = []
 default what = ""
-default what_list = []
+#default what_list = ""
+default what_all_list = []
+
+default saturday1_list = []
 
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)
@@ -103,11 +106,17 @@ label SpriteSystem:
 
 init python:
     schedule_time = 0
-    saturday1_event = "N/A"
     morn_do = "선택"
     af_do = "선택"
     night_do = "선택"
     exclaim = False
+
+    def ValDel():
+        if 'where_list' in globals():
+            del store.where_list
+        return
+
+
     def SpriteUpdate(st):
         if s_pos is None:
             return .01
