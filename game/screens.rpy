@@ -465,7 +465,7 @@ screen choice(items):
                     store.exclaim = True
                 else:
                     store.exclaim = False
-                store.temp_count+=1
+                #store.temp_count+=1
             if exclaim == True:
                 textbutton i.caption:
                     action i.action
@@ -474,7 +474,7 @@ screen choice(items):
                 textbutton i.caption:
                     action i.action
                     style "choice_button"
-        $temp_count=0
+        #$temp_count=0
 
 
 ## True일 경우 narrator 캐릭터를 통해 지문을 표시합니다. False일 경우 지문이 비

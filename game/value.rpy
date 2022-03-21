@@ -102,9 +102,8 @@ label SpriteSystem:
     return
 
 init python:
-    temp_count = 0
-
     schedule_time = 0
+    saturday1_event = "N/A"
     morn_do = "선택"
     af_do = "선택"
     night_do = "선택"

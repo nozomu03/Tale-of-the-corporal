@@ -339,7 +339,12 @@ label saturday1_morn_pc:
     main "(브런치를 먹으러 갈 때까지 뭘 하면 좋으려나?)"
     menu:
         "게임 개발":
-            "wejio"
+            $SoundPlayer("click.ogg", 2.0)
+            $SoundPlayer("typing.ogg", 3.0)
+            "요 근래 딴짓을 너무 많이 했다. {w}꼬리가 길면 밟힌다. {w}설령 들킨다 하여도 얼버무릴 수 있는 웹서핑 정도면 모를까 그 이상은 위험하다."
+            $SoundPlayer("typing.ogg", 3.0)
+            $saturday1_event = "게임 개발"
+            call events_run_period
         "모델링 연습":
             "werjiowegjio"        
         "!!딴짓!!":
@@ -347,7 +352,6 @@ label saturday1_morn_pc:
         "!!게임!!":
             "wejoiweg"
     return
-        
 #label study_major:
 #    $what = "전공 공부"
 #
