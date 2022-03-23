@@ -634,7 +634,7 @@ screen main_menu():
     ## use 명령어로 스크린 내에 다른 스크린을 불러옵니다. 메인 메뉴 스크린의 내
     ## 용물은 navigation 스크린에 있습니다.
     use navigation
-
+    $ValDel()
     if gui.show_name:
 
         vbox:

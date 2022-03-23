@@ -224,6 +224,9 @@ label day2_checker:
         return
 
 label saturday1:
+    #$del what
+    $del where_list
+    $what = "N/A"
     if morn_do != "잠자기":
         $SoundPlayer("blanket.wav", 4.0)
         main "......."
@@ -270,6 +273,9 @@ label saturday1:
         scene bg_hallway_mid2 
         show main_cloth at center
         with dissolve
+        $now_h = 7
+        $now_m = 10
+        show screen time with dissolve
         if morn_do == "사이버지식정보방":
             call saturday1_morn_pc
     else:
@@ -337,19 +343,20 @@ label saturday1_morn_pc:
     "어느 날. {w}단순한 발상에서 시작된 실험. {w}내 호기심에서 시작된 일련의 계획은 차근차근 진행되어 완성 직전에 다달았다. {w}조금만 더 시간을 투자한다면 결실을 맺을 수 있을 것이다."
     "실시간 감시 기능이  사라진.{w}반쪽짜리 사이버 보안 체계가 가동하며 모니터 속에 바탕화면이 떴다."
     main "(브런치를 먹으러 갈 때까지 뭘 하면 좋으려나?)"
+    $evented = False
     menu:
-        "게임 개발":
+        "게임 개발(+1h 40m)":
             $SoundPlayer("click.ogg", 2.0)
             $SoundPlayer("typing.ogg", 3.0)
             "요 근래 딴짓을 너무 많이 했다. {w}꼬리가 길면 밟힌다. {w}설령 들킨다 하여도 얼버무릴 수 있는 웹서핑 정도면 모를까 그 이상은 위험하다."
             $SoundPlayer("typing.ogg", 3.0)
             $saturday1_event = "게임 개발"
             call events_run_period
-        "모델링 연습":
+        "모델링 연습(+1h 40m)":
             "werjiowegjio"        
-        "!!딴짓!!":
+        "!!딴짓!!(+1h 40m)":
             "wejiowegjo"
-        "!!게임!!":
+        "!!게임!!(+1h 40m)":
             "wejoiweg"
     return
 #label study_major:
