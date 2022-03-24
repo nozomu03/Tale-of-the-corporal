@@ -350,14 +350,35 @@ label saturday1_morn_pc:
             $SoundPlayer("typing.ogg", 3.0)
             "요 근래 딴짓을 너무 많이 했다. {w}꼬리가 길면 밟힌다. {w}설령 들킨다 하여도 얼버무릴 수 있는 웹서핑 정도면 모를까 그 이상은 위험하다."
             $SoundPlayer("typing.ogg", 3.0)
-            $saturday1_event = "게임 개발"
+            $what = "게임 개발"
             call events_run_period
         "모델링 연습(+1h 40m)":
-            "werjiowegjio"        
+            $SoundPlayer("click.ogg", 2.0)
+            $SoundPlayer("typing.ogg", 3.0)
+            "요 근래 딴짓을 너무 많이 했다. {w}꼬리가 길면 밟힌다. {w}설령 들킨다 하여도 얼버무릴 수 있는 웹서핑 정도면 모를까 그 이상은 위험하다."
+            $SoundPlayer("click.ogg", 2.0)
+            "모델링 프로그램을 실행시켰다."
+            "화면 속의 입체공간. {w}정육면체에서 시작하여 점차 복잡한 형태로. {w}물체에 곡면이 생겨나며 물체는 형상을 갖추어 나갔다."
+            $what = "모델링"
+            call events_run_period
         "!!딴짓!!(+1h 40m)":
-            "wejiowegjo"
+            $what = "딴짓"
+            #$in_secret1 = True
+            "의자 등받이에 기댔다."
+            $SoundPlayer("click.ogg", 2.0)
+            "웹 브라우저를 실행시키고 주변을 샆펴 아무도 없는 것을 확인했다."
+            "소리를 최소한으로 줄인 후 동영상을 재생시켰다."
+            call events_run_period
         "!!게임!!(+1h 40m)":
-            "wejoiweg"
+            $what = "게임"
+            #$in_secret2 = True
+            "주위를 살폈다. {w}방 안에 나 홀로 있음을 몇 번이고 철저히 확인했다."
+            main "(...음.)"
+            "웹 드라이브에 접속했다."
+            "미리 업로드 해 두었던 파일을 내려받고 혹시 모를 일에 대비해 로그를 삭제했다."
+            "찾기 힘든 외진 경로에 압축을 팔고 파일을 완전히 삭제했다."
+            $SoundPlayer("click.ogg", 2.0)
+            call events_run_period
     return
 #label study_major:
 #    $what = "전공 공부"

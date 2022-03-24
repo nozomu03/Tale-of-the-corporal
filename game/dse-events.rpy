@@ -23,10 +23,12 @@ init python:
     event("day2_study_major1", 'what==\"전공 공부\" and evented == False', event.random(.5), event.only(), priority=20)
     event("day2_study_major2", 'what==\"전공 공부\" and evented == False', priority = 100)
 
-    event("pcroom1_good_event1", 'morn_do==\"사이버지식정보방\" and evented == False', event.random(.7), event.only(), priority = 20)
+    event("pcroom1_good_event1", 'morn_do==\"사이버지식정보방\" and evented == False', event.random(.6), event.only(), priority = 20)
     event("pcroom1_normal_event1", 'morn_do==\"사이버지식정보방\" and evented == False', priority = 100)
-
     #event('meet_j')
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.3), event.only(), priority = 10)
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.3), event.only(), priority = 10)
+
 
 label pc_bad:
     $timeCheck(0, 20)
@@ -1129,19 +1131,33 @@ label day2_study_major3:
 label pcroom1_good_event1:
     $SoundPlayer("door.ogg", 2.0)
     show cap_working at right with dissolve
+    if what == "게임" or what == "딴짓":
+        "소리 없이 재빨리, 창을 닫았다."
     show main_cloth at center with wipeup
     $renpy.pause(.3)
     $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
     main "북진."
     fcaptain "안녕~ {w}주말인데 여기서 뭐하고 있어?"
     $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
-    main "게임 만들고 있었습니다."
-    fcaptain "게임?"
+    if what == "게임 개발" or what == "게임" or what == "딴짓":
+        main "게임 만들고 있었습니다."
+        fcaptain "게임?"
+    elif what == "모델링":
+        main "잠깐 모델링 공부 중이었습니다."
+        fcaptain "3d 모델링?"
     main "예."
     fcaptain "한 번 볼 수 있을까?"
-    "IDE 창을 최소화하고 테스트 모드로 게임을 실행했다."
-    fcaptain "직접 만든거야?"
-    main "그림이랑 오디오 쪽 빼고는 대부분 제가 직접 작업했습니다."
+    if what == "게임 개발":
+        "IDE 창을 최소화하고 테스트 모드로 게임을 실행했다."
+        fcaptain "직접 만든거야?"
+        main "그림이랑 오디오 쪽 빼고는 대부분 제가 직접 작업했습니다."
+    if what == "게임" or what == "딴짓":
+        "미리 켜둔 IDE 창 덕분에 바탕화면이 드러나 의심을 사는 일은 없었다."
+        "테스트 모드로 게임을 실행했다"
+    elif what == "모델링":
+        "만든 모델이 전체적으로 잘 보이도록 화면을 조작했다."
+        fcaptain "K2 소총이네? 직접 만든거야?"
+        main "예. "
     fcaptain "잘 만들었네..."
     main "감사합니다."
     fcaptain "자기 개발도 좋지만 밥은 꼬박꼬박 시간 맞춰서 먹으러 가야 한다?"
@@ -1158,32 +1174,164 @@ label pcroom1_good_event1:
     "나는 구원받은 것이나 다름없다. {w}처음으로 이천에 발을 디뎠던 날. {w}중대장님께서 내게 미소 지어주시지 않았더라면 이야기는 여기까지 이어지지도 못한 채 파탄났을 것이다."
     main "(중대장님... {w}지금에서는 중대장님과 떨어지게 되었습니다만... {w}중대장님께서 베풀어주신 그 모든 것 덕분에 지금껏 살아남았습니다. {w}언젠가 제 군생활이 끝날 때까지. {w}어쩌면 그 넘어서에도.)"
     main "(중대장님은 저의 우상이시며, 아버지와 같은 분이십니다.)"
-    $stress_val -= 5
-    $sat_val += 5
-    "화면을 바라보았다. {w}지난 주 일요일. {w}끝내 해결하지 못한 채 근무 투입했던 난점."
-    "지금이라면. {w}중대장님께 칭찬 받은 지금이라면. {w}아무리 머리를 굴려 보아도 해결하지 못한 오류를 풀어낼 수 있을 것 같았다."
-    $SoundPlayer("typing.ogg", 2.0)
-    play sound typing
+    if what == "게임 개발":
+        "화면을 바라보았다. {w}지난 주 일요일. {w}끝내 해결하지 못한 채 근무 투입했던 난점."
+        "지금이라면. {w}중대장님께 칭찬 받은 지금이라면. {w}아무리 머리를 굴려 보아도 해결하지 못한 오류를 풀어낼 수 있을 것 같았다."
+        $SoundPlayer("typing.ogg", 2.0)
+        play sound typing
+        $stress_val -= 5
+        $sat_val += 5
+    elif what == "모델링":
+        "모델을 저장하고 새 파일을 생성했다."
+        main "(이번에는...)"
+        "큐브이 길이를 늘리고, 다리가 될 부분을 만들기 시작했다."
+        play sound click
+        $stress_val -= 5
+        $sat_val += 5
+    else:
+        play sound tinnitus
+        $FaceChange("main_cloth_ser", 1.0, .5, "main_cloth")
+        "그런 우상을 속였다는 사실이 가슴을 무겁게 옥죄어 왔다.{p}그리고, 동시에. {w}가슴 속에 피어오른 것은 내게 허락되지 않은 감정."
+        "소등 이후의 막사, 그 끝모르게 퍼져나가는 어둠이 내 몸을 뒤치여. {w}하루가 더 없이 길었던 때. {w}자그마한 그늘마저 꼼꼼히 채우는 새론 광채를 두려워 하여 차라리 이 두 눈이 불타 멀어버기를 기도했던 때"
+        "그 격랑은 이미 물러났으나. {w}한 편에 분명한 흉터를 남기었고.{p}아문 상처가 때때로 쓰라리듯. {w}익숙한 괴로움이 몸을 스쳐 지나갔다." 
+        $renpy.transition(dissolve)
+        call eye_screen
+        main "(하지만... {w}어쩔 수 없다고...)"
+        "목소리" "{color=#FF0000}정말 그렇게 생각해?" with blur
+        scene bg_pcroom at blur2 
+        show main_cloth_ser at blur3
+        with Dissolve(2.0)
+        play looping heartbeat
+        "이어 찾아오는 현기증."
+        $SoundPlayer("sigh.wav", 1.0)
+        main "(x같네... {w}진짜...)"
+        $timeCheck(0, 10)
+        $FaceChange("main_cloth", 1.0, 1.0, "main_cloth_ser")
+        stop looping
+        "고개를 흔들어 털어냈다. {w}중대장님은 나가셨다. {w}한 번 순찰을 돌았으니 다음 순찰까지는 여유가 있을 것이다."
+        $SoundPlayer("enter.wav", 1.0)
+        "종료한 {nw}"
+        if what=="게임":
+            extend "게임 프로그램을 다시 실행시켰다."
+        elif what=="딴짓":
+            extend "웹 브라우저를 다시 실행시켰다."
     scene bg_black with fade    
     $renpy.pause(1.0)
     stop sound
-    $timeCheck(1, 30)
+    if what == "게임" or what == "딴짓":
+        $stress_val -= 10
+        $sat_val += 10
+        $timeCheck(1, 20)
+    else:
+        $timeCheck(1, 30)
     $evented=True
     return
 
 label pcroom1_normal_event1:
-    $SoundPlayer("typing.ogg", 2.0)
-    "쉽게 해결되지 않는 오류를 바로잡는 마지막 방법."
-    play sound typing
-    "소스코드 일부를 삭제하고 천천히 다시 짜 넣었다. {w}아무리 디버깅을 해도 원인을 알아낼 수 없는 오류라 해도 손쉽게 해결할 수 있는 마지막 수단."
-    "공들여 쌓아온 탑 일부를 제 손으로 무너뜨리는 일. {w}두 걸음 나아가기 위한 한 걸음의 후퇴이다."
-    stop sound
-    $SoundPlayer("typing.ogg", 2.0)
-    $SoundPlayer("click.ogg", 1.0)
-    "예상대로 원인모를 오류는 사라져 있었다. {w} 다음 부분으로 넘어가 개발을 이어갔다."
-    play sound typing
-    scene bg_black with fade
-    $SoundPlayer("typing.ogg", 2.0)
+    if what == "게임 개발":
+        $SoundPlayer("typing.ogg", 2.0)
+        "쉽게 해결되지 않는 오류를 바로잡는 마지막 방법."
+        play sound typing
+        "소스코드 일부를 삭제하고 천천히 다시 짜 넣었다. {w}아무리 디버깅을 해도 원인을 알아낼 수 없는 오류라 해도 손쉽게 해결할 수 있는 마지막 수단."
+        "공들여 쌓아온 탑 일부를 제 손으로 무너뜨리는 일. {w}두 걸음 나아가기 위한 한 걸음의 후퇴이다."
+        stop sound
+        $SoundPlayer("typing.ogg", 2.0)
+        $SoundPlayer("click.ogg", 1.0)
+        "예상대로 원인모를 오류는 사라져 있었다. {w} 다음 부분으로 넘어가 개발을 이어갔다."
+        play sound typing
+        scene bg_black with fade
+        $SoundPlayer("typing.ogg", 2.0)
+    elif what == "모델링":
+        $SoundPlayer("click.ogg", 2.0)
+        "배경으로 깔아둔 청사진을 따라 정육면체를 가공했다. {w}잘라내고, 늘이고, 줄여가며 모양을 만들었다."
+        play sound mousework        
+        scene bg_black with Fade(1.0, 3.0, 1.0, color="#000000")
     $timeCheck(1, 30)
     $evented=True
+    stop sound
     return
+
+label pcroom1_bad_event1:
+    $SoundPlayer("door.ogg", 2.0)
+    #show jun_working_sang at right with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)        
+    show jun_working_sang at Position(xalign=.4, yalign=1.0)
+    hide main_cloth
+    show main_cloth_sup at center
+    with vpunch
+    jun "뭐하냐?"
+    "조건반사적으로 손이 움직이려 했다."
+    if what == "딴짓":
+        extend "\n멈추었다. {w}경우에 따라서라면... {w}충분히 넘어갈 수 있는 상황이다."
+        $FaceChange("main_cloth", 1.0, .5, "main_cloth_sup")
+        main "잠깐... {w}웹서핑 중이었습니다."
+        jun "나와 볼래? {w}확인할 게 있어서 그래."
+        main "...예."
+        hide main_cloth
+        hide jun_working_sang
+        show main_cloth at center
+        show jun_working_sang at Position(xalign=.4, yalign=1.0)
+        $SoundPlayer("typing.ogg", 2.0)        
+        jun "이야~ {w}참..."
+        main "......."
+        jun "ㅇㅇ아."
+        main "상병 ㅇㅇㅇ."
+        jun "사지방이 뭐하는 곳이냐?"
+        main "공부하라고 있는 곳입니다."
+        jun "그런데 넌 뭐했어?"
+        main "......."
+        jun "경고다. {w}조금 있다가 다시 올 거야. {w}또 걸리기면 알아서 해라."
+        main "예..."
+    elif what == "게임":
+        $SoundPlayer("enter.wav", 1.0)
+        jun "꺼봤자 소용없어. {w}다 봤으니까."
+        $FaceChange("main_cloth_ang", 1.0, .5, "main_cloth_sup")
+        main "(망할...)"
+        jun "ㅇㅇ아."
+        main "상병 ㅇㅇㅇ."        
+        jun "비켜."
+        main "....예."
+        hide main_cloth_ang
+        hide jun_working_sang
+        show main_cloth 
+        show jun_working_sang at Position(xalign=.4, yalign=1.0)
+        $SoundPlayer("typing.ogg", 2.0)
+        jun "이야... 아주 그냥... {w}네 세상이었구나?"
+        main "......."
+        jun "어떻게 할래?"
+        main "잘 못 들었습니다?"
+        jun "이거 어쩔 거냐고."
+        main "그건..."
+        jun "일단 일어나. {w}컴퓨터 꺼."
+        $SoundPlayer("click.ogg", 2.0)
+        main "껐습니다."
+        jun "그리고{nw}"
+        $event_result_val = renpy.random.randint(1, 100)
+        $print(event_result_val)
+        if event_result_val >= 45:
+            extend ", 나가."
+            main "...알겠습니다."
+            jun "오늘 하루 사지방 다시 오기만 해 봐."
+            main "예."
+            jun "나라서 운 좋은 줄 알아. {w}알겠어?"
+            "당직사령님께. {w}혹은 소대장님께 보고된다는 최악의 상황은 일단 면했다."
+            "그렇지만..."
+            $stress_val += 5 
+            $sat_val -= 10
+        else:
+            extend "..."
+            jun "이건 어쩔 수 없다. {w}월요일날 통신소대장님 출근하시는 대로 보고드릴 테니까 그렇게 알아. {w}나가 봐."
+            main "...예."
+            $stress_val += 10
+            $sat_val -= 20
+        $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
+        main "북진. {w}고생하십시오."
+        $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
+        $renpy.pause(1.0)
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        $evented = True
+        $timeCheck(0, 30) 
+    return
+
