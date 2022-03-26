@@ -8,6 +8,47 @@ init offset = -1
 ################################################################################
 ## 스타일
 ################################################################################
+label eye_screen:
+    #modal True
+    ##a = "sdfg"
+    #$count_2 = 0
+    #for i in range(10):        
+    #    add "cg_eye.png" at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+    #        rotate renpy.random.randint(0, 359)
+        #$ui.close()
+        #$count_2 += 1
+    show cg_eye at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye2 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye3 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye4 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye5 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye6 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye7 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye8 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye9 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    show cg_eye as cg_eye10 at Position(xpos = renpy.random.randint(20, 1050), ypos = renpy.random.randint(20, 500)):
+        rotate renpy.random.randint(0, 120)
+    with vpunch
+    return
+    
 screen schedule:
     modal True
     vbox:

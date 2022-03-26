@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/branc.rpy", line 227: expected statement.
-    del where_list
-                  ^
+File "game/dse-events.rpy", line 1213: expected ':' not found.
+    else what=="딴짓":
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 21 11:20:10 2022
+Thu Mar 24 17:58:04 2022
