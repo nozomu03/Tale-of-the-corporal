@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dse-events.rpy", line 1213: expected ':' not found.
-    else what=="딴짓":
-         ^
+File "game/image.rpy", line 78: invalid syntax
+            part_sum_h += 
+    
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 24 17:58:04 2022
+Mon Mar 28 16:16:57 2022

@@ -26,8 +26,8 @@ init python:
     event("pcroom1_good_event1", 'morn_do==\"사이버지식정보방\" and evented == False', event.random(.6), event.only(), priority = 20)
     event("pcroom1_normal_event1", 'morn_do==\"사이버지식정보방\" and evented == False', priority = 100)
     #event('meet_j')
-    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.3), event.only(), priority = 10)
-    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.3), event.only(), priority = 10)
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.5), event.only(), priority = 10)
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.5), event.only(), priority = 10)
 
 
 label pc_bad:
@@ -1197,7 +1197,7 @@ label pcroom1_good_event1:
         $renpy.transition(dissolve)
         call eye_screen
         main "(하지만... {w}어쩔 수 없다고...)"
-        "목소리" "{color=#FF0000}정말 그렇게 생각해?" with blur
+        "목소리" "{color=#FF0000}정말 그렇게 생각해?"
         scene bg_pcroom at blur2 
         show main_cloth_ser at blur3
         with Dissolve(2.0)
@@ -1219,8 +1219,8 @@ label pcroom1_good_event1:
     $renpy.pause(1.0)
     stop sound
     if what == "게임" or what == "딴짓":
-        $stress_val -= 10
-        $sat_val += 10
+        $stress_val -= 15
+        $sat_val += 20
         $timeCheck(1, 20)
     else:
         $timeCheck(1, 30)
@@ -1246,6 +1246,12 @@ label pcroom1_normal_event1:
         "배경으로 깔아둔 청사진을 따라 정육면체를 가공했다. {w}잘라내고, 늘이고, 줄여가며 모양을 만들었다."
         play sound mousework        
         scene bg_black with Fade(1.0, 3.0, 1.0, color="#000000")
+    else:
+        "1주일 만의 자유는 확실히 달콤했다.{p}지난 5일 간의 고생을 보상받는 느낌이었다." 
+        "그에 더해, 해서는 안 될 일을 하는 데에서 오는 배덕감. {p}알량하다, 라고도 말할 수 있는 내 실력을 갈고닦아 하나의 체계에 일부나마 무력화시켰다는 데에서 오는 환희."
+        "짓눌릴 것만 같던 압박감으로부터 해방되었다."
+        $stress_val -= 5  
+        $sat_val += 10
     $timeCheck(1, 30)
     $evented=True
     stop sound
@@ -1308,7 +1314,7 @@ label pcroom1_bad_event1:
         jun "그리고{nw}"
         $event_result_val = renpy.random.randint(1, 100)
         $print(event_result_val)
-        if event_result_val >= 45:
+        if event_result_val >= 60:
             extend ", 나가."
             main "...알겠습니다."
             jun "오늘 하루 사지방 다시 오기만 해 봐."
@@ -1316,13 +1322,13 @@ label pcroom1_bad_event1:
             jun "나라서 운 좋은 줄 알아. {w}알겠어?"
             "당직사령님께. {w}혹은 소대장님께 보고된다는 최악의 상황은 일단 면했다."
             "그렇지만..."
-            $stress_val += 5 
+            $stress_val += 10 
             $sat_val -= 10
         else:
             extend "..."
             jun "이건 어쩔 수 없다. {w}월요일날 통신소대장님 출근하시는 대로 보고드릴 테니까 그렇게 알아. {w}나가 봐."
             main "...예."
-            $stress_val += 10
+            $stress_val += 15
             $sat_val -= 20
         $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
         main "북진. {w}고생하십시오."

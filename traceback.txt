@@ -1,38 +1,69 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 1574, in script call
-    call saturday1
-  File "game/branc.rpy", line 280, in script call
-    call saturday1_morn_pc
-  File "game/branc.rpy", line 381, in script call
-    call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 297, in script call
-    call expression _event from call_expression_event_1
-  File "game/dse-events.rpy", line 1320, in script
-    extned "..."
-Exception: Sayer 'extned' is not defined.
+Compiling ATL code at <string>:2
+  File "game/script.rpy", line 28, in script call
+    main "갔다 올게."
+  File "renpy/common/00console.rpy", line 1054, in script
+    python in _console:
+  File "renpy/common/00console.rpy", line 1056, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 564, in interact
+    line = ui.interact()
+  File "game/image.rpy", line 73, in glitching
+    all_part = all_part.pop(0) - part_sum_h
+AttributeError: 'int' object has no attribute 'pop'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1574, in script call
-    call saturday1
-  File "game/branc.rpy", line 280, in script call
-    call saturday1_morn_pc
-  File "game/branc.rpy", line 381, in script call
-    call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 297, in script call
-    call expression _event from call_expression_event_1
-  File "game/dse-events.rpy", line 1320, in script
-    extned "..."
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'extned' is not defined.
+  File "game/script.rpy", line 28, in script call
+    main "갔다 올게."
+  File "renpy/common/00console.rpy", line 1054, in script
+    python in _console:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00console.rpy", line 1056, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 564, in interact
+    line = ui.interact()
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 558, in visit_all
+    for d in self.visit():
+  File "renpy/atl.py", line 603, in visit
+    block = self.compile()
+  File "renpy/atl.py", line 510, in compile
+    block = self.atl.compile(self.context)
+  File "renpy/atl.py", line 705, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "renpy/atl.py", line 922, in compile
+    child = ctx.eval(expr)
+  File "renpy/atl.py", line 260, in eval
+    return eval(expr, renpy.store.__dict__, self.context) # @UndefinedVariable
+  File "<string>", line 1, in <module>
+  File "renpy/defaultstore.py", line 346, in At
+    rv = i(rv)
+  File "game/image.rpy", line 73, in glitching
+    all_part = all_part.pop(0) - part_sum_h
+AttributeError: 'int' object has no attribute 'pop'
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Thu Mar 24 18:42:15 2022
+Mon Mar 28 16:27:53 2022

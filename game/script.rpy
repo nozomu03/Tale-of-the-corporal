@@ -11,6 +11,27 @@
 label start:
     #scene bg_room2
     #call SpriteSystem
+    image main_ord_glitch:
+        At("main_ord", glitching)
+        pause .2
+        At("main_ord", chromatic_offset)
+        pause .3
+        At("main_ord", glitching)
+        pause .2
+        At("main_ord", chromatic_offset)
+        pause .3
+        At("main_ord", glitching)
+        pause .2
+        At("main_ord", chromatic_offset)
+        pause .3
+        At("main_ord", glitching)
+        pause .2
+        At("main_ord", chromatic_offset)
+        pause .3
+        pause 1.0
+        repeat
+    show main_ord_glitch at center with dissolve
+    $renpy.pause(3000)
     window hide
     scene bg_black
     centered "내가 원하는 건. {w}무엇이었을까."

@@ -59,7 +59,7 @@ default message_list = []
 default what = ""
 #default what_list = ""
 default what_all_list = []
-
+#default random_x = -2
 default saturday1_list = []
 default pc_ben = [False]
 
@@ -108,6 +108,7 @@ label SpriteSystem:
     return
 
 init python:
+    now_glitch = "main_ord"
     schedule_time = 0
     morn_do = "선택"
     af_do = "선택"

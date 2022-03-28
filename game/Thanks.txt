@@ -123,6 +123,8 @@ classic-plastic-chairs https://sketchfab.com/3d-models/classic-plastic-chairs-6d
 Ren'py Source:
 https://lemmasoft.renai.us/forums/viewtopic.php?t=17599
 
+Gouvernathor https://github.com/Gouvernathor/renpy-ChromaGlitch
+
 Font
 NanumGothic by NAVER Corp. https://help.naver.com/support/service/main.help?serviceNo=1074&categoryNo=13669
 

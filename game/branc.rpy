@@ -321,6 +321,18 @@ label saturday1:
         $sat_val += 2
     return
 
+label saturday1_morn_phone:
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_mid2 with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway2
+    show main_cloth at right
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room2 with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at right with dissolve
+
 label saturday1_morn_pc:
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_hallway_end2
@@ -378,7 +390,7 @@ label saturday1_morn_pc:
             "미리 업로드 해 두었던 파일을 내려받고 혹시 모를 일에 대비해 로그를 삭제했다."
             "찾기 힘든 외진 경로에 압축을 팔고 파일을 완전히 삭제했다."
             $SoundPlayer("click.ogg", 2.0)
-            call events_run_period
+            call events_run_period            
     return
 #label study_major:
 #    $what = "전공 공부"
