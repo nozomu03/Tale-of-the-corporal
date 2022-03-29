@@ -278,6 +278,30 @@ label saturday1:
         show screen time with dissolve
         if morn_do == "사이버지식정보방":
             call saturday1_morn_pc
+            if not saturday1_list[0] == 4 or saturday1_list[0] == 5:
+                scene bg_pcroom
+                show main_cloth
+                with dissolve
+                main "(시간이 벌써 이렇게 됐나.)"
+                "괜히 늦게 밥을 먹으러 가 혼나는 것보다 조금 일찍 나서는 편이 낫겠지.{p}자리를 정돈하고 일어났다."
+                hide main_cloth
+                $SoundPlayer("walk_slow.ogg", 2.0)
+                $SoundPlayer("door.ogg", 2.0)
+                $SoundPlayer("door.ogg", 2.0)
+                $SoundPlayer("walk_slow.ogg", 2.0)
+                scene bg_black with fade
+                $renpy.pause(1.0)
+                $SoundPlayer("door.ogg", 2.0)
+                $SoundPlayer("door.ogg", 2.0)
+                scene bg_room2 
+                show main_cloth
+                with dissolve
+                $renpy.pause(1.0)
+                hide main_cloth
+                $SoundPlayer("sheet.ogg", 1.0)  
+                "침대 위에서 데굴거리며 식사 출발 방송이 나오기를 기다렸다."  
+        elif morn_do == "휴대폰":
+            call saturday1_morn_phone
     else:
         scene bg_office2:
             im.Sepia("bg_office3.png")
@@ -332,6 +356,12 @@ label saturday1_morn_phone:
     scene bg_room2 with dissolve
     $SoundPlayer("door.ogg", 2.0)
     show main_cloth at right with dissolve
+    $renpy.pause(1.0)
+    $SoundPlayer("sheet.ogg", 1.0)
+    "침대에 누워 밥을 먹으러 갈 시간이 될 때까지 빈둥거렸다."
+    $stress_val -= 3
+    $sat_val += 3
+    return
 
 label saturday1_morn_pc:
     $SoundPlayer("walk_slow.ogg", 2.0)

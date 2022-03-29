@@ -1,43 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at <string>:2
-  File "game/script.rpy", line 28, in script call
-    main "갔다 올게."
-  File "renpy/common/00console.rpy", line 1054, in script
-    python in _console:
-  File "renpy/common/00console.rpy", line 1056, in <module>
-    console.interact()
-  File "renpy/common/00console.rpy", line 564, in interact
-    line = ui.interact()
-  File "game/image.rpy", line 73, in glitching
-    all_part = all_part.pop(0) - part_sum_h
-AttributeError: 'int' object has no attribute 'pop'
+Compiling ATL code at game/script.rpy:15
+  File "game/script.rpy", line 33, in script
+    show main_ord_glitch at center with dissolve
+  File "game/image.rpy", line 93, in glitching
+    VBox(part_list),
+TypeError: argument of type 'ATLTransform' is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 28, in script call
-    main "갔다 올게."
-  File "renpy/common/00console.rpy", line 1054, in script
-    python in _console:
-  File "renpy/ast.py", line 928, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00console.rpy", line 1056, in <module>
-    console.interact()
-  File "renpy/common/00console.rpy", line 564, in interact
-    line = ui.interact()
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
+  File "game/script.rpy", line 33, in script
+    show main_ord_glitch at center with dissolve
+  File "renpy/ast.py", line 1197, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1167, in show_imspec
+    atl=atl)
+  File "renpy/exports.py", line 768, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "renpy/display/core.py", line 1147, in add
+    thing.visit_all(lambda d : None)
   File "renpy/display/core.py", line 568, in visit_all
     d.visit_all(callback, seen)
   File "renpy/display/core.py", line 568, in visit_all
@@ -59,11 +41,17 @@ Full traceback:
   File "<string>", line 1, in <module>
   File "renpy/defaultstore.py", line 346, in At
     rv = i(rv)
-  File "game/image.rpy", line 73, in glitching
-    all_part = all_part.pop(0) - part_sum_h
-AttributeError: 'int' object has no attribute 'pop'
+  File "game/image.rpy", line 93, in glitching
+    VBox(part_list),
+  File "renpy/defaultstore.py", line 265, in __call__
+    rv.add(renpy.easy.displayable(i))
+  File "renpy/easy.py", line 130, in displayable
+    return renpy.display.image.DynamicImage(d, scope=scope)
+  File "renpy/display/image.py", line 567, in __init__
+    if ("[prefix_" in i):
+TypeError: argument of type 'ATLTransform' is not iterable
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Mon Mar 28 16:27:53 2022
+Tue Mar 29 15:17:43 2022

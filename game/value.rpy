@@ -21,6 +21,7 @@ define young = Character("박영훈", who_color = "#CD853F", what_color = "#7788
 define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B90000")
 define wol = Character("정영월", who_color = "#3C4444", what_color = "#1E0A0A")
 define jun = Character("김현준", who_color = "#262D2D", what_color = "#403C4C")
+define zeen = Character("강진욱", who_color = "#7B708E", what_color = "#767074")
 
 #사수 통신병 -> 김호윤
 #3소대장님 -> 작전장교님 = 조원우 
@@ -61,7 +62,6 @@ default what = ""
 default what_all_list = []
 #default random_x = -2
 default saturday1_list = []
-default pc_ben = [False]
 
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)

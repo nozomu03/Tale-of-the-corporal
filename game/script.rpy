@@ -11,28 +11,30 @@
 label start:
     #scene bg_room2
     #call SpriteSystem
-    image main_ord_glitch:
-        At("main_ord", glitching)
-        pause .2
-        At("main_ord", chromatic_offset)
-        pause .3
-        At("main_ord", glitching)
-        pause .2
-        At("main_ord", chromatic_offset)
-        pause .3
-        At("main_ord", glitching)
-        pause .2
-        At("main_ord", chromatic_offset)
-        pause .3
-        At("main_ord", glitching)
-        pause .2
-        At("main_ord", chromatic_offset)
-        pause .3
-        pause 1.0
-        repeat
-    show main_ord_glitch at center with dissolve
-    $renpy.pause(3000)
-    window hide
+    #image main_ord_glitch:
+    #    At("main_ord", glitching)
+    #    pause .2
+    #    At("main_ord", chromatic_offset)
+    #    pause .3
+    #    At("main_ord", glitching)
+    #    pause .2
+    #    At("main_ord", chromatic_offset)
+    #    pause .3
+    #    At("main_ord", glitching)
+    #    pause .2
+    #    At("main_ord", chromatic_offset)
+    #    pause .3
+    #    At("main_ord", glitching)
+    #    pause .2
+    #    At("main_ord", chromatic_offset)
+    #    pause .3
+    #    pause 1.0
+    #    repeat
+    #show main_ord_glitch at center with dissolve
+    #$renpy.pause(3000)
+    #"테스트메세지"
+   # show para_text("aaaaaa")
+    #window hide
     scene bg_black
     centered "내가 원하는 건. {w}무엇이었을까."
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
@@ -1593,6 +1595,23 @@ label start:
         extend " 간만에 시간에 쫒기지 않고 빵과 베이컨을 먹을 수 있을 것이다."
     "그러한 잡생각들과 함께 마지막으로 남아있던 의식의 마지막 꺼풀마저 벗겨지며 나는 빠르게 잠에 빠져들었다."    
     call saturday1
+    $now_h = 10
+    $now_m = 10
+    $SoundPlayer("broadcast.wav", 2.0)
+    scene bg_room2 with dissolve
+    "당직부사관" "\[통합중대 인원들. {w}식사 출발해주시길 바랍니다.\]"
+    $SoundPlayer("blanket.wav", 4.0)
+    show main_cloth at right with wipeup
+    main "밥 먹으러 가자."
+    $SoundPlayer("blanket.wav", 4.0)
+    show jeong_cloth at center
+    with wipeup
+    zeen "으음..."
+    main "진욱아. {w}어떻게 할래. {w}일단 깨워달래서 꺠우긴 했는데 더 자고 싶으면 내가 말판 옮겨주고."
+    zeen "아닙니다. {w}먹으러 가겠습니다."
+    $SoundPlayer("blanket.wav", 4.0)
+    show zeen_cloth at left with wipeup
+    $SoundPlayer("walk_slow.ogg")
     #"[morn_do] [af_do] [night_do]"
     "."
     return

@@ -1221,10 +1221,11 @@ label pcroom1_good_event1:
     if what == "게임" or what == "딴짓":
         $stress_val -= 15
         $sat_val += 20
-        $timeCheck(1, 20)
+        $timeCheck(2, 20)
     else:
-        $timeCheck(1, 30)
+        $timeCheck(2, 30)
     $evented=True
+    $saturday1_list.append(0)
     return
 
 label pcroom1_normal_event1:
@@ -1252,7 +1253,8 @@ label pcroom1_normal_event1:
         "짓눌릴 것만 같던 압박감으로부터 해방되었다."
         $stress_val -= 5  
         $sat_val += 10
-    $timeCheck(1, 30)
+    $saturday1_list.append(1)
+    $timeCheck(2, 30)
     $evented=True
     stop sound
     return
@@ -1267,7 +1269,7 @@ label pcroom1_bad_event1:
     with vpunch
     jun "뭐하냐?"
     "조건반사적으로 손이 움직이려 했다."
-    if what == "딴짓":
+    if what == "딴짓": #code 3
         extend "\n멈추었다. {w}경우에 따라서라면... {w}충분히 넘어갈 수 있는 상황이다."
         $FaceChange("main_cloth", 1.0, .5, "main_cloth_sup")
         main "잠깐... {w}웹서핑 중이었습니다."
@@ -1288,6 +1290,17 @@ label pcroom1_bad_event1:
         main "......."
         jun "경고다. {w}조금 있다가 다시 올 거야. {w}또 걸리기면 알아서 해라."
         main "예..."
+        $saturday1_list.append(3)
+        $stress_val += 10
+        $sat_val -= 10
+        hide jun_working_sang
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        main "(...위험했다... {w}게임 같은 걸 했다면... 바로 끝장이었을 거야...)"
+        play sound mousework
+        scene bg_black with fade    
+        $renpy.pause(1.0)
+        stop sound
     elif what == "게임":
         $SoundPlayer("enter.wav", 1.0)
         jun "꺼봤자 소용없어. {w}다 봤으니까."
@@ -1314,7 +1327,7 @@ label pcroom1_bad_event1:
         jun "그리고{nw}"
         $event_result_val = renpy.random.randint(1, 100)
         $print(event_result_val)
-        if event_result_val >= 60:
+        if event_result_val >= 60: #code 4
             extend ", 나가."
             main "...알겠습니다."
             jun "오늘 하루 사지방 다시 오기만 해 봐."
@@ -1324,12 +1337,14 @@ label pcroom1_bad_event1:
             "그렇지만..."
             $stress_val += 10 
             $sat_val -= 10
-        else:
+            $saturday1_list.append(4)
+        else: #code 5
             extend "..."
             jun "이건 어쩔 수 없다. {w}월요일날 통신소대장님 출근하시는 대로 보고드릴 테니까 그렇게 알아. {w}나가 봐."
             main "...예."
             $stress_val += 15
             $sat_val -= 20
+            $saturday1_list.append(5)
         $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
         main "북진. {w}고생하십시오."
         $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
@@ -1339,5 +1354,19 @@ label pcroom1_bad_event1:
         $SoundPlayer("door.ogg", 2.0)
         $evented = True
         $timeCheck(0, 30) 
+        scene bg_hallway_end2
+        show main_cloth_ang at right
+        with dissolve
+        main "......."
+        hide main_cloth_ang
+        play looping walk_slow
+        scene bg_taba_dawn with Fade(1.0, 2.0, 1.0, color="#000000")
+        show main_cloth_taba_nof with dissolve
+        stop looping
+        $Smoking(img="main_cloth", loc=1, rep = 2, first=True)
+        main "(일 났구만...)"
+        $Smoking(img="main_cloth", loc=1, rep = 3)
+        scene bg_black with Fade(1.0, 2.0, 1.0, color="#000000")
+        $renpy.pause(2.0)  
     return
 
