@@ -1611,8 +1611,44 @@ label start:
     zeen "아닙니다. {w}먹으러 가겠습니다."
     $SoundPlayer("blanket.wav", 4.0)
     show zeen_cloth at left with wipeup
+    $renpy.pause(.5)
+    scene bg_room2
     $SoundPlayer("walk_slow.ogg")
     #"[morn_do] [af_do] [night_do]"
+    play looping walk_slow
+    scene bg_resta_front
+    show zoo_working
+    with Fade(1.0, 2.0, 1.0, color="#000000")
+    show main_cloth at center
+    show jeong_cloth at Position(xalign=.3, yalign=1.0)
+    show zeen_cloth at left
+    with dissolve
+    $renpy.pause(.3)
+    $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
+    main "북진. {w}고생하십니다. {w}[zoo] 하사님."
+    zoo "밥 맛있게 먹어~"
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
+    $renpy.pause(.3)
+    scene bg_resta_front
+    show zoo_working
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_resta_in 
+    show main_cloth at center 
+    with dissolve
+    "브런치 메뉴는 베이글과 크림치즈, 베이컨 세 조각. 음료로는 탄산과 이온음료가 준비되어 있었다."
+    show zeen_cloth at left with wipeup
+    jeong "넌 또 탄산이야?"
+    main "운동한 것도 아닌데 이온음료는 좀 그렇잖아?"
+    jeong "그거 순 설탕덩어리인데..."
+    $SoundPlayer("coke.wav", 1.0) 
+    $SoundPlayer("drink.wav", 1.0)
+    "식도를 강렬히 자극하는 탄산. {w}옅은 기억이 뇌리를 스쳐지나가고."
+    "결락된 환부로부터 잊고있었던 통증. {w}존재할 수 없는 환상통이 밀물처럼 몰려들었다."
+    main "(.......)"
+    "과거는 과거일 뿐이라 말하며 가슴에 묻은 채 나아갈 수 있을 만큼의 굳건한 의지가 나에게도 있었더라면."
+    "이 또한 언젠가를 위한 반석으로 삼는 것이 가능했겠지만."
+    "큰 바람 앞에서 한 번 부러진 깃대가 이전과 같은 모습으로 꼿꼿히 설 수 없듯. {w}무엇으로도 "
+
     "."
     return
 

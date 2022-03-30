@@ -130,5 +130,7 @@ NanumGothic by NAVER Corp. https://help.naver.com/support/service/main.help?serv
 
 SandooMiSaeng by Sandoll Inc. https://www.sandollcloud.com/font/Sandoll/225.html
 
+Shibuya Font https://fonts.google.com/specimen/Rock+3D?subset=latin#standard-styles
+
 3D 모델링 자문 유튜브 개는멍멍
 https://www.youtube.com/channel/UClr8KV3V-Kt7_90RdarFBnA
