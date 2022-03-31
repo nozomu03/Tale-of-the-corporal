@@ -1617,7 +1617,7 @@ label start:
     #"[morn_do] [af_do] [night_do]"
     play looping walk_slow
     scene bg_resta_front
-    show zoo_working
+    show zoo_working at right
     with Fade(1.0, 2.0, 1.0, color="#000000")
     show main_cloth at center
     show jeong_cloth at Position(xalign=.3, yalign=1.0)
@@ -1632,11 +1632,12 @@ label start:
     scene bg_resta_front
     show zoo_working
     $SoundPlayer("walk_slow.ogg", 2.0)
+    play looping dish_wash
     scene bg_resta_in 
     show main_cloth at center 
     with dissolve
     "브런치 메뉴는 베이글과 크림치즈, 베이컨 세 조각. 음료로는 탄산과 이온음료가 준비되어 있었다."
-    show zeen_cloth at left with wipeup
+    show jeong_cloth at left with wipeup
     jeong "넌 또 탄산이야?"
     main "운동한 것도 아닌데 이온음료는 좀 그렇잖아?"
     jeong "그거 순 설탕덩어리인데..."
@@ -1645,11 +1646,49 @@ label start:
     "식도를 강렬히 자극하는 탄산. {w}옅은 기억이 뇌리를 스쳐지나가고."
     "결락된 환부로부터 잊고있었던 통증. {w}존재할 수 없는 환상통이 밀물처럼 몰려들었다."
     main "(.......)"
-    "과거는 과거일 뿐이라 말하며 가슴에 묻은 채 나아갈 수 있을 만큼의 굳건한 의지가 나에게도 있었더라면."
-    "이 또한 언젠가를 위한 반석으로 삼는 것이 가능했겠지만."
-    "큰 바람 앞에서 한 번 부러진 깃대가 이전과 같은 모습으로 꼿꼿히 설 수 없듯. {w}무엇으로도 "
+    "과거는 과거일 뿐이라 말하며 가슴에 묻은 채 나아갈 수 있을 만큼의 굳건한 의지가 나에게도 있었더라면 이 또한 언젠가를 위한 반석으로 삼는 것이 가능했겠지만 꺾여버린 깃대는 두 번 다시 누각에 설 수 없을 듯 보였다."
+    "목에 잔류한 통증을 베이컨 기름과 함께 삼켜냈다."
+    "쓴웃음이 번져나오는 것을 간신히 막아내고 묵묵히 식사에 집중했다."
+    show zeen_cloth at right with dissolve
+    jeong "진욱아, 괜찮아?"
+    zeen "예. {w}좀 피곤하긴 한데 괜찮습니다."
+    main "야간 근무는 처음이었지?"
+    zeen "예..."
+    main "어떄?"
+    zeen "어우... {w}쉽지 않습니다. {w}속도 메슥거리고 어지럽습니다."
+    jeong "원래 그래. {w}밥 먹고 올라가서 마저 자."
+    zeen "그래야 할 것 같습니다..."
+    main "별 일 없었어?"
+    zeen "예. {w}고균영 상병이 잘 알려줘서 잘 못한 건 없었습니다."
+    main "다행이네."
+    "구워진 베이글에 발려진 크림치즈는 하얀색이 거의 보이지 않을 정도로 녹아내려 있었다."
+    jeong "브런치가 다 좋긴 한데 양이 좀 적은 것 같단 말이지."
+    main "그러게... {w}칼로리로만 보면 평소 먹는 밥이랑 별로 차이 없을 텐데..."
+    zeen "아침을 굶고 먹어서 더 그렇지 않겠습니까?"
+    jeong "그것도 영향을 주긴 하겠지. {w}안되겠다, PX 가서 냉동 하나 까야겠다."
+    main "냉동이라..."
+    jeong "왜, 너도 먹게?"
+    main "아니. {w}난 감자칩이면 충분해."
+    jeong "몸에 냐쁜 것만 먹네."
+    main "냉동도 만만치 않게 나빠."
+    jeong "뭐 그렇게 나오면 할 말이 없긴 하지만."
+    scene bg_resta_front with Fade(1.0, 2.0, 1.0, color="#000000")
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show zeen_cloth at left
+    show jeong_cloth at Position(xalign=.3, yalign=1.0)
+    show main_cloth at center
+    with dissolve
+    zeen "저... {w}[jeong] 병장님?"
+    jeong "왜?"
+    zeen "제가 너무 피곤해서 그런데 혹시 먼저 올라가도 되겠습니까?"
+    jeogn "그래, 빨리 가서 자."
+    zeen "고생하십시오."
+    hide zeen_cloth 
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    jeong "그래서, 넌 PX 갈 거야?"
+    
 
-    "."
+    "." 
     return
 
 #(85, 35, 238, 216)
