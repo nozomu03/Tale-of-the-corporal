@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/image.rpy", line 23: expected '=' not found.
-    image para_text ParameterizedText(xalign=.5, yalign=.5)
-                                     ^
+File "game/script.rpy", line 1752: expected statement.
+    Smoking("main_cloth", 1.0, 1)
+                                 ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Mar 29 15:45:56 2022
+Mon Apr  4 18:22:05 2022

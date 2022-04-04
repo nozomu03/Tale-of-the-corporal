@@ -22,7 +22,7 @@ define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B900
 define wol = Character("정영월", who_color = "#3C4444", what_color = "#1E0A0A")
 define jun = Character("김현준", who_color = "#262D2D", what_color = "#403C4C")
 define zeen = Character("강진욱", who_color = "#7B708E", what_color = "#767074")
-
+#1소대 통신병 -> 윤정현
 #사수 통신병 -> 김호윤
 #3소대장님 -> 작전장교님 = 조원우 
 define right = Position(xalign=.9, yalign=1.0)
@@ -62,6 +62,8 @@ default what = ""
 default what_all_list = []
 #default random_x = -2
 default saturday1_list = []
+default go_px = False
+
 
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)
@@ -161,7 +163,11 @@ init python:
         if first == True:
             renpy.sound.play("/audio/lighter.ogg")
             renpy.pause(4.0)
-            FaceChange(img + "_taba", loc, 2.0, img + "_taba_nof")
+            if img + "_lighter" in renpy.get_showing_tags():
+                print("문제 발생")
+                FaceChange(img + "_taba", loc, 2.0, img + "_lighter")
+            else:
+                FaceChange(img + "_taba", loc, 2.0, img + "_taba_nof")
             first = False
         while count < rep:
             FaceChange(img + "_taba", loc, 1.0, img + "_tabahand")

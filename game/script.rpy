@@ -179,7 +179,7 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
     $SoundPlayer("door.ogg", 2.0)
-    "등받이에 기댄 채 나도 모르는 사이 무너진 자세를 바로잡았다. {w}첫 근무 때처럼 갑작스레 찾아온 저혈압으로 간부님들꼐 걱정을 끼치지 않으려면 이런 사소한 것도 전부 신경써야 했다."
+    "등받이에 기댄 채 나도 모르는 사이 무너진 자세를 바로잡았다. {w}첫 근무 때처럼 갑작스레 찾아온 저혈압으로 간부님들께 걱정을 끼치지 않으려면 이런 사소한 것도 전부 신경써야 했다."
     $SoundPlayer("typing.ogg", 2.0)
     $SoundPlayer("alert.ogg", 2.0)
     "육군 레이더 체계 수신기가 경보음을 토해냈다."
@@ -1597,6 +1597,7 @@ label start:
     call saturday1
     $now_h = 10
     $now_m = 10
+    show screen time with dissolve
     $SoundPlayer("broadcast.wav", 2.0)
     scene bg_room2 with dissolve
     "당직부사관" "\[통합중대 인원들. {w}식사 출발해주시길 바랍니다.\]"
@@ -1617,20 +1618,22 @@ label start:
     #"[morn_do] [af_do] [night_do]"
     play looping walk_slow
     scene bg_resta_front
-    show zoo_working at right
+    show jun_working_sang at right
     with Fade(1.0, 2.0, 1.0, color="#000000")
+    stop looping
     show main_cloth at center
     show jeong_cloth at Position(xalign=.3, yalign=1.0)
     show zeen_cloth at left
     with dissolve
     $renpy.pause(.3)
+    $timeCheck(0, 5)
     $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
-    main "북진. {w}고생하십니다. {w}[zoo] 하사님."
-    zoo "밥 맛있게 먹어~"
+    main "북진. {w}고생하십니다. {w}[jun] 하사님."
+    jun "밥 맛있게 먹어라."
     $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
     $renpy.pause(.3)
     scene bg_resta_front
-    show zoo_working
+    show jun_working_sang at right
     $SoundPlayer("walk_slow.ogg", 2.0)
     play looping dish_wash
     scene bg_resta_in 
@@ -1674,20 +1677,79 @@ label start:
     jeong "뭐 그렇게 나오면 할 말이 없긴 하지만."
     scene bg_resta_front with Fade(1.0, 2.0, 1.0, color="#000000")
     $SoundPlayer("walk_slow.ogg", 2.0)
+    stop looping
     show zeen_cloth at left
     show jeong_cloth at Position(xalign=.3, yalign=1.0)
     show main_cloth at center
     with dissolve
+    $timeCheck(0, 20)
     zeen "저... {w}[jeong] 병장님?"
     jeong "왜?"
     zeen "제가 너무 피곤해서 그런데 혹시 먼저 올라가도 되겠습니까?"
-    jeogn "그래, 빨리 가서 자."
+    jeong "그래, 빨리 가서 자."
     zeen "고생하십시오."
     hide zeen_cloth 
     $SoundPlayer("walk_slow.ogg", 2.0)
-    jeong "그래서, 넌 PX 갈 거야?"
-    
-
+    main "먼저 올라가. {w}난 바로 흡연장으로 갈 거니까."
+    jeong "알았어. {w}있다 보자."
+    hide jeong_cloth
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_taba
+    show main_cloth_lighter 
+    with dissolve
+    $Smoking("main_cloth", 1.0, 2, True)
+    "할 일을 정리했다."
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5:        
+        if af_do == "사이버지식정보방":
+            "원래대로라면 브런치를 먹은 후 다시 사이버지식정보방에 가려 했지만... {p}[jun] 하사님께서는 내가 저지른 잘못에 대한 일차적인 벌로 사이버지식정보방 이용을 금지하였다."
+            "괜히 또 갔다가 일을 키우는 것보다는... {w}다른 일을 하는 게 좋을 듯 싶지만..."
+            menu:
+                "잠자기":
+                    main "(돌아가서 잠이나 자야겠다.)"
+                    $af_do = "잠자기"
+                "공부":
+                    main "(오히려 잘 됐어. {w}훈련도 곧이니까 공부를 좀 더 해 두자.)"
+                    $af_do = "공부"
+                "휴대폰":
+                    main "(대충 폰 만지면서 시간이나 때워야지...)"
+                    $af_do = "휴대폰"
+                "!!사이버지식정보방!!":
+                    "사이버지식 정보방 내부에는 CCTV가 없다. {w}복도를 비추는 CCTV는 외부계단으로 올라간다면 시야에 들지 않을 수 있다."
+                    "순찰만 조심한다면 컴퓨터를 사용하는데 문제가 없을 것이다."
+    $Smoking("main_cloth", 1.0, 1, False)
+    main "(px... 가야하나?)"
+    "곰곰히 생각해보았다."
+    "과자는 아직 넉넉했다. {w}음료수도 1.5L짜리 페트병으로 한 개 반이 남아있다."
+    main "(굳이 살 게 있다면 담배이긴 한데...)"
+    menu:
+        "PX에 간다":
+            $go_px = True
+        "PX에 가지 않는다.":
+            $go_px = True
+    $Smoking("main_cloth", 1.0, 1, False)
+    "날씨가 쌀쌀해지고 있다."
+    "다시금 가을이 오고 있다. {w}바스락거리는 낙엽과, 터진 은행열매에서 나는 냄새의 계절이."
+    "평일 오후, 뜀걸음을 뛰게 된다면 샛노랗게 물든 부대. {w}콧구멍을 찌르는 것은 여린 차가움을 품은 공기."
+    "겨우내, 체력 단련 시 엄습하곤 하는 비강을, 기도를, 폐를 에는 듯한 날카로운 냉기가 아닌.{p}흘러 내리는 땀을. {w}불구덩이 속에 뛰어든 것 마냥 달구어지는 피부를 식혀주는 기분 좋은 차가움."    
+    "이맘때의 바람은 등 뒤에서 밀어주는 바람. {w}한 없이 높은 고지에 닿을 시간."
+    "한 삶이 저무는 겨울이 와, 살아있는 것이 모두 잠에 빠져들기 전. {w}일년에서 가장 아름다운 때."
+    main "(작년에는... 이 때 뭘 했었더라.)"
+    "처음으로 군대에서 명절을 보냈다. {w}소대 사람들과 함께 맛있는 요리를 해 먹었다. {w}육군지휘검열을 대비해 1달 내내 전투준비태세 훈련만 했다. {w}처음으로 5대기 임무를 수행했다. {w}육군지휘검열 당일날 제때 볼일을 보지 못해 바지에 지릴 뻔 했다."    
+    "다른 사람들이 군장을 매고 꽈리고개를 넘을 때 5대기인 덕분에 닷지를 타고 편하게 넘어갔다.{w} 처음으로 나안 야간사격을 했다." 
+    "그 때는. {w}파스텔로 덧칠된 나날이었다. {w}내 주변에 있는 모든 것을 한 없이 밝았고. {w}노력이라는 벽돌로 쌓아올려진 거성은 결코 무너지지 않을 듯 보였다."
+    "느리게나마 나아가고 있었고. {w}여러 시간이 지난 후에 뒤를 돌아본다면 원근법에 따라 착실히 작아져 가는 풍경이 보였다.{p}이제 와 돌이켜본다면 나는 이미 알고 있었다. {w}모든 것은 만들어진 허상. {w}잘 짜여진 한 편의 연극이라는 것을." 
+    "그러나, 나는. {w}한 목적을 위해 창조된 환상임에도 그 정취에 취하여 문득 떠오른 의문을 애써 눌러 죽이고. {w}곳곳에 산재해 있던 진실에 이르는 실마리들을 무시하고 말았다."
+    main "(취하지 않았다고 해도... {w}바뀔 건 없었겠지만.)"
+    $Smoking("main_cloth", 1.0, 2, False)
+    "지금에 이르러서까지 바뀌지 않는 것 하나. {w}나는 은혜를 입었다. {w}그렇기에 이곳에 서 있을 수 있다."
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5:        
+        "옳다, 와 그르다. {w}이분법으로 생각한다면 틀림없이 내가 한 행동은 그름. {w}분명한 사실이었다."
+        "허나, 지금에 이르러서는 남들이 뭐라고 하던.{w} 이런 짓이라도 하지 않으면... {w}제자리에 서 있는 것조차 버거운 몸이 되어버렸다."
+        $Smoking("main_cloth", 1.0, 1)
+        main "(어떻게 해야 할까... {w}뭘 해야...{w} 다시 기회를 얻을 수 있지?)"
+    else:
+        $Smoking("main_cloth", 1.0, 1)
     "." 
     return
 

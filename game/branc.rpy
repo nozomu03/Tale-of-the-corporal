@@ -278,7 +278,7 @@ label saturday1:
         show screen time with dissolve
         if morn_do == "사이버지식정보방":
             call saturday1_morn_pc
-            if not saturday1_list[0] == 4 or saturday1_list[0] == 5:
+            if not saturday1_list[0] == 4 and not saturday1_list[0] == 5:
                 scene bg_pcroom
                 show main_cloth
                 with dissolve
@@ -299,7 +299,9 @@ label saturday1:
                 $renpy.pause(1.0)
                 hide main_cloth
                 $SoundPlayer("sheet.ogg", 1.0)  
+                $timeCheck(0, 10)
                 "침대 위에서 데굴거리며 식사 출발 방송이 나오기를 기다렸다."  
+
         elif morn_do == "휴대폰":
             call saturday1_morn_phone
     else:

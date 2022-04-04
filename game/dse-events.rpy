@@ -560,7 +560,7 @@ label csco1:
     else:
         "균영이는 무표정히 컴퓨터 화면을 바라보고 있다."
         $SoundPlayer("typing.ogg", 2.0)
-        go "아...{w} 정말 죄송합니다. {w}계속 해야할게 밀려들어 와서... {w}그래도 ㅇㅇㅇ 상병님꼐서는 언제나 노력하고 계시지 않습니까. {w}그 노력이 언젠가는 결실을 맺을거라고 저는 생각하고 있습니다."
+        go "아...{w} 정말 죄송합니다. {w}계속 해야할게 밀려들어 와서... {w}그래도 ㅇㅇㅇ 상병님께서는 언제나 노력하고 계시지 않습니까. {w}그 노력이 언젠가는 결실을 맺을거라고 저는 생각하고 있습니다."
         main "그래, 고맙다."
     main "고생해라."
     go "고생하십시오. {w}화이팅입니다."
@@ -1330,7 +1330,7 @@ label pcroom1_bad_event1:
         if event_result_val >= 60: #code 4
             extend ", 나가."
             main "...알겠습니다."
-            jun "오늘 하루 사지방 다시 오기만 해 봐."
+            jun "사지방 다시 오기만 해 봐."
             main "예."
             jun "나라서 운 좋은 줄 알아. {w}알겠어?"
             "당직사령님께. {w}혹은 소대장님께 보고된다는 최악의 상황은 일단 면했다."
@@ -1345,6 +1345,7 @@ label pcroom1_bad_event1:
             $stress_val += 15
             $sat_val -= 20
             $saturday1_list.append(5)
+            jun "사지방 다시 오기만 해 봐."
         $FaceChange("main_cloth_sal", 1.0, .5, "main_cloth")
         main "북진. {w}고생하십시오."
         $FaceChange("main_cloth", 1.0, .5, "main_cloth_sal")
@@ -1366,7 +1367,9 @@ label pcroom1_bad_event1:
         $Smoking(img="main_cloth", loc=1, rep = 2, first=True)
         main "(일 났구만...)"
         $Smoking(img="main_cloth", loc=1, rep = 3)
-        scene bg_black with Fade(1.0, 2.0, 1.0, color="#000000")
+        scene bg_black 
+        hide screen time
+        with Fade(1.0, 2.0, 1.0, color="#000000")
         $renpy.pause(2.0)  
     return
 
