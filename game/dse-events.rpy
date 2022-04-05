@@ -29,6 +29,8 @@ init python:
     event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.5), event.only(), priority = 10)
     event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.5), event.only(), priority = 10)
 
+    event("sat_tabaevent", 'where == "토요일_담배" and sat_val <=10', event.random(.6), event.only(), priority = 10)
+
 
 label pc_bad:
     $timeCheck(0, 20)
@@ -1373,3 +1375,67 @@ label pcroom1_bad_event1:
         $renpy.pause(2.0)  
     return
 
+label sat_tabaevent:
+    "희끄무레, 안개가 끼기 시작했다."
+    scene bg_taba:
+        blur 10
+    show hoyun_sil at right:
+        blur 10
+    show main_cloth_tabahand
+    with blur_transition
+    "안개 틈 사이로 한 사람이 서 있다. {w}얼굴은 보이지 않는다. {w}확인할 수 있는 것은 어렴풋한 형체 뿐."
+    "그것만으로도 저 인형이 무엇인지 알아보는데는 문제가 없었다."
+    "목소리" "잉?"
+    main "......."
+    "목소리" "뭐야, 너 담배 폈었어?"
+    main "예... {w}어쩌다 보니까... 이렇게 됐습니다."
+    "살짝 미소를 지은 채 나를 바라보셨다."
+    "언제나 그려셨다."
+    "과묵히 앉아 먼저 말하지 않는다면 침묵을 유지하시던 분."
+    "무섭게만 느껴졌던 김호윤 병장님은 부사수로 들어온 날 위해 통신병으로서 알아야 할 여러 지식들을 담담히 알려주셨다."
+    "귓가에 들려오던 웃음소리, 감탄사. {w}후반기 교육을 받지 않고 곧바로 자대 배치를 받은 탓에 아무것도 모르는 신병이었던 나를 누구보다 가까이 두고 가르치던 이."
+    main "김호윤 병장님..."
+    "이제에서는 만날 수 없는. {w}군인으로 선 내가 진정으로 만족하며, 하루하루 충실감을 느끼던 날과 이어지는 열쇠조각."
+    "미화된 기억이라 한다 하여도 그 날들의 나는 이렇게 매일매일을 부침과,{w} 충동과.{w} 격정과.{w} 부정 속에서 허우적거리지는 않았다."
+    "적어도, 그 시절의 나는. {w}국가에서 부과한 18개월이란 짧지 않은 시간 동안 그저 증오하거나, 원망하거나. {w}때로는 끝모를 무력함에. {w}바닥 모를 공포감에 번민하지 않고서."
+    "지속되는 행불행의 교차를 눈 앞의 사람들과 함께 겸허히 맞이하며. {w}들뜨거나, 침울해하며 보낼 수 있을지도 모른다고."
+    "내가 품은 가시들에 겹찔려 가면서까지 품어주며. {w}갓 일어선 갓난아기처럼 위태로이, 느릿히 내딛어지는 내 발걸음마저 인내하며 함께해 주었던 분들께서 느꼈었다."
+    main "김호윤 병장님..."
+    hoyun "불렀으면 말을 해야지."
+    main "보고싶습니다..."
+    "그렇게 또 한 번. {w}너무나 당연한 사실을 망각했었던 것이다."
+    "문자 그대로 내가 가진 모든 것을 얄팍한 가능성에 베팅한 채 주어졌던 십 수 번의 기회를 모두 걷어찼던 건 나였다."
+    "최악의 선택지를 고른 대가. {w}나는 다시 한 번 내쫒김과 도주 사이에서 도주를 선택하였고. {w}아물었다고. {w}완전히 흩어져 사라졌으리라 여겨졌던 그림자는 몸집을 되불려냈다."
+    $FaceChange("main_cloth_cry", 1.0, 1.0, "main_cloth_tabahand")    
+    main "다시 한 번 김호윤 병장님과 이야기하고 싶습니다."
+    main "다시 한 번 통신병 교육을 받고 싶습니다."
+    main "다시 한 번 함께 훈련하고 싶습니다."
+    main "다시 한 번 함께 5대기에 투입하고 싶습니다."
+    main "그리고... 마지막까지 전하지 못했던 한 마디 말을 전하고 싶습니다."
+    hoyun "......."
+    "눈 앞에 있는 것은 그저 그림자.{w}아무리 모습을 비슷히 갖춘다 하여도 결코 진실은 되지 못하는 한 편린."
+    show hoyun_sil at Position(xalign=.6, yalign=1.0): 
+        blur 10
+    with dissolve
+    "머리에 손이 얹어졌다."
+    $SoundPlayer("blanket.wav", 3.0)
+    "부옇게 흐려진 시야 너머, 따스한 손길과 미소가 눈에 들어왔다."
+    main "김호윤 병장님..."
+    hoyun "고생했다. {w}조금만 더 고생하자. {w}거의 다 했잖아?"
+    "이것은 환상이다. {w}내 뇌가 짜낸 거짓이다."
+    "그러나. {w}거울 속에 비친 상에 불과하다 하여도. {w}달이 태양이 빛을 빌어 밤땅을 어스름히 비추어 주듯이."
+    "지금 눈 앞의 꿈무리는 내게 잠시나마 안녕을 가져다 주었다."
+    hoyun "그리고 울지 좀 마. {w}울어도 바뀌는 건 없다고."
+    main "예..."
+    scene bg_taba
+    show main_cloth_tabahand
+    with blur_transition
+    "꿈꿔왔던 이상은 나타났을 떄와 마찬가지로 예고 없이 흩어졌다."
+    "담뱃재가 바닥에 떨어졌다."
+    $SoundPlayer("blanket.wav", 3.0)
+    $FaceChange("main_cloth_tabahand", 1.0, 1.0, "main_cloth_cry")
+    main "(김호윤 병장님... {w}잘 지내고 계십니까?)"
+    $Smoking("main_cloth", 1.0, 2)
+    $sat_val += 10
+    $stress_val -= 5
+    return

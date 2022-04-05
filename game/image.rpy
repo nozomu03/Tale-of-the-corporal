@@ -103,3 +103,19 @@ screen itjusttest:
         add "button2"
         add "button3"
 #image temp(a=None):    
+
+    
+transform blur_transition(new_widget, old_widget):
+    delay 3.0
+    
+    contains:
+        new_widget
+        blur 36
+        linear 1.5 blur 0
+        
+    contains:
+        old_widget
+        alpha 1.0
+        linear 2.0 alpha 0.0
+
+        

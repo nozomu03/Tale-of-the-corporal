@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1686, in script
-    jeogn "그래, 빨리 가서 자."
-Exception: Sayer 'jeogn' is not defined.
+  File "game/script.rpy", line 44, in script
+    with blur_transition
+  File "game/script.rpy", line 44, in <module>
+    with blur_transition
+NameError: name 'blur_transition' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1686, in script
-    jeogn "그래, 빨리 가서 자."
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'jeogn' is not defined.
+  File "game/script.rpy", line 44, in script
+    with blur_transition
+  File "renpy/ast.py", line 1436, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 44, in <module>
+    with blur_transition
+NameError: name 'blur_transition' is not defined
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Mon Apr  4 13:05:15 2022
+Tue Apr  5 13:05:48 2022

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1752: expected statement.
-    Smoking("main_cloth", 1.0, 1)
-                                 ^
+File "game/script.rpy", line 1761: expected statement.
+    at right
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Apr  4 18:22:05 2022
+Tue Apr  5 13:11:33 2022

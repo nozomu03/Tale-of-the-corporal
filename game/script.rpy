@@ -34,14 +34,14 @@ label start:
     #$renpy.pause(3000)
     #"테스트메세지"
    # show para_text("aaaaaa")
-    #window hide
+    window hide
     scene bg_black
     centered "내가 원하는 건. {w}무엇이었을까."
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
     extend "그 얼굴에 떠오른 미소를 보기 위해 제 몸을 채찍질하던 날들, 은. {w}과연 의미가 있었을까?"
     scene bg_room 
     show main_ord 
-    with fade
+    with blur_transition
     $SoundPlayer("blanket.wav", 4.0)
     "목소리 1" "근무 들어가니?"
     main "응."
@@ -1750,6 +1750,10 @@ label start:
         main "(어떻게 해야 할까... {w}뭘 해야...{w} 다시 기회를 얻을 수 있지?)"
     else:
         $Smoking("main_cloth", 1.0, 1)
+    $Smoking("main_cloth", 1.0, 2)
+    #$evented = False
+    $where = "토요일_담배"
+    call events_run_period
     "." 
     return
 

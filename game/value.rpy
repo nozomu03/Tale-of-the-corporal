@@ -22,6 +22,7 @@ define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B900
 define wol = Character("정영월", who_color = "#3C4444", what_color = "#1E0A0A")
 define jun = Character("김현준", who_color = "#262D2D", what_color = "#403C4C")
 define zeen = Character("강진욱", who_color = "#7B708E", what_color = "#767074")
+define hoyun = Character("김호윤", who_color = "#A17D7B", what_color = "#7D8186")
 #1소대 통신병 -> 윤정현
 #사수 통신병 -> 김호윤
 #3소대장님 -> 작전장교님 = 조원우 
