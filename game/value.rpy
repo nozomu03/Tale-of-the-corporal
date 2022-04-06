@@ -188,16 +188,15 @@ init python:
             return
 
     class CardHand:
-        card_list = []
         def __init__(self):
             self.card_list = []
             return
         
         def add(self, card):
             self.card_list.append(card)
-            return
-
+            #print(self.card_list)
         def remove(self, card):
+            global now_card
             global coreect_card
             print(str(coreect_card)  + ":" + str(card.number))
             if coreect_card == True:
@@ -205,7 +204,7 @@ init python:
                     self.card_list.remove(card)    
                     coreect_card = False
                     now_card = card
-                    return
+                    print(now_card.img)
             return
 
         def getAll(self):
