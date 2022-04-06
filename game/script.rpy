@@ -1754,6 +1754,9 @@ label start:
     #$evented = False
     $where = "토요일_담배"
     call events_run_period
+    call set_allcard
+    call game_reset
+    call screen cardgame
     "." 
     return
 

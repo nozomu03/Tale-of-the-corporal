@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1761: expected statement.
-    at right
+File "game/cardgame.rpy", line 70: Line is indented, but the preceding align statement does not expect a block. Please check this line's indentation.
+    hbox:
     ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Apr  5 13:11:33 2022
+Wed Apr  6 17:10:04 2022

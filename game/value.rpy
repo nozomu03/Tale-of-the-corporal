@@ -65,6 +65,12 @@ default what_all_list = []
 default saturday1_list = []
 default go_px = False
 
+default my_hand = CardHand()
+default enermy_hand = CardHand()
+
+default morn_do = "선택"
+default af_do = "선택"
+default night_do = "선택"
 
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)
@@ -111,11 +117,9 @@ label SpriteSystem:
     return
 
 init python:
+    dummy_val = False
     now_glitch = "main_ord"
     schedule_time = 0
-    morn_do = "선택"
-    af_do = "선택"
-    night_do = "선택"
     exclaim = False
 
     def ValDel():
@@ -176,6 +180,45 @@ init python:
             FaceChange(img + "_tabahand", loc, 1.0, img + "_taba")
             renpy.pause(2.0)
             count += 1
+
+    class Card:
+        def __init__(self, img="", number=1):
+            self.img = img
+            self.number = number
+            return
+
+    class CardHand:
+        card_list = []
+        def __init__(self):
+            self.card_list = []
+            return
+        
+        def add(self, card):
+            self.card_list.append(card)
+            return
+
+        def remove(self, card):
+            global coreect_card
+            print(str(coreect_card)  + ":" + str(card.number))
+            if coreect_card == True:
+                if card in self.card_list:
+                    self.card_list.remove(card)    
+                    coreect_card = False
+                    now_card = card
+                    return
+            return
+
+        def getAll(self):
+            return self.card_list
+
+        def getSome(self, _index):
+            return self.card_list[_index]
+
+        def burst(self):
+            if len(self.card_list) >= 20:
+                return True
+            else:
+                return False
 
     class Item:
         def __init__(self, name="", icon="", intro="", tip=""):
