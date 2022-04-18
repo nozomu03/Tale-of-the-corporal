@@ -1067,7 +1067,7 @@ label day2_study_major1:
     $SoundPlayer("door.ogg")
     "어깨에, 감촉이 남아있다."
     "작업 도중, 훈련 도중. {w}여러 차례 넘어지고, 부상당하며 해진 섬유 너머에서 체온이 전달되었다."
-    "지금으로부터 닿을 수 없으리 만큼 멀직히 떨어진 것처럼 느껴지는 가까운 떄에. {w}두려움에 질듯 고개를 숙일 때마다 살며시 얹어졌듯이."
+    "지금으로부터 닿을 수 없으리 만큼 멀직히 떨어진 것처럼 느껴지는 가까운 때에. {w}두려움에 질듯 고개를 숙일 때마다 살며시 얹어졌듯이."
     "몇 남지 않은 연결고리들마저 하나 둘 부서져 내리는 이금에, 어깨에 머문 온기. {w}그 흔적은 빠르게 흩어지겠지만. {w}분명한 형상을 지닌 따스함을 남겼다."
     main "([zoo] 하사님...)"
     "어리석음에서 시작된 잘못으로 인해 모래 위의 성탑은 파도라 말하지도 못할 하찮은 물줄기와 만나자 삽시간에 무너져 내렸다."
@@ -1076,7 +1076,7 @@ label day2_study_major1:
     "한 시의 쉼도 없이 매 차례 몸집을 불리던 달빛의 그림자를 진실된 빛으로 지워내주던 이들."
     "비록 그 분들 중 대부분은 약속된 기간이 끝남과 함께 떠나가게 되었으나."
     "선임 분들이. {w}[zoo] {s}상병{/s}하사님이. {w} 간부님이 계셨기에. {w}노력할 수 있었고. {w}깎아지르는 절벽을 수 차례 넘어설 수 있었다."
-    "변변한 사과 한 마디도 건내지 않은 채 도망나올 정도로 나를 둘러싼 허물이 커졌던 떄도. {w}그 벗겨지지 않은 허물이 드리운 그늘이 아직 남은 지금에도."
+    "변변한 사과 한 마디도 건내지 않은 채 도망나올 정도로 나를 둘러싼 허물이 커졌던 때도. {w}그 벗겨지지 않은 허물이 드리운 그늘이 아직 남은 지금에도."
     "나는 버텨 섰다. {w}폭풍에 휩싸인 것 마냥 굉굉히 흔들리면서도 아슬하게나마 꺾이지 않은 채."
     "지금껏 지탱해준 모든 것 중에 단 하나라도 도중에 잃어버렸거나, 처음부터 손에 쥐지 못했더라면."
     "어떻게 되었을지는 자명한 사실이다."
@@ -1130,7 +1130,7 @@ label day2_study_major3:
     $what_all_list.append(what)
     return
 
-label pcroom1_good_event1:
+label pcroom1_good_event1: #0
     $SoundPlayer("door.ogg", 2.0)
     show cap_working at right with dissolve
     if what == "게임" or what == "딴짓":
@@ -1231,7 +1231,7 @@ label pcroom1_good_event1:
     $where = ""
     return
 
-label pcroom1_normal_event1:
+label pcroom1_normal_event1: #1
     if what == "게임 개발":
         $SoundPlayer("typing.ogg", 2.0)
         "쉽게 해결되지 않는 오류를 바로잡는 마지막 방법."
@@ -1377,7 +1377,7 @@ label pcroom1_bad_event1:
         $renpy.pause(2.0)  
         $where = ""
     return
-
+##만약 잠자기/휴대폰의 경우는 코드 6
 label sat_tabaevent:
     "희끄무레, 안개가 끼기 시작했다."
     scene bg_taba:
@@ -1433,7 +1433,7 @@ label sat_tabaevent:
     scene bg_taba
     show main_cloth_cry
     with blur_transition
-    "꿈꿔왔던 이상은 나타났을 떄와 마찬가지로 예고 없이 흩어졌다."
+    "꿈꿔왔던 이상은 나타났을 때와 마찬가지로 예고 없이 흩어졌다."
     "담뱃재가 바닥에 떨어졌다."
     $SoundPlayer("blanket.wav", 3.0)
     $FaceChange("main_cloth_tabahand", 1.0, 1.0, "main_cloth_cry")

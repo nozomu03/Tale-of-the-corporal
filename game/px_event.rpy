@@ -7,7 +7,7 @@ label test_px:
         scene bg_bath
         show main_cloth at center
         with dissolve
-        "브런치가 평소와는 달리 든든하게 나왔기 때문일까, px 앞은 한산했다."
+        "이미 한 차례 사람이 빠질 시간이어서일까. {w}px 앞은 한산했다."
         $SoundPlayer("door.ogg", 2.0)
         scene bg_px with dissolve
         "판매원" "어서 오세요."

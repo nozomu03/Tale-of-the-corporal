@@ -304,6 +304,7 @@ label saturday1:
 
         elif morn_do == "휴대폰":
             call saturday1_morn_phone
+            $saturday1_list.append(6)
     else:
         scene bg_office2:
             im.Sepia("bg_office3.png")
@@ -336,17 +337,16 @@ label saturday1:
         extend " ...생각했었다."
         $SoundPlayer("broadcast.wav", 2.0)
         fcaptain "\[지휘통제실에서 전파합니다. {w}강습대대 인원들 아침식사. {w}아침식사 출발해주시길 바랍니다.\]"
-        $SoundPlayer("blanket.wav", 4.0)
         scene bg_room2 with dissolve
-        show main_cloth with wipeup
         main "(꿈인가...)"
         "가슴 속에 자그맣게. {w}그날 느꼈던 감정의 모조품이 어렸다."
         main "(보고싶은... 사람들.)"
         main "(그 분들 뵈기 부끄럽지 않도록... {w}더 분발해야겠지.)"
         $stress_val -= 2
         $sat_val += 2
+        $saturday1_list.append(6)
     return
-
+##잠자기랑 휴대폰은 코드 6
 label saturday1_morn_phone:
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_hallway_mid2 with dissolve
