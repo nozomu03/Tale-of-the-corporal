@@ -15,7 +15,7 @@ define cap2 = Character("박류원", who_color="#1A1E1E", what_color="#09030A")
 define son = Character("손한연", who_color="#828282", what_color="#3C3C8C")
 define sang = Character("구상언", who_color="#6E6062", what_color="#343F39")
 define tie = Character("정훈장교", who_color="#46649B", what_color = "#2E8B57")
-define pl3 = Character("조원우", who_color="#0064FF", what_color="#D2E1FF")
+define pl3 = Character("조원우", who_color="#0064FF", what_color="#7791C4")
 define zoo = Character("주완영", who_color="#B3C6C6", what_color="#9E8181")
 define young = Character("박영훈", who_color = "#CD853F", what_color = "#778899")
 define past1 = Character("박호원", who_color = "#8c8c8c", what_color = "#B90000")
@@ -75,6 +75,10 @@ default night_do = "선택"
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)
 
+###요일 시스템 관련######
+default day_list = ["월", "화", "수", "목", "금", "토", "일"]
+default now_day = 5
+default now_week = 2
 #풍수지탄
 
 #화발다풍우

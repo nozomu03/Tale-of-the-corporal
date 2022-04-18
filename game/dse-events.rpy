@@ -26,10 +26,10 @@ init python:
     event("pcroom1_good_event1", 'morn_do==\"사이버지식정보방\" and evented == False', event.random(.6), event.only(), priority = 20)
     event("pcroom1_normal_event1", 'morn_do==\"사이버지식정보방\" and evented == False', priority = 100)
     #event('meet_j')
-    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.5), event.only(), priority = 10)
-    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.5), event.only(), priority = 10)
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.7), event.only(), priority = 10)
+    event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.7), event.only(), priority = 10)
 
-    event("sat_tabaevent", 'where == "토요일_담배" and sat_val <=10', event.random(.6), event.only(), priority = 10)
+    event("sat_tabaevent", 'where == "토요일_담배" and sat_val <=10 and evented == False', event.random(.6), event.only(), priority = 0)
 
 
 label pc_bad:
@@ -1228,6 +1228,7 @@ label pcroom1_good_event1:
         $timeCheck(2, 30)
     $evented=True
     $saturday1_list.append(0)
+    $where = ""
     return
 
 label pcroom1_normal_event1:
@@ -1258,6 +1259,7 @@ label pcroom1_normal_event1:
     $saturday1_list.append(1)
     $timeCheck(2, 30)
     $evented=True
+    $where = ""
     stop sound
     return
 
@@ -1373,6 +1375,7 @@ label pcroom1_bad_event1:
         hide screen time
         with Fade(1.0, 2.0, 1.0, color="#000000")
         $renpy.pause(2.0)  
+        $where = ""
     return
 
 label sat_tabaevent:
@@ -1428,14 +1431,16 @@ label sat_tabaevent:
     hoyun "그리고 울지 좀 마. {w}울어도 바뀌는 건 없다고."
     main "예..."
     scene bg_taba
-    show main_cloth_tabahand
+    show main_cloth_cry
     with blur_transition
     "꿈꿔왔던 이상은 나타났을 떄와 마찬가지로 예고 없이 흩어졌다."
     "담뱃재가 바닥에 떨어졌다."
     $SoundPlayer("blanket.wav", 3.0)
     $FaceChange("main_cloth_tabahand", 1.0, 1.0, "main_cloth_cry")
     main "(김호윤 병장님... {w}잘 지내고 계십니까?)"
-    $Smoking("main_cloth", 1.0, 2)
+    $Smoking("main_cloth", 1.0, 1)
     $sat_val += 10
     $stress_val -= 5
+    $evented = True
+    $where = ""
     return

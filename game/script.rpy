@@ -1726,7 +1726,7 @@ label start:
         "PX에 간다":
             $go_px = True
         "PX에 가지 않는다.":
-            $go_px = True
+            $go_px = False
     $Smoking("main_cloth", 1.0, 1, False)
     "날씨가 쌀쌀해지고 있다."
     "다시금 가을이 오고 있다. {w}바스락거리는 낙엽과, 터진 은행열매에서 나는 냄새의 계절이."
@@ -1750,16 +1750,37 @@ label start:
         main "(어떻게 해야 할까... {w}뭘 해야...{w} 다시 기회를 얻을 수 있지?)"
     else:
         $Smoking("main_cloth", 1.0, 1)
-    $Smoking("main_cloth", 1.0, 2)
-    #$evented = False
-    $where = "토요일_담배"
-    call events_run_period
-    call set_allcard
-    call game_reset
-    call screen cardgame
+    $Smoking("main_cloth", 1.0, 1)
+    call taba_event_incounter
+    $Smoking("main_cloth", 1.0, 1)
+    "강 물살에 되치인 바윗돌이 깎여나가 언젠가 흔적만을 남긴 채 바스러지듯.{p}어떤 일이 벌어지더라도, 시간은 멈추지도, 멈춰 세우지도 못한 채 제각각에게 부여된 절대량을 파먹으며 흘러간다.{p}한 없이 멀게만 느껴졌던 어느 삶의 끝무리가 손에 잡힐 듯 보이기 시작했다."
+    "지난 1년 3개월. {w}수 차례 그래왔듯, 눈을 감고, 호흡을 정돈하며. {w}코 앞에 들이닥친 것부터 차례대로 하나씩 처리해 나간다면.{p}이 고난 역시 돌파할 수 있을 것이다. {w}헤쳐 나갈 수 있을 것이다. {w}적어도 내 한 사람에게서는 경험으로서 증명되는 진실이었다."
+    $Smoking("main_cloth", 1.0, 1)
+    "그 일련의 공식을 마음 속으로부터 부정하게 된 건, 언제부터인가 자리잡은 내면의 언짢음.{p}출처도, 이유도, 그 의의도 모른 채 그저 끌어안고 있었던 어느 한 감정이 그림자의 형상으로 변하였을 때."
+    "섞여들어 온 부산물은 \'걱정을 끼치지 않기 위해\'라는 제멋대로인 딱지가 붙은 채 함구 되어 비밀이 되었고.{p}이내 실금투성이 유리 위로 내쳐진 망치가 되었다."
+    $Smoking("main_cloth", 1.0, 1)
+    "어쩌면 그때, 홀로 온전히 품는 것을 포기한 채. {w}이미 끼쳤던 부담에, 폐에 편승하여. {w}한 번 더 내밀어진 손을 붙잡고서 내게 드리운 그늘의 일부를 넘겼더라면."
+    $Smoking("main_cloth", 1.0, 1)
+    $SoundPlayer("sigh.wav", 2.0)
+    main "(다 무슨 소용이야... {w}이미 다 끝나버렸는데.)"
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_tabahand")
+    $renpy.pause(.5)
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $now_day = 5
+    call px_incounter
     "." 
     return
 
+
+
+###########Card?####
+#call events_run_period
+#call set_allcard
+#call game_reset
+#call screen cardgame
 #(85, 35, 238, 216)
 #$message_list.append(Message())
 #call screen test_screen

@@ -424,6 +424,18 @@ label saturday1_morn_pc:
             $SoundPlayer("click.ogg", 2.0)
             call events_run_period            
     return
+
+label taba_event_incounter:
+    $evented = False
+    $where = "토요일_담배"
+    call events_run_period
+    $where = ""
+    return
+
+label px_incounter:
+    $evented = False
+    call events_run_period
+    return
 #label study_major:
 #    $what = "전공 공부"
 #

@@ -1,52 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/cardgame.rpy", line 24, in prepare_screen
-    screen cardgame:
-  File "game/cardgame.rpy", line 24, in prepare
-    screen cardgame:
-  File "game/cardgame.rpy", line 34, in prepare
-    vbox:
-  File "game/cardgame.rpy", line 34, in prepare
-    vbox:
-  File "game/cardgame.rpy", line 38, in prepare
-    textbutton "{color=FF0000}차례 넘기기":
-  File "game/cardgame.rpy", line 38, in prepare
-    textbutton "{color=FF0000}차례 넘기기":
-SyntaxError: invalid syntax (cardgame.rpy, line 42)
+While running game code:
+  File "game/dse-event_dispatcher.rpy", line 299, in script
+    return
+Exception: Could not find return label (u'game/script.rpy', 1649150960, 3).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 662, in main
-    run(restart)
-  File "renpy/main.py", line 97, in run
-    renpy.display.screen.prepare_screens()
-  File "renpy/display/screen.py", line 955, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/cardgame.rpy", line 24, in prepare_screen
-    screen cardgame:
-  File "game/cardgame.rpy", line 24, in prepare
-    screen cardgame:
-  File "game/cardgame.rpy", line 34, in prepare
-    vbox:
-  File "game/cardgame.rpy", line 34, in prepare
-    vbox:
-  File "game/cardgame.rpy", line 38, in prepare
-    textbutton "{color=FF0000}차례 넘기기":
-  File "game/cardgame.rpy", line 38, in prepare
-    textbutton "{color=FF0000}차례 넘기기":
-  File "renpy/pyanalysis.py", line 714, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "renpy/pyanalysis.py", line 696, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (cardgame.rpy, line 42)
+  File "game/dse-event_dispatcher.rpy", line 299, in script
+    return
+  File "renpy/ast.py", line 1567, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "renpy/execution.py", line 710, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label (u'game/script.rpy', 1649150960, 3).
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Wed Apr  6 20:02:58 2022
+Mon Apr 18 14:11:01 2022
