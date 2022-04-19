@@ -425,6 +425,24 @@ label saturday1_morn_pc:
             call events_run_period            
     return
 
+label saturday1_af_pc:
+    $SoundPlayer("phone_beep.ogg", .6)
+    if saturday1_list == 4 or saturday1_list = 5:
+        play looping walk_slow
+        scene bg_black with fade
+        "CCTV를 피해 외부계단으로 사이버지식 정보방에 들어갔다."
+        stop looping
+    else:
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway_mid
+        show main_cloth 
+        with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_pcroom
+    show main_cloth at center
+    with fade
+    $SoundPlayer("door.ogg", 2.0)
+
 label taba_event_incounter:
     $evented = False
     $where = "토요일_담배"

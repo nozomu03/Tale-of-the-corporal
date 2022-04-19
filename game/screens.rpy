@@ -329,6 +329,27 @@ style frame:
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
+screen just_test:
+    modal True
+    add "bg_black.png"
+    default a = 20
+    vbox:
+        text "[a]"
+        textbutton "닫고 열기" action [renpy.restart_interaction]
+        textbutton "더하기" action SetScreenVariable("a", a + 10)
+        textbutton "초기화" action renpy.restart_interaction
+       
+screen just_test2:
+    add "phone_back.png"
+
+init python:
+    def PrintJump(val):
+        print(val)
+        return
+
+label test_label:
+    "이예~"
+    return
 screen test_screen:
     modal True
     add "phone_back.png"
@@ -339,7 +360,7 @@ screen test_screen:
           #  vbox:
          #   #    hbox:
                    # text "[y]"
-            $print(y)
+            #$print(y)
             $temp_text = Text(i.message)
             if counter == 0 or past_i.type == 1:
                 fixed:  
@@ -363,10 +384,101 @@ screen test_screen:
            # else:
             $y += 40
             $past_i = i
-            $counter += 1            
-        button action Return()
+            $counter += 1 
+
+        #$go_messagebox +  
+        button action [Return(), SetVariable("go_messagebox", go_messagebox + message_list)]
         #$time.sleep(2)
     $message_list = []                    
+
+
+screen test_screen2:
+    modal True
+    add "phone_back.png"
+    if go_messagebox != []:
+        $y = 180
+        $counter = 0
+        default trigger = False
+        for i in go_messagebox:  
+            text str(counter):
+                ypos y 
+          #  vbox:
+         #   #    hbox:
+                   # text "[y]"
+            if y + 40 > 490:
+                textbutton "▶":
+                    align(.5, .7)
+                    action [Hide("test_screen2"), Show("test_screen2_2"), SetVariable("go_messagebox", go_messagebox[counter-1: len(go_messagebox)-1])]
+                $trigger = True
+            if trigger == False:
+                $temp_text = Text(i.message)
+                if counter == 0 or past_i.type == 1:
+                    fixed:  
+                        text "{size=10}[i.who]{/size}":
+                            pos(490, y-13)
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)
+                else:
+                    $y -= 5
+                    fixed:                      
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)            
+                if temp_text.size()[1] >= 54:                
+                    $y += int(temp_text.size()[1] - 27)
+            # else:
+                $y += 40
+                $past_i = i
+                $counter += 1 
+
+screen test_screen2_2:
+    modal True
+    add "phone_back.png"
+    if go_messagebox != []:
+        $y = 180
+        $counter = 0
+        default trigger = False
+        for i in go_messagebox:  
+            text str(counter):
+                ypos y 
+          #  vbox:
+         #   #    hbox:
+                   # text "[y]"
+            if y + 40 > 490:
+                textbutton "▶":
+                    align(.5, .7)
+                    action [Hide("test_screen2"), Show("test_screen2_2"), SetVariable("go_messagebox", go_messagebox[counter-1: len(go_messagebox)-1])]
+                $trigger = True
+            if trigger == False:
+                $temp_text = Text(i.message)
+                if counter == 0 or past_i.type == 1:
+                    fixed:  
+                        text "{size=10}[i.who]{/size}":
+                            pos(490, y-13)
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)
+                else:
+                    $y -= 5
+                    fixed:                      
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)            
+                if temp_text.size()[1] >= 54:                
+                    $y += int(temp_text.size()[1] - 27)
+            # else:
+                $y += 40
+                $past_i = i
+                $counter += 1 
 
 ################################################################################
 ## 게임내 스크린

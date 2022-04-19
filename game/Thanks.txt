@@ -94,6 +94,8 @@ switch https://freesound.org/people/EricsSoundschmiede/sounds/457410/
 
 mousework  https://freesound.org/people/khenshom/sounds/565203/
 
+phone_alarm https://freesound.org/people/stwime/sounds/545338/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 

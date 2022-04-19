@@ -1772,7 +1772,18 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     $now_day = 5
     call px_incounter
-    "." 
+    window hide
+    #python:
+    #    message_check = 0
+    #    for i in range(9):
+    #        go_messagebox.append(Message(message = str(message_check )+ "\newgwegweg"))
+    #        message_check += 1
+    call screen test_screen
+    "."
+    call screen test_screen2
+
+   # $renpy.pause()
+    "."
     return
 
 

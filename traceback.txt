@@ -1,30 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1747, in script
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
-  File "game/script.rpy", line 1747, in <module>
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
-IndexError: list index out of range
+  File "game/script.rpy", line 1783, in script
+    call screen test_screen2
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "renpy/common/00action_control.rpy", line 126, in __call__
+    renpy.show_screen(self.screen, *self.args, **self.kwargs)
+Exception: Screen test_scene2_2 is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1747, in script
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
-  File "renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 1747, in <module>
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
-  File "renpy/python.py", line 992, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/script.rpy", line 1783, in script
+    call screen test_screen2
+  File "renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 4160, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "renpy/display/layout.py", line 1102, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "renpy/display/layout.py", line 1102, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "renpy/display/layout.py", line 1102, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "renpy/display/screen.py", line 727, in event
+    rv = self.child.event(ev, x, y, st)
+  File "renpy/display/layout.py", line 1102, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "renpy/display/behavior.py", line 983, in event
+    return handle_click(self.clicked)
+  File "renpy/display/behavior.py", line 918, in handle_click
+    rv = run(action)
+  File "renpy/display/behavior.py", line 323, in run
+    new_rv = run(i, *args, **kwargs)
+  File "renpy/display/behavior.py", line 330, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_control.rpy", line 126, in __call__
+    renpy.show_screen(self.screen, *self.args, **self.kwargs)
+  File "renpy/display/screen.py", line 1131, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen test_scene2_2 is not known.
+
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Mon Apr 18 18:53:22 2022
+Tue Apr 19 21:38:53 2022

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/px_event.rpy", line 52: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-            "쥐어진 캔에 응결된 수증기들이 방울방울 맺혔다. {w}내용물의 냉기가 체온을 빠르게 빼앗아 간다.
+File "game/screens.rpy", line 412: expected a keyword argument or child statement.
+    $trigger = True
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Apr 18 18:13:38 2022
+Tue Apr 19 21:41:57 2022

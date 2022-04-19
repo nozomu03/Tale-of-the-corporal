@@ -33,6 +33,7 @@ define left = Position(xalign=.1, yalign=1.0)
 
 define config.gl2 = True
 define centered = Character(None, kind = centered, what_color="#FFFFFF")
+default test_val2 = 0
 
 default item_x = 0
 default item_y = 0
@@ -57,7 +58,14 @@ default events_executed = { }
 default events_executed_yesterday = { }
 default where_list = []
 define bad_incount = 0
+#메시지 박스 ###########
+default go_messagebox = []
+default mom_messagebox = []
+default message_over = False
 default message_list = []
+default message_page = 0
+default message_length = 0
+#default message_list = []
 default what = ""
 #default what_list = ""
 default what_all_list = []
@@ -93,8 +101,8 @@ style menu_choice_button is choice_button:
   
 
 
-screen test_screen:
-    modal True
+#screen test_screen:
+#    modal True
 
 screen ForceMouse:
     on "show":
@@ -185,6 +193,10 @@ init python:
             renpy.pause(2.0)
             count += 1
 
+    def HideAndShow(name = ""):
+        renpy.hide_screen(name)
+        renpy.show_screen(name)
+
     class Card:
         def __init__(self, img="", number=1):
             self.img = img
@@ -222,7 +234,7 @@ init python:
                 return True
             else:
                 return False
-
+    test_val = False
     class Item:
         def __init__(self, name="", icon="", intro="", tip=""):
             self.name = name
@@ -332,3 +344,68 @@ label status_check:
         centered "이런 개같은 하루 하루를... {w}얼마나 더 보내야 끝이 날까."
         $bad_incount += 1
     return
+
+init python:
+    def message_list_refersh(val):
+        global message_list
+        global message_page
+        global message_over
+        message_list = val
+        message_page += 1
+        #message_over = False
+        renpy.sound.play("/audio/lighter.ogg")
+        return
+
+    #def Length_check:
+    #    global message_list
+    #    global message_page
+    #    global message_over
+#
+    #    y = 180
+    #    #Text(i.message)
+    #    for i in go_messagebox:      
+    #        #$message_over = False
+    #        if y + 40 >= 490:
+    #            y = 180
+    #            message_over = True
+    #            message_list = go_messagebox[counter:len(go_messagebox)]
+    #            return
+    #            #text "wegjiowegjio"
+    #            
+#
+    #        else:
+    #            $counter += 1
+#
+    #            #$print(y)
+    #            $temp_text = Text(i.message)
+    #            if counter == 0 or past_i.type == 1:
+    #                fixed:  
+    #                    text "{size=10}[i.who]{/size}":
+    #                        pos(490, y-13)
+    #                    add "msg_back.png":                                        
+    #                        pos(490, y)                                      
+    #                        size(temp_text.size()[0], temp_text.size()[1])
+    #                    text "[i.message]":
+    #                        pos(490, y)
+    #            else:
+    #                $y -= 5
+    #                fixed:                      
+    #                    add "msg_back.png":                                        
+    #                        pos(490, y)                                      
+    #                        size(temp_text.size()[0], temp_text.size()[1])
+    #                    text "[i.message]":
+    #                        pos(490, y)            
+    #            if temp_text.size()[1] >= 54:                
+    #                $y += int(temp_text.size()[1] - 27)
+    #            $message_length += 1
+    #        # else:
+    #            $y += 40
+    #            $past_i = i
+    #            #$message_length += 1
+    #    text str(counter):
+    #        ypos y
+    #    #if message_over:
+    #    #    textbutton "◀"
+    #    #else:           
+    #    return 
+#
