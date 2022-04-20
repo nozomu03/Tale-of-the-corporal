@@ -226,6 +226,7 @@ label day2_checker:
 label saturday1:
     #$del what
     $del where_list
+    
     $what = "N/A"
     if morn_do != "잠자기":
         $SoundPlayer("blanket.wav", 4.0)
@@ -437,12 +438,22 @@ label saturday1_af_pc:
         scene bg_hallway_mid
         show main_cloth 
         with dissolve
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway_end
+        show main_cloth
+        with dissolve
     $SoundPlayer("door.ogg", 2.0)
     scene bg_pcroom
     show main_cloth at center
     with fade
-    $SoundPlayer("door.ogg", 2.0)
-
+    "병사의 휴대폰 사용이 전면적으로 허가된 이후 사이버지식정보방을 사용하는 인구는 급격히 줄어들었다. {w}예전과 달리 돈을 내지 않아도 마음껏 사용할 수 있다고는 해도 여러가지 불편한 점이 많기 때문이다."
+    "간혹가다 프린터를 이용하는 등의 pc가 꼭 필요한 상황이 아니라면 굳이 찾는 이가 없는 곳."
+    "자리를 잡아 컴퓨터를 켰다."
+    $SoundPlayer("computer.wav", 4.0)
+    $SoundPlayer("typing.ogg", 3.0)
+    $SoundPlayer("click.ogg", .8)
+    $SoundPlayer("typing.ogg", 3.0)
+    return
 label taba_event_incounter:
     $evented = False
     $where = "토요일_담배"

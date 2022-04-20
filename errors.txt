@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 412: expected a keyword argument or child statement.
-    $trigger = True
-    ^
+File "game/screens.rpy", line 383: for expects a non-empty block.
+    else:
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Apr 19 21:41:57 2022
+Wed Apr 20 14:04:19 2022

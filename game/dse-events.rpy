@@ -1444,3 +1444,57 @@ label sat_tabaevent:
     $evented = True
     $where = ""
     return
+
+#saturday1_list
+label pcroom1_good_event2: ##1일차 점심
+    "도중에 막히는 일 없이 개발은 순조롭게 진행되었다.{p}모델링도 생각한 것 이상으로 잘 뽑혔고, 스토리도 어딘가에 걸리지 않은 채 유유히 흘러갔다."
+    $SoundPlayer("door.ogg", 2.0)
+    show son_cloth_nom at right with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    son "엇, [main] 씨. {w}뭐하세요?"
+    main "게임 만들어요."
+    son "무슨 게임이요?"
+    main "비주얼 노벨이라고 옛날에 초등학교 때 컴퓨터실 가면 깔려있는 클릭해서 진행하는 게임 있잖아요. {w}그거 사촌뻘 되는거요."
+    son "헤에~ {w}신기하네요. {w}게임을 하는 사람이야 수 없이 봤지만 게임 만드는 사람은 실제로 처음 봐요."
+    main "그런가요?"
+    son "예. {w}멋있어요."
+    main "......."
+    "동경, 에서 시작된 선택. {w}내가 게임 개발자라는 직업을 장래희망으로 삼게 된 결정적인 계기.{p}중학교 때 우연찮게 접했던 한 게임."
+    son "ㅇㅇ씨는 그럼 이런 게임 많이 해 봤어요?"
+    main "예? {w}아, 네. {w}그렇죠. {w}관련된 게임을 좀 해본 사람이면 이 안에 들어가 있는 요소들 어디서 따왔는지 바로 알 수 있을 걸요?"
+    son "특별히 추천할 만한 게임 같은 건 없나요? {w}입문작으로다가."
+    main "어떤 장르 좋아하세요? {w}이런 류는 스토리가 중심에 서니까요. {w}취향에 안 맞는 걸 추천해 드릴 순 없죠."
+    son "장르... {w}장르라... {w}그렇네요... {w}굳이 따지자면 판타지물이려나요."
+    main "그럼 이거 추천드릴게요."
+    "휴대폰을 꺼내 스토어를 띄웠다."
+    main "기억을 잃어가는 공주가 마법학교에 들어가면서 벌어지는 일인데 재밌어요."
+    son "으음~ {w}한 번 해볼게요."
+    hide son_cloth_nom 
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    "한연 씨는 다른 자리에 앉아 휴대폰을 만지작거리기 시작했다."
+    $SoundPlayer("typing.ogg", 2.0)
+    scene bg_black with wipeleft
+    $SoundPlayer("typing.ogg", 2.0)
+    $renpy.pause(3.0)
+    $now_h = 17
+    $now_m = 10
+    return
+
+label pcroom1_normal_event2:
+    "도중에 막히는 일 없이 개발은 순조롭게 진행되었다.{p}모델링도 생각한 것 이상으로 잘 뽑혔고, 스토리도 어딘가에 걸리지 않은 채 유유히 흘러갔다."
+    $SoundPlayer("phone_beep.wav", .4)
+    $message_list.append(Message(type=0, who="고균영", message = "ㅇㅇㅇ 상병님."))
+    call screen test_screen with dissolve
+    $message_list.append(Message(type=0, who="고균영", message = "혹시 어디십니까?"))
+    call screen test_screen 
+    $message_list.append(Message(type=0, who="고균영", message = "안 바쁘시면 잠깐 저랑\n같이 탄약고 좀 가 주실\n수 있겠습니까?"))
+    call screen test_screen 
+    $message_list.append(Message(type=1, who="나", message = "ㅇㅇ 어디로 갈까"))
+    call screen test_screen 
+    $message_list.append(Message(type=0, who="고균영", message = "어차피 사지방이시지 않습니까.\n제가 가겠습니다."))
+    call screen test_screen 
+    $message_list.append(Message(type=1, who="나", message = "ㅇㅋ"))
+    call screen test_screen 
+    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 1중대 소대통신병으로 복무하다 전입온 만큼 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+    return

@@ -1190,7 +1190,7 @@ label start:
     $FaceChange("main_tabahand", 1.0, .5, "main_tabahand_sal")
     $FaceChange("zoo_taba_nof", 0.0, 1.0, "zoo_smi")
     $Smoking(img="zoo", loc=0, rep = 2, first=True)
-    if what == "전문하사":
+    if "전문하사" in what_all_list:
         zoo "근무 끝났어?"
         main "예. {w}막 퇴근했습니다."
         zoo "고생했다."
@@ -1206,7 +1206,7 @@ label start:
     main "백신 호송도 빨리 끝났으면 좋겠습니다."
     zoo "그러게..."
     $Smoking(img="zoo", loc=0, rep = 1)
-    if what == "전문하사":
+    if "전문하사" in what_all_list:
         zoo "넌 근무 언제까지야?"
         main "금요일까지 쭉입니다."
         zoo "백신호송에 요원화 훈련에... {w}간부도 병사도 죽어 나가는구나."
@@ -1715,9 +1715,6 @@ label start:
                     "휴대폰":
                         main "(대충 폰 만지면서 시간이나 때워야지...)"
                         $af_do = "휴대폰"
-                    "!!사이버지식정보방!!":
-                        "사이버지식 정보방 내부에는 CCTV가 없다. {w}복도를 비추는 CCTV는 외부계단으로 올라간다면 시야에 들지 않을 수 있다."
-                        "순찰만 조심한다면 컴퓨터를 사용하는데 문제가 없을 것이다."    
     $Smoking("main_cloth", 1.0, 1, False)
     main "(px... 가야하나?)"
     "곰곰히 생각해보았다."
@@ -1772,16 +1769,38 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     $now_day = 5
     call px_incounter
-    window hide
-    #python:
-    #    message_check = 0
-    #    for i in range(9):
-    #        go_messagebox.append(Message(message = str(message_check )+ "\newgwegweg"))
-    #        message_check += 1
-    call screen test_screen
-    "."
-    call screen test_screen2
-
+    $SoundPlayer("phone_beep.wav", .4)
+    $message_list.append(Message(type=0, who="고균영", message = "ㅇㅇㅇ 상병님."))
+    call screen test_screen with dissolve
+    $message_list.append(Message(type=0, who="고균영", message = "혹시 어디십니까?"))
+    call screen test_screen 
+    $message_list.append(Message(type=0, who="고균영", message = "안 바쁘시면 잠깐 저랑\n같이 탄약고 좀 가 주실\n수 있겠습니까?"))
+    call screen test_screen 
+    $message_list.append(Message(type=1, who="나", message = "ㅇㅇ 어디로 갈까"))
+    call screen test_screen 
+    $message_list.append(Message(type=0, who="고균영", message = "어차피 사지방이시지 않습니까.\n제가 가겠습니다."))
+    call screen test_screen 
+    $message_list.append(Message(type=1, who="나", message = "ㅇㅋ"))
+    call screen test_screen 
+    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+    "누군가는 균영이의 행동을 보고 건방지다던가, 쓸데 없는 참견이라고 말할 지도 모르겠지만 적어도 나에게는 필요한 일이었다."
+    "본디 전투중대였던 1중대에서 소대 통신병으로 군생활의 절반이 넘는 기간 동안 복무한 내가 통신소대에서 제대로 된 일과를 수행한 기간은 길게 잡아도 3개월. {w}실질적으로는 그보다 더 짧을 것이다. {w}선임이라고는 하지만, 과업에 대한 숙련도나 이해도에서는 뒤쳐지는 상황."
+    "나중에, 평일 일과 수행 도중에.{w} 혹은, 훈련 도중에. {w} 능력 부족으로 간부님들께 질책받는 것보다는 낫다."
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_end 
+    show main_cloth at left
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show go_cloth_cross at right with dissolve
+    $renpy.pause(.5)
+    $FaceChange("go_cloth_cross2", 2.0, .5, "go_cloth_cross")
+    go "먼저 나와 계셨습니까."
+    main "응."
+    go "바로 가십니까?"
+    main "그래, 출발하자."
+    scene bg_hallway_end
+    $SoundPlayer("walk_slow.ogg")
    # $renpy.pause()
     "."
     return

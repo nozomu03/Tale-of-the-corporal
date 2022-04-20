@@ -331,14 +331,11 @@ style frame:
 
 screen just_test:
     modal True
-    add "bg_black.png"
-    default a = 20
-    vbox:
-        text "[a]"
-        textbutton "닫고 열기" action [renpy.restart_interaction]
-        textbutton "더하기" action SetScreenVariable("a", a + 10)
-        textbutton "초기화" action renpy.restart_interaction
-       
+    python:
+        global test_val
+        test_val = True
+    button action Return()
+
 screen just_test2:
     add "phone_back.png"
 
@@ -354,40 +351,56 @@ screen test_screen:
     modal True
     add "phone_back.png"
     if message_list != []:
-        $y = 180
-        $counter = 0
+        default y = 180
+        default counter = 0
         for i in message_list:        
           #  vbox:
          #   #    hbox:
                    # text "[y]"
             #$print(y)
             $temp_text = Text(i.message)
-            if counter == 0 or past_i.type == 1:
-                fixed:  
-                    text "{size=10}[i.who]{/size}":
-                        pos(490, y-13)
-                    add "msg_back.png":                                        
-                        pos(490, y)                                      
-                        size(temp_text.size()[0], temp_text.size()[1])
-                    text "[i.message]":
-                        pos(490, y)
+            if i.type == 0:
+                if counter == 0 or past_i.type == 1:
+                    fixed:  
+                        text "{size=10}[i.who]{/size}":
+                            pos(490, y-13)
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)
+                else:
+                    $y -= 5
+                    fixed:                      
+                        add "msg_back.png":                                        
+                            pos(490, y)                                      
+                            size(temp_text.size()[0], temp_text.size()[1])
+                        text "[i.message]":
+                            pos(490, y)            
+                if temp_text.size()[1] >= 54:                
+                    $y += int(temp_text.size()[1] - 27)
+                $counter += 1 
             else:
+                $x=790
+                $x-=int(temp_text.size()[0])
+                text "{color=#FF0000}"+str(int(x)):
+                    xalign .8
+                    ypos y
                 $y -= 5
+                #790
                 fixed:                      
                     add "msg_back.png":                                        
-                        pos(490, y)                                      
+                        pos(x, y)                                      
                         size(temp_text.size()[0], temp_text.size()[1])
                     text "[i.message]":
-                        pos(490, y)            
-            if temp_text.size()[1] >= 54:                
-                $y += int(temp_text.size()[1] - 27)
-           # else:
+                        pos(x, y)            
+                if temp_text.size()[1] >= 54:                
+                    $y += int(temp_text.size()[1] - 27)           # else:
             $y += 40
-            $past_i = i
-            $counter += 1 
+            $past_i = i            
 
         #$go_messagebox +  
-        button action [Return(), SetVariable("go_messagebox", go_messagebox + message_list)]
+    button action [Return(), SetVariable("go_messagebox", go_messagebox + message_list)]
         #$time.sleep(2)
     $message_list = []                    
 
