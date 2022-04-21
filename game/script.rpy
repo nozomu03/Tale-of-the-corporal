@@ -1800,7 +1800,17 @@ label start:
     go "바로 가십니까?"
     main "그래, 출발하자."
     scene bg_hallway_end
-    $SoundPlayer("walk_slow.ogg")
+    play looping walk_slow
+    scene bg_black with wipeleft
+    $renpy.pause(2.0)
+    scene bg_tanout with wiperight
+    stop looping
+    show go_cloth_atten at right
+    show main_cloth at center
+    with dissolve
+    go "제가 저번에 말씀드리지 않았습니까. {w}CCTV가 안되면 10에 9은 탄약고 내부 선 문제입니다. {w}기억하고 계십니까?"
+    main "응."
+    go "이번에는 제가 안 도와드릴 테니 한 번 해 보십시오."
    # $renpy.pause()
     "."
     return
