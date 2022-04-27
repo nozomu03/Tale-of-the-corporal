@@ -1769,48 +1769,9 @@ label start:
     $SoundPlayer("walk_slow.ogg", 2.0)
     $now_day = 5
     call px_incounter
-    $SoundPlayer("phone_beep.wav", .4)
-    $message_list.append(Message(type=0, who="고균영", message = "ㅇㅇㅇ 상병님."))
-    call screen test_screen with dissolve
-    $message_list.append(Message(type=0, who="고균영", message = "혹시 어디십니까?"))
-    call screen test_screen 
-    $message_list.append(Message(type=0, who="고균영", message = "안 바쁘시면 잠깐 저랑\n같이 탄약고 좀 가 주실\n수 있겠습니까?"))
-    call screen test_screen 
-    $message_list.append(Message(type=1, who="나", message = "ㅇㅇ 어디로 갈까"))
-    call screen test_screen 
-    $message_list.append(Message(type=0, who="고균영", message = "어차피 사지방이시지 않습니까.\n제가 가겠습니다."))
-    call screen test_screen 
-    $message_list.append(Message(type=1, who="나", message = "ㅇㅋ"))
-    call screen test_screen 
-    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
-    "누군가는 균영이의 행동을 보고 건방지다던가, 쓸데 없는 참견이라고 말할 지도 모르겠지만 적어도 나에게는 필요한 일이었다."
-    "본디 전투중대였던 1중대에서 소대 통신병으로 군생활의 절반이 넘는 기간 동안 복무한 내가 통신소대에서 제대로 된 일과를 수행한 기간은 길게 잡아도 3개월. {w}실질적으로는 그보다 더 짧을 것이다. {w}선임이라고는 하지만, 과업에 대한 숙련도나 이해도에서는 뒤쳐지는 상황."
-    "나중에, 평일 일과 수행 도중에.{w} 혹은, 훈련 도중에. {w} 능력 부족으로 간부님들께 질책받는 것보다는 낫다."
-    hide main_cloth
-    $SoundPlayer("walk_slow.ogg", 2.0)
-    scene bg_hallway_end 
-    show main_cloth at left
-    with dissolve
-    $SoundPlayer("walk_slow.ogg", 2.0)
-    show go_cloth_cross at right with dissolve
-    $renpy.pause(.5)
-    $FaceChange("go_cloth_cross2", 2.0, .5, "go_cloth_cross")
-    go "먼저 나와 계셨습니까."
-    main "응."
-    go "바로 가십니까?"
-    main "그래, 출발하자."
-    scene bg_hallway_end
-    play looping walk_slow
-    scene bg_black with wipeleft
-    $renpy.pause(2.0)
-    scene bg_tanout with wiperight
-    stop looping
-    show go_cloth_atten at right
-    show main_cloth at center
-    with dissolve
-    go "제가 저번에 말씀드리지 않았습니까. {w}CCTV가 안되면 10에 9은 탄약고 내부 선 문제입니다. {w}기억하고 계십니까?"
-    main "응."
-    go "이번에는 제가 안 도와드릴 테니 한 번 해 보십시오."
+    $morn_do ="_" + morn_do
+    $evented=False
+    call saturday1_af_branch
    # $renpy.pause()
     "."
     return

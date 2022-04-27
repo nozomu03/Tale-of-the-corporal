@@ -28,8 +28,12 @@ init python:
     #event('meet_j')
     event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"딴짓\"', event.random(.7), event.only(), priority = 10)
     event("pcroom1_bad_event1", 'morn_do==\"사이버지식정보방\" and evented == False and what==\"게임\"', event.random(.7), event.only(), priority = 10)
-
+#pcroom1_good_event2
     event("sat_tabaevent", 'where == "토요일_담배" and sat_val <=10 and evented == False', event.random(.6), event.only(), priority = 0)
+  
+    event("pcroom1_normal_event2", 'evented == False and af_do==\"사이버지식정보방\"', event.random(.6), event.only(), priority = 10)
+    event("pcroom1_good_event2", 'evented == False and af_do==\"사이버지식정보방\"', event.random(.3), event.only(), priority = 10)
+    event("pcroom1_none_event2", 'evented == False and af_do==\"사이버지식정보방\"', priority = 100)
 
 
 label pc_bad:
@@ -1477,8 +1481,11 @@ label pcroom1_good_event2: ##1일차 점심
     scene bg_black with wipeleft
     $SoundPlayer("typing.ogg", 2.0)
     $renpy.pause(3.0)
+    $sat_val += 5
+    $stress_val -= 8
     $now_h = 17
     $now_m = 10
+    $evented = True
     return
 
 label pcroom1_normal_event2:
@@ -1496,5 +1503,96 @@ label pcroom1_normal_event2:
     call screen test_screen 
     $message_list.append(Message(type=1, who="나", message = "ㅇㅋ"))
     call screen test_screen 
-    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 1중대 소대통신병으로 복무하다 전입온 만큼 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+    "누군가는 균영이의 행동을 보고 건방지다던가, 쓸데 없는 참견이라고 말할 지도 모르겠지만 적어도 나에게는 필요한 일이었다."
+    "본디 전투중대였던 1중대에서 소대 통신병으로 군생활의 절반이 넘는 기간 동안 복무한 내가 통신소대에서 제대로 된 일과를 수행한 기간은 길게 잡아도 3개월. {w}실질적으로는 그보다 더 짧을 것이다. {w}선임이라고는 하지만, 과업에 대한 숙련도나 이해도에서는 뒤쳐지는 상황."
+    "나중에, 평일 일과 수행 도중에.{w} 혹은, 훈련 도중에. {w} 능력 부족으로 간부님들께 질책받는 것보다는 낫다."
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_end 
+    show main_cloth at left
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show go_cloth_cross at right with dissolve
+    $renpy.pause(.5)
+    $FaceChange("go_cloth_cross2", 2.0, .5, "go_cloth_cross")
+    go "먼저 나와 계셨습니까."
+    main "응."
+    go "바로 가십니까?"
+    main "그래, 출발하자."
+    scene bg_hallway_end
+    play looping walk_slow
+    scene bg_black with wipeleft
+    $renpy.pause(2.0)
+    scene bg_tanout with wiperight
+    stop looping
+    show go_cloth_atten at right
+    show main_cloth at center
+    with dissolve
+    go "제가 저번에 말씀드리지 않았습니까. {w}CCTV가 안되면 10에 9은 탄약고 내부 선 문제입니다. {w}기억하고 계십니까?"
+    main "응."
+    go "이번에는 제가 안 도와드릴 테니 혼자 한 번 해 보십시오."
+    scene bg_tanout
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_tanout2
+    show go_cloth_atten at right
+    show main_cloth at center
+    with dissolve
+    "초병 α" "누구십니까?"
+    go "통신소대 상병 ㅇㅇㅇ, 상병 고균영입니다. {w}CCTV 수리 때문에 왔습니다."
+    scene bg_black with dissolve
+    $SoundPlayer("gate.ogg", 2.0)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_tan_inside
+    show go_cloth_cross at right
+    show main_cloth at center
+    with dissolve
+    main "어디보자..."
+    "시간을 너무 오래 끌 순 없다. {w}이건 일종의 테스트. {w}빠르고 정확하게 끝내는게 중요하다."
+    call screen cctv_board
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show sol_sil at left with dissolve
+    "초병 α" "고쳤습니까?"
+    go "예. {w}전원선이 뽑혔었네요."
+    "초병 α" "주말에 쉬지도 못하고 죄송해요."
+    go "아녜요. {w}통신소대에서 해야 할 일인데요."
+    scene bg_tan_inside2
+    show sol_sil at left
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("gate.ogg", 2.0)
+    scene bg_tanout2 
+    show main_cloth at center
+    show go_cloth_atten at right
+    with dissolve
+    go "고생하세요~"
+    "초병 α" "고생하셨습니다!"
+    scene bg_tanout2
+    play looping walk_slow
+    scene bg_black with fade
+    $renpy.pause(4.0)
+    stop looping
+    $SoundPlayer("door.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    $timeCheck(0, 20)
+    scene bg_pcroom
+    show main_cloth at center
+    with fade
+    "석식 때까지는 아직 꽤나 긴 시간이 남아있다. {w}자리를 잡고 다시 컴퓨터를 켰다."
+    $renpy.pause(3.0)
+    $stress_val -= 5
+    $sat_val += 5
+    $now_h = 17
+    $now_m = 10
+    $evented = True
+    return
+
+label pcroom1_none_event2:
+    play sound typing
+    "찾는 이 하나 없는 조용한 사이버지식정보방에 타건음 한 줄기만이 고요하게 퍼져나간다."
+    $renpy.pause(3.0)
+    $sat_val += 2
+    $stress_val -= 2
+    $now_h = 17
+    $now_m = 10
+    $evented = True
     return

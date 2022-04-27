@@ -426,22 +426,22 @@ label saturday1_morn_pc:
             call events_run_period            
     return
 
+label saturday1_af_branch:
+    if af_do == "사이버지식정보방":
+        call saturday1_af_pc
+    elif af_do == "잠자기":
+        call saturday1_af_sleep
+    return
 label saturday1_af_pc:
-    $SoundPlayer("phone_beep.ogg", .6)
-    if saturday1_list == 4 or saturday1_list = 5:
-        play looping walk_slow
-        scene bg_black with fade
-        "CCTV를 피해 외부계단으로 사이버지식 정보방에 들어갔다."
-        stop looping
-    else:
-        $SoundPlayer("walk_slow.ogg", 2.0)
-        scene bg_hallway_mid
-        show main_cloth 
-        with dissolve
-        $SoundPlayer("walk_slow.ogg", 2.0)
-        scene bg_hallway_end
-        show main_cloth
-        with dissolve
+    #$SoundPlayer("phone_beep.ogg", .6)
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_mid
+    show main_cloth 
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_end
+    show main_cloth
+    with dissolve
     $SoundPlayer("door.ogg", 2.0)
     scene bg_pcroom
     show main_cloth at center
@@ -453,7 +453,46 @@ label saturday1_af_pc:
     $SoundPlayer("typing.ogg", 3.0)
     $SoundPlayer("click.ogg", .8)
     $SoundPlayer("typing.ogg", 3.0)
+    call events_run_period            
+    main "(벌써 시간이 이렇게 됐네.)"
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_hallway_end 
+    show main_cloth at center
+    with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway 
+    show main_cloth
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room 
+    show main_cloth 
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    "침대에 걸터앉아 휴대폰을 만지작거렸다."
     return
+
+label saturday1_af_sleep:
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway
+    show main_cloth
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth with dissolve
+    $renpy.pause(.3)
+    hide main_cloth
+    $SoundPlayer("sheet.ogg", 1.0)  
+    "침대에 몸을 맡겼다. {w}금세 정신이 몽롱해지며 잠이 쏟아졌다."
+    scene bg_black with fade
+    $renpy.pause(2.0)
+    $now_h = 17
+    $now_m = 20
+
+    return
+
 label taba_event_incounter:
     $evented = False
     $where = "토요일_담배"
@@ -469,3 +508,34 @@ label px_incounter:
 #    $what = "전공 공부"
 #
 #    return
+
+label go_test_good:
+    $SoundPlayer("plugin.wav", 1.0)
+    scene bg_tan_inside2
+    show main_cloth at center
+    show go_cloth_cross at right
+    with dissolve
+    "뽑혀 있던 전원선을 꽂자 모니터는 다시 CCTV 화면을 비추었다."
+    $FaceChange("go_cloth_cross2", 2.0, 1.0, "go_cloth_cross")
+    go "오~ 빠르십니다?"
+    main "네 말마따나 선이 뽑힌 경우가 대부분이니까. {w}간단하지 뭐."
+    go "역시 짬이란 건 무시 못하겠습니다."
+    $sat_val += 4
+    $stress_val -= 5
+    return
+
+label go_test_bad:
+    main "(이상하다...)"
+    go "선. {w}전원선 뽑혀있습니다."
+    main "...정말이네."
+    go "도와드립니까?"
+    main "아냐, 됐어. {w}...여기서부터는 할 수 있어."
+    "등 뒤가 따가웠다."
+    $SoundPlayer("plugin.wav", 1.0)
+    scene bg_tan_inside2
+    show main_cloth at center
+    show go_cloth_cross at right
+    with dissolve
+    $sat_val -= 5
+    $stress_val += 7
+    return

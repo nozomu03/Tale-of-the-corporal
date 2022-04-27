@@ -5,6 +5,22 @@
 init offset = -1
 
 
+
+##############################################
+###CCTV 보드 확인##############################
+screen cctv_board:
+    default remain_time = 20
+    modal True
+    add "cctv_board.png"
+    text "{color=#FFFFFF}{size=40}00:" + "{color=#FFFFFF}{size=40}[remain_time]{/size}":
+        align(.12, .15)
+    imagebutton idle "cctv_answer.png" hover "cctv_answer2.png":
+        pos(897, 303)
+        action [Return(), Call("go_test_good")]
+    timer 21.0 action [Return(), Call("go_test_bad")]
+    if remain_time > 0:
+        timer 1.0 action SetScreenVariable("remain_time", remain_time-1) repeat True
+
 ################################################################################
 ## 스타일
 ################################################################################

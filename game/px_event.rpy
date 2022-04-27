@@ -72,4 +72,5 @@ label first_saturday1:
         $stress_val -= 5
         $timeCheck(0, 10)
         $evented = True
+        $go_px = False
     return

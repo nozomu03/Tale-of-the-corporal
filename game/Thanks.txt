@@ -98,6 +98,10 @@ phone_alarm https://freesound.org/people/stwime/sounds/545338/
 
 phone_beep https://freesound.org/people/lartti/sounds/529979/
 
+gate https://freesound.org/people/nataliabm09/sounds/531478/
+
+plugin https://freesound.org/people/chestnutjam/sounds/428317/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 

@@ -1,29 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1780, in script
-    call screen test_screen
+  File "game/script.rpy", line 1785, in script call
+    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
   File "renpy/common/000statements.rpy", line 569, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 350, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 350, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 353, in execute
-    if message_list != []:
-  File "game/screens.rpy", line 356, in execute
-    for i in message_list:
-  File "game/screens.rpy", line 362, in execute
-    if i.type == 0:
-  File "game/screens.rpy", line 384, in execute
-    text temp_text.size()[0]:
-Exception: Cannot display 189.0 as text.
+  File "game/screens.rpy", line 11, in execute
+    screen cctv_board:
+  File "game/screens.rpy", line 11, in execute
+    screen cctv_board:
+  File "game/screens.rpy", line 15, in execute
+    text remain_time
+Exception: Cannot display 0 as text.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1780, in script
-    call screen test_screen
+  File "game/script.rpy", line 1785, in script call
+    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
+  File "renpy/common/00console.rpy", line 1054, in script call
+    python in _console:
+  File "<string>", line 1, in script
   File "renpy/ast.py", line 2015, in execute
     self.call("execute")
   File "renpy/ast.py", line 2003, in call
@@ -54,23 +53,17 @@ Full traceback:
     self.update()
   File "renpy/display/screen.py", line 637, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 350, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 350, in execute
-    screen test_screen:
-  File "game/screens.rpy", line 353, in execute
-    if message_list != []:
-  File "game/screens.rpy", line 356, in execute
-    for i in message_list:
-  File "game/screens.rpy", line 362, in execute
-    if i.type == 0:
-  File "game/screens.rpy", line 384, in execute
-    text temp_text.size()[0]:
+  File "game/screens.rpy", line 11, in execute
+    screen cctv_board:
+  File "game/screens.rpy", line 11, in execute
+    screen cctv_board:
+  File "game/screens.rpy", line 15, in execute
+    text remain_time
   File "renpy/text/text.py", line 1556, in __init__
     raise Exception("Cannot display {0!r} as text.".format(i))
-Exception: Cannot display 189.0 as text.
+Exception: Cannot display 0 as text.
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Wed Apr 20 14:22:14 2022
+Wed Apr 27 16:21:00 2022
