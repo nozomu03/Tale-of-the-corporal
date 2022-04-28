@@ -1,4 +1,6 @@
 image bg_hallway_sepia = im.Sepia("bg_hallway.png")
+image bg_school_sepia = im.Sepia("bg_school.png")
+
 define bg_qquari_sepia = im.Sepia("bg_qquari.png")
 define main_gear_sepia = im.Sepia("main_gear.png")
 
