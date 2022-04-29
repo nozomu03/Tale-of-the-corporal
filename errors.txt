@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 14: expected a keyword argument, colon, or end of line.
-    imagebutton "cctv_answer.png":
-                ^
+File "game/branc.rpy", line 492: expected 'label_name' not found.
+    call 
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Apr 27 15:24:20 2022
+Fri Apr 29 13:39:57 2022

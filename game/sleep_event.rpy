@@ -1,5 +1,7 @@
 init python:
-    event('first_saturday1', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event1', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event2', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event3', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=100)
 
 label sleep_event1:
     centered "그것은 아마, 옛 꿈."
@@ -29,14 +31,14 @@ label sleep_event1:
     "그 때 쌓아올려진 경험들이 지금까지도 직, 간접적으로 영향을 미치고 있는 지금. {w}감정 역시 시간 아래에서 자유롭지 못하니 언젠가에 이르게 된다면 사라질 터이나. {w}적어도 지금까지는 그럴 낌세조차 보이지 않았다."
     $stress_val += 10
     $sat_val -= 5
-    $evented = False
-    $af_do = ""
+    $evented = True
+    $af_do = "_" + af_do
     return
   
 label sleep_event2:
     main "으..."
     scene bg_hospital
-    show hoyun_smi at right
+    show hoyun_smi at center
     with fade
     hoyun "일어났냐."
     main "...김호윤... 병장님...?"
@@ -45,7 +47,48 @@ label sleep_event2:
     hoyun "...? {w}쓰읍... {w}이거 아무리 봐도 뇌진탕까지 겹친 거 같은데..."
     main "잘 못 들었습니다?"
     hoyun "아냐."
+    show hoyun_smi at right with moveinleft
     $SoundPlayer("door.ogg", 2.0)
     extend "부소대장님. {w}ㅇㅇ이 정신 차렸습니다."
-
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    show hoyun_smi at center
+    show park_cross_hat at right
+    with moveinright
+    $renpy.pause(.3)
+    $FaceChange("park_cross_smi", 2.0, .5, "park_corss_hat")
+    park "여~ {w}ㅇㅇ~ {w}좀 괜찮냐~?"
+    main "부소대장님..."
+    "옅게 웃음을 짓고 있는 [park] 중사님."
+    main "무슨 일이 있었던 겁니까?"
+    park "뭐야, 기억 안 나?"
+    main "예... {w}저는 그러니까..."
+    park "혹한기 훈련 도중에 기절했잖아."
+    main "기절... 말입니까?"
+    hoyun "진짜 사람 놀래키는데는 재주가 있다니까."
+    main "그러고보니 김호윤 병장님께서는 왜... 여기 계십니까...? {w}전역대기시지 않습니까?"
+    hoyun "너 같으면 부사수가 훈련 받다가 쓰러졌다는데 싹 무시하고 룰루랄라 집에 갈 수 있겠냐? {w}내가 그런 사람으로 보여?"
+    main "아닙니다."
+    park "기억이 하나도 안 난다고?"
+    main "그렇습니다."
+    play sound sigh 
+    park "그래도 정신 차려서 다행이다."
+    main "감사합니다..."
+    "꿈이라는 것을. {w}김호윤 병장님의 모습이 눈에 비쳤을 때부터 알고 있었다.{p}그러나, 마음 속에서부터 따뜻해져 오는 옛 정취의 파편은 눈을 감는다면. {w}고개를 흔든다면. {w}연못에 떨어진 돌맹이로부터 태어난 파문이 물에 비친 어렴풋한 형상을 지워내듯 산산히 흩어질 것만 같은 여린 것이어. {w}그저 똑바로 응시하는 것 밖에 할 수 없었다."
+    "한 없이 닮게 베끼나, 결코 원품이 될 수 없는 거울 속의 상이라고 하여도. {w}찰나에 가까운 시간 속에서의 재회를 통해 직면한 문제들로부터 탈피하여 잠깐이나마 안락을 얻을 수 있었다."
+    $stress_val -= 8
+    $sat_val += 8
+    $af_do = "_" + af_do
+    $evented = True
     return
+
+label sleep_event3:
+    "안개가 낀다. {w}인지력에 먹구름이 드리우고, 기억에 결락이 생겨나기 시작한다. {w}꿈 없는 잠 속으로 빠져들며 이내 모든 감각이 빠른 속도로 옅어져 갔다."
+    "소리도, 형체도, 광원도 존재하지 않는 방에 유폐된 것처럼 얼마나 넒게 펼쳐진지 모를 어둠에 잠겼다."
+    "이곳에서 시간은 1분이 한 시간이, 때로는 1초가 되며 그 의미를 잃는다."
+    "찰나. {w}어쩌면 수 시간.{w}그 이후에, 목소리가 들려왔다."
+    $stress_val -= 3
+    $sat_val += 3
+    $af_do = "_" + af_do
+    $evented=True
+    return
+

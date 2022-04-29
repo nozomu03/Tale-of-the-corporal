@@ -366,6 +366,24 @@ label saturday1_morn_phone:
     $sat_val += 3
     return
 
+label saturday1_af_phone:
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway_mid with dissolve
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_hallway
+    show main_cloth at right
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    scene bg_room2 with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    show main_cloth at right with dissolve
+    $renpy.pause(1.0)
+    $SoundPlayer("sheet.ogg", 1.0)
+    "침대에 누워 밥을 먹으러 갈 시간이 될 때까지 빈둥거렸다."
+    $stress_val -= 3
+    $sat_val += 3
+    return
+
 label saturday1_morn_pc:
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_hallway_end2
@@ -428,10 +446,70 @@ label saturday1_morn_pc:
 
 label saturday1_af_branch:
     if af_do == "사이버지식정보방":
+        $evented = False
         call saturday1_af_pc
     elif af_do == "잠자기":
+        $evented = False
         call saturday1_af_sleep
+    elif af_do == "휴대폰":
+        call saturday1_af_phone
+        $now_h = 17
+        $now_m = 10
+    elif af_do == "공부":
+        call saturday1_af_study
+        $now_h = 17
+        $now_m = 10
+    
     return
+label saturday1_af_study:    
+    "생활관에서는 진욱이가 자고 있다. {w}불을 끈 채로 공부를 하긴 힘드니 병영도서관으로 가기로 했다."
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5 :
+        "문제는 사이버지식정보방과 붙어있다는 것이다."
+        main "(오해받기 딱 좋은데...)"
+        "그렇다고 해서 다른 사람들이 음식을 먹고 있는 휴게실에서 공부를 할 수도 없다."
+        main "(어쩔 수 없나...)"
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway
+        show main_cloth
+        with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_room2
+        show main_cloth 
+        with dissolve
+        "책을 챙겼다."
+        scene bg_hallway
+        show main_cloth
+        with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        $renpy.pause(.3)
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_hallway_mid
+        show main_cloth
+        with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_office2 with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth with dissolve
+    else:
+        $SoundPlayer("walk_slow.ogg", 2.0)    
+        scene bg_hallway_end
+        show main_cloth
+        with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_pcroom with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth with dissolve
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        scene bg_library 
+        show main_cloth
+        with dissolve
+    "책을 펼치고, 공부하기 시작했다."
+    $now_h = 17
+    $now_m = 10
+    return
+
 label saturday1_af_pc:
     #$SoundPlayer("phone_beep.ogg", .6)
     $SoundPlayer("walk_slow.ogg", 2.0)
@@ -454,6 +532,8 @@ label saturday1_af_pc:
     $SoundPlayer("click.ogg", .8)
     $SoundPlayer("typing.ogg", 3.0)
     call events_run_period            
+    $now_h = 17
+    $now_m = 10
     main "(벌써 시간이 이렇게 됐네.)"
     hide main_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
@@ -488,9 +568,9 @@ label saturday1_af_sleep:
     "침대에 몸을 맡겼다. {w}금세 정신이 몽롱해지며 잠이 쏟아졌다."
     scene bg_black with fade
     $renpy.pause(2.0)
+    call events_run_period
     $now_h = 17
     $now_m = 20
-
     return
 
 label taba_event_incounter:

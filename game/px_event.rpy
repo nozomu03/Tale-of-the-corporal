@@ -1,5 +1,5 @@
 init python:
-    event('first_saturday1', 'go_px == True and now_week==2 and now_day == 5 and evented == False', event.random(1.0), event.only(), priority=0)
+    event('first_saturday1', 'go_px == True and now_week==2 and now_day == 5 and evented == False', event.random(.5), event.only(), priority=0)
 
 label first_saturday1:
     #"px 이벤트 테스트입니다."
