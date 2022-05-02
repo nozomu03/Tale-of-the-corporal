@@ -1771,8 +1771,19 @@ label start:
     call px_incounter
     $morn_do ="_" + morn_do
     $evented=False
-    call saturday1_af_branch
+    call saturday1_af_branch    
    # $renpy.pause()
+    #$SoundPlayer("walk_slow.ogg", 2.0)
+    scene bg_room2 
+    show main_cloth at right
+    with fade
+    $renpy.pause(2.0)
+    $timeCheck(0, 10)
+    $SoundPlayer("broadcast.wav", 2.0)
+    fcaptain "\[지휘통제실에서 당직사령이 전파합니다. {w}ㅇㅇ대대 전 인원은 식사 순번에 맞추어 식사 출발 해 주시길 바랍니다.\]"
+    $SoundPlayer("broadcast.wav", 2.0)
+    "당직부사관" "\[통합중대. {w}식사, 식사 출발해 주시길 바랍니다.\]"
+
     "."
     return
 

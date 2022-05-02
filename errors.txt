@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/branc.rpy", line 492: expected 'label_name' not found.
-    call 
-        ^
+File "game/screens.rpy", line 403: Line is indented, but the preceding one-line python statement does not expect a block. Please check this line's indentation.
+    xalign .8
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr 29 13:39:57 2022
+Mon May  2 17:38:01 2022

@@ -206,7 +206,7 @@ label day2_checker:
         call events_run_period
         return
     elif what == "주특기 공부":
-        main "(이제 곧 호국훈련이네... {w}그때까지 주특기를 좀 더 숙달해 놓으면 균영이도 더 이상 뭐라 못하겠지.)"
+        main "(이제 곧 육지검에 호국이네... {w}그때까지 주특기를 좀 더 숙달해 놓으면 균영이도 더 이상 뭐라 못하겠지.)"
         main "정훈장교님?"
         tie "왜?"
         main "전자도서관 들어가서 교범 봐도 되겠습니까?"
@@ -216,6 +216,7 @@ label day2_checker:
         main "간부님 계정으로 로그인만 되어 있으면 왠만한 교범은 다 읽을 수 있는 걸로 알고 있습니다."
         tie "맘대로 해."
         call events_run_period
+        $study_count += 1
         return
     elif what == "전공 공부":
         main "(어디보자... {w}어디까지 했더라...)"
@@ -448,19 +449,36 @@ label saturday1_af_branch:
     if af_do == "사이버지식정보방":
         $evented = False
         call saturday1_af_pc
+        main "(시간 참 빠르네...)"
+        "주변을 한 번 정리 한후 자리에서 일어났다."
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        $SoundPlayer("walk_slow.ogg", 2.0)
     elif af_do == "잠자기":
         $evented = False
         call saturday1_af_sleep
     elif af_do == "휴대폰":
         call saturday1_af_phone
         $now_h = 17
-        $now_m = 10
+        $now_m = 20
     elif af_do == "공부":
         call saturday1_af_study
+        $study_count += 1
         $now_h = 17
-        $now_m = 10
-    
+        $now_m = 20
+        main "(시간 참 빠르네...)"
+        "주변을 한 번 정리 한후 자리에서 일어났다."
+        hide main_cloth
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        $SoundPlayer("door.ogg", 2.0)
+        $SoundPlayer("walk_slow.ogg", 2.0)
     return
+
+
+
 label saturday1_af_study:    
     "생활관에서는 진욱이가 자고 있다. {w}불을 끈 채로 공부를 하긴 힘드니 병영도서관으로 가기로 했다."
     if saturday1_list[0] == 4 or saturday1_list[0] == 5 :
@@ -506,8 +524,8 @@ label saturday1_af_study:
         show main_cloth
         with dissolve
     "책을 펼치고, 공부하기 시작했다."
-    $now_h = 17
-    $now_m = 10
+    call events_run_period            
+    $evented = True
     return
 
 label saturday1_af_pc:

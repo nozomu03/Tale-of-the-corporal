@@ -83,6 +83,10 @@ default night_do = "선택"
 define circirisin = ImageDissolve("board_fin.png", 5.0, 8)
 define testd = ImageDissolve("testimage.png", 5.0, 8)
 
+###공부 카운터########
+default study_count = 0
+
+
 ###요일 시스템 관련######
 default day_list = ["월", "화", "수", "목", "금", "토", "일"]
 default now_day = 5

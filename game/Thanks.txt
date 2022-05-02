@@ -102,6 +102,8 @@ gate https://freesound.org/people/nataliabm09/sounds/531478/
 
 plugin https://freesound.org/people/chestnutjam/sounds/428317/
 
+drawer_open/drawer_close https://freesound.org/people/ScaniX/sounds/276440/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 

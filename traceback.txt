@@ -1,69 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1785, in script call
-    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 11, in execute
-    screen cctv_board:
-  File "game/screens.rpy", line 11, in execute
-    screen cctv_board:
-  File "game/screens.rpy", line 15, in execute
-    text remain_time
-Exception: Cannot display 0 as text.
+  File "game/script.rpy", line 1774, in script call
+    call saturday1_af_branch
+  File "game/branc.rpy", line 460, in script call
+    call saturday1_af_study
+  File "game/branc.rpy", line 511, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+IndentationError: unexpected indent (<none>, line 1)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1785, in script call
-    "굳이 탄약고라고 꼬집어서 말했다는 건 CCTV나 전화기 같은 게 망가졌다는 뜻이다.{w} 굳이 내게 전우조가 되어달라 부탁한 건 이 기회에 내 과업 수행 능력을 확인해보고 모르는 부분을 알려주기 위해서겠지."
-  File "renpy/common/00console.rpy", line 1054, in script call
-    python in _console:
-  File "<string>", line 1, in script
-  File "renpy/ast.py", line 2015, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 2003, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3136, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 11, in execute
-    screen cctv_board:
-  File "game/screens.rpy", line 11, in execute
-    screen cctv_board:
-  File "game/screens.rpy", line 15, in execute
-    text remain_time
-  File "renpy/text/text.py", line 1556, in __init__
-    raise Exception("Cannot display {0!r} as text.".format(i))
-Exception: Cannot display 0 as text.
+  File "game/script.rpy", line 1774, in script call
+    call saturday1_af_branch
+  File "game/branc.rpy", line 460, in script call
+    call saturday1_af_study
+  File "game/branc.rpy", line 511, in script call
+    call events_run_period
+  File "game/dse-event_dispatcher.rpy", line 255, in script
+    python hide:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/dse-event_dispatcher.rpy", line 255, in <module>
+    python hide:
+  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
+    if not i.check(eobjs):
+  File "game/dse-event_dispatcher.rpy", line 60, in check
+    if not i.eval(self.name, valid):
+  File "game/dse-event_dispatcher.rpy", line 99, in eval
+    return eval(self.expr)
+  File "renpy/python.py", line 2274, in py_eval
+    code = py_compile(code, 'eval')
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+IndentationError: unexpected indent (<none>, line 1)
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Wed Apr 27 16:21:00 2022
+Mon May  2 16:41:33 2022

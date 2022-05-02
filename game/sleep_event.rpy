@@ -1,7 +1,7 @@
 init python:
-    event('sleep_event1', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
-    event('sleep_event2', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
-    event('sleep_event3', ' now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=100)
+    event('sleep_event1', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event2', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event3', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=100)
 
 label sleep_event1:
     centered "그것은 아마, 옛 꿈."

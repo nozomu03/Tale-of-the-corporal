@@ -72,7 +72,7 @@ screen schedule:
         frame:
             grid 3 2:
                 text "07:00 ~ 10:10   "
-                text "11:00 ~ 17:10   "
+                text "11:00 ~ 17:20   "
                 text "18:00 ~ 20:30"
                 textbutton "[morn_do]" action[Show("schedule_inner"), SetVariable("schedule_time", 1)]
                 textbutton "[af_do]" action[Show("schedule_inner"), SetVariable("schedule_time", 2)]
@@ -399,9 +399,9 @@ screen test_screen:
             else:
                 $x=790
                 $x-=int(temp_text.size()[0])
-                text "{color=#FF0000}"+str(int(x)):
-                    xalign .8
-                    ypos y
+                #text "{color=#FF0000}"+str(int(x)):
+                #    xalign .8
+                #    ypos y
                 $y -= 5
                 #790
                 fixed:                      
