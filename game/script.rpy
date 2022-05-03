@@ -1755,7 +1755,7 @@ label start:
     "지난 1년 3개월. {w}수 차례 그래왔듯, 눈을 감고, 호흡을 정돈하며. {w}코 앞에 들이닥친 것부터 차례대로 하나씩 처리해 나간다면.{p}이 고난 역시 돌파할 수 있을 것이다. {w}헤쳐 나갈 수 있을 것이다. {w}적어도 내 한 사람에게서는 경험으로서 증명되는 진실이었다."
     $Smoking("main_cloth", 1.0, 1)
     "그 일련의 공식을 마음 속으로부터 부정하게 된 건, 언제부터인가 자리잡은 내면의 언짢음.{p}출처도, 이유도, 그 의의도 모른 채 그저 끌어안고 있었던 어느 한 감정이 그림자의 형상으로 변하였을 때."
-    "섞여들어 온 부산물은 \'걱정을 끼치지 않기 위해\'라는 제멋대로인 딱지가 붙은 채 함구 되어 비밀이 되었고.{p}이내 실금투성이 유리 위로 내쳐진 망치가 되었다."
+    "섞여들어 온 부산물은 \'걱정을 끼s치지 않기 위해\'라는 제멋대로인 딱지가 붙은 채 함구 되어 비밀이 되었고.{p}이내 실금투성이 유리 위로 내쳐진 망치가 되었다."
     $Smoking("main_cloth", 1.0, 1)
     "어쩌면 그때, 홀로 온전히 품는 것을 포기한 채. {w}이미 끼쳤던 부담에, 폐에 편승하여. {w}한 번 더 내밀어진 손을 붙잡고서 내게 드리운 그늘의 일부를 넘겼더라면."
     $Smoking("main_cloth", 1.0, 1)
@@ -1783,7 +1783,74 @@ label start:
     fcaptain "\[지휘통제실에서 당직사령이 전파합니다. {w}ㅇㅇ대대 전 인원은 식사 순번에 맞추어 식사 출발 해 주시길 바랍니다.\]"
     $SoundPlayer("broadcast.wav", 2.0)
     "당직부사관" "\[통합중대. {w}식사, 식사 출발해 주시길 바랍니다.\]"
-
+    main "진욱아."
+    zeen "......."
+    main "진욱아, 일어나."
+    zeen "...예..."
+    $SoundPlayer("blanket.wav", 2.0)
+    show zeen_cloth at left with wipeup
+    main "밥 먹으러 가자."
+    zeen "예..."
+    $SoundPlayer("door.ogg", 2.0)
+    hide main_cloth
+    hide zeen_cloth
+    scene bg_hallway
+    show jeong_cloth at left
+    with dissolve
+    show main_cloth at right
+    show zeen_cloth at center
+    with dissolve
+    $SoundPlayer("door.ogg", 2.0)
+    if af_do != "사이버지식정보방":
+        jeong "먼저 와 있었네."
+        main "왜?"
+        jeong "방금 잠깐 일이 있어서 사지방 들렀는데 없길래. {p}가자, 밥 먹으러."
+    scene bg_hallway
+    play looping walk_slow
+    scene bg_black with wipeleft
+    $renpy.pause(2.0)
+    stop looping
+    play looping dish_wash
+    $renpy.pause(2.0)
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
+        play looping dish_wash
+        scene bg_resta_in
+        show main_cloth at center
+        with wiperight
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        show go_cloth_cross at right with dissolve
+        go "ㅇㅇㅇ 상병님."
+        main "응?"
+        go "식사 마치시고 제 생활관으로 한 번 와주십시오. {w}이유는 아실 거라 생각합니다."
+        main "...그래."
+        go "있다 뵙겠습니다."
+        hide go_cloth_cross
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        show jeong_cloth at left with dissolve
+        jeong "뭐야, 무슨 일이야?"
+        main "글쎄... {w}가 봐야 알 것 같은데..."
+        "거짓말. {w}이유는 뻔했다. {w}아침에 사지방에서 있었던 일 때문이겠지."
+        "다른 사름들이 보고 있는 식당에서 그 이야기를 꺼내지 않은 것에 감사하며 꾸역꾸역 남은 음식을 입 안에 밀어넣었다."
+        scene bg_black with wipeleft
+        $renpy.pause(2.0)
+    $timeCheck(0, 20)
+    stop looping
+    scene bg_resta_front
+    show zeen_cloth at left
+    show jeong_cloth at center
+    show main_cloth at right
+    with wiperight
+    jeong "햐... {w}배부르다. {w}브런치 데이는 저녁이 맛있게 나와서 좋다니까."
+    zeen "맞습니다. {w}오늘 고기볶음 끝내줬습니다."
+    jeong "ㅇㅇ."
+    main "어."
+    jeong "담배 피러 갈 거지?"
+    main "응."
+    jeong "그래, 있다 보자."
+    zeen "생활관에서 뵙겠습니다. {w}고생하십시오."
+    hide zeen_cloth
+    hide jeong_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
     "."
     return
 
