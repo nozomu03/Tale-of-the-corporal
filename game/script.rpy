@@ -1851,6 +1851,27 @@ label start:
     hide zeen_cloth
     hide jeong_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
+    hide main_cloth
+    play loop walk_slow
+    scene bg_black with fade
+    $renpy.pause(1.0)
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
+        stop walk_slow
+        scene bg_room 
+        show go_cloth_cross at right
+        $SoundPlayer("knock.ogg", 2.0)
+        go "들어오십시오."
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth_ang at center with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        main "......."
+        go "......."
+        main "......."
+        play sound sigh
+        go "하아... {w}뭐 하실 말씀 없으십니까?"
+        "예상했던 그대로였다. {w}김승준 하사님은 당장 자리에 계시지 않는 소대장님을 대신해 균영이에게 아침에 있었던 일을 통보했다."
+        "아니. {w}어쩌면 소대장님께 보고를 드리고, 소대장님이 다시 균영이에게 이야기했을 수도 있겠지.{p}과정은 중요하지 않았다. {w}중요한 것은 지금 이 순간 내가 불려왔다는 것."
+        
     "."
     return
 
