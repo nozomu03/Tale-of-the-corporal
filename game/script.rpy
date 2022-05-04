@@ -39,19 +39,6 @@ label start:
     centered "내가 원하는 건. {w}무엇이었을까."
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
     extend "그 얼굴에 떠오른 미소를 보기 위해 제 몸을 채찍질하던 날들, 은. {w}과연 의미가 있었을까?"
-    scene chap_back1 with fade
-    play sound "<from 0.0 to 2.0>audio/pen2.ogg"
-    show para_text_1("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=84}The Vestige Of Past{/size}{/font}"):
-        alpha 0
-        linear 8.0 alpha 1
-    with wiperight2
-    play sound "<from 1.0 to 2.9>audio/pen2.ogg"
-    show para_text_2("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=60}-Wondering storm | Drifting Shadow-{/size}{/font}"):
-        alpha 0
-        linear 8.0 alpha 1
-    with wiperight2
-    stop sound
-    $renpy.pause()
     scene bg_room 
     show main_ord 
     with blur_transition
@@ -785,7 +772,21 @@ label start:
     call screen continued with Dissolve(1.0)
     "......."
     hide screen time
+    scene chap_back1 with fade
+    play sound "<from 0.2 to 2.8>audio/pen2.ogg"
+    show para_text_1("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=84}The Vestige Of Past{/size}{/font}"):
+        alpha 0
+        linear 8.0 alpha 1
+    with wiperight2
+    play sound "<from .8 to 4.0>audio/pen2.ogg"
+    show para_text_2("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=60}-Wondering storm & Drifting Shadow-{/size}{/font}"):
+        alpha 0
+        linear 8.0 alpha 1
+    with wiperight2
+    stop sound
+    $renpy.pause()
     $stressAndSat()
+    scene bg_black with fade
     centered "반복. {w}어제는 오늘과. {w}오늘은 내일과."
     extend "\n매일매일이 같은. {w}모든 것이 뻔히 예상되는. {w}그렇기에 조그마한 실금이라도 난다면. {w}반드시 파절로 이어지는."
     extend "\n그 속에서 상처 입고, 상처 주며 2년이라는 시간을 살아왔다. {w}몇 번이고 깨어질 위기를 넘어서며 악착같이 헤엄쳐 졸업장을 받아냈다."
