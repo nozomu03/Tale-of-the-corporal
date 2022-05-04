@@ -39,6 +39,19 @@ label start:
     centered "내가 원하는 건. {w}무엇이었을까."
     extend "\n어떤 것을 이루고자 그리도 노력했을까. {w}멈추는 일도, 흔들리는 일도 없이. {w}오로지 하나."
     extend "그 얼굴에 떠오른 미소를 보기 위해 제 몸을 채찍질하던 날들, 은. {w}과연 의미가 있었을까?"
+    scene chap_back1 with fade
+    play sound "<from 0.0 to 2.0>audio/pen2.ogg"
+    show para_text_1("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=84}The Vestige Of Past{/size}{/font}"):
+        alpha 0
+        linear 8.0 alpha 1
+    with wiperight2
+    play sound "<from 1.0 to 2.9>audio/pen2.ogg"
+    show para_text_2("{color=#FFFFFF}{font=IndieFlower-Regular.ttf}{size=60}-Wondering storm | Drifting Shadow-{/size}{/font}"):
+        alpha 0
+        linear 8.0 alpha 1
+    with wiperight2
+    stop sound
+    $renpy.pause()
     scene bg_room 
     show main_ord 
     with blur_transition
@@ -1812,7 +1825,7 @@ label start:
     stop looping
     play looping dish_wash
     $renpy.pause(2.0)
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
+    if saturday1_list[0] == 5:
         play looping dish_wash
         scene bg_resta_in
         show main_cloth at center
@@ -1851,12 +1864,13 @@ label start:
     hide zeen_cloth
     hide jeong_cloth
     $SoundPlayer("walk_slow.ogg", 2.0)
+    play looping walk_slow
     hide main_cloth
-    play loop walk_slow
-    scene bg_black with fade
+    scene bg_black 
+    with fade
     $renpy.pause(1.0)
-    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
-        stop walk_slow
+    if saturday1_list[0] == 5:
+        stop looping
         scene bg_room 
         show go_cloth_cross at right
         $SoundPlayer("knock.ogg", 2.0)
@@ -1871,7 +1885,8 @@ label start:
         go "하아... {w}뭐 하실 말씀 없으십니까?"
         "예상했던 그대로였다. {w}김승준 하사님은 당장 자리에 계시지 않는 소대장님을 대신해 균영이에게 아침에 있었던 일을 통보했다."
         "아니. {w}어쩌면 소대장님께 보고를 드리고, 소대장님이 다시 균영이에게 이야기했을 수도 있겠지.{p}과정은 중요하지 않았다. {w}중요한 것은 지금 이 순간 내가 불려왔다는 것."
-        
+        call go_pc_branch        
+    stop looping
     "."
     return
 

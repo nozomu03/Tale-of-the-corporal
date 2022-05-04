@@ -922,7 +922,7 @@ label day2_study_specialty3:
     gang "잘... 모르겠습니다. {w}소대장님도 그냥 \'가서 ㅇㅇㅇ 데려와\' 라고 밖에 말씀 안하셨습니다."
     main "어디 계신데, 지금?"
     $event_result_val = renpy.random.randint(1, 100)
-    "[event_result_val]"
+    #"[event_result_val]"
     if event_result_val <= 60:
         gang "사이버지식정보방입니다."
         $FaceChange("main_ang", 2.0, 1.0, "main_unhat")

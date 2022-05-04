@@ -1,54 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1774, in script call
-    call saturday1_af_branch
-  File "game/branc.rpy", line 460, in script call
-    call saturday1_af_study
-  File "game/branc.rpy", line 511, in script call
-    call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 255, in script
-    python hide:
-  File "game/dse-event_dispatcher.rpy", line 255, in <module>
-    python hide:
-  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
-    if not i.check(eobjs):
-  File "game/dse-event_dispatcher.rpy", line 60, in check
-    if not i.eval(self.name, valid):
-  File "game/dse-event_dispatcher.rpy", line 99, in eval
-    return eval(self.expr)
-IndentationError: unexpected indent (<none>, line 1)
+  File "game/script.rpy", line 52, in script
+    with wiperight2
+IOError: Couldn't find file 'pen2.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1774, in script call
-    call saturday1_af_branch
-  File "game/branc.rpy", line 460, in script call
-    call saturday1_af_study
-  File "game/branc.rpy", line 511, in script call
-    call events_run_period
-  File "game/dse-event_dispatcher.rpy", line 255, in script
-    python hide:
-  File "renpy/ast.py", line 928, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/dse-event_dispatcher.rpy", line 255, in <module>
-    python hide:
-  File "game/dse-event_dispatcher.rpy", line 262, in _execute_python_hide
-    if not i.check(eobjs):
-  File "game/dse-event_dispatcher.rpy", line 60, in check
-    if not i.eval(self.name, valid):
-  File "game/dse-event_dispatcher.rpy", line 99, in eval
-    return eval(self.expr)
-  File "renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "renpy/python.py", line 835, in py_compile
-    raise e
-IndentationError: unexpected indent (<none>, line 1)
+  File "game/script.rpy", line 52, in script
+    with wiperight2
+  File "renpy/ast.py", line 1443, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "renpy/exports.py", line 1684, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2762, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 4025, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 518, in periodic
+    topf = load(filename)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'pen2.ogg'.
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
  
-Mon May  2 16:41:33 2022
+Wed May  4 17:24:56 2022

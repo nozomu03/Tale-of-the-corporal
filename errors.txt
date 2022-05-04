@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 403: Line is indented, but the preceding one-line python statement does not expect a block. Please check this line's indentation.
-    xalign .8
-    ^
+File "game/script.rpy", line 51: is not terminated with a newline. (Check strings and parenthesis.)
+        $renpy.pause(5.0
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon May  2 17:38:01 2022
+Wed May  4 16:39:49 2022

@@ -22,8 +22,11 @@ image blood8 = "blood.png"
 image blood9 = "blood.png"
 image blood10 = "blood.png"
 
-image para_text = ParameterizedText(xalign=.5, yalign=.5)
+define wiperight2 = CropMove(4.0, "wiperight")
 
+image para_text = ParameterizedText(xalign=.5, yalign=.5)
+image para_text_1 = ParameterizedText(xalign=.5, yalign=.4)
+image para_text_2 = ParameterizedText(xalign=.5, yalign=.6)
 transform bluring:
     blur 34.0
     linear 2.0 blur 10.0
