@@ -1892,7 +1892,7 @@ label start:
     return
 
 
-
+#This Is Test Message For New Computer
 ###########Card?####
 #call events_run_period
 #call set_allcard
