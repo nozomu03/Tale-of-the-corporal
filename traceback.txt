@@ -1,40 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 52, in script
-    with wiperight2
-IOError: Couldn't find file 'pen2.ogg'.
+After initialization, but before game start.
+SyntaxError: invalid syntax (script.rpy, line 2034)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 52, in script
-    with wiperight2
-  File "renpy/ast.py", line 1443, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "renpy/exports.py", line 1684, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "renpy/display/core.py", line 2762, in do_with
-    clear=clear)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 4025, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1162, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1082, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 518, in periodic
-    topf = load(filename)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'pen2.ogg'.
+  File "renpy/bootstrap.py", line 331, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 596, in main
+    renpy.game.script.analyze()
+  File "renpy/script.py", line 957, in analyze
+    i.analyze()
+  File "renpy/ast.py", line 1205, in analyze
+    self.atl.mark_constant()
+  File "renpy/atl.py", line 718, in mark_constant
+    i.mark_constant()
+  File "renpy/atl.py", line 999, in mark_constant
+    constant = min(constant, is_constant_expr(expr))
+  File "renpy/pyanalysis.py", line 542, in is_constant_expr
+    node, literal = ccache.ast_eval_literal(expr)
+  File "renpy/pyanalysis.py", line 696, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: invalid syntax (script.rpy, line 2034)
 
-Windows-10-10.0.22000
+Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
  
-Wed May  4 17:24:56 2022
+Tue May 24 06:11:09 2022

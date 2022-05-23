@@ -1888,9 +1888,175 @@ label start:
         "아니. {w}어쩌면 소대장님께 보고를 드리고, 소대장님이 다시 균영이에게 이야기했을 수도 있겠지.{p}과정은 중요하지 않았다. {w}중요한 것은 지금 이 순간 내가 불려왔다는 것."
         call go_pc_branch        
     stop looping
+    play sound walk_slow
+    scene bg_black with fade
+    $renpy.pause(1.0)
+    centered "{font=SDMiSaeng.ttf}{size=30}간혹 꿈을 꿀 때가 있었다."
+    extend "\n길어봐야 몇 시간. {w}채 하루를 넘기지 못하는 짤막한 여흥."
+    extend "\n적어도 그 순간만큼은 무엇으로도 더럽혀지지 않은 채 온전히 나만을 위한 장소가 만들어졌다."
+    extend "\n때로는 한 때 스쳐지나갔던 추억이. {w}때로는 언제 다가올지 모르는 불안이. {w}또, 때로는. {w}지금을 한 없이 닮게 비추어 내보이는 거울이 되어주었다."
+    extend "\n그 안에서 만큼은. {w}\'다른 것\'은 배제되었다. {w}독립되게 존재하는 것은 오로지 나 하나.{p}인물도, 풍경도, 사물도. {w}만상은 내 필요에 따라 만들어지고. {w}내 이상에 따라 형상된다."
+    extend "\n...그랬을 터였다."
+    scene bg_taba
+    show main_cloth_taba
+    with fade
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "주변을 둘러보았다."
+    "제 푸르름을 뽐내며 웃자란 이름 모를 길풀들이 잘려나가며 온 막사에 낡은 모터 소리와 함께 흐드러지게 퍼져나가던. {w}호흡에 방해될 정도로 농후하고 콧속을 간지럽히며 쉬이 사라지지 않으나 결코 불쾌하지는 않았던."
+    "태양빛으로 달궈진 아스팔트의 아지랑이와 푸른 빛으로 물든 세상."
+    "내가 발을 딛고 선 이곳은 멈춤없이 변화를 맞이하고 있었으나. {w}물살에 깎이는 바위처럼 더디었기에. {w}아직 \'바뀜\'이라는 것을 겪지 않은 듯 보였다."
+    "뇌리에 각인될 정도로 유난히 짙었던 풀냄새와 함께 시작한 어느 여름날로부터의 여정은 어느덧. {w}종국에 접어들기 시작했다."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "닳아빠진 기억 조각과. {w}무력과. {w}자괴.{p}사고도, 행동도. {w}말 한 마디 하는 것조차도 서툴러 인정과 도주 사이의 간극도 알아차리지 못한 채 뱉어내어 상처입고, 상처입힌 내게는. {w}더 이상 무엇도 남지 않았고. {w}무엇도 필요 없으리라고 생각했었다."
+    "그저, 생각했을 뿐이었다."
+
+    hide screen status
+    hide screen inventory_button
+    hide screen time 
+    hide screen buff_screen
+
+    #show explain_scene with dissolve
+    #centered "{font=SDMiSaeng.ttf}{size=30}그렇게, 나는. {w}꿈에게서도 버림받고 말았다."
+    #play sound clock fadein .5
+    #show bg_white:
+    #    At("bg_white", glitching)
+    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}消失") at glitching:
+    #    xalign .5 yalign .5#:
+    #$renpy.pause(1.5, hard=True)
+    #show bg_black
+    #hide para_text
+    #$renpy.pause(1.3, hard=True)
+    #hide bg_black
+    #show bg_white:
+    #    At("bg_white", glitching)
+    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}破折") at glitching:
+    #    xalign .5 yalign .5#:
+    #$renpy.pause(1.5, hard=True)
+    #show bg_black
+    #hide para_text
+    #$renpy.pause(1.3, hard=True)
+    #hide bg_black
+    #show bg_white:
+    #    At("bg_white", glitching)
+    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}幻影?") at glitching:
+    #    xalign .5 yalign .5#:
+    #$renpy.pause(1.5, hard=True)
+    #hide para_text
+    #show bg_black
+    #$renpy.pause(1.3, hard=True)
+    #hide bg_black
+    #show bg_white:
+    #    At("bg_white", glitching)
+    #$renpy.pause(1.5, hard=True)
+    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}Alraune") at glitching:
+    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+    #    rotate renpy.random.randint(20, 340)
+    #$renpy.pause(1.4)
+    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}병신") as para_text2 at glitching:
+    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+    #    rotate renpy.random.randint(20, 340)
+    #$renpy.pause(1.4)
+    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}기억") as para_text3 at glitching:
+    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+    #    rotate renpy.random.randint(20, 340)
+    #$renpy.pause(1.4)
+    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}환호") as para_text4 at glitching:
+    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+    #    rotate renpy.random.randint(20, 340)
+    #$renpy.pause(1.4)
+    #hide para_text 
+    #hide para_text2   
+    #hide para_text3
+    #hide para_text4
+    #show bg_white:
+    #    At("bg_white", glitching)
+    #    pause .2
+    #    At("bg_white", chromatic_offset)
+    #    pause .2
+    #    At("bg_white", glitching)
+    #    pause 1.0
+    #    At("bg_white", chromatic_offset)
+    #    At("bg_white", glitching)
+    #    pause .2
+    #    At("bg_white", chromatic_offset)
+    #    pause .2
+    #    At("bg_white", glitching)
+    #    pause .2
+    #    At("bg_taba", chromatic_offset)
+    #    pause .2
+    #    At("bg_taba", glitching)
+    #$renpy.pause(.5)
+    #play second noise fadein 1.0
+    #$renpy.pause(2.0)#cg_eye as cg_eye2     
+    #hide bg_white
+    scene bg_taba:
+        At("bg_taba", chromatic_offset)
+        pause 1.0
+        At("bg_taba", glitching)
+        pause .2
+        At("bg_taba", chromatic_offset)
+        pause .2
+        At("bg_taba", glitching)
+        pause .1
+        At("bg_taba", chromatic_offset)
+        pause .1
+        At("bg_taba", glitching)
+        pause 2.0
+        At("bg_taba", glitching)
+        pause .2
+        At("bg_taba", chromatic_offset)
+        pause .2
+        At("bg_taba", glitching)
+        pause .1
+        At("bg_taba", chromatic_offset)
+        pause .1
+        At("bg_taba", glitching)
+        pause 2.0
+    show main_cloth_tabahand
+    $renpy.pause(1.0)
+    hide main_cloth_tabahand
+    $renpy.pause(.2)
+    show main_cloth_tabahand at chromatic_offset:
+        align(.5, 1.0)
+        At("main_cloth_tabahand", chromatic_offset)
+        pause .2
+        align(.498, .498)
+        At("main_cloth_tabahand", glitching)
+        pause .2
+        At("main_cloth_tabahand", chromatic_offset)
+        pause .2
+        align(.4, .6)
+        At("main_cloth_tabahand", glitching)
+        pause .1
+        align(.78, .4)
+        At("main_cloth_tabahand", chromatic_offset)
+        pause .1
+        align(.45, .465)
+        At("main_cloth_tabahand", glitching)
+        pause 1.0
+        align(.15, .2)
+        At("main_cloth_tabahand", glitching)
+        align(.6, .7)
+        pause .2
+        At("main_cloth_tabahand", chromatic_offset)
+        pause .2
+        At("main_cloth_tabahand", glitching)
+        pause .1
+        At("main_cloth_tabahand", chromatic_offset)
+        pause .1
+        At("main_cloth_tabahand", glitching)
+    $renpy.pause(3.0)
+    hide main_cloth_tabahand
+    $renpy.pause(.1)
+    show main_cloth_tabahand
+    stop second fadeout 2.0
+    "처음부터 답은 정해져 있었다."
+    #centered "{size=90}{font=SDMiSaeng.ttf}{color=#000000}무엇인지 모를."
+    #show para_text("{font=Togalite-Black.otf}{size=200}破折")
+    #centered "마치 자의를 가진 듯 홀로 존재하고 있었다."
+    #show para_text("{font=Togalite-Black.otf}{size=200}幻影?")
     "."
     return
-
 
 #This Is Test Message For New Computer
 ###########Card?####

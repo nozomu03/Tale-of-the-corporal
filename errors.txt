@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 51: is not terminated with a newline. (Check strings and parenthesis.)
-        $renpy.pause(5.0
+File "game/script.rpy", line 1990: expected end of line
+    stop sound noise fadeout 1.0
+               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed May  4 16:39:49 2022
+Tue May 24 04:41:33 2022

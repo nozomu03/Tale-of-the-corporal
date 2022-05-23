@@ -311,6 +311,7 @@ init python:
     blur_val = False
     renpy.music.register_channel(name = "looping", mixer = None, loop = True)
     renpy.music.register_channel(name = "looping2", mixer = None, loop = True)
+    renpy.music.register_channel(name = "second", mixer = None, loop = False)
 
 
     def timeCheck(add_h=0, add_m=0):

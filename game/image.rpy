@@ -70,11 +70,12 @@ init python:
         child = renpy.displayable(child)#이미지 생성
         dis_width, dis_height = renpy.render(child, 0, 0, 0, 0).get_size()#이미지 x y
         part_list = []#조각 리스트
-        push_val = 0#조각을 좌우로 미는 정도
+        push_val = 2#조각을 좌우로 미는 정도
         all_part = [renpy.random.randint(0, dis_height) for i in range(30)]
         all_part.sort()#랜덤한 높이로 이미지 range 조각 내기        
         now_height = 0 #현재 
         part_sum_h = 0 #지금까지 조각낸 부분의 높이
+        #print("All Part: " + str(all_part))
         while part_sum_h < dis_height: #전부 다 조각내지 않는 한
             if all_part: #all_part이 비지 않았다면
                 now_height = all_part.pop(0) - part_sum_h #all_part[0]
