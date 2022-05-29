@@ -385,6 +385,82 @@ label saturday1_af_phone:
     $sat_val += 3
     return
 
+label saturday1_night:
+    if night_do != "사이버지식정보방":
+        scene bg_hallway with dissolve
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        show main_cloth with dissolve
+        $renpy.pause(.2)
+        $SoundPlayer("door.ogg", 2.0)
+        scene bg_room2 with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth at right with dissolve
+        "생활관 안에는 아무도 없었다."
+        $renpy.pause(.2)
+        hide main_cloth with wipedown
+        $SoundPlayer("sheet.ogg", 1.0)
+        if night_do == "휴대폰":
+            call saturday1_night_phone
+        elif night_do == "잠자기":
+            scene bg_black with eye_close
+            call events_run_period
+        else:
+            "공부할 것들을 챙겼다."
+            hide main_cloth
+            $SoundPlayer("door.ogg", 2.0)
+            scene bg_hallway with dissolve
+            $SoundPlayer("door.ogg", 2.0)
+            show main_cloth with dissolve
+            $SoundPlayer("walk_slow.ogg", 2.0)
+            if saturday1_list[0] == 4 or saturday1_list[0] == 5:
+                scene bg_hallway_mid
+                show main_cloth 
+                with dissolve
+                $renpy.pause(.2)
+                hide main_cloth
+                $SoundPlayer("door.ogg", 2.0)
+                scene bg_office2 with dissolve
+                $SoundPlayer("door.ogg", 2.0)
+                show main_cloth with dissolve
+                call events_run_period
+            else:
+                scene bg_hallway_end
+                show main_cloth 
+                with dissolve
+                $renpy.pause(.2)
+                hide main_cloth
+                $SoundPlayer("door.ogg", 2.0)
+                scene bg_library with dissolve
+                $SoundPlayer("door.ogg", 2.0)
+                show main_cloth with dissolve
+                call events_run_period
+
+    else:
+        scene bg_hallway_end with dissolve
+        $SoundPlayer("walk_slow.ogg", 2.0)
+        show main_cloth with dissolve
+        $renpy.pause(.2)
+        $SoundPlayer("door.ogg", 2.0)
+        hide main_cloth
+        scene bg_pcroom with dissolve
+        $SoundPlayer("door.ogg", 2.0)
+        show main_cloth with dissolve
+        call events_run_period
+    $now_h = 20
+    $now_m = 30
+
+    return
+
+label saturday1_night_phone:
+    "이어폰을 꼈다. {w}자그마한 휴대폰 액정에 시선을 집중했다.{p}빛나는 물체라고는 내 손의 스마트폰 하나. {w}숨 쉬는 것이라곤 자리에 누운 나 하나."
+    "주변은 점차 잊혀지며 생각이 서서히 사라지기 시작했다."
+    $renpy.pause(2.0)
+    $sat_val+=2
+    $stress_val -= 2
+    $evented=True
+    return
+
+
 label saturday1_morn_pc:
     $SoundPlayer("walk_slow.ogg", 2.0)
     scene bg_hallway_end2

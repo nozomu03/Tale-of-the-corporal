@@ -1915,80 +1915,80 @@ label start:
     hide screen time 
     hide screen buff_screen
 
-    #show explain_scene with dissolve
-    #centered "{font=SDMiSaeng.ttf}{size=30}그렇게, 나는. {w}꿈에게서도 버림받고 말았다."
-    #play sound clock fadein .5
-    #show bg_white:
-    #    At("bg_white", glitching)
-    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}消失") at glitching:
-    #    xalign .5 yalign .5#:
-    #$renpy.pause(1.5, hard=True)
-    #show bg_black
-    #hide para_text
-    #$renpy.pause(1.3, hard=True)
-    #hide bg_black
-    #show bg_white:
-    #    At("bg_white", glitching)
-    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}破折") at glitching:
-    #    xalign .5 yalign .5#:
-    #$renpy.pause(1.5, hard=True)
-    #show bg_black
-    #hide para_text
-    #$renpy.pause(1.3, hard=True)
-    #hide bg_black
-    #show bg_white:
-    #    At("bg_white", glitching)
-    #show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}幻影?") at glitching:
-    #    xalign .5 yalign .5#:
-    #$renpy.pause(1.5, hard=True)
-    #hide para_text
-    #show bg_black
-    #$renpy.pause(1.3, hard=True)
-    #hide bg_black
-    #show bg_white:
-    #    At("bg_white", glitching)
-    #$renpy.pause(1.5, hard=True)
-    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}Alraune") at glitching:
-    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
-    #    rotate renpy.random.randint(20, 340)
-    #$renpy.pause(1.4)
-    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}병신") as para_text2 at glitching:
-    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
-    #    rotate renpy.random.randint(20, 340)
-    #$renpy.pause(1.4)
-    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}기억") as para_text3 at glitching:
-    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
-    #    rotate renpy.random.randint(20, 340)
-    #$renpy.pause(1.4)
-    #show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}환호") as para_text4 at glitching:
-    #    xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
-    #    rotate renpy.random.randint(20, 340)
-    #$renpy.pause(1.4)
-    #hide para_text 
-    #hide para_text2   
-    #hide para_text3
-    #hide para_text4
-    #show bg_white:
-    #    At("bg_white", glitching)
-    #    pause .2
-    #    At("bg_white", chromatic_offset)
-    #    pause .2
-    #    At("bg_white", glitching)
-    #    pause 1.0
-    #    At("bg_white", chromatic_offset)
-    #    At("bg_white", glitching)
-    #    pause .2
-    #    At("bg_white", chromatic_offset)
-    #    pause .2
-    #    At("bg_white", glitching)
-    #    pause .2
-    #    At("bg_taba", chromatic_offset)
-    #    pause .2
-    #    At("bg_taba", glitching)
-    #$renpy.pause(.5)
-    #play second noise fadein 1.0
-    #$renpy.pause(2.0)#cg_eye as cg_eye2     
-    #hide bg_white
+    show explain_scene with dissolve
+    centered "{font=SDMiSaeng.ttf}{size=30}그렇게, 나는. {w}꿈에게서도 버림받고 말았다."
+    play sound clock fadein .5
+    show bg_white:
+        At("bg_white", glitching)
+    show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}消失") at glitching:
+        xalign .5 yalign .5#:
+    $renpy.pause(1.5, hard=True)
+    show bg_black
+    hide para_text
+    $renpy.pause(1.3, hard=True)
+    hide bg_black
+    show bg_white:
+        At("bg_white", glitching)
+    show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}破折") at glitching:
+        xalign .5 yalign .5#:
+    $renpy.pause(1.5, hard=True)
+    show bg_black
+    hide para_text
+    $renpy.pause(1.3, hard=True)
+    hide bg_black
+    show bg_white:
+        At("bg_white", glitching)
+    show para_text("{font=Togalite-Black.otf}{size=200}{color=#890004}幻影?") at glitching:
+        xalign .5 yalign .5#:
+    $renpy.pause(1.5, hard=True)
+    hide para_text
+    show bg_black
+    $renpy.pause(1.3, hard=True)
+    hide bg_black
+    show bg_white:
+        At("bg_white", glitching)
+    $renpy.pause(1.5, hard=True)
+    show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}Alraune") at glitching:
+        xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+        rotate renpy.random.randint(20, 340)
+    $renpy.pause(1.4)
+    show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}병신") as para_text2 at glitching:
+        xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+        rotate renpy.random.randint(20, 340)
+    $renpy.pause(1.4)
+    show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}기억") as para_text3 at glitching:
+        xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+        rotate renpy.random.randint(20, 340)
+    $renpy.pause(1.4)
+    show para_text("{size=400}{font=SDMiSaeng.ttf}{color=#890004}환호") as para_text4 at glitching:
+        xpos renpy.random.randint(0, 800) ypos renpy.random.randint(100, 200)
+        rotate renpy.random.randint(20, 340)
+    $renpy.pause(1.4)
+    hide para_text 
+    hide para_text2   
+    hide para_text3
+    hide para_text4
+    show bg_white:
+        At("bg_white", glitching)
+        pause .2
+        At("bg_white", chromatic_offset)
+        pause .2
+        At("bg_white", glitching)
+        pause 1.0
+        At("bg_white", chromatic_offset)
+        At("bg_white", glitching)
+        pause .2
+        At("bg_white", chromatic_offset)
+        pause .2
+        At("bg_white", glitching)
+        pause .2
+        At("bg_taba", chromatic_offset)
+        pause .2
+        At("bg_taba", glitching)
+    $renpy.pause(.5)
+    play second noise fadein 1.0
+    $renpy.pause(2.0)#cg_eye as cg_eye2     
+    hide bg_white
     scene bg_taba:
         At("bg_taba", chromatic_offset)
         pause 1.0
@@ -2051,11 +2051,98 @@ label start:
     show main_cloth_tabahand
     stop second fadeout 2.0
     "처음부터 답은 정해져 있었다."
-    #centered "{size=90}{font=SDMiSaeng.ttf}{color=#000000}무엇인지 모를."
+    "그저, 못 본 채 하며 외면했을 뿐."
+    "목소리" "그걸 이제야 알았어? {w}너도 참 너구나?"
+    show main_cloth at right:
+        At("main_cloth", chromatic_offset)
+        align (.1, 1.0)
+    with dissolve
+    main "......."
+    "목소리" "그러게 내가 말했잖아. {w}처음부터 따랐으면... {w}너도, 다른 사람들도 좋았을 텐데."
+    main "그랬을지도 모르지."
+    "목소리" "인정하는 거야? {w}네 \'독선\'을."
+    main "하지만 나는... {w}최선을 다했다고...{w} 그 이상 내가 뭘 할 수 있었겠어?"
+    "목소리" "자기 변호하는 꼬라지 하고는. {w}그래. {w}평생 그렇게 자위나 하다 억울해하면서 뒈져버려."
+    main "입 다물어. {w}네가 뭘 안다고-{w=.3}{nw}"
+    "목소리" "모든 걸 알고 있지. {w}난 너인걸. {w}매일 같이 후회하고, 몸서리치며 살고 있는 걸 내가 모를까봐? {w}사실은... {w}원망스러운 거잖아. {w}그날의 네가."
+    main "......."
+    "목소리" "{b}넌 틀렸어. {w}아예 처음부터 글러먹었었다고.{/b}"
+    main "아니... {w}아니야... {w}나는..."
+    "목소리" "{b}맞아. {w}네 마음 속 목소리에 귀를 기울여 보라고. {w}낙오자 새끼 주제에 건방 떨지 말고.{/b}"
+    play sound crack
+    show glass_test with glass_crash
+    "목소리" "추하게 굴지 말고 현실을 직시해 병신아."
+    play sound glass
+    scene bg_taba
+    show main_cloth_tabahand
+    with vpunch
+    main "......."
+    $af_do = "_" + af_do
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "거짓은 없다. {w}지금껏 날 둘러싼 채 벌어졌던 수많은 일들은 내 잘못으로부터 말미암아 일어났다.{p}만약. {w}아직 시작되기 이전에. {w}조각된 행복에 취해 잊어버린 어떤 \'계획\'을 꿋꿋히 실행해 나갔더라면... {w}이라 수 차례 상상해 왔었다."
+    "만약 그랬더라면... {w}나 뿐만 아니라 나와 관계를 맺었던 모든 이들이 불행해지는 지금과 같은 일은 일어나지 않았겠지... {w}라며 상상하곤 했었다."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "그러나, 나는 잘못된 선택을 했고. {w}바로잡을 수 있는 수 차례의 기회를 손에 쥐지 못한 채 흘려보내고 말았다."
+    "이제 와서는 더 이상 진행되지 못한 채 고여 썩어가는 이야기와 감정의 부스러기.{p}내가 할 수 있는 것은 그저 언젠가 다가올 종극을 기다리며 껴안은 채 나아가는 것 뿐."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    main "(하아...)"
+    "용기를 냈다고. {w}지금껏 이어왔던 나약한 자신을 뛰어넘어 보겠다고. {w}나는 나의 틀린 선택을 숭고한 결의라도 되는 것 마냥 포장했었다."
+    "그러나 지금에 내게 남은 것은 무엇인가. {w}끝 모를 후회와, 회한. {w}혐오 밖에 없지 않은가."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "그때. {w}단 한 마디. {w}\'해 보겠습니다\'. {w}\'분발하겠습니다\'. {w}가 아닌. {w}\'좌송합니다\' 라는 말을 입에 담았어야 했다 자괴하며 그저 하루하루를 흘려보낼 뿐."
+    "할 수 있는 것도. {w}허락된 것도 몇 남지 않게 된 삶에서 나는 그저 곧 다가올 끝을 기다리며 질식할 것 같은 매일매일을 비루하게 살아가고 있었다."
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    "애써 사고를 정지시켰다. {w}애써 다른 주제를 떠올렸다. {w}이 이상 고뇌한다 하여도 바뀌는 것은 아무 것도 없기에."
+    if saturday1_list[0] == 4 or saturday1_list[0] == 5:
+        if night_do == "사이버지식정보방":
+            "[jun] 하사님께서 지시한 사이버지식정보방 출입 금지. {w}어길 수는 없었다. 씻고 휴대폰을 제출할 때까지 대신 무엇을 하면 좋을까."
+            menu:
+                "잠자기":
+                    main "(잠이나 한 숨 자고 일어날까...)"
+                    "잠에 빠져들 수만 있다면 머리 속을 가득 채우려 넘실대는 이 어찌 못할 상념에 제동을 걸 수 있을 듯 했다."
+                    $night_do = "잠자기"
+                "공부":
+                    main "(차라리 공부라도 하자.)"
+                    "하나에 집중해 몰입할 수만 있다면 이 바닥 없는 수렁으로부터 탈출할 수 있을지도 모른다."
+                    $night_do = "공부"
+                "휴대폰":
+                    main "(폰이나 쳐다봐야지... 뭐...)"
+                    "휴대폰 속 정보의 바다에 내던져진다면 금세 잊을 수 있을지도 모를 일이다."
+                    $night_do = "휴대폰"
+    $Smoking(img="main_cloth", loc=1.0, rep=1)
+    $SoundPlayer("putoff.wav", 2.0)
+    $FaceChange("main_cloth", 1.0, .5, "main_cloth_tabahand")
+    $renpy.pause(.2)
+    hide main_cloth
+    $SoundPlayer("walk_slow.ogg", 2.0)
+    $evented=False
+    show screen status
+    show screen inventory_button
+    show screen time 
+    show screen buff_screen    
+    call saturday1_night
+    $renpy.pause(2.0)
+    hide screen status
+    hide screen inventory_button
+    hide screen time 
+    hide screen buff_screen    
+    scene bg_black with fade
+    centered "오늘 하루 나는..."
+    extend "\n[stress_val]만큼의 스트레스를 받았다."
+    extend "\n[sat_val]만큼 만족했다."
+    if sat_val >= 40:        
+        $bufftory.delete(sat_debuff1)
+        #$bufftory.add(sat_debuff1)
+        centered "디버프 \'번뇌탁-수욕정이풍부지\'가 제거되었다."
+    if stress_val >= 72:
+        centered "이런 개같은 하루 하루를... {w}얼마나 더 보내야 끝이 날까."
+        $bad_incount += 1
+    call screen continued with Dissolve(1.0)
+        #centered "{size=90}{font=SDMiSaeng.ttf}{color=#000000}무엇인지 모를."
     #show para_text("{font=Togalite-Black.otf}{size=200}破折")
     #centered "마치 자의를 가진 듯 홀로 존재하고 있었다."
     #show para_text("{font=Togalite-Black.otf}{size=200}幻影?")
-    "."
+    "......."
     return
 
 #This Is Test Message For New Computer

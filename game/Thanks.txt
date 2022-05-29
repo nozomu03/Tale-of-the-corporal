@@ -104,6 +104,12 @@ plugin https://freesound.org/people/chestnutjam/sounds/428317/
 
 drawer_open/drawer_close https://freesound.org/people/ScaniX/sounds/276440/
 
+clock https://freesound.org/people/taquion/sounds/495481/
+
+crack https://freesound.org/people/deleted_user_3656686/sounds/418194/
+
+glass https://freesound.org/people/Darsycho/sounds/444448/
+
 Image
 wallpaper https://pixabay.com/photos/milky-way-stars-night-sky-night-2695569/
 
@@ -126,6 +132,9 @@ https://pixabay.com/illustrations/photo-manipulation-alien-foreign-1825450/
 https://pixabay.com/ko/illustrations/%ed%9a%8c%eb%a1%9c%eb%a7%9d-%ed%9a%8c%eb%a1%9c-%ea%b8%b0%ed%8c%90-%ed%9a%8c%eb%a1%9c-%ec%b6%94%ec%a0%81-5987786/
 
 https://pixabay.com/ko/vectors/%ed%9a%8c%eb%a1%9c-%eb%b3%b4%eb%93%9c-%eb%b0%b0%ea%b2%bd-%eb%b2%bd%ec%a7%80-%ec%a1%b0%ec%a7%81-6522546/
+
+https://pixabay.com/photos/glass-window-broken-cracked-89068/
+
 
 3D Model
 office_chair j.a.m https://sketchfab.com/3d-models/office-chair-41973aa1808d4a13b84c24497fc77c63

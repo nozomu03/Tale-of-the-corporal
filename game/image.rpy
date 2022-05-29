@@ -125,3 +125,5 @@ transform blur_transition(new_widget, old_widget):
         linear 2.0 alpha 0.0
 
         
+define glass_crash = ImageDissolve("gun_barrel.jpg", .3, 16)
+define eye_close = ImageDissolve("gun_barrel2.jpg", 2.0, 16)

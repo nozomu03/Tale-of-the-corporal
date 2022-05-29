@@ -35,6 +35,8 @@ init python:
     event("pcroom1_good_event2", 'evented == False and af_do==\"사이버지식정보방\"', event.random(.3), event.only(), priority = 10)
     event("pcroom1_none_event2", 'evented == False and af_do==\"사이버지식정보방\"', priority = 100)
 
+    event("pcroom1_good_event3", 'evented == False and night_do==\"사이버지식정보방\"', event.random(.3), event.only(), priority = 10)
+    event("pcroom1_none_event3", 'evented == False and night_do==\"사이버지식정보방\"', priority = 100)
 
 label pc_bad:
     $timeCheck(0, 20)
@@ -1594,5 +1596,30 @@ label pcroom1_none_event2:
     $stress_val -= 2
     $now_h = 17
     $now_m = 10
+    $evented = True
+    return
+
+label pcroom1_good_event3:
+    $SoundPlayer("typing.ogg", 2.0)
+    "꼬인 실타래처럼 쉬이 해결되지 않을 것 같던 버그들이 점차 고쳐져나가기 시작한다."
+    "그 어느 때보다 깔끔한 코드가 화면에 길게 이어지기 시작하고. {w}내가 의도했던 그대로 작동하는 완벽한 소스가 되었다."
+    play looping typing
+    $renpy.pause(2.0)
+    stop looping
+    $stress_val -= 10
+    $sat_val += 5
+    $evented= True
+    $now_h = 20
+    $now_m = 30
+    return
+
+label pcroom1_none_event3:
+    play sound typing
+    "찾는 이 하나 없는 조용한 사이버지식정보방에 타건음 한 줄기만이 고요하게 퍼져나간다."
+    $renpy.pause(3.0)
+    $sat_val += 2
+    $stress_val -= 2
+    $now_h = 20
+    $now_m = 30
     $evented = True
     return

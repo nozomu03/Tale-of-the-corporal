@@ -2,6 +2,9 @@ init python:
     event('sleep_event1', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
     event('sleep_event2', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
     event('sleep_event3', 'now_week==2 and now_day == 5 and af_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=100)
+    event('sleep_event1', 'now_week==2 and now_day == 5 and night_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event2', 'now_week==2 and now_day == 5 and night_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=0)
+    event('sleep_event3', 'now_week==2 and now_day == 5 and night_do==\"잠자기\" and evented == False', event.random(1.0), event.only(), priority=100)
 
 label sleep_event1:
     centered "그것은 아마, 옛 꿈."
@@ -17,7 +20,7 @@ label sleep_event1:
     "두 번 다시 돌아오고 싶지 않았던. {w}뇌리에서 지워지지 않는 쇠사슬의 땅."
     "목소리" "선배. {w}여기서 혼자 뭐 해요?"
     $SoundPlayer("walk_slow.ogg")
-    show extra_sil at right with dissolve
+    show extra_sil at left with dissolve
     main "......."
     "목소리" "선배?"
     main "어? {w}어. {w}불렀어?"
@@ -32,7 +35,6 @@ label sleep_event1:
     $stress_val += 10
     $sat_val -= 5
     $evented = True
-    $af_do = "_" + af_do
     return
   
 label sleep_event2:
@@ -77,7 +79,6 @@ label sleep_event2:
     "한 없이 닮게 베끼나, 결코 원품이 될 수 없는 거울 속의 상이라고 하여도. {w}찰나에 가까운 시간 속에서의 재회를 통해 직면한 문제들로부터 탈피하여 잠깐이나마 안락을 얻을 수 있었다."
     $stress_val -= 8
     $sat_val += 8
-    $af_do = "_" + af_do
     $evented = True
     return
 
@@ -88,7 +89,5 @@ label sleep_event3:
     "찰나. {w}어쩌면 수 시간.{w}그 이후에, 목소리가 들려왔다."
     $stress_val -= 3
     $sat_val += 3
-    $af_do = "_" + af_do
     $evented=True
     return
-

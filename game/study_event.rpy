@@ -1,6 +1,11 @@
 init python:
-    event('study_event1', 'af_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.random(.3), priority=40)
-    event('study_event2', 'af_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.random(.3), priority=20)
+    event('study_event1', 'af_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.only(), event.random(.3), priority=40)
+    event('study_event2', 'af_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.only(), event.random(.3), priority=20)
+    event('study_none', 'af_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', priority=100)
+    
+    event('study_event3', 'night_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.only(), event.random(.3), priority=40)
+    event('study_event4', 'night_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', event.only(), event.random(.3), priority=20)
+    event('study_none', 'night_do == \"공부\" and now_week==2 and now_day == 5 and evented == False', priority=100)
 
 label study_event1:
     $SoundPlayer("pen.ogg", 2.0)
@@ -95,7 +100,6 @@ label study_event1:
         show main_cloth
         with fade
     stop looping
-    $af_do = "_" + af_do
     return
 
 label study_event2:
@@ -210,6 +214,56 @@ label study_event2:
     stop looping
     #$now_h = 17
     #$now_m = 20
-    $af_do = "_" + af_do
     #$evented = True
+    return
+
+label study_event3:
+    "교본을 펼쳤다. {w}1중대 3소대에서 본부중대 통신소대로 적을 옮긴지도 3개월 가까이 되었다. {w}1년 가까운 시간 동안 한 번도 해 본 적 없던 업무들을 하게 되었다. {w}통신소대 후임들보다 뒤쳐지는 것은 어찌보면 당연했다."
+    "그렇기 때문에 나는 더욱 노력하였다. {w}순발력이 떨어지고 상황 적응력이 타인에 비해 부족한 나이다. {w}예상 외의 상황들이 도사리고 있는 훈련에서 실수를 하지 않기 위해 나는 교본을 통째로 달달 외우고 있었다."
+    "교본 곳곳을 포스트잇으로 가린 채 정확하게 숙지하였는지 평가하였다."
+    main "(자석식, {w}건전지. {w}주파수 도약 방식...)"
+    "내가 적은 답안은 하나도 빼놓지 않고 정답이었다."
+    main "(아무리 그래도 역시 반복 숙달을 하니 늘긴 하는구나.)"
+    "다음 단락으로 넘어가 공부를 속행했다."
+    $stress_val -= 5
+    $sat_val += 5
+    play looping pen
+    $renpy.pause(2.0)
+    stop looping
+    $now_h = 20
+    $now_m = 30
+    $evented = True
+    return
+
+label study_event4:
+    "교본을 펼쳤다. {w}1중대 3소대에서 본부중대 통신소대로 적을 옮긴지도 3개월 가까이 되었다. {w}1년 가까운 시간 동안 한 번도 해 본 적 없던 업무들을 하게 되었다. {w}통신소대 후임들보다 뒤쳐지는 것은 어찌보면 당연했다."
+    "그렇기 때문에 나는 더욱 노력하였다. {w}순발력이 떨어지고 상황 적응력이 타인에 비해 부족한 나이다. {w}예상 외의 상황들이 도사리고 있는 훈련에서 실수를 하지 않기 위해 나는 교본을 통째로 달달 외우고 있었다."
+    "교본 곳곳을 포스트잇으로 가린 채 정확하게 숙지하였는지 평가하였다."
+    main "(잠깐만... {w}이게... {w}뭐였더라..?)"
+    $SoundPlayer
+    $SoundPlayer("paper.ogg", 1.0)
+    $SoundPlayer("paper.ogg", 1.0)
+    $SoundPlayer("paper.ogg", 1.0)
+    main "(...망할.)"
+    "기본 중의 기본이었다. {w}1중대 소대통신병으로 복무하고 있었을 때부터 한 번도 잊어버리지 않았다고 생각한."
+    main "(왜 이러지? {w}왜 이런 간단한 것도...)"
+    "틀린 부분을 다시 복습하고 다음 단락으로 넘어갔다."
+    $stress_val += 5
+    $sat_val -= 5
+    play looping pen
+    $renpy.pause(2.0)
+    stop looping
+    $now_h = 20
+    $now_m = 30
+    $evented = True
+    return
+
+label study_none:
+    "구석에 앉아 조용히 공부했다."    
+    play looping pen
+    $renpy.pause(2.0)
+    stop looping
+    $stress_val -= 2
+    $sat_val += 2
+    $evented=True
     return

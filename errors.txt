@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1990: expected end of line
-    stop sound noise fadeout 1.0
-               ^
+The label status_check is defined twice, at File "game/script.rpy", line 2129:
+    label status_check:
+and File "game/value.rpy", line 344:
+    label status_check:
+
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue May 24 04:41:33 2022
+Sun May 29 10:46:04 2022
